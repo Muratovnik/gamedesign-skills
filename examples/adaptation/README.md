@@ -1,56 +1,79 @@
-# East Gate: preserve an operation across language and layout
+# East Gate: adapt a clue across language and layout
 
-An original two-version microgame for adapting an existing artifact. Read the verse, use its
-guide, and choose one of four directions. A correct choice opens the gate and
-gives a ferryman token; a wrong direction returns to the verse without loss.
-The separate ferry consumer requires the saved direction and an unspent token,
-then spends the token and starts a voyage. No score or timer is needed.
+East Gate is a small two-version game for exploring what must survive when an
+artifact changes. In English, four verse lines spell `EAST`; in Russian, six
+lines spell `ВОСТОК`. The player reads a guide, chooses a direction, and can
+open the gate by finding the direction encoded by the verse. The later ferry
+scene uses that saved direction and spends the ferryman token. A wrong direction
+returns the player to the verse without loss.
 
-The English four-line version spells EAST. The Russian six-line version spells
-ВОСТОК. The target presents one line at a time; players may permanently pin whole
-lines to compare them. Pinning preserves the task of finding the operation and
-applying it. It is not a simulated measurement of reading or memory demand.
+The files in `fixtures/` are playable inputs to the adjacent Python consumer.
+It checks that the clue resolves to the declared exit and that the later sign
+still points to that exit. The English fixture presents all four target lines
+together. The Russian fixture presents one line at a time and allows pinning
+lines in a notebook; pinning makes comparison available while the player works
+out the clue. The consumer serializes text views and actions;
+it does not render a phone screen or establish reading difficulty, language
+quality, accessibility, or human inference.
 
-The JSON files are the actual consumed content, not examples of a proposed
-format. The CLI is a small game consumer with a text view, pin and direction actions. It
-checks the input record types, revision, clue-to-exit relation and the later sign
-before accepting data. Malformed content or saved action records return a
-structured `invalid` result with exit 2 and create no game output. An actual
-wrong direction is a valid executed turn with a closed gate, not malformed data.
-This deliberately narrow consumer is not a general story engine or a mobile UI.
+## Run the example
 
-From this directory, use a new output path:
+You need Python 3.11 or later. No third-party package is needed. Run commands
+from the Game Design repository root so the fixture paths below resolve. Give
+each command a new output filename under the ignored `tmp/` directory; the
+consumer refuses to overwrite an existing file.
+
+In Bash, create the ignored scratch parent if it does not exist, then make a
+fresh run directory and execute the play, view, and ferry steps in order:
 
 ```bash
-python3 consumer.py --artifact fixtures/east-gate-ru.json --expect-revision east-gate-ru-2 --pin 1 --pin 2 --pin 3 --pin 4 --pin 5 --pin 6 --choose east --output /tmp/east-gate-run.json
-python3 consumer.py --operation view --artifact fixtures/east-gate-ru.json --expect-revision east-gate-ru-2 --line 1 --output /tmp/east-gate-line1.json
-python3 consumer.py --operation enter-ferry --artifact fixtures/east-gate-ru.json --expect-revision east-gate-ru-2 --state /tmp/east-gate-run.json --output /tmp/east-gate-voyage.json
-python3 -m unittest discover -s . -p 'test_*.py' -v
+mkdir -p tmp/reader-runs
+RUN=$(mktemp -d tmp/reader-runs/east-gate-XXXXXX)
+python3 examples/adaptation/consumer.py \
+  --artifact examples/adaptation/fixtures/east-gate-ru.json \
+  --expect-revision east-gate-ru-2 \
+  --pin 1 --pin 2 --pin 3 --pin 4 --pin 5 --pin 6 --choose east \
+  --output "$RUN/gate.json"
+python3 examples/adaptation/consumer.py --operation view \
+  --artifact examples/adaptation/fixtures/east-gate-ru.json \
+  --expect-revision east-gate-ru-2 --line 1 --output "$RUN/line-1.json"
+python3 examples/adaptation/consumer.py --operation enter-ferry \
+  --artifact examples/adaptation/fixtures/east-gate-ru.json \
+  --expect-revision east-gate-ru-2 --state "$RUN/gate.json" \
+  --output "$RUN/voyage.json"
 ```
 
-The `view` operation emits the guide, one visible target line, the next line ID
-and allowed actions. Request that next ID to browse the next line; the source
-version emits its four lines together. These are actual serialized text views,
-not a rendered mobile interface. The default play command applies the supplied
-pin and choice sequence. It does not claim that a human actually read the views.
-Pin actions appear in the view only when the content declares `aid: line-pins`.
-Without that optional aid, both layouts still support direction choice and the
-carousel still supports navigation; submitting a pin action is invalid.
-`enter-ferry` reopens the saved result in another process, verifies the content
-digest and direction/token, and returns a consumed-token state. Reusing that
-post-voyage state is rejected.
+On Windows PowerShell, create the ignored scratch parent and run directory, then
+use the Python launcher (or replace `py -3` with the path to your Python 3
+executable):
 
-Inspect the result's notebook, gate, token and voyage. Choose `north` to
-exercise a legitimate wrong turn. Change the first target line to a literal
-translation starting with С to produce a broken operation; the consumer refuses
-that artifact instead of recording a successful localization. Rewriting it with
-a different meaningful В line is a valid alternative. The original source file
-stays available for comparison.
+```powershell
+$null = New-Item -ItemType Directory -Force tmp\reader-runs
+$run = Join-Path (Resolve-Path tmp\reader-runs) ("east-gate-" + [guid]::NewGuid().ToString("N"))
+New-Item -ItemType Directory $run | Out-Null
+py -3 examples/adaptation/consumer.py --artifact examples/adaptation/fixtures/east-gate-ru.json --expect-revision east-gate-ru-2 --pin 1 --pin 2 --pin 3 --pin 4 --pin 5 --pin 6 --choose east --output (Join-Path $run gate.json)
+py -3 examples/adaptation/consumer.py --operation view --artifact examples/adaptation/fixtures/east-gate-ru.json --expect-revision east-gate-ru-2 --line 1 --output (Join-Path $run line-1.json)
+py -3 examples/adaptation/consumer.py --operation enter-ferry --artifact examples/adaptation/fixtures/east-gate-ru.json --expect-revision east-gate-ru-2 --state (Join-Path $run gate.json) --output (Join-Path $run voyage.json)
+```
 
-The corresponding method and research transfer are in
-[adaptation](../../skills/game-design/references/adaptation.md). Language quality,
-screen-reader behavior, actual small-screen layout and human inference are open
-observations; the included deterministic checks prove only the declared content
-and action relations. Collect a consented target-device session through the
-[environment contract](../../skills/game-design/references/environment-contracts.md)
-when those properties are required.
+The play result should show an open gate, the six pinned lines in its notebook,
+and an unspent `ferryman` token. The view result contains the guide, visible
+line, next line ID, direction choices, and permitted actions. Since this
+fixture uses a one-line carousel, request the returned next line ID to continue
+browsing. The ferry result should mark the voyage started and the token spent.
+The ferry step reopens the saved result in a separate process, checks its
+content digest and direction, and accepts only the open gate with an unspent
+token.
+
+To inspect a valid wrong turn, rerun the play command in a separate fresh
+directory with `--choose north`: the gate remains closed and no token is
+awarded. A malformed or stale artifact, or an invalid saved action, instead
+returns a structured `invalid` result and exit code 2 without a game output.
+That is different from a valid wrong turn, which executes normally. The
+included deterministic relations show what this consumer accepts; they are not
+a measurement of how a person reads or solves the clue.
+
+The adaptation method and its transfer guidance are in
+[Adaptation](../../skills/game-design/references/adaptation.md). For a
+consented target-device session, use the
+[environment contract](../../skills/game-design/references/environment-contracts.md).

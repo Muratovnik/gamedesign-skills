@@ -2,75 +2,77 @@
 
 **Status: current.**
 
-This page records user-facing design choices that help maintainers understand
-the package. It explains the rationale and the evidence that would justify
-reconsidering a choice.
+This page explains the package choices a maintainer may need to revisit. Each
+decision gives the reason for the current choice and the kind of evidence that
+would justify changing it.
 
-## Seven direct entries and one complete bundle
+## Seven direct entries, distributed as one bundle
 
-The package has seven entries with distinct subject areas and canonical owners
-for shared relations. Direct entry supports both narrow tasks and changes that
-cross several systems. The complete bundle keeps sibling references available
-when the source is moved. Seven entries are a revisable organization choice,
-not a measured optimum. Repeated discovery or reading problems would justify
-revisiting the boundaries.
+The seven entries give narrow tasks a direct starting point while preserving
+cross-domain context in sibling references. The package distributes them as one
+complete bundle so a moved skill can still resolve its local references.
+`catalog.json` is the inventory. The number and boundaries are organizational
+choices, not a measured optimum. Repeated
+navigation or reading problems would justify revisiting them.
 
-## Constructive procedures with conditional references
+## Build around a concrete game relation
 
-The methods ask the designer to build or revise an actual game relation. They
-use references when those help answer a real design question. This keeps
-general research and engineering processes in the separately maintained Assay
-package while allowing game-specific judgment to remain with the subject
-methods. A reference should be reconsidered when it adds process without
-changing a decision or artifact.
+The methods ask designers to construct or revise an actual game artifact and
+inspect the consequence. They include references when a research distinction or
+technical boundary changes that design decision. General research,
+implementation and evaluation procedures remain in the separately maintained
+[Assay project](https://github.com/Muratovnik/assay); Game Design uses the
+identity and selected owner resources recorded in its optional
+[Assay binding](../skills/game-design/assets/assay-binding.json). A reference
+earns its place when it changes the decision or artifact under discussion.
 
-## Explicit external method sources
+## Keep source binding separate from discovery claims
 
-Assay is an independent dependency, so the Game Design package does not assume
-that its files share a parent directory or are installed in a particular
-location. The optional source binding makes the selected method content
-inspectable for a task. A consumer's actual permissions and enabled state must
-still be established by that consumer; a readable file alone cannot prove
-client authorization.
+The Assay binding pins source identity and selected resource digests so a
+consumer can inspect which external method version was selected. It does not
+install that source, establish a client's permissions, or prove automatic
+discovery. Reading a file is evidence of readability only. Change this boundary
+only with evidence from the relevant consumer lifecycle.
 
-## Prepared client manifests
+## Derive projections from the catalog
 
-The repository contains source projections for plugin clients. Keeping those
-projections derived from the same skill inventory avoids maintaining different
-bundles by hand. Schema validation establishes structure only. Client listing,
-selection, sibling resolution and lifecycle remain separate compatibility
-questions that require the relevant client and build.
+Client-facing source projections are generated from the same seven-entry
+inventory. This avoids maintaining conflicting hand-written bundle lists. The
+local checks validate projection structure and links; they do not establish
+client listing, selection, sibling resolution or lifecycle. Reconsider the
+projection contract when a supported consumer's actual behavior requires a
+different representation.
 
-## Use existing tools for concrete game operations
+## Reuse concrete tools at the example boundary
 
-The examples use available engine APIs, parsers and small consumers to make
-action, geometry, migration, observation and content-selection relations
-concrete. A new general engine, installer or model runner would add maintenance
-without serving these examples. When a real game has a suitable importer or
-query path, use that instead of translating it into an example format.
+Examples use their relevant engine APIs, parsers and small consumers to make a
+specific action, geometry, migration, observation or content-selection relation
+inspectable. Adding a general engine, installer or model runner would add
+maintenance without serving those cases. When a real game has a suitable
+importer or query path, the example should use that path rather than inventing a
+parallel format.
 
-## Keep evidence proportional to the claim
+## Match each claim to its evidence
 
-A schema check can establish shape; a deterministic consumer can establish its
-declared data behavior; neither establishes that a game is enjoyable, that a
+A schema check establishes shape; a deterministic consumer establishes only its
+declared data behavior. Neither demonstrates that a game is enjoyable, that a
 person learned, or that an interface is accessible in use. The examples keep
-human, material and perceptual questions visible so a technical result is not
-mistaken for an experience claim. Claims should be revisited when their scope
-or available evidence changes.
+those questions visible so technical results are not read as experience claims.
+Revisit a claim when its scope or evidence changes; see the
+[capability map](traceability.md) and [research and evidence limits](late-comparison.md).
 
 ## Preserve legitimate alternatives
 
-The authored materials include expressive play without victory, worlds whose
+The authored examples include expressive play without victory, worlds whose
 meaning is not reducible to simulation, alternate clue routes, permanent help,
-purposeful repetition, asymmetric authority, and an accepted ending. These
-examples make clear that a method is a way to reason about a design relation,
-not a universal demand for a particular mechanic.
+purposeful repetition, asymmetric authority and an accepted ending. These are
+valid design outcomes. The methods support reasoning about a design relation;
+they do not require a particular mechanic or a single form of success.
 
-## Relation to existing approaches
+## Relation to established approaches
 
-The methods retain familiar concerns such as short feedback loops, progression,
-access and the relationship between implementation and player experience.
-Those concerns do not replace the package's procedures for changing a concrete
-artifact and checking the consequence. The [comparison rationale](late-comparison.md)
-summarizes this boundary and cites public sources. It does not claim a measured
-comparison of agent performance.
+The methods retain familiar concerns such as feedback, progression, access and
+the relation between implementation and player experience. Their contribution
+is to connect those concerns to a concrete artifact and an inspectable change.
+The [research and evidence page](late-comparison.md) records the source basis
+and limits; it does not report a measured comparison of agent performance.

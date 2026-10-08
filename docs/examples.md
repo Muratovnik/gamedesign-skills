@@ -1,53 +1,38 @@
 # Example guide
 
-All game examples in this package are original, authored material. They are
-development examples, not hidden evaluation cases or observations of real players.
-Use the rules/data themselves, enact the stated moves, and inspect the resulting
-artifact. A conceptual companion and a digital miniature may use different
-encodings or rules; their explicit version identities govern each replay.
+Use this page to find a playable or inspectable case for a design question. The
+linked studies contain their own rules, inputs, commands and expected
+observations; this guide points you to the part that makes a useful comparison.
 
-| Family | Start here | Concrete work and discriminating contrast |
+| If you are changing… | Start with… | Compare… |
 | --- | --- | --- |
-| Action, space and encounter | [Quay Crossing](../examples/design-studies/harbour-of-echoes/quay-crossing.md), [Godot](../examples/godot-episode/README.md) | Change actual action timing and preserve a usable response; compare a clear ray with an impassable body and a signal outside the camera |
-| Free expressive and rhythmic play | [Free-form Loom](../examples/design-studies/harbour-of-echoes/free-form-loom.md) | Two equal-duration compositions differ in pulse, texture and controllable relation; no victory condition is introduced |
-| World, inhabitants and traces | [Harbour gamebook](../examples/design-studies/harbour-of-echoes/gamebook.md) | A public material trace and privately known event create different lawful actions; authored world meaning is not reduced to simulation |
-| Inference and conditional story | [Harbour gamebook](../examples/design-studies/harbour-of-echoes/gamebook.md), [actor views](../examples/analysis-lab/README.md#observer-specific-views) | Follow fact → available clue → actor knowledge → legal scene; remove a channel and revise consequences rather than giving every NPC omniscience |
-| Learning and cognitive help | [Lens workshop](../examples/design-studies/harbour-of-echoes/lens-workshop.md) | Guided, unaided transfer and permanent-help variants; success at a prompted answer is not external learning |
-| Resources, access and loss | [Systems studies](../examples/systems-studies/README.md), [analysis lab](../examples/analysis-lab/README.md) | Make stock usable across owners/time, inspect a recovery witness and resource sensitivity; a correct total can still be inaccessible |
-| Cooperative campaign and state | [Lantern Crew](../examples/systems-studies/README.md), [state migration](../examples/analysis-lab/README.md#state-migration) | Retain private rights and knowledge across departure, election, migration and recovery; compare a lockout with a lawful campaign ending |
-| Joint action and matching | [Shared play](../skills/game-participation-design/references/shared-play.md) | Enact proposal, private refusal and next legal choice; show an impossible role-constrained queue and a valid composition |
-| Access, intensity and return | [Access and return](../skills/game-participation-design/references/access-and-return.md) | Private choice and assistance preserve the chooser; pause, skip and cancel change named time/resource/dramatic state |
-| Repertoire and generation | [Repertoire](../skills/game-content-design/references/repertoire.md), [analysis lab](../examples/analysis-lab/README.md) | Compare relation diversity after cosmetic names are removed; retain generation dependencies through filtering, actual selection and presentation |
-| Adaptation of an existing artifact | [East Gate](../examples/adaptation/README.md) | Versioned English/Russian content, one-line display with permanent line pins, chosen direction and reused next scene; broken literal translation control |
+| Action timing, response and encounter space | [Quay Crossing](../examples/design-studies/harbour-of-echoes/quay-crossing.md) or the [Godot episode](../examples/godot-episode/README.md) | A legal response against an off-camera signal, blocked body or no-input case. The written game and Godot episode have separate rules and evidence. |
+| Expressive play without a win condition | [Sound-and-light loom](../examples/design-studies/harbour-of-echoes/free-form-loom.md) | Two equal-duration compositions with different pulse, texture and controllable relations. |
+| World, inhabitants and conditional story | [The third bell gamebook](../examples/design-studies/harbour-of-echoes/gamebook.md) | A public trace against privately known events; remove a message path and follow the changed legal scene. |
+| Inference and help | [Lens workshop](../examples/design-studies/harbour-of-echoes/lens-workshop.md), [East Gate](../examples/adaptation/README.md) or [actor views](../examples/analysis-lab/README.md#observer-specific-views) | Prompted answers against unaided transfer or permanent help; actor knowledge against a serialized view. These answer different questions. |
+| Resources, loss, access and return | [Systems studies](../examples/systems-studies/README.md) and the [analysis lab](../examples/analysis-lab/README.md) | Who can use a resource, recover after loss and retain rights through departure or migration. A valid total alone does not show that an owner can access it. |
+| Joint action and participation | [Shared play](../skills/game-participation-design/references/shared-play.md) and [access and return](../skills/game-participation-design/references/access-and-return.md) | Proposal, private refusal and next legal choice; then pause, skip or cancel and the named state each changes. |
+| Content generation and selection | [Repertoire](../skills/game-content-design/references/repertoire.md) and the [analysis lab](../examples/analysis-lab/README.md) | Whether relations remain varied after cosmetic names are removed, and how generated content moves through filtering, selection and presentation. |
+| Adapting an existing artifact | [East Gate](../examples/adaptation/README.md) | Versioned English and Russian clues, one-line display with permanent line pins, player-selected direction and the reused next scene. |
 
-## Cross-domain traces
+The [Harbour of Echoes guide](../examples/design-studies/harbour-of-echoes/README.md)
+collects the paper studies and links each to its method owner. The
+[capability map](traceability.md) maps methods to examples and implementation
+boundaries.
 
-**Action to signal to space to threat.** Quay Crossing supplies the design
-relation; the separately identified Godot miniature consumes baseline/candidate
-fixtures. The native trace is evidence for that miniature's input and geometry,
-not a human response or a claim to have executed every paper rule.
+## Read the evidence with the example
 
-**Fact to clue to actor knowledge to scene.** Harbour's gamebook records who can
-know which fact and when; remove the message path and replay the changed scene.
-The technical actor-view example proves serialized permission filtering and
-downstream choice for its declared save format. It does not isolate an LLM that
-already saw the full save.
+Follow the linked README or replay record for exact prerequisites, commands,
+fresh output locations and expected results. A paper replay shows what follows
+from its stated rules and assumptions. A deterministic consumer or schema check
+shows behavior only for its declared input and format. Neither establishes
+enjoyment, learning, cultural interpretation, accessibility in use or voluntary
+social consent. The examples are authored and synthetic; they are not
+observations of real players or undisclosed evaluation cases.
 
-**Resources to loss to rights to return.** Lantern Crew includes a complete
-paper input/result replay and lawful contrasts. The technical lab has its own
-versioned recovery and idempotent-migration policy; it does not claim to enact
-the paper variant's different survey bonus or migration-repeat behavior.
-
-**Language and device to clue and help to target action.** East Gate
-changes the existing source artifact, not an unrelated demo. Whole-line pins
-support comparison; the player still selects the direction, which opens the
-target gate and feeds the later sign. Human linguistic quality and a rendered
-device interaction remain separate observations.
-
-## Reproduce and interpret
-
-Example READMEs contain literal commands and expected semantic observations.
-Use fresh output paths and preserve failed runs. The paper replay notes contain
-arithmetical/state calculations with declared assumptions. Those calculations
-and native receipts can refute a broken relation; they cannot supply enjoyment,
-learning, cultural interpretation or voluntary social consent by themselves.
+The technical examples also remain distinct from their paper companions. The
+Godot trace concerns its own controller and geometry. The analysis lab filters
+serialized actor views for its declared save format; it does not isolate a model
+that has already seen the full save. East Gate's serialized views do not measure
+human reading or a rendered device interaction. Each detailed example states
+the evidence it supplies and the properties left open.

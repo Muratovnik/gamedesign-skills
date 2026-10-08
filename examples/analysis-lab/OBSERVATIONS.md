@@ -1,9 +1,10 @@
 # Collect and interpret an observation of this episode
 
 No people or physical materials were observed while constructing this example.
-The shipped CSV and manifest are synthetic format demonstrations. Use this route
-when a consumer supplies relevant real recordings or arranges its own observation.
-The importer does not contact participants, invent consent or authenticate a source.
+The shipped CSV and manifest are synthetic format demonstrations, not a
+historical participant result. Use this route when a consumer supplies relevant
+real recordings or arranges its own observation. The importer does not contact
+participants, invent consent, or authenticate a source.
 
 ## Define the relation before collecting
 
@@ -22,7 +23,8 @@ instruction as independent discovery, or declined participation as a failed acti
 Choose a recording method able to distinguish the needed order. Retain the
 engine's world and run clocks separately, the capture clock, an identifiable
 common anchor, dropped intervals and synchronization uncertainty. To inspect a
-supplied audio/video file's timestamps, a consumer with FFprobe may use:
+supplied audio/video file's timestamps, a consumer with FFprobe may run this
+from the recording's directory, replacing the placeholder with its actual path:
 
 ```bash
 ffprobe -v error -show_streams -show_frames -of json supplied-recording.mp4
@@ -58,12 +60,41 @@ retention of its recordings and personal information.
 
 ## Interpret after import
 
-Use `observe_evidence.py --csv <rows> --manifest <manifest> --output <new-report>`.
-It validates metadata with JSON Schema, parses the CSV using Python's standard
-parser, rejects empty sets, preserves unknown outcomes and excludes declined
-attempts from completed-attempt counts. It always leaves `human_claim` unresolved:
-format, filenames and a provenance label cannot themselves establish authenticity
-or suitability.
+The importer needs Python 3.11+ and `jsonschema==4.26.0`. Follow the analysis
+lab's [prerequisite setup](README.md#prerequisites-and-output-handling), then
+run from the Game Design repository root with a new report path below ignored
+`tmp/`. For example, in Bash:
+
+```bash
+mkdir -p tmp/reader-runs
+RUN=$(mktemp -d tmp/reader-runs/observations-XXXXXX)
+PYTHON=.venv/bin/python
+"$PYTHON" skills/game-design/scripts/observe_evidence.py \
+  --csv examples/analysis-lab/fixtures/observations.csv \
+  --manifest examples/analysis-lab/fixtures/observation-manifest.json \
+  --output "$RUN/observations.json"
+```
+
+On Windows PowerShell, create a unique directory and invoke the same operation
+with the environment's Windows interpreter:
+
+```powershell
+$null = New-Item -ItemType Directory -Force tmp\reader-runs
+$run = Join-Path (Resolve-Path tmp\reader-runs) ("observations-" + [guid]::NewGuid().ToString("N"))
+New-Item -ItemType Directory $run | Out-Null
+& .\.venv\Scripts\python.exe skills/game-design/scripts/observe_evidence.py --csv examples/analysis-lab/fixtures/observations.csv --manifest examples/analysis-lab/fixtures/observation-manifest.json --output (Join-Path $run observations.json)
+```
+
+The CSV and manifest above are synthetic examples. Their recognizable result
+is `synthetic_format_demonstration` with `human_claim` set to
+`not_established`.
+
+For a supplied CSV and manifest, use the same three flags with their actual
+paths and a fresh output filename. The importer validates metadata with JSON
+Schema, parses CSV with Python's standard parser, rejects empty sets, preserves
+unknown outcomes, and excludes declined attempts from completed-attempt counts.
+It always leaves `human_claim` unresolved: format, filenames, and a provenance
+label cannot establish authenticity or suitability.
 
 Inspect the cited source and at least the material interval needed for the claim.
 Separate action, self-report, expert interpretation and permission. Ask whether

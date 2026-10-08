@@ -1,21 +1,27 @@
 # Systems and participation studies
 
-These original synthetic studies provide playable rules, initial states and
-concrete results for resources, participation and content. They support paper
-replay and arithmetic inspection. They are not observations of human play or
-claims about the effectiveness of the skills.
+This page contains one original synthetic paper study of resource ownership,
+authority, migration, and recovery after a roster change. It needs only the
+rules below, the linked JSON starting/result records, and paper or another way
+to track quantities and turns. There is no executable consumer in this folder;
+for digital state operations, follow the separately versioned
+[analysis lab](../analysis-lab/README.md). These declared outcomes are not
+observations of human play or evidence about a skill's effectiveness.
 
 ## Replay Lantern Crew
 
 The crew wants to restore a harbor generator after a loss and roster change.
-Ava has left. Bo returns with a winch and one personal fuel. Cy is new and
-chooses the survey route. The crew has 4 scrap; repair costs 6. Ava's personal
-archive pass has not expired, but her absence suspends hosted archive entry.
+Ava is absent; Bo returns with a winch and one personal fuel; Cy joins with the
+public survey map. The locker holds 4 crew scrap and repair costs 6. Ava still
+owns an unexpired personal archive pass, but her absence suspends hosted entry.
+The exercise asks you to preserve ownership, knowledge, and prior history while
+finding a permitted route to repair or an agreed ending.
 
-Use [x3-input.json](x3-input.json) as the complete relevant starting state.
-[x3-ridge-result.json](x3-ridge-result.json) records the result of the specified
-migration and ridge replay. These readable paper-study encodings support the
-rules on this page. For executable operations use the analysis lab's own
+Begin with [x3-input.json](x3-input.json), the complete relevant paper-study
+state. Read the boundary rule, then play the ridge branch under “Play the next
+episode”; compare your final quantities and history with
+[x3-ridge-result.json](x3-ridge-result.json). These JSON files encode this
+paper contract. For executable state operations, use the analysis lab's own
 fixtures through [state migration](../analysis-lab/README.md#state-migration)
 and [observer-specific views](../analysis-lab/README.md#observer-specific-views).
 
@@ -56,7 +62,7 @@ The paper migration accepts version 1 and produces version 2. An already
 version-2 input is rejected as `already_migrated`; this is the selected repeat
 contract for this paper operation, not a requirement for all migrations.
 
-Apply these operations in order:
+Apply these operations in order before starting the next episode:
 
 1. Keep all participant IDs; record Ava as absent rather than delete her.
 2. Carry 4 scrap with owner `crew:lantern-crew`; preserve personal fuel and
@@ -75,7 +81,8 @@ copies Ava's code into Bo's view fails this preservation claim.
 
 ### Play the next episode
 
-Read the public map to Bo and Cy. This is a new observation event for Bo:
+After the transfer, read the public map to Bo and Cy. This is a new observation
+event for Bo:
 
 > Ridge: three turns, no fuel, reveal stable landing. Canal: one turn,
 > requires Bo's equipped winch and one fuel, reveal damaged pier. Completing
@@ -89,7 +96,8 @@ repair for 6, making the generator work. A generator that was already working
 at a survey's completion adds another 2; this first repair has no retroactive
 payout. The next public survey is also free to start.
 
-The ridge replay is complete:
+For the supplied ridge choice, complete the three-turn survey, then let Bo
+approve the repair. The expected paper result is:
 
 | Step | Crew scrap | Bo fuel | Generator | Information and next action |
 | --- | ---: | ---: | --- | --- |
