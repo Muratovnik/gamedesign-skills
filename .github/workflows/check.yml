@@ -33,5 +33,14 @@ jobs:
       - run: python -B -m unittest discover -s examples/godot-episode -p 'test_*.py' -v
       - run: python -B -m unittest discover -s examples/design-studies/harbour-of-echoes -p 'test_*.py' -v
       - run: python .github/relkit.pyz audit --history
-      - run: python -B tools/release.py build --output dist --version 0.1.0
-      - run: python -B tools/smoke.py --assets dist --version 0.1.0 --temp tmp/release-smoke
+      - name: Read source version
+        id: version
+        shell: python
+        run: |
+          import os
+          from pathlib import Path
+          version = Path("VERSION").read_text(encoding="utf-8").strip()
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"version={version}\n")
+      - run: python -B tools/release.py build --output dist --version ${{ steps.version.outputs.version }}
+      - run: python -B tools/smoke.py --assets dist --version ${{ steps.version.outputs.version }} --temp tmp/release-smoke

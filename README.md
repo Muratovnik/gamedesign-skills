@@ -5,7 +5,7 @@
 Seven composable methods for making and revising playable games.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0-informational?style=flat-square)](VERSION)
+[![Version](https://img.shields.io/badge/version-0.1.1-informational?style=flat-square)](VERSION)
 
 </div>
 
@@ -104,10 +104,10 @@ Godot executable where needed. Checks do not launch model runs. Prepare a
 versioned source archive with:
 
 ```bash
-python tools/release.py build --output dist --version 0.1.0
+python tools/release.py build --output dist --version 0.1.1
 ```
 
-This creates `gamedesign-skills-0.1.0-source.zip` and `SHA256SUMS` in `dist/`.
+This creates `gamedesign-skills-0.1.1-source.zip` and `SHA256SUMS` in `dist/`.
 It prepares source files; it does not publish or register the package.
 
 ## Documentation

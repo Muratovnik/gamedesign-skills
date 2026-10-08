@@ -19,7 +19,7 @@ The shell examples use Bash. Replace both paths with your actual locations;
 spaces are allowed when the variables stay quoted:
 
 ```bash
-GAME_DESIGN_ROOT="/absolute/packages/game-design-0.1.0/game-design"
+GAME_DESIGN_ROOT="/absolute/packages/game-design-0.1.1/game-design"
 GAME_ROOT="/absolute/my-game"
 ```
 

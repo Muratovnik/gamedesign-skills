@@ -10,10 +10,10 @@ From the repository root, build the selected version into a new output
 directory:
 
 ```bash
-python tools/release.py build --output dist --version 0.1.0
+python tools/release.py build --output dist --version 0.1.1
 ```
 
-The command creates `gamedesign-skills-0.1.0-source.zip` and `SHA256SUMS` in
+The command creates `gamedesign-skills-0.1.1-source.zip` and `SHA256SUMS` in
 `dist/`. Check the command result and digest before sharing the archive. Keep
 the source version and archive identity together when recording a later
 compatibility or support claim.
@@ -30,7 +30,7 @@ On Windows its interpreter is `.venv/Scripts/python.exe`; on Unix it is
 
 ```text
 python .github/relkit.pyz audit
-python tools/smoke.py --assets dist --version 0.1.0 --temp tmp/release-smoke
+python tools/smoke.py --assets dist --version 0.1.1 --temp tmp/release-smoke
 ```
 
 The smoke consumes the built archive, checks its checksum and version, extracts
@@ -46,9 +46,9 @@ Before publication, commit the reviewed files and run
 `Muratovnik/gamedesign-skills`. Release preparation and publication are separate:
 
 ```text
-python .github/relkit.pyz release prepare 0.1.0
-python .github/relkit.pyz release plan 0.1.0
-python .github/relkit.pyz release run 0.1.0 --publish --plan-hash REVIEWED
+python .github/relkit.pyz release prepare 0.1.1
+python .github/relkit.pyz release plan 0.1.1
+python .github/relkit.pyz release run 0.1.1 --publish --plan-hash REVIEWED
 ```
 
 Use the isolated environment's interpreter so the source checks have their

@@ -8,7 +8,7 @@ actual game revision.
 
 | Component or route | Current boundary |
 | --- | --- |
-| Game Design | Version 0.1.0; use the complete source bundle |
+| Game Design | Version 0.1.1; use the complete source bundle |
 | Assay | The shipped binder requires 0.17.2 at commit `94c517b0aac9ba2575086bf9aead1cc828aadb0d`; no automatic installation |
 | Python | Examples require Python 3.11 or newer; other environment combinations are not established by that statement alone |
 | Python packages | Development dependencies are listed in `requirements-dev.txt`; no package is downloaded on skill load |

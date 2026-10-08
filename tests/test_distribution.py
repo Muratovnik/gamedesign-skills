@@ -194,6 +194,7 @@ class SecurePackaging(unittest.TestCase):
         self.temp = temporary_directory()
         self.addCleanup(self.temp.cleanup)
         self.base = Path(self.temp.name)
+        self.version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
 
     def _source(self) -> Path:
         root = self.base / "source"
@@ -290,7 +291,7 @@ class SecurePackaging(unittest.TestCase):
 
     def test_release_build_smokes_downloaded_assets_and_exact_names(self):
         assets = self.base / "assets"
-        version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+        version = self.version
         built = subprocess.run(
             [sys.executable, str(ROOT / "tools" / "release.py"), "build", "--output", str(assets), "--version", version],
             cwd=ROOT,
@@ -301,7 +302,7 @@ class SecurePackaging(unittest.TestCase):
         )
         self.assertEqual(built.returncode, 0, built.stdout + built.stderr)
         result = json.loads(built.stdout)
-        self.assertEqual(set(result["assets"]), {"gamedesign-skills-0.1.0-source.zip", "SHA256SUMS"})
+        self.assertEqual(set(result["assets"]), {f"gamedesign-skills-{version}-source.zip", "SHA256SUMS"})
         self.assertEqual({path.name for path in assets.iterdir()}, set(result["assets"]))
         checked = subprocess.run(
             [sys.executable, str(ROOT / "tools" / "smoke.py"), "--assets", str(assets), "--version", version,
@@ -323,7 +324,7 @@ class SecurePackaging(unittest.TestCase):
         assets = self.base / "assets"
         with self.assertRaisesRegex(ValueError, "does not match VERSION"):
             release.build(assets, "9.9.9")
-        result = release.build(assets, "0.1.0")
+        result = release.build(assets, self.version)
         (assets / "unexpected.txt").write_text("third asset", encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "Expected exactly"):
             smoke.verify(assets, result["version"], self.base / "smoke")
@@ -336,21 +337,21 @@ class SecurePackaging(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "outside public source roots"):
             package.validate_destination(ROOT, receipt)
         with self.assertRaisesRegex(ValueError, "outside public source roots"):
-            release.build(ROOT / "docs" / "assets", "0.1.0")
+            release.build(ROOT / "docs" / "assets", self.version)
         self.assertFalse(archive.exists())
         self.assertFalse(receipt.exists())
 
     def test_corrupted_checksum_and_unsafe_downloaded_zip_are_rejected(self):
         assets = self.base / "assets"
-        built = release.build(assets, "0.1.0")
+        built = release.build(assets, self.version)
         archive = assets / built["archive"]
         archive.write_bytes(archive.read_bytes() + b"corruption")
         with self.assertRaisesRegex(ValueError, "checksum"):
-            smoke.verify(assets, "0.1.0", self.base / "corrupt-smoke")
+            smoke.verify(assets, self.version, self.base / "corrupt-smoke")
 
         unsafe = self.base / "unsafe-assets"
         unsafe.mkdir()
-        unsafe_name = "gamedesign-skills-0.1.0-source.zip"
+        unsafe_name = f"gamedesign-skills-{self.version}-source.zip"
         unsafe_archive = unsafe / unsafe_name
         info = zipfile.ZipInfo("game-design/../../outside.txt")
         info.external_attr = 0o100644 << 16
@@ -359,7 +360,7 @@ class SecurePackaging(unittest.TestCase):
         digest = hashlib.sha256(unsafe_archive.read_bytes()).hexdigest()
         (unsafe / "SHA256SUMS").write_text(f"{digest}  {unsafe_name}\n", encoding="ascii")
         with self.assertRaisesRegex(ValueError, "Unsafe archive member path"):
-            smoke.verify(unsafe, "0.1.0", self.base / "unsafe-smoke")
+            smoke.verify(unsafe, self.version, self.base / "unsafe-smoke")
 
 
 if __name__ == "__main__":
