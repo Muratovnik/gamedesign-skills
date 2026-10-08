@@ -1,0 +1,770 @@
+{
+  "subject": "Muratovnik/gamedesign-skills",
+  "source_commit": "7b385469b95ffe40562e7161ea9c3cab7bec2b94",
+  "source_tree": "cd84ab3cd583ad2ceec9860da79d907de5d7f8c1",
+  "version": "0.1.0",
+  "scope": "Complete corrected code/documentation tree before this own-baseline record and correction evidence are added. No product changes are hidden in a self-referential hash.",
+  "baseline_commit": "f9f6bac0ee767597692d5c17d1eecc90f6788aa8",
+  "assay_commit": "94c517b0aac9ba2575086bf9aead1cc828aadb0d",
+  "model_trials": 0,
+  "files": [
+    {
+      "path": ".agents/plugins/marketplace.json",
+      "bytes": 369,
+      "sha256": "48764271b757530b3fd75408463d9cc891cdebedf51f94593eb8b3def7d5dd38"
+    },
+    {
+      "path": ".betterleaks.toml",
+      "bytes": 98,
+      "sha256": "070980fba70d7b9b3e08f808e753bdd6275ad4f832b131c28ecf0db75eeaaae0"
+    },
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "bytes": 322,
+      "sha256": "5a56f2b9881cef0ac3da5f2cad04d5c2e9474a1fe3a572e7d429f74a5022f351"
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "bytes": 187,
+      "sha256": "3c43c3243db62e8c3ead042e8cc31ce11b63283a68fae1269ce4c4b8df068c6b"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 32,
+      "sha256": "ef9974ae486cedac2638968e17c82aca37e3d83dd40929ada3aa94daea026258"
+    },
+    {
+      "path": ".github/relkit.pyz",
+      "bytes": 135589,
+      "sha256": "fe4c3271e21ff560a3385313b1da340c48b13f271769bbabeb4d0f975a7a621d"
+    },
+    {
+      "path": ".github/relkit.pyz.sha256",
+      "bytes": 77,
+      "sha256": "3d53c0b7074534aaec700d2bacc84cbf3b671ad99cd4454e7d6ba94defba289b"
+    },
+    {
+      "path": ".github/workflows/check.yml",
+      "bytes": 1367,
+      "sha256": "430bec77f894bf6e46d5cfeb6b36aacb226235717925cf7eb4f82c7188d8f147"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 194,
+      "sha256": "f566a47ef57b58b1107127957f6bc93f1b6008d739c27fc1e37e26cff3d66186"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 2798,
+      "sha256": "73ecb0e0eefc59102ad555dcb1d90fb15d830568202a9aacee8bed4d62fa9729"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1553,
+      "sha256": "73f986650fb2a1689bc007301a94f2023e483a5acd0a57f8fb0a287279bf4556"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 2458,
+      "sha256": "a8f7d0e3d3e1d588431a83311303ac46dedc7e7740dec4d90e9911d76984500a"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1081,
+      "sha256": "43f715d10e372f8cf616481133ec461f7f10f565fcdfa1c1f4087b6660273444"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 1466,
+      "sha256": "4922e702379a146076f52bc7bc50b7c98769a4e941bc1547884a638384f0486c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6897,
+      "sha256": "cf04f2d563e56b305ab6700e8df793fe84305fa86ca1b6e64a9d059e6046622a"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 1217,
+      "sha256": "dd76cdc07fadb96912f21d9f91938412a0a2366b57f81495babaca75f34929a4"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "catalog.json",
+      "bytes": 577,
+      "sha256": "24b29495315d019af01ad0c0bc3a24f4a0c17c6a1ca253ce0845350966f7b34c"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "bytes": 4522,
+      "sha256": "20114b57be9e159f4ce82dd52a0338f3e53f22675ef4d5b5ab4530a8ff902361"
+    },
+    {
+      "path": "docs/decisions.md",
+      "bytes": 3742,
+      "sha256": "85fbf52aaf50cbddbd593861bfbe1a879850be98c714ea4138275389a2a69a5d"
+    },
+    {
+      "path": "docs/examples.md",
+      "bytes": 5193,
+      "sha256": "0a13459d50e3cdc5c85fd563d726eff284ee4b09a92b8ecded86a967a31ff66e"
+    },
+    {
+      "path": "docs/installation.md",
+      "bytes": 9899,
+      "sha256": "93a3dcc68f5d1a5cacfd9ac0e38a35fb5dcea16047295018cfeb59a34fefc793"
+    },
+    {
+      "path": "docs/late-comparison.md",
+      "bytes": 1264,
+      "sha256": "61a32e546dc1854d989431ab68338c06005b69399b50b3fb7639bef634241b64"
+    },
+    {
+      "path": "docs/quickstart.ru.md",
+      "bytes": 4719,
+      "sha256": "98b8d2f3c01e4275900a2c3b1456a3b6e58eb4fed3766b1c6ef63b3b247815d7"
+    },
+    {
+      "path": "docs/releases.md",
+      "bytes": 2779,
+      "sha256": "a6b196ddc310b35b7b87a8c256f834bbd9f7b649a8f608c3cab413359fc56f1a"
+    },
+    {
+      "path": "docs/reviews/2026-10-08/evidence/README.md",
+      "bytes": 3495,
+      "sha256": "d771400379f2bacb0f6cfa691c5fba8a171e51cfe589c70a0966fd18f0779c07"
+    },
+    {
+      "path": "docs/reviews/2026-10-08/evidence/baseline-evidence-manifest.json",
+      "bytes": 22813,
+      "sha256": "014f6fa86246227499c371259955ef9d9769083624a8e9b232255ed2a99791da"
+    },
+    {
+      "path": "docs/reviews/2026-10-08/evidence/baseline-evidence.zip",
+      "bytes": 425114,
+      "sha256": "105fbcab8a59783dbf4f728f4e15013e047ab8b736c94f9df69b41828c07e267"
+    },
+    {
+      "path": "docs/reviews/2026-10-08/evidence/baseline-identity.json",
+      "bytes": 23518,
+      "sha256": "3d1c4cd391c620ec068aefe8c65fbe3d7ec140575050ebea8ce415f6c3ee5775"
+    },
+    {
+      "path": "docs/reviews/2026-10-08/evidence/review-freeze.json",
+      "bytes": 249,
+      "sha256": "7c1e5bbb0d20d23641f02be25326214c55c0a75ab9a1a01eb0b4a8b08b8ec21a"
+    },
+    {
+      "path": "docs/reviews/2026-10-08/review-game-design-project.md",
+      "bytes": 46694,
+      "sha256": "3a83585a31bf5ea3839e7b9edb45f146e0ecd13a2eea0d7938d8b519b1219a10"
+    },
+    {
+      "path": "docs/traceability.md",
+      "bytes": 4062,
+      "sha256": "9182d22efef83844a73485b02f9072c98a9e5d05da07fa413e8b7766867dc2c5"
+    },
+    {
+      "path": "examples/adaptation/README.md",
+      "bytes": 3710,
+      "sha256": "7aae4564f5ccd22ba7908ac9cbc0086e15fc5f0754d738882d830e32b5032566"
+    },
+    {
+      "path": "examples/adaptation/consumer.py",
+      "bytes": 8975,
+      "sha256": "b46f2e8db14437c0cde5097f3d7e558c0b972d7855a60540a3b196017605e644"
+    },
+    {
+      "path": "examples/adaptation/fixtures/east-gate-en.json",
+      "bytes": 529,
+      "sha256": "13cf33385f11e68d3581cbf94d9efa2466205d69fea0d21c4ff7576255f2675f"
+    },
+    {
+      "path": "examples/adaptation/fixtures/east-gate-ru.json",
+      "bytes": 763,
+      "sha256": "e4e083614d2d2037128e43f9fb534df4d9058a18b2c9adf0cb7606641fa0e34c"
+    },
+    {
+      "path": "examples/adaptation/test_adaptation.py",
+      "bytes": 6802,
+      "sha256": "d69aea080870adea8d69edc56f4ddba5aaeedbe081b73942503ea35b9bb820f7"
+    },
+    {
+      "path": "examples/analysis-lab/OBSERVATIONS.md",
+      "bytes": 4665,
+      "sha256": "f1c941b9c4c0b3c50c1c6b49d21599872e16dc1e93424b3660c0a0d7c1cd45a3"
+    },
+    {
+      "path": "examples/analysis-lab/README.md",
+      "bytes": 17996,
+      "sha256": "840eff11879d6fa64d93873c68cc1bb1493885e2f860573a5f7bba17ede69278"
+    },
+    {
+      "path": "examples/analysis-lab/consumer.py",
+      "bytes": 3334,
+      "sha256": "a6dfd5658005de0de6743da79cfbab1192ce99a0274d460bf0e3a18a8fe7bfc3"
+    },
+    {
+      "path": "examples/analysis-lab/content_rules.py",
+      "bytes": 1181,
+      "sha256": "58994c2fd5d019587bbfa4cb41c09cd14a80acb907dd001b01a01c89b70f0212"
+    },
+    {
+      "path": "examples/analysis-lab/economy.py",
+      "bytes": 3776,
+      "sha256": "3fa8379442a2ed4db31fe71bc5a5d80f5488a636d810b2b8aac5148018256bfb"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/content.json",
+      "bytes": 1464,
+      "sha256": "7060a9c866be347ffcf9ee1a653799ed7e69df139020e743d4ac8bd16fdd3447"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/event-dictionary.json",
+      "bytes": 808,
+      "sha256": "89fbfd4377682b6a570fcf9805ed0dfbe3c9529b1bea2146e9c403e333616dfa"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/events.csv",
+      "bytes": 868,
+      "sha256": "8c41dc75e78a1a811b2d60d6df49d5b79c99ff1a5f7ff1da7422245195bcb3a0"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/observation-manifest.json",
+      "bytes": 692,
+      "sha256": "a727299d543a679dba74f17a9ea3a5eec99da758d1b894c61794b7ddcbae98e3"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/observations.csv",
+      "bytes": 616,
+      "sha256": "faad317dbd7ce2857481156778388b876320842b2771e56ea082a990ec09c789"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/resource-model.json",
+      "bytes": 305,
+      "sha256": "5de7ee6a33e438bd1cb6cf6f05a177b63adb0cdb75d5d7236db546680c5ca595"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/save-v1.json",
+      "bytes": 1729,
+      "sha256": "aa48da1be3186334fbedcd64526e2e93db00db1e8d2b0fe1a98ce9f66022e099"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/sessions.csv",
+      "bytes": 450,
+      "sha256": "8e891352223d0fbdb90d97215b71ed3a8956e86325fd4aa1bb9acf205617fbb5"
+    },
+    {
+      "path": "examples/analysis-lab/lab.py",
+      "bytes": 4036,
+      "sha256": "6d4cf01a280194d4d0d41b6043f33918fd1514d75f1c5db15e65e9bf89b3dc11"
+    },
+    {
+      "path": "examples/analysis-lab/outcome-query.sql",
+      "bytes": 1146,
+      "sha256": "9b52baf015729df5ba0e22ecfb9dbb26a0ba6ced2f09b69e25fb4cf51884b1bd"
+    },
+    {
+      "path": "examples/analysis-lab/requirements.txt",
+      "bytes": 133,
+      "sha256": "ffcdf5100ca9d4b696a6b156a2f565f0d348eec2eed62805378fb163bedabf9c"
+    },
+    {
+      "path": "examples/analysis-lab/state.py",
+      "bytes": 12544,
+      "sha256": "d8b9eab98f6e2acf6a12036d75b6723b894a7506e3f0f4246f6c14ed3ab85ec9"
+    },
+    {
+      "path": "examples/analysis-lab/telemetry.py",
+      "bytes": 6251,
+      "sha256": "2ad561a1031e1bf827a48e6baef45129c067cc9d0a30aeea7ad5d944302c84c5"
+    },
+    {
+      "path": "examples/analysis-lab/test_input_and_replay.py",
+      "bytes": 6836,
+      "sha256": "9d31e246bd98eb122fc3a43a6f50227562de7cb3245791acc63b3c8dfbe0ce67"
+    },
+    {
+      "path": "examples/analysis-lab/test_measurement_and_eligibility.py",
+      "bytes": 8809,
+      "sha256": "7adf898c52274289278b76b6477e0ca0ceff72cd8cd1c3436193bf9889bf22e6"
+    },
+    {
+      "path": "examples/analysis-lab/test_semantics.py",
+      "bytes": 12589,
+      "sha256": "41e51385c37d1ebf57ad051305b608e24a1b8dea8587ac860613acebca117fc0"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/README.md",
+      "bytes": 3588,
+      "sha256": "c74fbe5b68d7f7134c95dc91a5609251ea290ad25066eec5f6a88d6167c9c8e4"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/calculate.py",
+      "bytes": 5445,
+      "sha256": "fdf38623ba6c62974983143558ea9647b341f875136744ed21e40d1afadfb819"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/calculation-output.json",
+      "bytes": 5444,
+      "sha256": "43fa6123d7614e4c46b0a18dcb6855c2ce0dfe0c9daa5c2c5cbea60bf4cf03ab"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/cases.json",
+      "bytes": 2505,
+      "sha256": "440a731feb48100efdc3e6f10bae694eb5a6db8ab0e46ec0ad50efdb033df6f9"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/free-form-loom.md",
+      "bytes": 5350,
+      "sha256": "6d68c34ac6a355019a560022599fd2af2bd4f334a229e3fcd363a9f665238f06"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/gamebook.md",
+      "bytes": 12819,
+      "sha256": "1d64e9f67548d243f74687779bfab7a33de526303bfeed2c62961156985e20f9"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/lens-workshop.md",
+      "bytes": 3538,
+      "sha256": "0012ba6f43eeae3d199a58318857af0666b555e56e090a9b65a521de94167e32"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/loom-score.json",
+      "bytes": 939,
+      "sha256": "19292751ed51346d2c26f0e2ce43404e0f96d6a192b7a30274b7dbac52b7bccd"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/quay-crossing.md",
+      "bytes": 4801,
+      "sha256": "0d022e876ef6ad0464a6d59e9dcb973676f3d9d271e9273926cf3e5e1c492ab7"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/render_loom.py",
+      "bytes": 9796,
+      "sha256": "f5de95ad8b1f2957e335927debabf92e7aab0bb24eeca1c4e7160d48f5dfb9fb"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/replay-notes.md",
+      "bytes": 8825,
+      "sha256": "18295822e61d987a0dd2025b6c3a1b152c70e01cd0c26feecac96914e2f6fcd4"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/test_render_loom.py",
+      "bytes": 3799,
+      "sha256": "b68c86bdd005499d8330ee8034db8e7e1140feac4a70bae01e3a755f10e1f850"
+    },
+    {
+      "path": "examples/godot-episode/README.md",
+      "bytes": 13776,
+      "sha256": "341181d00d742a6a7381c4861926f742fcd67967cadb523d8a41cf4ad1781548"
+    },
+    {
+      "path": "examples/godot-episode/episode.gd",
+      "bytes": 11074,
+      "sha256": "4db7b17bc664324568dd0a8ea8cad61af668db64de037ff451b91a70abee2dcb"
+    },
+    {
+      "path": "examples/godot-episode/episode.gd.uid",
+      "bytes": 20,
+      "sha256": "33240bf2b0330b3c0e0da12ece5770d6fda405799f179f653113f47251d537a4"
+    },
+    {
+      "path": "examples/godot-episode/episode.tscn",
+      "bytes": 513,
+      "sha256": "accc10f5c52e8a5bb37bb2178dfd06477cba272051cf474fc7cd20d8195be35b"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/baseline.json",
+      "bytes": 1521,
+      "sha256": "3b43e2f23a81a4e49a28205fa9a5200a8a7dbaffe69deaf7a30920038c1e90d5"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/candidate.json",
+      "bytes": 1522,
+      "sha256": "2f02fbb0a598e8fe6c13aeb52e85f1b158c49162cb1c6f9b82f97f676d5e878c"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/narrow-gap.json",
+      "bytes": 1523,
+      "sha256": "dbc707da653b5a8a3055b9ec98bb11dc81e1c1ba12c213572c82f8e4be1dbd63"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/no-input.json",
+      "bytes": 1188,
+      "sha256": "f7a214aec7c297cb5943aeb09151694a3bac8bb1fd99025b4bae3aff3fabd99a"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/off-camera.json",
+      "bytes": 1524,
+      "sha256": "a47891b4bc8389f099660545e173a20c8f47e3256764fef3b8a4ec6662ac9497"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/recovery-locked.json",
+      "bytes": 1508,
+      "sha256": "189c275a626d97d9b07595b2731858ebc4213f179a9187698b9cd5b902576474"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/test_recorded_candidate_report.json",
+      "bytes": 21190,
+      "sha256": "9105bc41111a26df77a5ae2cf2a742a0d701b98bb4e6cff2b97ed201d0bb9b9d"
+    },
+    {
+      "path": "examples/godot-episode/player.gd",
+      "bytes": 2970,
+      "sha256": "c9bce2c42d4fb192dfb6e293c4ffb99447fbee3e13a7090571ec35df2dfbca79"
+    },
+    {
+      "path": "examples/godot-episode/player.gd.uid",
+      "bytes": 20,
+      "sha256": "fe951f61fa3c0a11ef20a59a04802ada918a0acb32c57be0b838c3fdadc1d0e6"
+    },
+    {
+      "path": "examples/godot-episode/project.godot",
+      "bytes": 570,
+      "sha256": "f70d9b895e9784e0e361d305b895921fabfa87f975dcf6530347122d629a6c21"
+    },
+    {
+      "path": "examples/godot-episode/qualify.py",
+      "bytes": 21569,
+      "sha256": "2b71554739407fb3234da9a03fdb61daec17211e55d1f794f1012861ad7dd703"
+    },
+    {
+      "path": "examples/godot-episode/requirements.txt",
+      "bytes": 132,
+      "sha256": "0a8b77b80646216fd3ecf7b7d0fc1f41b10acf0e16011284395ffb4f2abd5ec4"
+    },
+    {
+      "path": "examples/godot-episode/test_report_contract.py",
+      "bytes": 14802,
+      "sha256": "4ffbbd1f88dcb02f1ef66e34cd62e2c83b24bbba9eb82721ea59a00df2d3cc9f"
+    },
+    {
+      "path": "examples/systems-studies/README.md",
+      "bytes": 9081,
+      "sha256": "fdf823810874a41c3e37d98dfa579401f26ba660ffbb5b96b79476edd1e426cf"
+    },
+    {
+      "path": "examples/systems-studies/x3-input.json",
+      "bytes": 1874,
+      "sha256": "5efb166d31942281589b5b3c01374764d6cb33b1045ec8e64ec814b56be9376c"
+    },
+    {
+      "path": "examples/systems-studies/x3-ridge-result.json",
+      "bytes": 1757,
+      "sha256": "e864897f2fa40a263cb132efa436a25109c92c6314e80115c5f57c71e149ff4f"
+    },
+    {
+      "path": "plugin.json",
+      "bytes": 353,
+      "sha256": "0d6652e613726a2b0f366bafbd69173695b04e907e1248563ef23f07988336fb"
+    },
+    {
+      "path": "relkit.toml",
+      "bytes": 2320,
+      "sha256": "7cb967f51f739860c3a504883f19a34eeae8632540b15a635d26e1e4a04042e9"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "bytes": 262,
+      "sha256": "136ac6cfae8fa4e206f3722bdf9640349f989beb9d999e3842fd86bb76b9d290"
+    },
+    {
+      "path": "skills/game-content-design/SKILL.md",
+      "bytes": 4086,
+      "sha256": "3298bd38694831b15017b3182dab5791b86246ac0acf8f4807df1cdf3d231243"
+    },
+    {
+      "path": "skills/game-content-design/agents/openai.yaml",
+      "bytes": 252,
+      "sha256": "e1d406655d2fa88e1ccd784155d36a836997baaefec65a8ccfab2d19aab4caac"
+    },
+    {
+      "path": "skills/game-content-design/assets/harbor-repertoire.json",
+      "bytes": 2246,
+      "sha256": "6f34171f77721de0dcd4e1335bd4be561aa3fd48993b5c069f8e46ed875853f8"
+    },
+    {
+      "path": "skills/game-content-design/assets/parcel-worlds.json",
+      "bytes": 1983,
+      "sha256": "8284d652283dc4f6000f8baca52c70f3dc9bb30175e32447e78e37dde0b935ea"
+    },
+    {
+      "path": "skills/game-content-design/references/repertoire.md",
+      "bytes": 13808,
+      "sha256": "da1dba2cf560ed09ec4c6f515462d6b8d7b75de9c99f07f4b1843fe82dab4ad2"
+    },
+    {
+      "path": "skills/game-design/SKILL.md",
+      "bytes": 5523,
+      "sha256": "b02bcb1c7d7ad695e21d7352aef3cd1b29d862bc32786e61dbdb2a87ca0df712"
+    },
+    {
+      "path": "skills/game-design/agents/openai.yaml",
+      "bytes": 119,
+      "sha256": "092e34392a47e4533c480b7fe253d6344aa06af26ab22b8d5dd103aeff9c62d1"
+    },
+    {
+      "path": "skills/game-design/assets/assay-binding.json",
+      "bytes": 24795,
+      "sha256": "82097de1c19f7ce40597f6472fa1f6c005dcc50bc617025ad489b6ec8b0d9795"
+    },
+    {
+      "path": "skills/game-design/assets/content.schema.json",
+      "bytes": 1917,
+      "sha256": "f4db2c523b4892b9360d22e9568972d24b30e36c21e8a2fc8e722ef82ae4458b"
+    },
+    {
+      "path": "skills/game-design/assets/episode-report.schema.json",
+      "bytes": 22811,
+      "sha256": "ad1bc1e4a84b3ac28fd7dbf77336831fc3a411e6e12862d13167bac8c925e2a5"
+    },
+    {
+      "path": "skills/game-design/assets/episode.schema.json",
+      "bytes": 5093,
+      "sha256": "02ad07d86b56ae4f74b1cf6ecdbc5dfcbf4e2bb30d5bfe4c4e0a2a3a6e1e9dda"
+    },
+    {
+      "path": "skills/game-design/assets/observation.schema.json",
+      "bytes": 1401,
+      "sha256": "4675f0f855a441cf5f66f24fcaba9ca1f83b1a0ec99ff94e1f338660e1e9f0c3"
+    },
+    {
+      "path": "skills/game-design/assets/observer-view.schema.json",
+      "bytes": 1626,
+      "sha256": "e88d1758022d055dc2df031bbb43a71390ce515bb76afacb8ef4dc97c3171711"
+    },
+    {
+      "path": "skills/game-design/assets/resource-model.schema.json",
+      "bytes": 1341,
+      "sha256": "a888e5830780a7361c8e36258e188c49a00796fef8e14262bdd91fcab099fbab"
+    },
+    {
+      "path": "skills/game-design/assets/save-v1.schema.json",
+      "bytes": 5470,
+      "sha256": "72bf7841b377ae7ba09ae5c2a603dbded118cbbed26a504820e81a7719de3b2c"
+    },
+    {
+      "path": "skills/game-design/assets/save-v2.schema.json",
+      "bytes": 6685,
+      "sha256": "8e7cff4728c97e1fa0322e4504d3b369da7caf007647842ae46c1160965b57c6"
+    },
+    {
+      "path": "skills/game-design/assets/telemetry-dictionary.schema.json",
+      "bytes": 1273,
+      "sha256": "1df94f725bfbdf97503b3d075040fb0984fbd8078eee806223ee89093cf7a0b2"
+    },
+    {
+      "path": "skills/game-design/references/adaptation.md",
+      "bytes": 4450,
+      "sha256": "79da889c0de0496cc174b555c7b1b60266b158dd047de94110ffac9500d7d200"
+    },
+    {
+      "path": "skills/game-design/references/consumer-and-assay-contract.md",
+      "bytes": 6151,
+      "sha256": "87cd0929e47495ab45042ea4842ef9a3a352dc7cfda43ac18d3efef74907c549"
+    },
+    {
+      "path": "skills/game-design/references/environment-contracts.md",
+      "bytes": 9151,
+      "sha256": "1fbe11c4fe4e4af78e70835ed0394843a49f6b279faeadc1d4b3ce887a328b15"
+    },
+    {
+      "path": "skills/game-design/references/relations-and-context.md",
+      "bytes": 6310,
+      "sha256": "5fe518e607cd2dea38c6513d1292bd8456bb18813651d805ecbc3449bc8a2895"
+    },
+    {
+      "path": "skills/game-design/scripts/bind_assay.py",
+      "bytes": 6031,
+      "sha256": "41fe0ee7567bfc1d1df8bc1bcbe9a6db9ea193a5ccc2481d27e7bae558b5da75"
+    },
+    {
+      "path": "skills/game-design/scripts/observe_evidence.py",
+      "bytes": 4734,
+      "sha256": "e47a8cc8913423c2ea31b1edda8af07445e6ed9b3440a1f4350ad6e9eb9caca5"
+    },
+    {
+      "path": "skills/game-design/scripts/requirements.txt",
+      "bytes": 93,
+      "sha256": "25eb3034f302321350cee99445b27c26c7e2d06c5904520364b2759d6ecde552"
+    },
+    {
+      "path": "skills/game-design/scripts/validate_artifact.py",
+      "bytes": 2335,
+      "sha256": "05fd81379352867ff20c285f83b1e94b1a59c2152626e1451acded77ab39d906"
+    },
+    {
+      "path": "skills/game-information-design/SKILL.md",
+      "bytes": 4737,
+      "sha256": "c046bcf4c5fb7c7f036ff626080d90f9a1751e2365f59880b94d64e59cd473f9"
+    },
+    {
+      "path": "skills/game-information-design/agents/openai.yaml",
+      "bytes": 261,
+      "sha256": "b1857fa72c975eb06c5963588033bd35835a6efc8371927ee2682178bb84e54f"
+    },
+    {
+      "path": "skills/game-information-design/references/inference.md",
+      "bytes": 7312,
+      "sha256": "a3b052dbd728470c1acda73e8f212e1e51ae681ec930b3655b696aa3b724743a"
+    },
+    {
+      "path": "skills/game-information-design/references/learning-and-help.md",
+      "bytes": 8882,
+      "sha256": "08b2ae1e0cc9cb5f6c41269751558c6e0031b04cb23aa03e30f8ec64e7b4c371"
+    },
+    {
+      "path": "skills/game-participation-design/SKILL.md",
+      "bytes": 4670,
+      "sha256": "4b75f2bea3377e4f6c810fbe59c1cf6cd5bf8a2d9da389b1e898b078268a229f"
+    },
+    {
+      "path": "skills/game-participation-design/agents/openai.yaml",
+      "bytes": 247,
+      "sha256": "21900b9fea0e771ab6014af2fcb0a685013467609ad9ffc4febc081293027438"
+    },
+    {
+      "path": "skills/game-participation-design/references/access-and-return.md",
+      "bytes": 11489,
+      "sha256": "7c1f4c2a6c2862787c182f72f8ca9aa272126d23b5b38172a53be605010f50e1"
+    },
+    {
+      "path": "skills/game-participation-design/references/paid-and-timed-rights.md",
+      "bytes": 9865,
+      "sha256": "feb919b74c724cf32223ebc5843bd197db55a18349bb9152b821fe78e00bc6b5"
+    },
+    {
+      "path": "skills/game-participation-design/references/shared-play.md",
+      "bytes": 10474,
+      "sha256": "c329ac62d44c933a2862d9a5874fc116f559a60f9e184009a88d31afcdb0a7e8"
+    },
+    {
+      "path": "skills/game-systems-design/SKILL.md",
+      "bytes": 4878,
+      "sha256": "462bea254ca2d6db2a1e8a63d8945c9e0d63d741ee0f9f39b8be925a9f072863"
+    },
+    {
+      "path": "skills/game-systems-design/agents/openai.yaml",
+      "bytes": 251,
+      "sha256": "2260d66c8d69300df57efdfec1ef18ab38016d946d705a56b5f0a5221473c626"
+    },
+    {
+      "path": "skills/game-systems-design/references/game-state-transfer.md",
+      "bytes": 9207,
+      "sha256": "2150e18b048c1c28b9c1fcaf57f74a2830d9bec9985afa7ca850ab418ecbeb68"
+    },
+    {
+      "path": "skills/game-systems-design/references/loss-and-continuation.md",
+      "bytes": 7744,
+      "sha256": "0b92bec7d67f112215c1e038c9388ca17dd5920255c94b2bff6d53dc7d31e27f"
+    },
+    {
+      "path": "skills/game-systems-design/references/resources-and-development.md",
+      "bytes": 12565,
+      "sha256": "7e96e8420fd93a6afe12cb255dc49c61e986310f0ebe5558088645253e7a6442"
+    },
+    {
+      "path": "skills/game-world-narrative-design/SKILL.md",
+      "bytes": 5060,
+      "sha256": "2db0781a3332291a33ac948d074872b4bb2f005497e48d175445778c43a7a10b"
+    },
+    {
+      "path": "skills/game-world-narrative-design/agents/openai.yaml",
+      "bytes": 267,
+      "sha256": "197ac1a21f961771f5a94cfc9e0861489e1cc86d932689f069fcca2cc862cd2a"
+    },
+    {
+      "path": "skills/game-world-narrative-design/references/conditional-story.md",
+      "bytes": 9159,
+      "sha256": "267005af2df922874c05069fb3d7bb74009611df1b651b24716b5bbe386a6230"
+    },
+    {
+      "path": "skills/game-world-narrative-design/references/world-relations.md",
+      "bytes": 7369,
+      "sha256": "bc349359bf8c857523bd6f44f100ca33eafcaabe9e58498994b5185b240e31c1"
+    },
+    {
+      "path": "skills/gameplay-design/SKILL.md",
+      "bytes": 5416,
+      "sha256": "ab09856ed270ad21e935db35d1451024f643c8bd366418048339bd4f215900fc"
+    },
+    {
+      "path": "skills/gameplay-design/agents/openai.yaml",
+      "bytes": 253,
+      "sha256": "c4f094710a7130328553cc8febed17b42a4da5e85483da291743319747d8f4ff"
+    },
+    {
+      "path": "skills/gameplay-design/references/actions-and-time.md",
+      "bytes": 9771,
+      "sha256": "a987036e6b7e0fcd466aa9bfffb6b08a38457875b6561234401aa7e0a114f86c"
+    },
+    {
+      "path": "skills/gameplay-design/references/entities.md",
+      "bytes": 8589,
+      "sha256": "3ab9acdfb317478d4ade01129f50764c386eb102faaf5ff4118e60fa95e67df8"
+    },
+    {
+      "path": "skills/gameplay-design/references/space-and-situations.md",
+      "bytes": 7430,
+      "sha256": "1225006b58ff87f0ab1e0e7a2b2bdbff38904e015b924933ec3ec824c326523d"
+    },
+    {
+      "path": "tests/test_assay_binding.py",
+      "bytes": 4076,
+      "sha256": "c8b3617f4c024c3c1e3de68ce0e26604b1c910b869a4b1ed282878e525670312"
+    },
+    {
+      "path": "tests/test_distribution.py",
+      "bytes": 18052,
+      "sha256": "baa9fa4398a792dc841b50b155de2fe7c5a65afa7e16e045bf23815491e7d6cc"
+    },
+    {
+      "path": "tools/check.py",
+      "bytes": 8655,
+      "sha256": "d4c21045b6e825cba48a25c666840e999ac0d30493fa7a10ce65d9995a6c5a63"
+    },
+    {
+      "path": "tools/package.py",
+      "bytes": 10418,
+      "sha256": "73a759b67fdc43ef2837c447f1cfac76741b10b9c9f8c05e86c0ea62b74fa161"
+    },
+    {
+      "path": "tools/release.py",
+      "bytes": 2635,
+      "sha256": "6804edffbcc803f7d0a363fdd1c100a2a9c9bdc6f2112f99cfd3b4c8a11b2877"
+    },
+    {
+      "path": "tools/render.py",
+      "bytes": 2768,
+      "sha256": "12773deb6534f939c9b4f51f012d7bd250bdc45f1d55cadbe36e4dcbd6e48a65"
+    },
+    {
+      "path": "tools/smoke.py",
+      "bytes": 11453,
+      "sha256": "0059f81e481fcb249f13133f1f92af83e512947443096ecb18d2406685643d7c"
+    },
+    {
+      "path": "tools/update_assay_binding.py",
+      "bytes": 2222,
+      "sha256": "53a659c19f59e2d05783e80c21b5a820268c43a971f59da6ffc7013c428ca9e2"
+    },
+    {
+      "path": "tools/vendor/Apache-2.0.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "tools/vendor/plugin.schema.json",
+      "bytes": 1805,
+      "sha256": "0a4aad95ce337878ad38802ebf0daa3fde76abe3f65400c86bcbb1ec0b3ab883"
+    }
+  ],
+  "verified_local_commit": "5f3d0951b18dd5c87a5e077c8560d555a1c03c2d",
+  "published_tree_equals_verified_local_tree": true,
+  "publication_identity": "github-transfer.json"
+}
