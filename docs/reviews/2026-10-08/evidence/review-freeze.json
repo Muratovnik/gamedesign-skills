@@ -1,0 +1,6 @@
+{
+  "review_sha256": "3a83585a31bf5ea3839e7b9edb45f146e0ecd13a2eea0d7938d8b519b1219a10",
+  "subject_commit": "f9f6bac0ee767597692d5c17d1eecc90f6788aa8",
+  "tracked_diff_before_correction": "",
+  "review_frozen_before_implementation_changes": true
+}
