@@ -1,0 +1,47 @@
+{
+  "identity": "harbour-of-echoes/tabletop-1",
+  "kind": "original-synthetic-author-cases",
+  "quay": {
+    "speed_m_per_tick": 3,
+    "body_width_m": 0.8,
+    "clearance_each_side_m": 0.1,
+    "sweep_tick": 30,
+    "wash_last_tick": 32,
+    "cases": [
+      {"id": "v1", "target": "alcove", "length_m": 12, "width_m": 1.2, "control_tick": 27, "cue_tick": 22, "press_tick": 27},
+      {"id": "v2", "target": "alcove", "length_m": 9, "width_m": 1.2, "control_tick": 27, "cue_tick": 22, "press_tick": 27},
+      {"id": "late-control", "target": "alcove", "length_m": 9, "width_m": 1.2, "control_tick": 28, "cue_tick": 22, "press_tick": 28},
+      {"id": "narrow-gap", "target": "alcove", "length_m": 9, "width_m": 0.9, "control_tick": 27, "cue_tick": 22, "press_tick": 27},
+      {"id": "late-cue", "target": "alcove", "length_m": 9, "width_m": 1.2, "control_tick": 27, "cue_tick": 29, "press_tick": 29},
+      {"id": "queued", "target": "alcove", "length_m": 9, "width_m": 1.2, "control_tick": 27, "cue_tick": 22, "press_tick": 25},
+      {"id": "early-then-held", "target": "alcove", "length_m": 9, "width_m": 1.2, "control_tick": 27, "cue_tick": 22, "press_tick": 24},
+      {"id": "upper-walk", "target": "upper", "length_m": 15, "width_m": 1.2, "control_tick": 27, "cue_tick": 22, "press_tick": 27},
+      {"id": "no-command", "target": "alcove", "length_m": 9, "width_m": 1.2, "control_tick": 27, "cue_tick": 22, "press_tick": null}
+    ]
+  },
+  "inference": {
+    "universe": ["Mira", "Oren", "automatic"],
+    "compatible_with": {
+      "P": ["Mira", "Oren"],
+      "T": ["Mira", "automatic"],
+      "V-open": ["Mira"],
+      "V-closed": ["Mira", "Oren", "automatic"]
+    },
+    "cases": [
+      {"id": "alternative-route", "encountered": ["T", "P"]},
+      {"id": "witness-route", "encountered": ["V-open"]},
+      {"id": "removed-channel", "encountered": ["V-closed"]},
+      {"id": "manual-only", "encountered": ["P"]},
+      {"id": "location-only", "encountered": ["T"]},
+      {"id": "no-evidence", "encountered": []}
+    ]
+  },
+  "loom": {"u_values": [0, 1, 2], "v_values": [0, 1, 2], "phrase_a_beats": [3, 3, 3, 1, 2], "phrase_b_beats": [3, 3, 3, 1, 2]},
+  "lenses": [
+    {"id": "introduction", "left": [2, 10], "right": [3, 30]},
+    {"id": "new-application", "left": [4, 40], "right": [2, 10]},
+    {"id": "equal-size", "left": [5, 20], "right": [1, 20]},
+    {"id": "tie", "left": [1, 10], "right": [2, 20]}
+  ],
+  "reserve": {"start_batches": 2, "requested_batches_before_repair": 3}
+}

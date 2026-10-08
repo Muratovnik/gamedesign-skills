@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "artifact_id": "east-gate",
+  "revision": "east-gate-ru-2",
+  "locale": "ru",
+  "display": "one-line-carousel",
+  "guide": "Начало каждой вахты указывает путь.",
+  "lines": ["Вечер прячет лодки.", "Отмель держит след.", "Соль белеет на канате.", "Тихо гаснет маяк.", "Огонь хранит смотритель.", "Ключ уносит прилив."],
+  "directions": {"north": "СЕВЕР", "east": "ВОСТОК", "south": "ЮГ", "west": "ЗАПАД"},
+  "exit_id": "east",
+  "aid": "line-pins",
+  "later_sign": {"direction_id": "east", "text": "Восточные ворота: покажите жетон перевозчика."}
+}

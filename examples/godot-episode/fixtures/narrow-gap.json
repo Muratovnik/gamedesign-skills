@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "game_id": "lantern-crew",
+  "build_id": "gate-episode-2",
+  "case_id": "narrow-gap",
+  "units": {
+    "position": "px",
+    "time": "physics_tick",
+    "tick_rate_hz": 60
+  },
+  "actor": {
+    "id": "bo",
+    "start_px": [
+      40,
+      90
+    ],
+    "radius_px": 8,
+    "recovery_ticks": 12,
+    "dash_ticks": 12,
+    "dash_speed_px_per_s": 600
+  },
+  "gap": {
+    "barrier_x_px": 120,
+    "thickness_px": 16,
+    "center_y_px": 90,
+    "height_px": 12
+  },
+  "camera": {
+    "center_px": [
+      120,
+      90
+    ],
+    "size_px": [
+      240,
+      180
+    ]
+  },
+  "threats": [
+    {
+      "id": "quay-pulse",
+      "source_px": [
+        70,
+        45
+      ],
+      "warning_tick": 10,
+      "resolve_tick": 26,
+      "danger_max_x_px": 112
+    },
+    {
+      "id": "crane-sweep",
+      "source_px": [
+        85,
+        145
+      ],
+      "warning_tick": 12,
+      "resolve_tick": 34,
+      "danger_max_x_px": 128
+    }
+  ],
+  "input_schedule": [
+    {
+      "tick": 2,
+      "action": "attack"
+    },
+    {
+      "tick": 16,
+      "action": "dodge"
+    },
+    {
+      "tick": 40,
+      "action": "save"
+    },
+    {
+      "tick": 42,
+      "action": "reset"
+    },
+    {
+      "tick": 44,
+      "action": "load"
+    },
+    {
+      "tick": 48,
+      "action": "interact"
+    }
+  ],
+  "stop_tick": 70,
+  "intent": "A committed attack cannot be cancelled; an earned recovery boundary may open a later dodge.",
+  "warning_text": "Cross the gap before the quay pulse and crane sweep."
+}

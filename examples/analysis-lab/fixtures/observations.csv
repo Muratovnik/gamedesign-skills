@@ -1,0 +1,5 @@
+participant_id,object_id,build_id,task_id,attempted,completed,elapsed_s,assistance,report,missing_reason,recording_ref
+synthetic-01,gate-candidate,gate-episode-2,cross-gap,yes,yes,3.2,none,Fabricated completion row.,,synthetic://row-1
+synthetic-02,gate-candidate,gate-episode-2,cross-gap,yes,no,5.1,facilitator,Fabricated assisted attempt.,,synthetic://row-2
+synthetic-03,gate-candidate,gate-episode-2,cross-gap,yes,unknown,,unknown,,recording stopped before resolution,synthetic://row-3
+synthetic-04,gate-candidate,gate-episode-2,cross-gap,no,no,,none,"Fabricated decline, not a failed attempt.",,synthetic://row-4

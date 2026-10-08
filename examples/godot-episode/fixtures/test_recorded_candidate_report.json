@@ -1,0 +1,1123 @@
+{
+  "body_collision_ticks": 0,
+  "build_id": "gate-episode-2",
+  "case_id": "candidate",
+  "display_driver": "headless",
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "events": [
+    {
+      "detail": {
+        "case_id": "candidate",
+        "fixture_sha256": "2f02fbb0a598e8fe6c13aeb52e85f1b158c49162cb1c6f9b82f97f676d5e878c"
+      },
+      "engine_physics_frame": 0,
+      "game_time_s": 0.0,
+      "kind": "fixture_loaded",
+      "monotonic_us": 217114,
+      "run_tick": 0,
+      "sequence": 0,
+      "world_tick": 0
+    },
+    {
+      "detail": {
+        "action": "attack",
+        "pipeline": "Input.parse_input_event"
+      },
+      "engine_physics_frame": 2,
+      "game_time_s": 0.0333333333333333,
+      "kind": "input_injected",
+      "monotonic_us": 218964,
+      "run_tick": 2,
+      "sequence": 1,
+      "world_tick": 2
+    },
+    {
+      "detail": {
+        "action": "attack",
+        "pipeline": "Node._input"
+      },
+      "engine_physics_frame": 2,
+      "game_time_s": 0.0333333333333333,
+      "kind": "input_received",
+      "monotonic_us": 219016,
+      "run_tick": 2,
+      "sequence": 2,
+      "world_tick": 2
+    },
+    {
+      "detail": {
+        "cancellable": false,
+        "recovery_until": 14
+      },
+      "engine_physics_frame": 2,
+      "game_time_s": 0.0333333333333333,
+      "kind": "attack_started",
+      "monotonic_us": 219047,
+      "run_tick": 2,
+      "sequence": 3,
+      "world_tick": 2
+    },
+    {
+      "detail": {
+        "body_diameter_px": 16.0,
+        "center_ray_clear": true,
+        "collision_mask": 1,
+        "gap_height_px": 28.0,
+        "ray_is_not_body_clearance": true,
+        "viewport_size_px": [
+          240.0,
+          180.0
+        ]
+      },
+      "engine_physics_frame": 3,
+      "game_time_s": 0.05,
+      "kind": "geometry_witness",
+      "monotonic_us": 226181,
+      "run_tick": 3,
+      "sequence": 4,
+      "world_tick": 3
+    },
+    {
+      "detail": {
+        "inside_camera_rect": true,
+        "modality": "scene_geometry_only",
+        "recovery_until": 14,
+        "resolution_tick": 26.0,
+        "screen_position_px": [
+          70.0,
+          45.0
+        ],
+        "source_px": [
+          70.0,
+          45.0
+        ],
+        "text": "Cross the gap before the quay pulse and crane sweep.",
+        "threat_id": "quay-pulse"
+      },
+      "engine_physics_frame": 10,
+      "game_time_s": 0.166666666666667,
+      "kind": "warning_presented",
+      "monotonic_us": 343521,
+      "run_tick": 10,
+      "sequence": 5,
+      "world_tick": 10
+    },
+    {
+      "detail": {
+        "inside_camera_rect": true,
+        "modality": "scene_geometry_only",
+        "recovery_until": 14,
+        "resolution_tick": 34.0,
+        "screen_position_px": [
+          85.0,
+          145.0
+        ],
+        "source_px": [
+          85.0,
+          145.0
+        ],
+        "text": "Cross the gap before the quay pulse and crane sweep.",
+        "threat_id": "crane-sweep"
+      },
+      "engine_physics_frame": 12,
+      "game_time_s": 0.2,
+      "kind": "warning_presented",
+      "monotonic_us": 377949,
+      "run_tick": 12,
+      "sequence": 6,
+      "world_tick": 12
+    },
+    {
+      "detail": {
+        "action": "dodge",
+        "pipeline": "Input.parse_input_event"
+      },
+      "engine_physics_frame": 16,
+      "game_time_s": 0.266666666666667,
+      "kind": "input_injected",
+      "monotonic_us": 446894,
+      "run_tick": 16,
+      "sequence": 7,
+      "world_tick": 16
+    },
+    {
+      "detail": {
+        "action": "dodge",
+        "pipeline": "Node._input"
+      },
+      "engine_physics_frame": 16,
+      "game_time_s": 0.266666666666667,
+      "kind": "input_received",
+      "monotonic_us": 446991,
+      "run_tick": 16,
+      "sequence": 8,
+      "world_tick": 16
+    },
+    {
+      "detail": {
+        "dash_until": 28
+      },
+      "engine_physics_frame": 16,
+      "game_time_s": 0.266666666666667,
+      "kind": "dodge_started",
+      "monotonic_us": 447030,
+      "run_tick": 16,
+      "sequence": 9,
+      "world_tick": 16
+    },
+    {
+      "detail": {
+        "actor_x_px": 150.0,
+        "health": 2,
+        "hit": false,
+        "threat_id": "quay-pulse"
+      },
+      "engine_physics_frame": 26,
+      "game_time_s": 0.433333333333333,
+      "kind": "threat_resolved",
+      "monotonic_us": 621338,
+      "run_tick": 26,
+      "sequence": 10,
+      "world_tick": 26
+    },
+    {
+      "detail": {
+        "actor_id": "keeper-ivo",
+        "channel": "unoccluded_local_sight",
+        "fact_id": "gate-crossed"
+      },
+      "engine_physics_frame": 27,
+      "game_time_s": 0.45,
+      "kind": "knowledge_acquired",
+      "monotonic_us": 642548,
+      "run_tick": 27,
+      "sequence": 11,
+      "world_tick": 27
+    },
+    {
+      "detail": {
+        "actor_id": "bo",
+        "x_px": 160.0
+      },
+      "engine_physics_frame": 27,
+      "game_time_s": 0.45,
+      "kind": "gate_crossed",
+      "monotonic_us": 642559,
+      "run_tick": 27,
+      "sequence": 12,
+      "world_tick": 27
+    },
+    {
+      "detail": {
+        "actor_x_px": 160.0,
+        "health": 2,
+        "hit": false,
+        "threat_id": "crane-sweep"
+      },
+      "engine_physics_frame": 34,
+      "game_time_s": 0.566666666666667,
+      "kind": "threat_resolved",
+      "monotonic_us": 759380,
+      "run_tick": 34,
+      "sequence": 13,
+      "world_tick": 34
+    },
+    {
+      "detail": {
+        "action": "save",
+        "pipeline": "Input.parse_input_event"
+      },
+      "engine_physics_frame": 40,
+      "game_time_s": 0.666666666666667,
+      "kind": "input_injected",
+      "monotonic_us": 863761,
+      "run_tick": 40,
+      "sequence": 14,
+      "world_tick": 40
+    },
+    {
+      "detail": {
+        "action": "save",
+        "pipeline": "Node._input"
+      },
+      "engine_physics_frame": 40,
+      "game_time_s": 0.666666666666667,
+      "kind": "input_received",
+      "monotonic_us": 864051,
+      "run_tick": 40,
+      "sequence": 15,
+      "world_tick": 40
+    },
+    {
+      "detail": {
+        "sha256": "e4a8049a2025b7170d1568a328b7de325fe9322fc29190d179fe7726f5fef730"
+      },
+      "engine_physics_frame": 40,
+      "game_time_s": 0.666666666666667,
+      "kind": "state_saved",
+      "monotonic_us": 865217,
+      "run_tick": 40,
+      "sequence": 16,
+      "world_tick": 40
+    },
+    {
+      "detail": {
+        "action": "reset",
+        "pipeline": "Input.parse_input_event"
+      },
+      "engine_physics_frame": 42,
+      "game_time_s": 0.7,
+      "kind": "input_injected",
+      "monotonic_us": 890178,
+      "run_tick": 42,
+      "sequence": 17,
+      "world_tick": 42
+    },
+    {
+      "detail": {
+        "action": "reset",
+        "pipeline": "Node._input"
+      },
+      "engine_physics_frame": 42,
+      "game_time_s": 0.7,
+      "kind": "input_received",
+      "monotonic_us": 890287,
+      "run_tick": 42,
+      "sequence": 18,
+      "world_tick": 42
+    },
+    {
+      "detail": {
+        "actor_x_px": 40.0
+      },
+      "engine_physics_frame": 42,
+      "game_time_s": 0.0,
+      "kind": "state_reset",
+      "monotonic_us": 890597,
+      "run_tick": 42,
+      "sequence": 19,
+      "world_tick": 0
+    },
+    {
+      "detail": {
+        "action": "load",
+        "pipeline": "Input.parse_input_event"
+      },
+      "engine_physics_frame": 44,
+      "game_time_s": 0.0333333333333333,
+      "kind": "input_injected",
+      "monotonic_us": 924726,
+      "run_tick": 44,
+      "sequence": 20,
+      "world_tick": 2
+    },
+    {
+      "detail": {
+        "action": "load",
+        "pipeline": "Node._input"
+      },
+      "engine_physics_frame": 44,
+      "game_time_s": 0.0333333333333333,
+      "kind": "input_received",
+      "monotonic_us": 925069,
+      "run_tick": 44,
+      "sequence": 21,
+      "world_tick": 2
+    },
+    {
+      "detail": {
+        "actor_x_px": 160.0,
+        "matches_saved_relations": true,
+        "world_tick": 40
+      },
+      "engine_physics_frame": 44,
+      "game_time_s": 0.666666666666667,
+      "kind": "state_restored",
+      "monotonic_us": 925438,
+      "run_tick": 44,
+      "sequence": 22,
+      "world_tick": 40
+    },
+    {
+      "detail": {
+        "action": "interact",
+        "pipeline": "Input.parse_input_event"
+      },
+      "engine_physics_frame": 48,
+      "game_time_s": 0.733333333333333,
+      "kind": "input_injected",
+      "monotonic_us": 996144,
+      "run_tick": 48,
+      "sequence": 23,
+      "world_tick": 44
+    },
+    {
+      "detail": {
+        "action": "interact",
+        "pipeline": "Node._input"
+      },
+      "engine_physics_frame": 48,
+      "game_time_s": 0.733333333333333,
+      "kind": "input_received",
+      "monotonic_us": 996216,
+      "run_tick": 48,
+      "sequence": 24,
+      "world_tick": 44
+    },
+    {
+      "detail": {
+        "known_fact_ids": [
+          "gate-crossed"
+        ],
+        "line": "The winch route is ready.",
+        "speaker_id": "keeper-ivo"
+      },
+      "engine_physics_frame": 48,
+      "game_time_s": 0.733333333333333,
+      "kind": "npc_reply",
+      "monotonic_us": 996623,
+      "run_tick": 48,
+      "sequence": 25,
+      "world_tick": 44
+    }
+  ],
+  "final_state": {
+    "actor": {
+      "dash_until": 28,
+      "health": 2,
+      "id": "bo",
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "recovery_until": 14
+    },
+    "build_id": "gate-episode-2",
+    "game_id": "lantern-crew",
+    "history": [
+      "archive-message",
+      "gate-crossed"
+    ],
+    "knowledge": {
+      "bo": [
+        "winch-procedure"
+      ],
+      "keeper-ivo": [
+        "gate-crossed"
+      ]
+    },
+    "resolved": [
+      "quay-pulse",
+      "crane-sweep"
+    ],
+    "right_owners": {
+      "archive-pass": "ava",
+      "winch": "bo"
+    },
+    "warned": [
+      "quay-pulse",
+      "crane-sweep"
+    ],
+    "world_tick": 66
+  },
+  "first_physics_frame": 1,
+  "fixture_sha256": "2f02fbb0a598e8fe6c13aeb52e85f1b158c49162cb1c6f9b82f97f676d5e878c",
+  "game_id": "lantern-crew",
+  "input_received_count": 6,
+  "limits": [
+    "Synthetic engine events, not hardware input.",
+    "Headless geometry and event clocks do not establish rendered visibility, audio or human perception."
+  ],
+  "npc_reply": "The winch route is ready.",
+  "physics_ticks_per_second": 60,
+  "restored_equal": true,
+  "run_id": "6106c963-206a-4f5f-9de2-413383ddfe46",
+  "saved_state": {
+    "actor": {
+      "dash_until": 28,
+      "health": 2,
+      "id": "bo",
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "recovery_until": 14
+    },
+    "build_id": "gate-episode-2",
+    "game_id": "lantern-crew",
+    "history": [
+      "archive-message",
+      "gate-crossed"
+    ],
+    "knowledge": {
+      "bo": [
+        "winch-procedure"
+      ],
+      "keeper-ivo": [
+        "gate-crossed"
+      ]
+    },
+    "resolved": [
+      "quay-pulse",
+      "crane-sweep"
+    ],
+    "right_owners": {
+      "archive-pass": "ava",
+      "winch": "bo"
+    },
+    "warned": [
+      "quay-pulse",
+      "crane-sweep"
+    ],
+    "world_tick": 40
+  },
+  "source_sha256": {
+    "episode.gd": "4db7b17bc664324568dd0a8ea8cad61af668db64de037ff451b91a70abee2dcb",
+    "episode.tscn": "accc10f5c52e8a5bb37bb2178dfd06477cba272051cf474fc7cd20d8195be35b",
+    "player.gd": "c9bce2c42d4fb192dfb6e293c4ffb99447fbee3e13a7090571ec35df2dfbca79",
+    "project.godot": "f70d9b895e9784e0e361d305b895921fabfa87f975dcf6530347122d629a6c21"
+  },
+  "status": "consumer_executed",
+  "trajectory": [
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 1,
+      "world_tick": 1
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 2,
+      "world_tick": 2
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 3,
+      "world_tick": 3
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 4,
+      "world_tick": 4
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 5,
+      "world_tick": 5
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 6,
+      "world_tick": 6
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 7,
+      "world_tick": 7
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 8,
+      "world_tick": 8
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 9,
+      "world_tick": 9
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 10,
+      "world_tick": 10
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 11,
+      "world_tick": 11
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 12,
+      "world_tick": 12
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 13,
+      "world_tick": 13
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 14,
+      "world_tick": 14
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 15,
+      "world_tick": 15
+    },
+    {
+      "health": 2,
+      "position_px": [
+        50.0,
+        90.0
+      ],
+      "run_tick": 16,
+      "world_tick": 16
+    },
+    {
+      "health": 2,
+      "position_px": [
+        60.0,
+        90.0
+      ],
+      "run_tick": 17,
+      "world_tick": 17
+    },
+    {
+      "health": 2,
+      "position_px": [
+        70.0,
+        90.0
+      ],
+      "run_tick": 18,
+      "world_tick": 18
+    },
+    {
+      "health": 2,
+      "position_px": [
+        80.0,
+        90.0
+      ],
+      "run_tick": 19,
+      "world_tick": 19
+    },
+    {
+      "health": 2,
+      "position_px": [
+        90.0,
+        90.0
+      ],
+      "run_tick": 20,
+      "world_tick": 20
+    },
+    {
+      "health": 2,
+      "position_px": [
+        100.0,
+        90.0
+      ],
+      "run_tick": 21,
+      "world_tick": 21
+    },
+    {
+      "health": 2,
+      "position_px": [
+        110.0,
+        90.0
+      ],
+      "run_tick": 22,
+      "world_tick": 22
+    },
+    {
+      "health": 2,
+      "position_px": [
+        120.0,
+        90.0
+      ],
+      "run_tick": 23,
+      "world_tick": 23
+    },
+    {
+      "health": 2,
+      "position_px": [
+        130.0,
+        90.0
+      ],
+      "run_tick": 24,
+      "world_tick": 24
+    },
+    {
+      "health": 2,
+      "position_px": [
+        140.0,
+        90.0
+      ],
+      "run_tick": 25,
+      "world_tick": 25
+    },
+    {
+      "health": 2,
+      "position_px": [
+        150.0,
+        90.0
+      ],
+      "run_tick": 26,
+      "world_tick": 26
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 27,
+      "world_tick": 27
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 28,
+      "world_tick": 28
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 29,
+      "world_tick": 29
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 30,
+      "world_tick": 30
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 31,
+      "world_tick": 31
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 32,
+      "world_tick": 32
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 33,
+      "world_tick": 33
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 34,
+      "world_tick": 34
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 35,
+      "world_tick": 35
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 36,
+      "world_tick": 36
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 37,
+      "world_tick": 37
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 38,
+      "world_tick": 38
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 39,
+      "world_tick": 39
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 40,
+      "world_tick": 40
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 41,
+      "world_tick": 41
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 42,
+      "world_tick": 0
+    },
+    {
+      "health": 2,
+      "position_px": [
+        40.0,
+        90.0
+      ],
+      "run_tick": 43,
+      "world_tick": 1
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 44,
+      "world_tick": 40
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 45,
+      "world_tick": 41
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 46,
+      "world_tick": 42
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 47,
+      "world_tick": 43
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 48,
+      "world_tick": 44
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 49,
+      "world_tick": 45
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 50,
+      "world_tick": 46
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 51,
+      "world_tick": 47
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 52,
+      "world_tick": 48
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 53,
+      "world_tick": 49
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 54,
+      "world_tick": 50
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 55,
+      "world_tick": 51
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 56,
+      "world_tick": 52
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 57,
+      "world_tick": 53
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 58,
+      "world_tick": 54
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 59,
+      "world_tick": 55
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 60,
+      "world_tick": 56
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 61,
+      "world_tick": 57
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 62,
+      "world_tick": 58
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 63,
+      "world_tick": 59
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 64,
+      "world_tick": 60
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 65,
+      "world_tick": 61
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 66,
+      "world_tick": 62
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 67,
+      "world_tick": 63
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 68,
+      "world_tick": 64
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 69,
+      "world_tick": 65
+    },
+    {
+      "health": 2,
+      "position_px": [
+        160.0,
+        90.0
+      ],
+      "run_tick": 70,
+      "world_tick": 66
+    }
+  ]
+}

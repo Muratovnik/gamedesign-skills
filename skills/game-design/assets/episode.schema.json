@@ -1,0 +1,247 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "game_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "build_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "units": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "const": "px"
+        },
+        "time": {
+          "const": "physics_tick"
+        },
+        "tick_rate_hz": {
+          "const": 60
+        }
+      },
+      "required": [
+        "position",
+        "time",
+        "tick_rate_hz"
+      ],
+      "additionalProperties": false
+    },
+    "actor": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_px": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "radius_px": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "recovery_ticks": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "dash_ticks": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "dash_speed_px_per_s": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "start_px",
+        "radius_px",
+        "recovery_ticks",
+        "dash_ticks",
+        "dash_speed_px_per_s"
+      ],
+      "additionalProperties": false
+    },
+    "gap": {
+      "type": "object",
+      "properties": {
+        "barrier_x_px": {
+          "type": "number"
+        },
+        "thickness_px": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "center_y_px": {
+          "type": "number"
+        },
+        "height_px": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "barrier_x_px",
+        "thickness_px",
+        "center_y_px",
+        "height_px"
+      ],
+      "additionalProperties": false
+    },
+    "camera": {
+      "type": "object",
+      "properties": {
+        "center_px": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "size_px": {
+          "const": [
+            240,
+            180
+          ]
+        }
+      },
+      "required": [
+        "center_px",
+        "size_px"
+      ],
+      "additionalProperties": false
+    },
+    "threats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_px": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "warning_tick": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "resolve_tick": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "danger_max_x_px": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "source_px",
+          "warning_tick",
+          "resolve_tick",
+          "danger_max_x_px"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "input_schedule": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tick": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "action": {
+            "enum": [
+              "attack",
+              "dodge",
+              "save",
+              "reset",
+              "load",
+              "interact"
+            ]
+          }
+        },
+        "required": [
+          "tick",
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "stop_tick": {
+      "type": "integer",
+      "minimum": 50
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "warning_text": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "game_id",
+    "build_id",
+    "case_id",
+    "units",
+    "actor",
+    "gap",
+    "camera",
+    "threats",
+    "input_schedule",
+    "stop_tick",
+    "intent",
+    "warning_text"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

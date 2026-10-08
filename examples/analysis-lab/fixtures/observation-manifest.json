@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "source_id": "synthetic-observation-format-01",
+  "record_kind": "synthetic",
+  "game_id": "lantern-crew",
+  "build_id": "gate-episode-2",
+  "question": "Can a first-time participant act after noticing the quay pulse?",
+  "relation_available": true,
+  "conditions": "Fabricated format examples only; no people or device sessions were observed.",
+  "collection_method": "Hand-authored synthetic rows to exercise missingness handling.",
+  "units": {
+    "elapsed_time": "s"
+  },
+  "limitations": [
+    "No empirical audience, perception, learning or accessibility conclusion.",
+    "A row label does not establish the authenticity of a future imported source."
+  ]
+}

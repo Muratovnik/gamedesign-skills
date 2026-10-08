@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Participation Design"
+  short_description: "Design shared play, access, return and timed rights"
+  default_prompt: "Use $game-participation-design to make this group's participation and next decisions executable."

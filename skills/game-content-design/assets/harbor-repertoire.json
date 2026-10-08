@@ -1,0 +1,16 @@
+{
+  "format": "harbor-repertoire-example-1",
+  "provenance": "original synthetic paper game",
+  "start_each_card": {"fuel": 1, "rope": 1, "parcel": "intact", "debt": []},
+  "delivery_marks": {"intact": 2, "damaged": 1},
+  "cards": [
+    {"id": "A", "name": "Ferry", "relation": "resource_time", "requires": [], "actions": [{"name": "ferry", "turns": 1, "fuel_cost": 1, "parcel_result": "intact"}, {"name": "ridge", "turns": 3, "fuel_cost": 0, "parcel_result": "intact"}]},
+    {"id": "B", "name": "Painted ferry", "relation": "resource_time", "requires": [], "actions": [{"name": "painted ferry", "turns": 1, "fuel_cost": 1, "parcel_result": "intact"}, {"name": "blue ridge", "turns": 3, "fuel_cost": 0, "parcel_result": "intact"}]},
+    {"id": "C", "name": "Tide steps", "relation": "timing_state", "requires": [], "initial_tide": "high", "actions": [{"name": "cross now", "turns": 1, "fuel_cost": 0, "parcel_result": "damaged"}, {"name": "wait then cross", "turns": 2, "fuel_cost": 0, "parcel_result": "intact", "steps": ["wait one turn for low tide", "cross in one turn"]}]},
+    {"id": "D", "name": "Keeper's bargain", "relation": "future_obligation", "requires": [], "actions": [{"name": "accept bargain", "turns": 1, "fuel_cost": 0, "parcel_result": "intact", "debt_added": {"holder": "player", "beneficiary": "keeper", "action": "future delivery", "turns": 2, "marks": 0}}, {"name": "refuse and take ridge", "turns": 3, "fuel_cost": 0, "parcel_result": "intact"}]},
+    {"id": "E", "name": "Shared hoist", "relation": "coordination", "requires": ["bo:winch"], "actions": [{"name": "propose lift", "proposer": "cy", "fuel_owner": "bo", "requires_confirmation": "bo", "on_accept": {"turns": 1, "fuel_cost": 1, "parcel_result": "intact"}, "on_decline": "cy chooses ridge or stops"}, {"name": "ridge", "proposer": "cy", "turns": 3, "fuel_cost": 0, "parcel_result": "intact"}]}
+  ],
+  "original_selector": {"scores": {"A": 3, "B": 3, "C": 2, "D": 2, "E": 0}, "choice": "highest score, alphabetical tie break, no history adjustment"},
+  "schedules": {"original": ["A", "A", "A", "A", "A"], "revised": ["A", "A", "C", "D", "E"]},
+  "revised_ineligible_E": {"fallback": "A", "record_reason": "bo:winch unavailable", "coordination_claim": false}
+}

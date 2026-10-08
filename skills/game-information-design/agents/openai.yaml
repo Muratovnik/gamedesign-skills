@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Information Design"
+  short_description: "Create inference, learning and appropriate game help"
+  default_prompt: "Use $game-information-design to construct the evidence, learning episode or help that this game decision needs."

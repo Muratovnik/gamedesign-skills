@@ -1,0 +1,21 @@
+{
+  "format": "parcel-worlds-example-1",
+  "provenance": "original synthetic finite generation",
+  "choices": {"day": [4, 5], "courier": ["Nia", "Oren"]},
+  "shared_rules": {
+    "delivery_time": "18:00",
+    "hill_quay_travel_minutes": 60,
+    "mira_at_quay": {"from": "17:40", "through": "18:10"},
+    "chen_leaves_quay": "17:30",
+    "chen_line": "I left at 17:30. I did not see the delivery.",
+    "office_has": ["receipt", "key"],
+    "quay_entry_requires": "key",
+    "completion_requires": ["enter quay", "retrieve parcel", "identify courier"]
+  },
+  "worlds": [
+    {"id": "Q-4-Nia", "day": 4, "courier": "Nia", "locations_at_18": {"Nia": "Quay", "Oren": "Hill"}, "receipt": "Day 4, 18:00. Nia delivered parcel Q-4-Nia at Quay.", "mira_knows": {"source": "observed delivery", "day": 4, "time": "18:00", "courier": "Nia", "place": "Quay"}, "mira_line": "On day 4 at 18:00 I saw Nia leave that parcel at Quay."},
+    {"id": "Q-4-Oren", "day": 4, "courier": "Oren", "locations_at_18": {"Nia": "Hill", "Oren": "Quay"}, "receipt": "Day 4, 18:00. Oren delivered parcel Q-4-Oren at Quay.", "mira_knows": {"source": "observed delivery", "day": 4, "time": "18:00", "courier": "Oren", "place": "Quay"}, "mira_line": "On day 4 at 18:00 I saw Oren leave that parcel at Quay."},
+    {"id": "Q-5-Nia", "day": 5, "courier": "Nia", "locations_at_18": {"Nia": "Quay", "Oren": "Hill"}, "receipt": "Day 5, 18:00. Nia delivered parcel Q-5-Nia at Quay.", "mira_knows": {"source": "observed delivery", "day": 5, "time": "18:00", "courier": "Nia", "place": "Quay"}, "mira_line": "On day 5 at 18:00 I saw Nia leave that parcel at Quay."},
+    {"id": "Q-5-Oren", "day": 5, "courier": "Oren", "locations_at_18": {"Nia": "Hill", "Oren": "Quay"}, "receipt": "Day 5, 18:00. Oren delivered parcel Q-5-Oren at Quay.", "mira_knows": {"source": "observed delivery", "day": 5, "time": "18:00", "courier": "Oren", "place": "Quay"}, "mira_line": "On day 5 at 18:00 I saw Oren leave that parcel at Quay."}
+  ]
+}

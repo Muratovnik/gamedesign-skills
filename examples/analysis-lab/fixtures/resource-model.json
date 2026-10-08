@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "game_id": "lantern-crew",
+  "unit": "scrap_piece",
+  "initial_scrap": {
+    "crew": 4,
+    "ava": 2,
+    "bo": 0
+  },
+  "initial_generators": 0,
+  "survey_yield_scrap": 2,
+  "repair_cost_scrap": 6,
+  "transfer": {
+    "from_id": "ava",
+    "to_id": "bo",
+    "amount": 2
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game World Narrative Design"
+  short_description: "Create encounterable worlds and consequential scenes"
+  default_prompt: "Use $game-world-narrative-design to make a usable world fragment or scene with coherent actions and consequences."

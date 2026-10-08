@@ -1,0 +1,45 @@
+[exposure]
+required_ignores = [
+  ".cache/scanners",
+  ".private/manifest.json",
+  ".state/receipt.json",
+  "tmp/scratch",
+  ".claude/settings.local.json",
+  ".codex/config.toml",
+]
+owner_identities = ["Nikolai Muratov <el.muratovnik@gmail.com>"]
+forbid_ai_attribution = true
+forbid_internal_planning = true
+forbid_machine_observations = true
+betterleaks_config = ".betterleaks.toml"
+hosted_ci = "public-only"
+
+# The binder's negative test supplies an escaping resource path and asserts its
+# rejection. This fixture remains readable; independent secret scanning applies.
+[exposure.baseline]
+"tests/test_distribution.py" = ["escapes-repository"]
+
+[changelog]
+profile = "strict"
+first_version = "0.1.0"
+
+[release]
+publisher = "github"
+repository = "Muratovnik/gamedesign-skills"
+branch = "main"
+version_file = "VERSION"
+version_pattern = '^([0-9]+\.[0-9]+\.[0-9]+)$'
+assets = ["gamedesign-skills-{version}-source.zip", "SHA256SUMS"]
+checksum_file = "SHA256SUMS"
+checks = [
+  ["{python}", "-B", "tools/check.py"],
+  ["{python}", "-B", "-m", "unittest", "discover", "-s", "tests", "-v"],
+  ["{python}", "-B", "-m", "unittest", "discover", "-s", "examples/adaptation", "-p", "test_*.py", "-v"],
+  ["{python}", "-B", "-m", "unittest", "discover", "-s", "examples/analysis-lab", "-p", "test_*.py", "-v"],
+  ["{python}", "-B", "-m", "unittest", "discover", "-s", "examples/godot-episode", "-p", "test_*.py", "-v"],
+]
+build = [["{python}", "-B", "tools/release.py", "build", "--output", "{assets}", "--version", "{version}"]]
+smoke = [["{python}", "-B", "tools/smoke.py", "--assets", "{assets}", "--version", "{version}", "--temp", "{temp}"]]
+smoke_platforms = ["linux", "win32"]
+require_guard = true
+owner_audit = true

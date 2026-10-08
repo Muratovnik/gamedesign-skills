@@ -1,0 +1,267 @@
+{
+  "identity": "harbour-of-echoes/tabletop-1",
+  "evidence_kind": "executed-author-calculation-of-declared-paper-models",
+  "input_sha256": "440a731feb48100efdc3e6f10bae694eb5a6db8ab0e46ec0ad50efdb033df6f9",
+  "script_sha256": "fdf38623ba6c62974983143558ea9647b341f875136744ed21e40d1afadfb819",
+  "limits": [
+    "No native-engine run",
+    "No human participants",
+    "No narrative VM",
+    "No behavioral skill evaluation"
+  ],
+  "quay": [
+    {
+      "case": "v1",
+      "command": "accepted",
+      "start_tick": 27,
+      "arrival_tick": 31,
+      "outcome": "hit-at-30",
+      "stamina_after_commitment": 2
+    },
+    {
+      "case": "v2",
+      "command": "accepted",
+      "start_tick": 27,
+      "arrival_tick": 30,
+      "outcome": "safe-at-32",
+      "stamina_after_commitment": 2
+    },
+    {
+      "case": "late-control",
+      "command": "accepted",
+      "start_tick": 28,
+      "arrival_tick": 31,
+      "outcome": "hit-at-30",
+      "stamina_after_commitment": 2
+    },
+    {
+      "case": "narrow-gap",
+      "command": "unreachable",
+      "start_tick": null,
+      "arrival_tick": null,
+      "outcome": "hit-at-30",
+      "stamina_after_commitment": 2
+    },
+    {
+      "case": "late-cue",
+      "command": "accepted",
+      "start_tick": 29,
+      "arrival_tick": 32,
+      "outcome": "hit-at-30",
+      "stamina_after_commitment": 2
+    },
+    {
+      "case": "queued",
+      "command": "accepted",
+      "start_tick": 27,
+      "arrival_tick": 30,
+      "outcome": "safe-at-32",
+      "stamina_after_commitment": 2
+    },
+    {
+      "case": "early-then-held",
+      "command": "expired-before-buffer",
+      "start_tick": null,
+      "arrival_tick": null,
+      "outcome": "hit-at-30",
+      "stamina_after_commitment": 2
+    },
+    {
+      "case": "upper-walk",
+      "command": "accepted",
+      "start_tick": 27,
+      "arrival_tick": 32,
+      "outcome": "hit-at-30",
+      "stamina_after_commitment": 2
+    },
+    {
+      "case": "no-command",
+      "command": "no-command",
+      "start_tick": null,
+      "arrival_tick": null,
+      "outcome": "hit-at-30",
+      "stamina_after_commitment": 2
+    }
+  ],
+  "recovery": {
+    "first_clear_tick": 33,
+    "first_next_threat_tick": 36
+  },
+  "inference": [
+    {
+      "case": "alternative-route",
+      "encountered_count": 2,
+      "possible": [
+        "Mira"
+      ],
+      "status": "unique-under-declared-premises"
+    },
+    {
+      "case": "witness-route",
+      "encountered_count": 1,
+      "possible": [
+        "Mira"
+      ],
+      "status": "unique-under-declared-premises"
+    },
+    {
+      "case": "removed-channel",
+      "encountered_count": 1,
+      "possible": [
+        "Mira",
+        "Oren",
+        "automatic"
+      ],
+      "status": "underdetermined"
+    },
+    {
+      "case": "manual-only",
+      "encountered_count": 1,
+      "possible": [
+        "Mira",
+        "Oren"
+      ],
+      "status": "underdetermined"
+    },
+    {
+      "case": "location-only",
+      "encountered_count": 1,
+      "possible": [
+        "Mira",
+        "automatic"
+      ],
+      "status": "underdetermined"
+    },
+    {
+      "case": "no-evidence",
+      "encountered_count": 0,
+      "possible": [
+        "Mira",
+        "Oren",
+        "automatic"
+      ],
+      "status": "no-evidence"
+    }
+  ],
+  "loom": [
+    {
+      "u": 0,
+      "v": 0,
+      "prototype_pulses": 1,
+      "altered_pulses": 1
+    },
+    {
+      "u": 0,
+      "v": 1,
+      "prototype_pulses": 2,
+      "altered_pulses": 2
+    },
+    {
+      "u": 0,
+      "v": 2,
+      "prototype_pulses": 4,
+      "altered_pulses": 4
+    },
+    {
+      "u": 1,
+      "v": 0,
+      "prototype_pulses": 2,
+      "altered_pulses": 1
+    },
+    {
+      "u": 1,
+      "v": 1,
+      "prototype_pulses": 4,
+      "altered_pulses": 2
+    },
+    {
+      "u": 1,
+      "v": 2,
+      "prototype_pulses": 4,
+      "altered_pulses": 4
+    },
+    {
+      "u": 2,
+      "v": 0,
+      "prototype_pulses": 4,
+      "altered_pulses": 1
+    },
+    {
+      "u": 2,
+      "v": 1,
+      "prototype_pulses": 4,
+      "altered_pulses": 2
+    },
+    {
+      "u": 2,
+      "v": 2,
+      "prototype_pulses": 4,
+      "altered_pulses": 4
+    }
+  ],
+  "phrase_lengths_beats": {
+    "a": 12,
+    "b": 12
+  },
+  "lenses": [
+    {
+      "case": "introduction",
+      "left_fraction": "1/5",
+      "right_fraction": "1/10",
+      "accepted": [
+        "right"
+      ],
+      "smaller_count_choice": "left",
+      "smaller_count_succeeds": false
+    },
+    {
+      "case": "new-application",
+      "left_fraction": "1/10",
+      "right_fraction": "1/5",
+      "accepted": [
+        "left"
+      ],
+      "smaller_count_choice": "right",
+      "smaller_count_succeeds": false
+    },
+    {
+      "case": "equal-size",
+      "left_fraction": "1/4",
+      "right_fraction": "1/20",
+      "accepted": [
+        "right"
+      ],
+      "smaller_count_choice": "right",
+      "smaller_count_succeeds": true
+    },
+    {
+      "case": "tie",
+      "left_fraction": "1/10",
+      "right_fraction": "1/10",
+      "accepted": [
+        "left",
+        "right",
+        "equal"
+      ],
+      "smaller_count_choice": "left",
+      "smaller_count_succeeds": true
+    }
+  ],
+  "reserve_before_repair": [
+    {
+      "request": 1,
+      "allowed": true,
+      "remaining": 1
+    },
+    {
+      "request": 2,
+      "allowed": true,
+      "remaining": 0
+    },
+    {
+      "request": 3,
+      "allowed": false,
+      "remaining": 0
+    }
+  ]
+}

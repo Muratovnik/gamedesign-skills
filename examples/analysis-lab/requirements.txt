@@ -1,0 +1,2 @@
+# Python 3.11+; SQLite, CSV, JSON and the test runner use the standard library.
+-r ../../skills/game-design/scripts/requirements.txt

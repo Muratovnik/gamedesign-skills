@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Content Design"
+  short_description: "Build meaningful repertoires and content selection"
+  default_prompt: "Use $game-content-design to create playable content variations and show how they are selected and presented."

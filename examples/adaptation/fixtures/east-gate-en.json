@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "artifact_id": "east-gate",
+  "revision": "east-gate-en-1",
+  "locale": "en",
+  "display": "four-lines",
+  "guide": "The beginning of each watch points the way.",
+  "lines": ["Evening ferries sleep.", "Ash settles on the rope.", "Salt marks the stones.", "Tide returns the key."],
+  "directions": {"north": "NORTH", "east": "EAST", "south": "SOUTH", "west": "WEST"},
+  "exit_id": "east",
+  "aid": "line-pins",
+  "later_sign": {"direction_id": "east", "text": "East Gate: show the ferryman's token."}
+}

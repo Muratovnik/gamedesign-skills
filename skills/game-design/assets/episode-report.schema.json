@@ -1,0 +1,1078 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Typed native episode observation contract. The shared stdlib JSON boundary additionally rejects all non-finite numeric values; format validation does not authenticate a report.",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "game_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "build_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fixture_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_sha256": {
+      "type": "object",
+      "properties": {
+        "project.godot": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "episode.tscn": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "episode.gd": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "player.gd": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "project.godot",
+        "episode.tscn",
+        "episode.gd",
+        "player.gd"
+      ],
+      "additionalProperties": false
+    },
+    "engine": {
+      "type": "object",
+      "properties": {
+        "major": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minor": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "patch": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hex": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "build": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hash": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timestamp": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "string": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "major",
+        "minor",
+        "patch",
+        "hex",
+        "status",
+        "build",
+        "hash",
+        "timestamp",
+        "string"
+      ],
+      "additionalProperties": true
+    },
+    "physics_ticks_per_second": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "first_physics_frame": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "display_driver": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_received_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "body_collision_ticks": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "trajectory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "run_tick": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "world_tick": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "position_px": {
+            "$ref": "#/$defs/vector2"
+          },
+          "health": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "run_tick",
+          "world_tick",
+          "position_px",
+          "health"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "final_state": {
+      "$ref": "#/$defs/snapshot"
+    },
+    "saved_state": {
+      "anyOf": [
+        {
+          "type": "object",
+          "maxProperties": 0
+        },
+        {
+          "$ref": "#/$defs/snapshot"
+        }
+      ]
+    },
+    "restored_equal": {
+      "type": "boolean"
+    },
+    "npc_reply": {
+      "type": "string"
+    },
+    "limits": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "status",
+    "game_id",
+    "build_id",
+    "case_id",
+    "run_id",
+    "fixture_sha256",
+    "source_sha256",
+    "engine",
+    "physics_ticks_per_second",
+    "first_physics_frame",
+    "display_driver",
+    "input_received_count",
+    "body_collision_ticks",
+    "events",
+    "trajectory",
+    "final_state",
+    "saved_state",
+    "restored_equal",
+    "npc_reply",
+    "limits"
+  ],
+  "additionalProperties": true,
+  "$defs": {
+    "vector2": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "actor": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "position_px": {
+          "$ref": "#/$defs/vector2"
+        },
+        "health": {
+          "type": "integer"
+        },
+        "recovery_until": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "dash_until": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "position_px",
+        "health",
+        "recovery_until",
+        "dash_until"
+      ],
+      "additionalProperties": false
+    },
+    "snapshot": {
+      "type": "object",
+      "properties": {
+        "game_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "build_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "world_tick": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "actor": {
+          "$ref": "#/$defs/actor"
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "knowledge": {
+          "type": "object",
+          "properties": {
+            "keeper-ivo": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "required": [
+            "keeper-ivo"
+          ],
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "right_owners": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "resolved": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "warned": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "game_id",
+        "build_id",
+        "world_tick",
+        "actor",
+        "history",
+        "knowledge",
+        "right_owners",
+        "resolved",
+        "warned"
+      ],
+      "additionalProperties": false
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "enum": [
+            "fixture_loaded",
+            "input_injected",
+            "input_received",
+            "attack_started",
+            "dodge_started",
+            "action_rejected",
+            "body_collision",
+            "geometry_witness",
+            "warning_presented",
+            "threat_resolved",
+            "knowledge_acquired",
+            "gate_crossed",
+            "state_saved",
+            "state_reset",
+            "state_restored",
+            "npc_reply",
+            "save_failed",
+            "load_failed"
+          ]
+        },
+        "run_tick": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "world_tick": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "game_time_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "engine_physics_frame": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "monotonic_us": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "detail": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "sequence",
+        "kind",
+        "run_tick",
+        "world_tick",
+        "game_time_s",
+        "engine_physics_frame",
+        "monotonic_us",
+        "detail"
+      ],
+      "additionalProperties": true,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "fixture_loaded"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_fixture_loaded"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "input_injected"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_input_injected"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "input_received"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_input_received"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "attack_started"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_attack_started"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "dodge_started"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_dodge_started"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "action_rejected"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_action_rejected"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "body_collision"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_body_collision"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "geometry_witness"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_geometry_witness"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "warning_presented"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_warning_presented"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "threat_resolved"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_threat_resolved"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "knowledge_acquired"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_knowledge_acquired"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "gate_crossed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_gate_crossed"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "state_saved"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_state_saved"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "state_reset"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_state_reset"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "state_restored"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_state_restored"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "npc_reply"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_npc_reply"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "save_failed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_save_failed"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "load_failed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detail": {
+                "$ref": "#/$defs/detail_load_failed"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "detail_fixture_loaded": {
+      "type": "object",
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fixture_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "case_id",
+        "fixture_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "detail_input_injected": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "enum": [
+            "attack",
+            "dodge",
+            "save",
+            "reset",
+            "load",
+            "interact"
+          ]
+        },
+        "pipeline": {
+          "const": "Input.parse_input_event"
+        }
+      },
+      "required": [
+        "action",
+        "pipeline"
+      ],
+      "additionalProperties": false
+    },
+    "detail_input_received": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "enum": [
+            "attack",
+            "dodge",
+            "save",
+            "reset",
+            "load",
+            "interact"
+          ]
+        },
+        "pipeline": {
+          "const": "Node._input"
+        }
+      },
+      "required": [
+        "action",
+        "pipeline"
+      ],
+      "additionalProperties": false
+    },
+    "detail_attack_started": {
+      "type": "object",
+      "properties": {
+        "cancellable": {
+          "type": "boolean"
+        },
+        "recovery_until": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "cancellable",
+        "recovery_until"
+      ],
+      "additionalProperties": false
+    },
+    "detail_dodge_started": {
+      "type": "object",
+      "properties": {
+        "dash_until": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "dash_until"
+      ],
+      "additionalProperties": false
+    },
+    "detail_action_rejected": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "enum": [
+            "attack",
+            "dodge",
+            "save",
+            "reset",
+            "load",
+            "interact"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recovery_until": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "action",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "detail_body_collision": {
+      "type": "object",
+      "properties": {
+        "collider": {
+          "type": "string",
+          "minLength": 1
+        },
+        "x_px": {
+          "type": "number"
+        },
+        "y_px": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "collider",
+        "x_px",
+        "y_px"
+      ],
+      "additionalProperties": false
+    },
+    "detail_geometry_witness": {
+      "type": "object",
+      "properties": {
+        "center_ray_clear": {
+          "type": "boolean"
+        },
+        "body_diameter_px": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "gap_height_px": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "collision_mask": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ray_is_not_body_clearance": {
+          "type": "boolean"
+        },
+        "viewport_size_px": {
+          "$ref": "#/$defs/vector2"
+        }
+      },
+      "required": [
+        "center_ray_clear",
+        "body_diameter_px",
+        "gap_height_px",
+        "collision_mask",
+        "ray_is_not_body_clearance",
+        "viewport_size_px"
+      ],
+      "additionalProperties": false
+    },
+    "detail_warning_presented": {
+      "type": "object",
+      "properties": {
+        "threat_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_px": {
+          "$ref": "#/$defs/vector2"
+        },
+        "screen_position_px": {
+          "$ref": "#/$defs/vector2"
+        },
+        "inside_camera_rect": {
+          "type": "boolean"
+        },
+        "resolution_tick": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "recovery_until": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "modality": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "threat_id",
+        "source_px",
+        "screen_position_px",
+        "inside_camera_rect",
+        "resolution_tick",
+        "recovery_until",
+        "text",
+        "modality"
+      ],
+      "additionalProperties": false
+    },
+    "detail_threat_resolved": {
+      "type": "object",
+      "properties": {
+        "threat_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hit": {
+          "type": "boolean"
+        },
+        "actor_x_px": {
+          "type": "number"
+        },
+        "health": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "threat_id",
+        "hit",
+        "actor_x_px",
+        "health"
+      ],
+      "additionalProperties": false
+    },
+    "detail_knowledge_acquired": {
+      "type": "object",
+      "properties": {
+        "actor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "channel": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "actor_id",
+        "fact_id",
+        "channel"
+      ],
+      "additionalProperties": false
+    },
+    "detail_gate_crossed": {
+      "type": "object",
+      "properties": {
+        "actor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "x_px": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "actor_id",
+        "x_px"
+      ],
+      "additionalProperties": false
+    },
+    "detail_state_saved": {
+      "type": "object",
+      "properties": {
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "detail_state_reset": {
+      "type": "object",
+      "properties": {
+        "actor_x_px": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "actor_x_px"
+      ],
+      "additionalProperties": false
+    },
+    "detail_state_restored": {
+      "type": "object",
+      "properties": {
+        "matches_saved_relations": {
+          "type": "boolean"
+        },
+        "world_tick": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "actor_x_px": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "matches_saved_relations",
+        "world_tick",
+        "actor_x_px"
+      ],
+      "additionalProperties": false
+    },
+    "detail_npc_reply": {
+      "type": "object",
+      "properties": {
+        "speaker_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "known_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "line": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "speaker_id",
+        "known_fact_ids",
+        "line"
+      ],
+      "additionalProperties": false
+    },
+    "detail_save_failed": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "error"
+      ],
+      "additionalProperties": false
+    },
+    "detail_load_failed": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    }
+  }
+}

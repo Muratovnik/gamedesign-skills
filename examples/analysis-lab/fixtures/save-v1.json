@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "build_id": "lantern-crew-1",
+  "game_id": "lantern-crew",
+  "save_id": "quay-campaign-07",
+  "world_id": "lantern-quay",
+  "clock_utc": "2026-10-08T20:00:00Z",
+  "members": [
+    {
+      "id": "ava",
+      "status": "away",
+      "scrap": 2,
+      "unlocks": [],
+      "known_fact_ids": [
+        "archive-code"
+      ],
+      "rights": [
+        {
+          "id": "archive-pass-ava",
+          "kind": "archive-host",
+          "expires_at": "2026-10-15T20:00:00Z",
+          "delegable": true
+        }
+      ]
+    },
+    {
+      "id": "bo",
+      "status": "active",
+      "scrap": 0,
+      "unlocks": [
+        "winch"
+      ],
+      "known_fact_ids": [
+        "winch-procedure"
+      ],
+      "rights": []
+    },
+    {
+      "id": "cy",
+      "status": "active",
+      "scrap": 0,
+      "unlocks": [],
+      "known_fact_ids": [
+        "survey-map"
+      ],
+      "rights": []
+    }
+  ],
+  "crew": {
+    "id": "crew",
+    "scrap": 4,
+    "generator": false,
+    "treasurer_id": "ava"
+  },
+  "facts": [
+    {
+      "id": "survey-map",
+      "public": true,
+      "value": "The east jetty has a free two-piece survey."
+    },
+    {
+      "id": "winch-procedure",
+      "public": false,
+      "value": "Lock the drum before hauling."
+    },
+    {
+      "id": "archive-code",
+      "public": false,
+      "value": "KITE-47"
+    }
+  ],
+  "history": [
+    {
+      "id": "archive-message",
+      "kind": "message-emitted",
+      "actor_id": "ava",
+      "tick": 30
+    },
+    {
+      "id": "generator-lost",
+      "kind": "loss",
+      "actor_id": "ava",
+      "tick": 45
+    }
+  ],
+  "delegations": [],
+  "election": {
+    "id": "treasury-vote-2",
+    "candidate_id": "bo",
+    "accepted": true
+  }
+}

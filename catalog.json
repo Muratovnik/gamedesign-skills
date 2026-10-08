@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "name": "game-design",
+  "install_unit": "full-bundle",
+  "skills": [
+    {
+      "id": "S0",
+      "name": "game-design"
+    },
+    {
+      "id": "S1",
+      "name": "gameplay-design"
+    },
+    {
+      "id": "S2",
+      "name": "game-information-design"
+    },
+    {
+      "id": "S3",
+      "name": "game-world-narrative-design"
+    },
+    {
+      "id": "S4",
+      "name": "game-systems-design"
+    },
+    {
+      "id": "S5",
+      "name": "game-participation-design"
+    },
+    {
+      "id": "S6",
+      "name": "game-content-design"
+    }
+  ]
+}

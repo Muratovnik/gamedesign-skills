@@ -1,0 +1,333 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "build_id": {
+      "const": "lantern-crew-2"
+    },
+    "game_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "save_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "world_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "clock_utc": {
+      "type": "string",
+      "minLength": 1
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "public": {
+            "type": "boolean"
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "public",
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "actor_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tick": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "actor_id",
+          "tick"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "delegations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "right_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "from_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "to_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "accepted": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "right_id",
+          "from_id",
+          "to_id",
+          "accepted"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "election": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accepted": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "candidate_id",
+        "accepted"
+      ],
+      "additionalProperties": false
+    },
+    "actors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "active",
+              "away"
+            ]
+          },
+          "unlock_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "known_fact_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "unlock_ids",
+          "known_fact_ids"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "accounts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner_kind": {
+            "enum": [
+              "actor",
+              "crew"
+            ]
+          },
+          "resource_id": {
+            "const": "scrap"
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unit": {
+            "const": "piece"
+          }
+        },
+        "required": [
+          "id",
+          "owner_id",
+          "owner_kind",
+          "resource_id",
+          "amount",
+          "unit"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "rights": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "archive-host"
+            ]
+          },
+          "expires_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "delegable": {
+            "type": "boolean"
+          },
+          "owner_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "expires_at",
+          "delegable",
+          "owner_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "crew_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "world": {
+      "type": "object",
+      "properties": {
+        "generator": {
+          "type": "boolean"
+        },
+        "survey_yield_scrap": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "generator",
+        "survey_yield_scrap"
+      ],
+      "additionalProperties": false
+    },
+    "roles": {
+      "type": "object",
+      "properties": {
+        "treasurer_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "treasurer_id"
+      ],
+      "additionalProperties": false
+    },
+    "migration": {
+      "type": "object",
+      "properties": {
+        "from_schema": {
+          "const": 1
+        },
+        "operation": {
+          "const": "lantern-save-1-to-2"
+        }
+      },
+      "required": [
+        "from_schema",
+        "operation"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "build_id",
+    "game_id",
+    "save_id",
+    "world_id",
+    "clock_utc",
+    "facts",
+    "history",
+    "delegations",
+    "election",
+    "actors",
+    "accounts",
+    "rights",
+    "crew_id",
+    "world",
+    "roles",
+    "migration"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

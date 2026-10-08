@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "game_id": "lantern-crew",
+  "items": [
+    {
+      "id": "free-survey",
+      "stage": "salvage",
+      "required_facts": [
+        "survey-map"
+      ],
+      "required_unlocks": [],
+      "required_rights": [],
+      "forbidden_history": [],
+      "action": "chart-route",
+      "text": "Choose east for dry scrap or west for a faster exposed crossing."
+    },
+    {
+      "id": "winch-route",
+      "stage": "salvage",
+      "required_facts": [
+        "winch-procedure"
+      ],
+      "required_unlocks": [
+        "winch"
+      ],
+      "required_rights": [],
+      "forbidden_history": [],
+      "action": "operate-winch",
+      "text": "Hold the loaded bridge while another crew member charts the route."
+    },
+    {
+      "id": "archive-search",
+      "stage": "archive",
+      "required_facts": [
+        "archive-code"
+      ],
+      "required_unlocks": [],
+      "required_rights": [
+        "archive-host"
+      ],
+      "forbidden_history": [],
+      "action": "search-archive",
+      "text": "Use the valid hosted pass to search the keeper records."
+    },
+    {
+      "id": "first-archive-message",
+      "stage": "salvage",
+      "required_facts": [
+        "survey-map"
+      ],
+      "required_unlocks": [],
+      "required_rights": [],
+      "forbidden_history": [
+        "archive-message"
+      ],
+      "action": "award-archive-message",
+      "text": "The first survey reveals the archived message."
+    }
+  ]
+}

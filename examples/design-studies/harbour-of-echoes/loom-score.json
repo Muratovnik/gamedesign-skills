@@ -1,0 +1,30 @@
+{
+  "artifact_id": "sound-and-light-loom",
+  "revision": "tabletop-score-1",
+  "source_document": "free-form-loom.md#two-playable-phrases-of-equal-duration",
+  "beat_seconds": 1,
+  "phrases": [
+    {
+      "id": "phrase-a",
+      "title": "Rise and return",
+      "sections": [
+        {"beats": 3, "u": 0, "v": 0, "sound": true},
+        {"beats": 3, "u": 1, "v": 1, "sound": true},
+        {"beats": 3, "u": 2, "v": 2, "sound": true},
+        {"beats": 1, "u": 2, "v": 2, "sound": false},
+        {"beats": 2, "u": 0, "v": 0, "sound": true}
+      ]
+    },
+    {
+      "id": "phrase-b",
+      "title": "Alternation and suspension",
+      "sections": [
+        {"beats": 3, "u": 2, "v": 2, "sound": true},
+        {"beats": 3, "u": 0, "v": 0, "sound": true},
+        {"beats": 3, "u": 2, "v": 2, "sound": true},
+        {"beats": 1, "u": 2, "v": 2, "sound": false},
+        {"beats": 2, "u": 2, "v": 2, "sound": false}
+      ]
+    }
+  ]
+}

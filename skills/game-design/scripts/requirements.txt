@@ -1,0 +1,2 @@
+# Python 3.11+; install into a disposable or project virtual environment.
+jsonschema==4.26.0

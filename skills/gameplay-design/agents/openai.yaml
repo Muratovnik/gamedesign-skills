@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gameplay Design"
+  short_description: "Create actions, behaviors, spaces and playable timing"
+  default_prompt: "Use $gameplay-design to create or revise the relevant playable relationship and deliver its concrete artifact."

@@ -1,0 +1,9 @@
+session_id,actor_id,game_id,build_id,cohort,capture_complete,expected_resolution_tick
+s01,bo,lantern-crew,gate-episode-1,new,1,34
+s02,bo,lantern-crew,gate-episode-2,new,1,34
+s03,bo,lantern-crew,gate-episode-2,new,1,34
+s04,bo,lantern-crew,gate-episode-2,new,0,34
+s05,bo,lantern-crew,gate-episode-2,new,1,34
+s06,bo,lantern-crew,gate-episode-2,returning,1,34
+s07,bo,lantern-crew,gate-episode-1,returning,1,34
+s08,bo,lantern-crew,gate-episode-2,new,1,34

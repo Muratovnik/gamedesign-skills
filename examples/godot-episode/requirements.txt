@@ -1,0 +1,2 @@
+# Python 3.11+ for qualification. Godot 4.7.2 is a separately supplied binary.
+-r ../../skills/game-design/scripts/requirements.txt

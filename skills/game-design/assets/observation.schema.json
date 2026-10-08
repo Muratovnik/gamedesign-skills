@@ -1,0 +1,77 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_kind": {
+      "enum": [
+        "synthetic",
+        "human-observation",
+        "expert-material"
+      ]
+    },
+    "game_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "build_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "relation_available": {
+      "type": "boolean"
+    },
+    "conditions": {
+      "type": "string",
+      "minLength": 1
+    },
+    "collection_method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "units": {
+      "type": "object",
+      "properties": {
+        "elapsed_time": {
+          "const": "s"
+        }
+      },
+      "required": [
+        "elapsed_time"
+      ],
+      "additionalProperties": false
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_id",
+    "record_kind",
+    "game_id",
+    "build_id",
+    "question",
+    "relation_available",
+    "conditions",
+    "collection_method",
+    "units",
+    "limitations"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

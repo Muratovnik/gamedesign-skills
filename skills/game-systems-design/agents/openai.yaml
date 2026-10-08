@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Systems Design"
+  short_description: "Design resources, progression and game state transfer"
+  default_prompt: "Use $game-systems-design to revise this game economy and show each affected actor's next available plan."

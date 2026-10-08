@@ -1,0 +1,21 @@
+{
+  "format": "lantern-crew-paper-2",
+  "provenance": "declared result of the README paper migration and ridge replay",
+  "rule_version": 2,
+  "crew_id": "lantern-crew",
+  "wall_time": "2026-10-08T18:00:00Z",
+  "game_turn": 3,
+  "participants": {
+    "ava": {"present": false, "fuel": 0, "unlocks": ["archive-reading"], "knowledge": ["archive-code"]},
+    "bo": {"present": true, "fuel": 1, "unlocks": ["winch"], "equipped": ["winch"], "knowledge": ["winch-procedure", "public-survey-map", "stable-landing"]},
+    "cy": {"present": true, "fuel": 0, "unlocks": [], "knowledge": ["public-survey-map", "stable-landing"]}
+  },
+  "crew": {"locker": {"owner": "crew:lantern-crew", "amount": 0, "unit": "scrap"}, "generator": "working", "treasurer": {"holder": "bo", "authority": "elect-bo-01"}},
+  "rights": [{"id": "archive-pass-01", "owner": "ava", "type": "personal-hosted-archive", "expires_at": "2026-10-15T20:00:00Z", "requires_present_host": true, "delegation": null}],
+  "accepted_decisions": [{"id": "elect-bo-01", "kind": "treasurer-succession", "successor": "bo", "accepted_by": ["ava", "bo", "cy"], "accepted_before_departure": true}],
+  "history": [{"id": "generator-lost-01", "status": "happened"}, {"id": "archive-message-01", "status": "delivered"}, {"id": "survey-ridge-01", "status": "completed", "marker": "stable-landing", "scrap_created": 2}, {"id": "repair-01", "status": "completed", "scrap_spent": 6, "authorized_by": "bo"}],
+  "objective": {"id": "restore-light", "status": "completed"},
+  "available_next": ["free-public-survey"],
+  "archive_entry": {"available": false, "reason": "personal host absent and no delegation"},
+  "migration_receipt": {"from": 1, "to": 2, "repeat_contract": "reject already version 2 as already_migrated"}
+}

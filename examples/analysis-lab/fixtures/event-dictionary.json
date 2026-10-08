@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "game_id": "lantern-crew",
+  "clock": "run_tick; monotonic episode harness clock, 60 ticks per second; not UTC or restored world time.",
+  "builds": {
+    "gate-episode-1": {
+      "outcome_event": "episode_complete",
+      "meaning": "Actor was alive at the end of the episode (old build meaning).",
+      "allowed_events": [
+        "action_accepted",
+        "episode_complete",
+        "episode_end"
+      ],
+      "requires_before_resolution": false
+    },
+    "gate-episode-2": {
+      "outcome_event": "gate_crossed",
+      "meaning": "Actor crossed the x=152 px gate boundary before the final threat resolved.",
+      "allowed_events": [
+        "action_accepted",
+        "gate_crossed",
+        "episode_end"
+      ],
+      "requires_before_resolution": true
+    }
+  }
+}
