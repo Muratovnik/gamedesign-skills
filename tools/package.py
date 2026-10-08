@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_ROOT_FILES = frozenset({
     "AGENTS.md",
     ".betterleaks.toml",
+    ".gitattributes",
     ".gitignore",
     "CHANGELOG.md",
     "CONTRIBUTING.md",
@@ -247,7 +248,7 @@ def main() -> int:
     except (OSError, ValueError) as exc:
         parser.error(str(exc))
     receipt.parent.mkdir(parents=True, exist_ok=True)
-    receipt.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    receipt.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps({"archive": str(output), "sha256": result["sha256"], "file_count": len(result["files"])}))
     return 0
 

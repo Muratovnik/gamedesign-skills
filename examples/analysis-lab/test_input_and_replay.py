@@ -23,14 +23,14 @@ class InputAndReplayTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             source, output = Path(directory) / "source.json", Path(directory) / "output.json"
             original = json.dumps(state)
-            source.write_text(original)
+            source.write_text(original, encoding="utf-8")
             argv = [sys.executable, "-B", str(HERE / "lab.py"), command,
                     "--input", str(source), "--output", str(output)]
             if operation_id is not None:
                 argv.extend(["--operation-id", operation_id])
             result = subprocess.run(argv, capture_output=True, text=True, check=False)
-            self.assertEqual(source.read_text(), original)
-            return result, json.loads(output.read_text()) if output.exists() else None
+            self.assertEqual(source.read_text(encoding="utf-8"), original)
+            return result, json.loads(output.read_text(encoding="utf-8")) if output.exists() else None
 
     def assert_invalid_without_output(self, result, output):
         self.assertEqual(result.returncode, 2, result.stdout + result.stderr)

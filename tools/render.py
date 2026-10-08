@@ -34,11 +34,11 @@ def main() -> int:
     changed = []
     for relative, expected in projections().items():
         path = ROOT / relative
-        if not path.exists() or path.read_text(encoding="utf-8") != expected:
+        if not path.exists() or path.read_bytes() != expected.encode("utf-8"):
             changed.append(relative)
             if not args.check:
                 path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_text(expected, encoding="utf-8")
+                path.write_text(expected, encoding="utf-8", newline="\n")
     print(json.dumps({"status": "stale" if args.check and changed else "current", "files": changed}))
     return int(args.check and bool(changed))
 

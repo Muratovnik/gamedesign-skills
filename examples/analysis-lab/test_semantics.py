@@ -210,7 +210,7 @@ class TelemetryAndObservationTests(unittest.TestCase):
                                          "unaided_known_attempts": 1, "unaided_completed": 1})
         with tempfile.TemporaryDirectory() as directory:
             empty = Path(directory) / "empty.csv"
-            empty.write_text((FIXTURES / "observations.csv").read_text().splitlines()[0] + "\n")
+            empty.write_text((FIXTURES / "observations.csv").read_text(encoding="utf-8").splitlines()[0] + "\n", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "No observations"):
                 import_observations(empty, FIXTURES / "observation-manifest.json")
 

@@ -104,7 +104,7 @@ def inspect(root: Path) -> dict:
             errors.append(f"{name}: {exc}")
     for relative, expected_text in projections(root).items():
         path = root / relative
-        if not path.exists() or path.read_text(encoding="utf-8") != expected_text:
+        if not path.exists() or path.read_bytes() != expected_text.encode("utf-8"):
             errors.append(f"Stale generated file: {relative}")
     schemas = list((root / "skills").rglob("*.schema.json")) + [root / "tools/vendor/plugin.schema.json"]
     for path in schemas:
@@ -114,8 +114,8 @@ def inspect(root: Path) -> dict:
         except Exception as exc:
             errors.append(f"{path.relative_to(root)}: invalid schema: {exc}")
     try:
-        schema = json.loads((root / "tools/vendor/plugin.schema.json").read_text())
-        Draft202012Validator(schema).validate(json.loads((root / "plugin.json").read_text()))
+        schema = json.loads((root / "tools/vendor/plugin.schema.json").read_text(encoding="utf-8"))
+        Draft202012Validator(schema).validate(json.loads((root / "plugin.json").read_text(encoding="utf-8")))
     except Exception as exc:
         errors.append(f"Portable plugin schema: {exc}")
     documents = {}

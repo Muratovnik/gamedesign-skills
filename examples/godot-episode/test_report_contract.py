@@ -16,7 +16,7 @@ RECORDED = HERE / "fixtures" / "test_recorded_candidate_report.json"
 
 class ReportContractTests(unittest.TestCase):
     def setUp(self):
-        self.report = json.loads(RECORDED.read_text())
+        self.report = json.loads(RECORDED.read_text(encoding="utf-8"))
 
     def assess(self, report, claim="escape", fixture="candidate.json", raw=None):
         with tempfile.TemporaryDirectory() as directory:

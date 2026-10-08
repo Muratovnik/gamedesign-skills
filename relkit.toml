@@ -15,9 +15,9 @@ betterleaks_config = ".betterleaks.toml"
 hosted_ci = "public-only"
 
 # The binder's negative test supplies an escaping resource path and asserts its
-# rejection. This fixture remains readable; independent secret scanning applies.
-[exposure.baseline]
-"tests/test_distribution.py" = ["escapes-repository"]
+# rejection. Structural path rules do not apply to this synthetic fixture;
+# independent secret scanning and non-excludable owner rules still apply.
+exclude = ["tests/test_distribution.py"]
 
 [changelog]
 profile = "strict"
@@ -39,7 +39,7 @@ checks = [
   ["{python}", "-B", "-m", "unittest", "discover", "-s", "examples/godot-episode", "-p", "test_*.py", "-v"],
 ]
 build = [["{python}", "-B", "tools/release.py", "build", "--output", "{assets}", "--version", "{version}"]]
-smoke = [["{python}", "-B", "tools/smoke.py", "--assets", "{assets}", "--version", "{version}", "--temp", "{temp}"]]
+smoke = [["{python}", "-B", "tools/smoke.py", "--assets", "{assets}", "--version", "{version}", "--temp", "{temp}/gamedesign-smoke"]]
 smoke_platforms = ["linux", "win32"]
 require_guard = true
 owner_audit = true

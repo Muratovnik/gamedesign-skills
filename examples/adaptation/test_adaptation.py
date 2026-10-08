@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent
 
 class AdaptationContract(unittest.TestCase):
     def setUp(self):
-        self.target = json.loads((ROOT / "fixtures/east-gate-ru.json").read_text())
+        self.target = json.loads((ROOT / "fixtures/east-gate-ru.json").read_text(encoding="utf-8"))
 
     def test_transferred_clue_actions_and_later_scene(self):
         result = play(self.target, "east-gate-ru-2", [1, 2, 3, 4, 5, 6], "east")
@@ -92,7 +92,7 @@ class InvalidFileBoundary(unittest.TestCase):
                 self.invalid(self.call(path, output, "--operation", "view"), output)
 
     def test_malformed_content_records_fail_before_presentation(self):
-        original = json.loads(self.artifact.read_text())
+        original = json.loads(self.artifact.read_text(encoding="utf-8"))
         changes = ({"directions": []}, {"later_sign": []},
                    {"guide": []}, {"later_sign": {"direction_id": "east", "text": False}})
         for number, change in enumerate(changes):
@@ -105,7 +105,7 @@ class InvalidFileBoundary(unittest.TestCase):
         produced = self.work / "played.json"
         result = self.call(self.artifact, produced, "--choose", "east")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        valid = json.loads(produced.read_text())
+        valid = json.loads(produced.read_text(encoding="utf-8"))
         inputs = [[], None, "save", dict(valid, actions=["choose"]),
                   dict(valid, actions=[{"choose": ["east"]}]),
                   dict(valid, actions=[{"pin_line": True}, {"choose": "east"}])]

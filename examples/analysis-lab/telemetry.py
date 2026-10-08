@@ -63,7 +63,7 @@ def query(sessions_path, events_path, dictionary_path, build_id, cohort, databas
         if backwards:
             raise ValueError("The declared monotonic run clock moved backwards.")
         sql_path = Path(__file__).with_name("outcome-query.sql")
-        rows = [dict(row) for row in database.execute(sql_path.read_text(),
+        rows = [dict(row) for row in database.execute(sql_path.read_text(encoding="utf-8"),
             {"build_id": build_id, "cohort": cohort, "outcome_event": definition["outcome_event"],
              "before_resolution": int(definition["requires_before_resolution"])})]
         if not rows:

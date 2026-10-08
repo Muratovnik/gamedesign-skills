@@ -15,7 +15,7 @@ def build(root: Path, revision: str) -> dict:
         raise ValueError("Supplied revision differs from checkout HEAD")
     if subprocess.check_output(["git", "-C", str(root), "status", "--porcelain"], text=True).strip():
         raise ValueError("Assay source is dirty; bind reviewed exact bytes only")
-    catalog = tomllib.loads((root / "catalog.toml").read_text())
+    catalog = tomllib.loads((root / "catalog.toml").read_text(encoding="utf-8"))
     tracked = subprocess.check_output(["git", "-C", str(root), "ls-files", "-z"]).decode().split("\0")
     owners = {}
     for entry in catalog["assets"]:
@@ -28,7 +28,7 @@ def build(root: Path, revision: str) -> dict:
         }
     return {
         "schema_version": 1,
-        "assay": {"repository": "https://github.com/Muratovnik/assay", "version": (root / "VERSION").read_text().strip(), "commit": head},
+        "assay": {"repository": "https://github.com/Muratovnik/assay", "version": (root / "VERSION").read_text(encoding="utf-8").strip(), "commit": head},
         "scope": "Identity files and selected owner runtime resources, excluding evaluator inputs. No native discovery claim.",
         "identity_files": {p: hashlib.sha256((root / p).read_bytes()).hexdigest() for p in ["VERSION", "catalog.toml", "LICENSE"]},
         "owners": owners,
@@ -42,5 +42,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
     target = Path(__file__).resolve().parents[1] / "skills/game-design/assets/assay-binding.json"
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(json.dumps(build(args.assay_root, args.revision), indent=2) + "\n")
+    target.write_text(json.dumps(build(args.assay_root, args.revision), indent=2) + "\n", encoding="utf-8", newline="\n")
     print(target)
