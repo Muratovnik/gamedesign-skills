@@ -1,6 +1,6 @@
 ---
 name: game-systems-design
-description: Design or revise game resources, prices, storage, exchange, progression, loss, recovery and state transfer across attempts, rosters, seasons or rule versions. Use when these rules change an actor's available plans. Skip purely cosmetic counters, business forecasts, generic database migrations and the agent's own task continuity.
+description: Design or revise game resources, prices, storage, exchange, progression, loss, recovery and state transfer across attempts, rosters, seasons or rule versions. Use when these rules change an actor's available plans or a declared two-player zero-sum utility matrix needs calculation. Skip purely cosmetic counters, business forecasts, generic database migrations and the agent's own task continuity.
 license: MIT
 ---
 
@@ -49,6 +49,7 @@ no external confirmation of its fictional values.
 | Decision | Read before constructing or changing it |
 | --- | --- |
 | Endowment, income, price, chance, storage, exchange, intermediation or an unlock | [Resources and development](references/resources-and-development.md) |
+| Mixed strategies or best-response bounds for an explicitly declared finite two-player zero-sum utility matrix | [Optional zero-sum analysis](references/zero-sum-analysis.md) |
 | Death, exhaustion, destroyed production, recovery, retirement or a finale | [Loss and continuation](references/loss-and-continuation.md) |
 | New attempt, roster, season, mode, save format or rules version | [Game state transfer](references/game-state-transfer.md) |
 

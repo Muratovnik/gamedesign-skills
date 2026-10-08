@@ -1,0 +1,16 @@
+{
+  "schema": "ink-scenario/1",
+  "id": "resume-and-share-with-notice",
+  "observe_variables": ["disclosure_heard", "excerpt_shared"],
+  "actions": [{"choice": "Share the excerpt"}],
+  "checks": [
+    {"kind": "variable", "at": 0, "name": "disclosure_heard", "equals": true},
+    {"kind": "variable", "at": 0, "name": "excerpt_shared", "equals": false},
+    {"kind": "choice", "at": 0, "text": "Share the excerpt", "available": true},
+    {"kind": "choice", "at": 0, "text": "Leave the room", "available": true},
+    {"kind": "text", "at": 1, "includes": "You place the excerpt and its imitation notice in the envelope."},
+    {"kind": "variable", "at": 1, "name": "excerpt_shared", "equals": true},
+    {"kind": "terminal", "at": 1, "equals": true},
+    {"kind": "action_count", "at_least": 1}
+  ]
+}

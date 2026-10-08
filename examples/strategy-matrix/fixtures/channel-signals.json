@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "model_id": "channel-signals-1",
+  "model_type": "two-player-zero-sum",
+  "context": {
+    "situation": "Original synthetic paper game: Harbour and Channel choose one signal simultaneously without seeing the other's choice.",
+    "availability": "Both players can choose any named signal in this state; there are no prerequisites or exclusive inventories.",
+    "horizon": "One clash, settled immediately; no later state, learning, geometry or repeated-game incentives are modeled."
+  },
+  "row_player": {
+    "name": "Harbour",
+    "actions": ["Anchor", "Lantern", "Sail"]
+  },
+  "column_player": {
+    "name": "Channel",
+    "actions": ["Anchor", "Lantern", "Sail"]
+  },
+  "utility": {
+    "meaning": "A positive entry transfers that many utility credits from Channel to Harbour; a negative entry reverses the transfer. The paper game's declared preference is linear in these credits.",
+    "unit": "net utility credits to Harbour per clash",
+    "costs": "All signals are free to choose. Every modeled gain and loss is the stated transfer; no time, equipment or opportunity cost is omitted within this one-clash model.",
+    "row_objective": "maximize-expected-utility",
+    "column_utility": "negative-of-row"
+  },
+  "payoffs": [
+    [0, -1, 2],
+    [1, 0, -3],
+    [-2, 3, 0]
+  ]
+}

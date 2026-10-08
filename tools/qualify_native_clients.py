@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import platform
 import queue
+import re
 import subprocess
 import sys
 import threading
@@ -37,6 +38,20 @@ def json_result(output: str):
     raise ValueError("The native command returned no JSON result")
 
 
+def claude_skill_inventory(details: str) -> list[str]:
+    match = re.search(r"^[ \t]*Skills \((\d+)\)[ \t]*(.*)$", details, re.MULTILINE)
+    if not match:
+        raise ValueError("Claude details contain no skill component inventory")
+    names = [name.strip() for name in match.group(2).split(",") if name.strip()]
+    if len(names) != int(match.group(1)) or len(names) != len(set(names)):
+        raise ValueError("Claude skill count and component names differ")
+    return sorted(names)
+
+
+def partial_text(value) -> str:
+    return value.decode("utf-8", errors="replace") if isinstance(value, bytes) else (value or "")
+
+
 class Qualification:
     def __init__(self, args):
         self.args = args
@@ -45,39 +60,71 @@ class Qualification:
         self.root = args.work.resolve()
         self.root.mkdir(parents=True, exist_ok=False)
 
-    def run(self, argv, cwd, *, allowed=(0,), parse=False):
+    def run(self, argv, cwd, *, allowed=(0,), parse=False, timeout=120):
         command = [str(arg) for arg in argv]
-        result = subprocess.run(command, cwd=cwd, text=True, capture_output=True, timeout=120)
-        self.commands.append({"argv": command, "cwd": str(cwd), "exit_code": result.returncode,
-                              "stdout": result.stdout, "stderr": result.stderr})
+        record = {"argv": command, "cwd": str(cwd), "status": "started", "exit_code": None}
+        self.commands.append(record)
+        try:
+            result = subprocess.run(command, cwd=cwd, text=True, capture_output=True, timeout=timeout)
+        except subprocess.TimeoutExpired as error:
+            record.update(status="timed_out", stdout=partial_text(error.stdout), stderr=partial_text(error.stderr),
+                          timeout_seconds=timeout)
+            raise
+        except OSError as error:
+            record.update(status="unavailable", error=str(error))
+            raise
+        record.update(status="completed", exit_code=result.returncode, stdout=result.stdout, stderr=result.stderr)
         if result.returncode not in allowed:
             raise RuntimeError(f"Native command failed ({result.returncode}): {command}\n{result.stderr}")
         return json_result(result.stdout) if parse else result
 
     def codex_skills(self, project):
-        process = subprocess.Popen([str(self.args.codex), "app-server", "--listen", "stdio://"],
-                                   cwd=project, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                   stderr=subprocess.PIPE, text=True)
+        command = [str(self.args.codex), "app-server", "--listen", "stdio://"]
+        protocol = {"client": "codex", "operation": "app-server", "argv": command,
+                    "cwd": str(project), "requests": [], "status": "started"}
+        self.observations.append(protocol)
+        try:
+            process = subprocess.Popen(command,
+                                       cwd=project, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                       stderr=subprocess.PIPE, text=True)
+        except OSError as error:
+            protocol.update(status="unavailable", error=str(error))
+            raise
         messages = queue.Queue()
         stderr = []
 
         def read_stdout():
             for line in process.stdout:
-                messages.put(json.loads(line))
+                try:
+                    messages.put(json.loads(line))
+                except json.JSONDecodeError:
+                    messages.put({"protocol_error": line})
 
         def read_stderr():
-            stderr.extend(process.stderr.readlines())
+            for line in process.stderr:
+                stderr.append(line)
 
-        threading.Thread(target=read_stdout, daemon=True).start()
-        threading.Thread(target=read_stderr, daemon=True).start()
+        output_reader = threading.Thread(target=read_stdout, daemon=True)
+        error_reader = threading.Thread(target=read_stderr, daemon=True)
+        output_reader.start()
+        error_reader.start()
 
         def request(identity, method, params):
+            attempt = {"id": identity, "method": method, "params": params}
+            protocol["requests"].append(attempt)
             process.stdin.write(json.dumps({"id": identity, "method": method, "params": params}) + "\n")
             process.stdin.flush()
             deadline = time.monotonic() + 45
             while time.monotonic() < deadline:
-                response = messages.get(timeout=max(0.01, deadline - time.monotonic()))
+                try:
+                    response = messages.get(timeout=max(0.01, deadline - time.monotonic()))
+                except queue.Empty:
+                    raise TimeoutError(f"Codex app-server timed out waiting for {method}") from None
+                if "protocol_error" in response:
+                    attempt["invalid_response"] = response["protocol_error"]
+                    raise ValueError(f"Codex app-server returned invalid JSON during {method}")
                 if response.get("id") == identity:
+                    attempt["response"] = response
                     if "error" in response:
                         raise RuntimeError(f"{method}: {response['error']}")
                     return response["result"]
@@ -89,11 +136,15 @@ class Qualification:
             process.stdin.write(json.dumps({"method": "initialized"}) + "\n")
             process.stdin.flush()
             result = request(2, "skills/list", {"cwds": [str(project)], "forceReload": True})
+            protocol["status"] = "completed"
             self.observations.append({"client": "codex", "operation": "skills/list", "result": result})
             rows = result["data"]
             if len(rows) != 1 or rows[0]["errors"]:
                 raise ValueError(f"Native skill discovery failed: {rows}")
             return rows[0]["skills"]
+        except Exception as error:
+            protocol.update(status="incomplete", error=str(error))
+            raise
         finally:
             process.terminate()
             try:
@@ -101,12 +152,18 @@ class Qualification:
             except subprocess.TimeoutExpired:
                 process.kill()
                 process.wait(timeout=5)
+            output_reader.join(timeout=1)
+            error_reader.join(timeout=1)
+            protocol["stderr"] = "".join(stderr)
+            protocol["exit_code"] = process.returncode
 
     def resource_action(self, installed, source, client, stage):
         expected = {path.relative_to(source).as_posix(): digest(path)
                     for path in (source / "skills").rglob("*") if path.is_file()
                     and "__pycache__" not in path.parts and "node_modules" not in path.parts}
-        observed = {name: digest(installed / name) for name in expected}
+        observed = {path.relative_to(installed).as_posix(): digest(path)
+                    for path in (installed / "skills").rglob("*") if path.is_file()
+                    and "__pycache__" not in path.parts and "node_modules" not in path.parts}
         if observed != expected:
             raise ValueError("The installed skill resources differ from the selected source")
         output = self.root / f"{client}-{stage}-observations.json"
@@ -177,7 +234,7 @@ class Qualification:
                 raise ValueError("Native enable state differs from the project declaration")
             skills = self.codex_skills(project)
             own = [item for item in skills if item.get("pluginId") == IDENTITY and item["enabled"]]
-            expected = sorted(path.parent.name for path in (source / "skills").glob("*/SKILL.md"))
+            expected = sorted(f"{PACKAGE}:{path.parent.name}" for path in (source / "skills").glob("*/SKILL.md"))
             if sorted(item["name"] for item in own) != (expected if enabled else []):
                 raise ValueError("Native Codex discovery differs from the enabled bundle inventory")
             if enabled:
@@ -232,12 +289,19 @@ class Qualification:
             item = states[IDENTITY]
             if item["scope"] != "local" or item["enabled"] != enabled:
                 raise ValueError("Claude native scope or enable state differs")
-            details = self.run([client, "plugin", "details", PACKAGE], project, allowed=(0,) if enabled else (1,))
+            # In 2.1.289 details describes even an installed disabled plugin.
+            # The native list independently reports the merged enable setting.
+            details = self.run([client, "plugin", "details", PACKAGE], project)
             if enabled:
-                expected = [path.parent.name for path in (source / "skills").glob("*/SKILL.md")]
-                if not all(name in details.stdout for name in expected):
+                expected = sorted(path.parent.name for path in (source / "skills").glob("*/SKILL.md"))
+                if claude_skill_inventory(details.stdout) != expected:
                     raise ValueError("Claude's loaded component details omit a bundled skill")
-                self.resource_action(Path(item["installPath"]), source, "claude", stage)
+                effective = Path(item.get("readFromFolder") or item["installPath"]).resolve()
+                if item.get("readFromFolder") and effective != source.resolve():
+                    raise ValueError("Claude's effective local source differs from the selected revision")
+                self.observations.append({"client": "claude", "stage": stage, "native_plugin": item,
+                                          "effective_source": str(effective)})
+                self.resource_action(effective, source, "claude", stage)
 
         add(sentinel, SENTINEL, SENTINEL_MARKETPLACE)
         add(self.args.previous)

@@ -25,9 +25,12 @@ Never pass an empty inspected or selected set as a clean result.
 | --- | --- | --- |
 | Read, edit and reopen a semantic artifact | JSON with versioned IDs; `scripts/validate_artifact.py` and skill-local `assets/*.schema.json`; original/candidate Godot fixtures and migration outputs are consumed again | Schema validity does not prove a playable or worthwhile relation; arbitrary game formats need their real importer |
 | Calculate resources, waiting and reachable recovery | `examples/analysis-lab/lab.py`: resource witnesses, geometric waiting with a declared guarantee, save repair/survey; resulting save is read by `consumer.py` | A bounded witness is not exhaustive human strategy or a frequency distribution of play |
+| Calculate a declared simultaneous two-player zero-sum model | [Systems matrix route](../../game-systems-design/references/zero-sum-analysis.md): real SciPy optimization followed by independently recomputed probability and best-response bounds | An equilibrium of supplied utilities does not establish that damage ratios are utilities, predict human play rates or make the game enjoyable |
+| Check a glTF/GLB artifact before its selected handoff | [glTF route](gltf-artifacts.md): actual Khronos validator, input/sidecar identities, full errors and coverage limits | Format conformance does not establish a required mesh, engine import, scale, collision or rendered appearance; empty and camera-only assets can be valid |
 | Relate signal, input and clock | Godot fixed ticks/Input trace; `examples/design-studies/harbour-of-echoes/render_loom.py` consumes two control scores into WAV and timed radius/dot-count CSV, then reopens them | Native ticks and PCM samples do not measure perceptual onset, motor response, frame pacing, speaker output or device latency |
 | Check geometry and observation | Real Godot bodies, collision query, point-ray and camera-frustum probes | A clear ray is not body clearance; in-frustum is not visually noticed; geometry is not material reachability |
 | Enact an episode | Godot scene executes actual input and physics; `run` creates a report, `assess` accepts/refutes the named property; toy consumers enact later choices | A native action trace is not a human playtest, complete game or production-project edit |
+| Execute a selected authored Ink scene and resume its state | [Native Ink route](../../game-world-narrative-design/references/ink-artifacts.md): real compilation, reopened program, explicit choices, native state and fresh runtime restore | A chosen trace is not exhaustive reachability, host-engine integration, human understanding or dramatic effect; a written scene can remain sufficient |
 | Save, reset and migrate state | Godot save/reload and analysis v1→v2 migration retain owners, rights, private knowledge, history and allowed next actions; idempotent operation IDs prevent repeated effects | Package update is not save rollback; every existing game's migration needs its own ownership and loss semantics |
 | Represent different participant views | `consumer.py view` writes one actor's permitted information; `choose` consumes only that file and permitted content | Serialized redaction does not isolate a model that previously read both views; simultaneous social interaction needs actual separate participants/contexts |
 | Analyze semantic event data | CSV sessions/events plus a versioned dictionary → SQLite query → build/cohort-specific denominator, unknown outcomes and result JSON | Synthetic rows show the pipeline, not player rates, causal explanations or live instrumentation |
@@ -51,6 +54,14 @@ Install the pinned requirements from `scripts/requirements.txt` into an isolated
 environment only when using these Python operations. No install is performed by
 loading a skill. Inputs and outputs below are placeholders for explicitly chosen
 game-owned files; use the literal runnable commands in the shipped example READMEs.
+
+The matrix, Ink and glTF references declare their own optional dependencies and
+task-owned installation locations. Keep those dependencies outside managed client
+caches and game data. Their original examples are in `examples/strategy-matrix`,
+`examples/ink-episode` and `examples/gltf-artifacts`; the installed runtime routes
+do not depend on those example paths. Choose an operation for the requested
+artifact or property, rather than converting an adequate paper task into a new
+format merely to use a tool.
 
 For the Godot source example, from the source package root:
 

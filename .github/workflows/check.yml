@@ -45,6 +45,34 @@ jobs:
       - run: python -B tools/release.py build --output dist --version ${{ steps.version.outputs.version }}
       - run: python -B tools/smoke.py --assets dist --version ${{ steps.version.outputs.version }} --temp tmp/release-smoke
 
+  artifact-operations:
+    if: github.event.repository && !github.event.repository.private
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Install numerical test environment
+        run: python -m pip install -r requirements-dev.txt -r skills/game-systems-design/scripts/requirements.txt numpy==2.3.5
+      - name: Prepare task-owned optional Node tools
+        run: |
+          mkdir "$RUNNER_TEMP/gltf-tools" "$RUNNER_TEMP/ink-deps"
+          cp skills/game-design/scripts/validate_gltf.cjs skills/game-design/scripts/package*.json "$RUNNER_TEMP/gltf-tools/"
+          cp skills/game-world-narrative-design/scripts/package*.json "$RUNNER_TEMP/ink-deps/"
+          npm ci --prefix "$RUNNER_TEMP/gltf-tools" --ignore-scripts --no-audit --no-fund
+          npm ci --prefix "$RUNNER_TEMP/ink-deps" --ignore-scripts --no-audit --no-fund
+          node --version
+      - run: python -B -m unittest discover -s examples/strategy-matrix -p 'test_*.py' -v
+      - run: node --test examples/gltf-artifacts/test_validation.cjs
+        env:
+          GD_GLTF_SCRIPT: ${{ runner.temp }}/gltf-tools/validate_gltf.cjs
+      - run: node --test examples/ink-episode/test_ink_artifact.cjs
+        env:
+          INKJS_ROOT: ${{ runner.temp }}/ink-deps/node_modules/inkjs
+
   native-clients:
     if: github.event.repository && !github.event.repository.private
     runs-on: ubuntu-latest
