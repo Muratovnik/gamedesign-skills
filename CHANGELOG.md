@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-## [0.1.1] - 2026-10-08
+## [0.1.1](https://github.com/Muratovnik/gamedesign-skills/compare/v0.1.0...v0.1.1) (2026-10-08)
 
 ### Fixed
 
