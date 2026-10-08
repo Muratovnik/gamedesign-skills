@@ -1,0 +1,421 @@
+{
+  "runtime_commit": "1873993a6491b52fe8288c19837600a012e18d4d",
+  "tree": "237e2892adefbf170c149ac644b0c4a18b31ba76",
+  "runs": {
+    "workflow_runs": [
+      {
+        "id": 37819498740,
+        "name": "Check",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 6,
+        "jobs_url": "https://api.github.com/repos/Muratovnik/gamedesign-skills/actions/runs/37819498740/jobs",
+        "logs_url": "https://api.github.com/repos/Muratovnik/gamedesign-skills/actions/runs/37819498740/logs",
+        "workflow_id": 378439227
+      }
+    ]
+  },
+  "jobs": {
+    "jobs": [
+      {
+        "id": 113456576647,
+        "name": "check (ubuntu-latest)",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 37819498740,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run python -m pip install -r requirements-dev.txt",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run python -B tools/check.py",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run python -B -m unittest discover -s tests -v",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Run python -B -m unittest discover -s examples/adaptation -p 'test_*.py' -v",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Run python -B -m unittest discover -s examples/analysis-lab -p 'test_*.py' -v",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Run python -B -m unittest discover -s examples/godot-episode -p 'test_*.py' -v",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Run python -B -m unittest discover -s examples/design-studies/harbour-of-echoes -p 'test_*.py' -v",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Run python .github/relkit.pyz audit --history",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Read source version",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "Run python -B tools/release.py build --output dist --version 0.1.1",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13
+          },
+          {
+            "name": "Run python -B tools/smoke.py --assets dist --version 0.1.1 --temp tmp/release-smoke",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 14
+          },
+          {
+            "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 27
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 28
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 29
+          }
+        ]
+      },
+      {
+        "id": 113456576836,
+        "name": "artifact-operations",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 37819498740,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Install numerical test environment",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Prepare task-owned optional Node tools",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run python -B -m unittest discover -s examples/strategy-matrix -p 'test_*.py' -v",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Run node --test examples/gltf-artifacts/test_validation.cjs",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Run node --test examples/ink-episode/test_ink_artifact.cjs",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17
+          }
+        ]
+      },
+      {
+        "id": 113456576892,
+        "name": "native-clients",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 37819498740,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run python -m pip install -r requirements-dev.txt",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Install exact native clients into disposable runner storage",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Retain the comparison baseline as an immutable source",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Qualify native discovery and local-source lifecycle",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Preserve actual client evidence, including incomplete runs",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17
+          }
+        ]
+      },
+      {
+        "id": 113456576901,
+        "name": "check (windows-latest)",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 37819498740,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run python -m pip install -r requirements-dev.txt",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run python -B tools/check.py",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run python -B -m unittest discover -s tests -v",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Run python -B -m unittest discover -s examples/adaptation -p 'test_*.py' -v",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Run python -B -m unittest discover -s examples/analysis-lab -p 'test_*.py' -v",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Run python -B -m unittest discover -s examples/godot-episode -p 'test_*.py' -v",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Run python -B -m unittest discover -s examples/design-studies/harbour-of-echoes -p 'test_*.py' -v",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Run python .github/relkit.pyz audit --history",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Read source version",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "Run python -B tools/release.py build --output dist --version 0.1.1",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13
+          },
+          {
+            "name": "Run python -B tools/smoke.py --assets dist --version 0.1.1 --temp tmp/release-smoke",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 14
+          },
+          {
+            "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 27
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 28
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 29
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "artifacts": [
+      {
+        "id": 11568218182,
+        "name": "native-client-evidence",
+        "size_in_bytes": 33452,
+        "url": "https://api.github.com/repos/Muratovnik/gamedesign-skills/actions/artifacts/11568218182",
+        "archive_download_url": "https://api.github.com/repos/Muratovnik/gamedesign-skills/actions/artifacts/11568218182/zip",
+        "expired": false,
+        "created_at": "2026-10-08T17:49:48Z",
+        "expires_at": "2027-01-06T17:49:13Z",
+        "updated_at": "2026-10-08T17:49:48Z",
+        "digest": "sha256:f78b01ed5ec0bab19c9a7a6b26e678aacbee6027b3d47c4d50f3fe058391a24f",
+        "workflow_run": {
+          "id": 37819498740,
+          "repository_id": 1410291726,
+          "head_repository_id": 1410291726,
+          "head_branch": "feat/research-backed-design-tools",
+          "head_sha": "1873993a6491b52fe8288c19837600a012e18d4d"
+        }
+      }
+    ]
+  }
+}

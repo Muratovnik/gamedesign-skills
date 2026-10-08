@@ -19,6 +19,14 @@ encodings or rules; their explicit version identities govern each replay.
 | Access, intensity and return | [Access and return](../skills/game-participation-design/references/access-and-return.md) | Private choice and assistance preserve the chooser; pause, skip and cancel change named time/resource/dramatic state |
 | Repertoire and generation | [Repertoire](../skills/game-content-design/references/repertoire.md), [analysis lab](../examples/analysis-lab/README.md) | Compare relation diversity after cosmetic names are removed; retain generation dependencies through filtering, actual selection and presentation |
 | Adaptation of an existing artifact | [East Gate](../examples/adaptation/README.md) | Versioned English/Russian content, one-line display with permanent line pins, chosen direction and reused next scene; broken literal translation control |
+| Stated utility and strategic response | [Strategy matrix](../examples/strategy-matrix/README.md) | Real SciPy optimization, independent best-response certificate, sensitivity and intended-hierarchy/single-action controls |
+| Native narrative state and next choice | [Ink episode](../examples/ink-episode/README.md) | Compile and reopen native Ink, inspect and choose, save state, resume in a fresh process; missing guard versus lawful departure |
+| glTF/GLB artifact conformance | [glTF artifacts](../examples/gltf-artifacts/README.md) | Actual Khronos validation of embedded/external assets; malformed accessors versus valid empty/camera assets; no unearned target-import claim |
+
+The three optional operations have separate dependency instructions in their
+READMEs. They are selected by an actual game task, not prerequisites for the
+paper studies. The observation importer in the analysis lab also preserves
+conditions, collection method and units through a saved/reopened report.
 
 ## Cross-domain traces
 

@@ -1,0 +1,89 @@
+{
+  "historical_inputs": 12,
+  "matched_current_inputs": 11,
+  "excluded_identity_claim": "Project plan was recovered as normalized text. The newly supplied discovery report is not one of the historical matched inputs.",
+  "matches": [
+    {
+      "historical_path": "upload/game-design-assay-mapping(1).md",
+      "sha256": "e6c1828fa24e96b27eacfd10cb0c111befbfc694c14860f76396b3c0500b094d",
+      "current_matches": [
+        "upload/game-design-assay-mapping(2).md"
+      ]
+    },
+    {
+      "historical_path": "upload/game-design-capability-model(8).md",
+      "sha256": "05ca1723299ec00985fe755b11914733a241cc085a50d372f7f1094a46935759",
+      "current_matches": [
+        "upload/game-design-capability-model(9).md"
+      ]
+    },
+    {
+      "historical_path": "upload/game-design-domain-map(2).md",
+      "sha256": "3a224087b4538a0efe0bf9daa29d50887e44b2dc792934f4ac84bdefff3d2221",
+      "current_matches": [
+        "upload/game-design-domain-map(3).md"
+      ]
+    },
+    {
+      "historical_path": "upload/game-design-domain-requirements(1).md",
+      "sha256": "005a981ebe5991a94b0e738619c46e0ade50ac4615c4f71c5d610347faf1cfae",
+      "current_matches": [
+        "upload/game-design-domain-requirements(2).md"
+      ]
+    },
+    {
+      "historical_path": "upload/game-design-domain-research(1).md",
+      "sha256": "ca0010be4d9f062bd8a5c90c124fc069efca8f8b30febd96152cb8c9366c034a",
+      "current_matches": [
+        "upload/game-design-domain-research(2).md"
+      ]
+    },
+    {
+      "historical_path": "upload/game-design-knowledge-synthesis(6).md",
+      "sha256": "8cdd6854eadb262fa58238bafaf3bb7312882d5d4f310bc436dabcd1e2c37eaa",
+      "current_matches": [
+        "upload/game-design-knowledge-synthesis(7).md"
+      ]
+    },
+    {
+      "historical_path": "upload/game-design-operational-requirements(4).md",
+      "sha256": "9edd491d061d59d0de375bba90afb895f721f660c73965ee9f513e874243673b",
+      "current_matches": [
+        "upload/game-design-operational-requirements(5).md"
+      ]
+    },
+    {
+      "historical_path": "upload/game-design-project-brief(2).md",
+      "sha256": "edf594355833c929e4ad6cc58a62e1a495768bf248c99a2ea9005786b215b5a8",
+      "current_matches": [
+        "upload/game-design-project-brief(3).md"
+      ]
+    },
+    {
+      "historical_path": "upload/game-design-project-plan(1).md",
+      "sha256": "b846ff4c4900d39996f6794574758c0b9ac64432858ba764eebc05dc379166a2",
+      "current_matches": []
+    },
+    {
+      "historical_path": "project_sources/01-software-engineering.md",
+      "sha256": "da4e2a72588d7e9605475ee683a8b0ade278d4d84fca0d9d4ed7aefbeaf91f10",
+      "current_matches": [
+        "project_sources/01-software-engineering.md"
+      ]
+    },
+    {
+      "historical_path": "project_sources/02-research-quality.md",
+      "sha256": "830241f439715e7d42f61cfb7a0d9605457197e2700b12468074ca13fe9897d1",
+      "current_matches": [
+        "project_sources/02-research-quality.md"
+      ]
+    },
+    {
+      "historical_path": "project_sources/03-llm-reasoning-control.md",
+      "sha256": "02fb31968dffd8801652d7a9eb46f3cd73a02b33965d263549c761924fdb7b32",
+      "current_matches": [
+        "project_sources/03-llm-reasoning-control.md"
+      ]
+    }
+  ]
+}

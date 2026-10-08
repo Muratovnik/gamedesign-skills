@@ -20,6 +20,15 @@ what its technical or paper evidence can and cannot establish.
 | Joint decisions, participation and return | [Participation design](../skills/game-participation-design/SKILL.md) | Proposal/refusal replay, private choice, assistance, pause and cancellation. |
 | Repertoires, generation and selection | [Content design](../skills/game-content-design/SKILL.md) | The analysis lab follows generated content through filtering and actual selection. |
 | Adaptation across language and device | [Adaptation](../skills/game-design/references/adaptation.md) | East Gate changes an existing puzzle and consumes its revised content in a target action. |
+| Explicit simultaneous zero-sum utility | [Zero-sum analysis](../skills/game-systems-design/references/zero-sum-analysis.md) | A real LP, independently checked best responses, changed utilities and valid intended hierarchy. |
+| Native conditional narrative and continuation | [Ink artifacts](../skills/game-world-narrative-design/references/ink-artifacts.md) | Listening Room compiles, consumes explicit actions, saves/reopens native state and continues; a missing guard is refuted while departure remains legal. |
+| Native asset conformance | [glTF artifacts](../skills/game-design/references/gltf-artifacts.md) | Actual glTF/GLB validation separates bad accessors, missing resources and unsupported coverage; empty/camera-only conformance does not assert a mesh predicate. |
+| Observation context at handoff | [Human and material route](../skills/game-design/references/environment-contracts.md#human-and-material-route) | Saved/reopened observations retain conditions, collection method and units; equal counts with different assistance remain distinct. |
+
+The [comparative requirement and plan addendum](research/2026-10-08/requirements-and-plan.md)
+maps these changes to the supplied GDR/GDE/OR and C3/C4 boundaries. Dependencies
+implement technical operations; they do not own subject judgment or Assay's
+general methods.
 
 ## Cross-domain traces
 
@@ -53,4 +62,7 @@ assumptions and legal alternatives inspectable. Engine and Python checks can
 refute broken data, timing, geometry or state behavior in their declared
 formats. They do not establish enjoyment, learning, cultural interpretation,
 social consent or accessibility in use. The examples are synthetic; no
-user-playtest or model-quality result is claimed.
+user-playtest result is claimed. Current scoped model tasks, native discovery
+and independent review are reported in the
+[verification record](reviews/2026-10-08-comparison/README.md), separately from
+these examples and historical evidence.

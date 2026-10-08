@@ -1,0 +1,26 @@
+[
+  {
+    "manifest": "domain-research-probes-manifest.json",
+    "archive": "domain-research-probes.zip",
+    "files_reopened": 16,
+    "status": "pass"
+  },
+  {
+    "manifest": "environment-research-probes-manifest.json",
+    "archive": "environment-research-probes.zip",
+    "files_reopened": 27,
+    "status": "pass"
+  },
+  {
+    "manifest": "integration-evidence-manifest.json",
+    "archive": "integration-evidence.zip",
+    "files_reopened": 33,
+    "status": "pass"
+  },
+  {
+    "manifest": "numeric-narrative-evidence-manifest.json",
+    "archive": "numeric-narrative-evidence.zip",
+    "files_reopened": 238,
+    "status": "pass"
+  }
+]

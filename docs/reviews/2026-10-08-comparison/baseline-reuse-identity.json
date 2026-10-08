@@ -1,0 +1,918 @@
+{
+  "recorded_correction_commit": "7b385469b95ffe40562e7161ea9c3cab7bec2b94",
+  "compared_initial_commit": "4fc654c2cb92989582c30bc048742f2cce7659ba",
+  "comparison_base": "a0db5af71146586cf861881670c991ad94d87e2b",
+  "recorded_files": 151,
+  "equal_files": 151,
+  "runtime_equal_files": 48,
+  "runtime_or_example_changes_between_initial_and_main": [],
+  "scope": "Exact recorded file bytes; not a rerun of historical tests; later release-only changes excluded from this equality claim.",
+  "files": [
+    {
+      "path": ".agents/plugins/marketplace.json",
+      "expected": "48764271b757530b3fd75408463d9cc891cdebedf51f94593eb8b3def7d5dd38",
+      "actual": "48764271b757530b3fd75408463d9cc891cdebedf51f94593eb8b3def7d5dd38",
+      "matches": true
+    },
+    {
+      "path": ".betterleaks.toml",
+      "expected": "070980fba70d7b9b3e08f808e753bdd6275ad4f832b131c28ecf0db75eeaaae0",
+      "actual": "070980fba70d7b9b3e08f808e753bdd6275ad4f832b131c28ecf0db75eeaaae0",
+      "matches": true
+    },
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "expected": "5a56f2b9881cef0ac3da5f2cad04d5c2e9474a1fe3a572e7d429f74a5022f351",
+      "actual": "5a56f2b9881cef0ac3da5f2cad04d5c2e9474a1fe3a572e7d429f74a5022f351",
+      "matches": true
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "expected": "3c43c3243db62e8c3ead042e8cc31ce11b63283a68fae1269ce4c4b8df068c6b",
+      "actual": "3c43c3243db62e8c3ead042e8cc31ce11b63283a68fae1269ce4c4b8df068c6b",
+      "matches": true
+    },
+    {
+      "path": ".gitattributes",
+      "expected": "ef9974ae486cedac2638968e17c82aca37e3d83dd40929ada3aa94daea026258",
+      "actual": "ef9974ae486cedac2638968e17c82aca37e3d83dd40929ada3aa94daea026258",
+      "matches": true
+    },
+    {
+      "path": ".github/relkit.pyz",
+      "expected": "fe4c3271e21ff560a3385313b1da340c48b13f271769bbabeb4d0f975a7a621d",
+      "actual": "fe4c3271e21ff560a3385313b1da340c48b13f271769bbabeb4d0f975a7a621d",
+      "matches": true
+    },
+    {
+      "path": ".github/relkit.pyz.sha256",
+      "expected": "3d53c0b7074534aaec700d2bacc84cbf3b671ad99cd4454e7d6ba94defba289b",
+      "actual": "3d53c0b7074534aaec700d2bacc84cbf3b671ad99cd4454e7d6ba94defba289b",
+      "matches": true
+    },
+    {
+      "path": ".github/workflows/check.yml",
+      "expected": "430bec77f894bf6e46d5cfeb6b36aacb226235717925cf7eb4f82c7188d8f147",
+      "actual": "430bec77f894bf6e46d5cfeb6b36aacb226235717925cf7eb4f82c7188d8f147",
+      "matches": true
+    },
+    {
+      "path": ".gitignore",
+      "expected": "f566a47ef57b58b1107127957f6bc93f1b6008d739c27fc1e37e26cff3d66186",
+      "actual": "f566a47ef57b58b1107127957f6bc93f1b6008d739c27fc1e37e26cff3d66186",
+      "matches": true
+    },
+    {
+      "path": "AGENTS.md",
+      "expected": "73ecb0e0eefc59102ad555dcb1d90fb15d830568202a9aacee8bed4d62fa9729",
+      "actual": "73ecb0e0eefc59102ad555dcb1d90fb15d830568202a9aacee8bed4d62fa9729",
+      "matches": true
+    },
+    {
+      "path": "CHANGELOG.md",
+      "expected": "73f986650fb2a1689bc007301a94f2023e483a5acd0a57f8fb0a287279bf4556",
+      "actual": "73f986650fb2a1689bc007301a94f2023e483a5acd0a57f8fb0a287279bf4556",
+      "matches": true
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "expected": "a8f7d0e3d3e1d588431a83311303ac46dedc7e7740dec4d90e9911d76984500a",
+      "actual": "a8f7d0e3d3e1d588431a83311303ac46dedc7e7740dec4d90e9911d76984500a",
+      "matches": true
+    },
+    {
+      "path": "LICENSE",
+      "expected": "43f715d10e372f8cf616481133ec461f7f10f565fcdfa1c1f4087b6660273444",
+      "actual": "43f715d10e372f8cf616481133ec461f7f10f565fcdfa1c1f4087b6660273444",
+      "matches": true
+    },
+    {
+      "path": "NOTICE.md",
+      "expected": "4922e702379a146076f52bc7bc50b7c98769a4e941bc1547884a638384f0486c",
+      "actual": "4922e702379a146076f52bc7bc50b7c98769a4e941bc1547884a638384f0486c",
+      "matches": true
+    },
+    {
+      "path": "README.md",
+      "expected": "cf04f2d563e56b305ab6700e8df793fe84305fa86ca1b6e64a9d059e6046622a",
+      "actual": "cf04f2d563e56b305ab6700e8df793fe84305fa86ca1b6e64a9d059e6046622a",
+      "matches": true
+    },
+    {
+      "path": "SECURITY.md",
+      "expected": "dd76cdc07fadb96912f21d9f91938412a0a2366b57f81495babaca75f34929a4",
+      "actual": "dd76cdc07fadb96912f21d9f91938412a0a2366b57f81495babaca75f34929a4",
+      "matches": true
+    },
+    {
+      "path": "VERSION",
+      "expected": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67",
+      "actual": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67",
+      "matches": true
+    },
+    {
+      "path": "catalog.json",
+      "expected": "24b29495315d019af01ad0c0bc3a24f4a0c17c6a1ca253ce0845350966f7b34c",
+      "actual": "24b29495315d019af01ad0c0bc3a24f4a0c17c6a1ca253ce0845350966f7b34c",
+      "matches": true
+    },
+    {
+      "path": "docs/compatibility.md",
+      "expected": "20114b57be9e159f4ce82dd52a0338f3e53f22675ef4d5b5ab4530a8ff902361",
+      "actual": "20114b57be9e159f4ce82dd52a0338f3e53f22675ef4d5b5ab4530a8ff902361",
+      "matches": true
+    },
+    {
+      "path": "docs/decisions.md",
+      "expected": "85fbf52aaf50cbddbd593861bfbe1a879850be98c714ea4138275389a2a69a5d",
+      "actual": "85fbf52aaf50cbddbd593861bfbe1a879850be98c714ea4138275389a2a69a5d",
+      "matches": true
+    },
+    {
+      "path": "docs/examples.md",
+      "expected": "0a13459d50e3cdc5c85fd563d726eff284ee4b09a92b8ecded86a967a31ff66e",
+      "actual": "0a13459d50e3cdc5c85fd563d726eff284ee4b09a92b8ecded86a967a31ff66e",
+      "matches": true
+    },
+    {
+      "path": "docs/installation.md",
+      "expected": "93a3dcc68f5d1a5cacfd9ac0e38a35fb5dcea16047295018cfeb59a34fefc793",
+      "actual": "93a3dcc68f5d1a5cacfd9ac0e38a35fb5dcea16047295018cfeb59a34fefc793",
+      "matches": true
+    },
+    {
+      "path": "docs/late-comparison.md",
+      "expected": "61a32e546dc1854d989431ab68338c06005b69399b50b3fb7639bef634241b64",
+      "actual": "61a32e546dc1854d989431ab68338c06005b69399b50b3fb7639bef634241b64",
+      "matches": true
+    },
+    {
+      "path": "docs/quickstart.ru.md",
+      "expected": "98b8d2f3c01e4275900a2c3b1456a3b6e58eb4fed3766b1c6ef63b3b247815d7",
+      "actual": "98b8d2f3c01e4275900a2c3b1456a3b6e58eb4fed3766b1c6ef63b3b247815d7",
+      "matches": true
+    },
+    {
+      "path": "docs/releases.md",
+      "expected": "a6b196ddc310b35b7b87a8c256f834bbd9f7b649a8f608c3cab413359fc56f1a",
+      "actual": "a6b196ddc310b35b7b87a8c256f834bbd9f7b649a8f608c3cab413359fc56f1a",
+      "matches": true
+    },
+    {
+      "path": "docs/reviews/2026-10-08/evidence/README.md",
+      "expected": "d771400379f2bacb0f6cfa691c5fba8a171e51cfe589c70a0966fd18f0779c07",
+      "actual": "d771400379f2bacb0f6cfa691c5fba8a171e51cfe589c70a0966fd18f0779c07",
+      "matches": true
+    },
+    {
+      "path": "docs/reviews/2026-10-08/evidence/baseline-evidence-manifest.json",
+      "expected": "014f6fa86246227499c371259955ef9d9769083624a8e9b232255ed2a99791da",
+      "actual": "014f6fa86246227499c371259955ef9d9769083624a8e9b232255ed2a99791da",
+      "matches": true
+    },
+    {
+      "path": "docs/reviews/2026-10-08/evidence/baseline-evidence.zip",
+      "expected": "105fbcab8a59783dbf4f728f4e15013e047ab8b736c94f9df69b41828c07e267",
+      "actual": "105fbcab8a59783dbf4f728f4e15013e047ab8b736c94f9df69b41828c07e267",
+      "matches": true
+    },
+    {
+      "path": "docs/reviews/2026-10-08/evidence/baseline-identity.json",
+      "expected": "3d1c4cd391c620ec068aefe8c65fbe3d7ec140575050ebea8ce415f6c3ee5775",
+      "actual": "3d1c4cd391c620ec068aefe8c65fbe3d7ec140575050ebea8ce415f6c3ee5775",
+      "matches": true
+    },
+    {
+      "path": "docs/reviews/2026-10-08/evidence/review-freeze.json",
+      "expected": "7c1e5bbb0d20d23641f02be25326214c55c0a75ab9a1a01eb0b4a8b08b8ec21a",
+      "actual": "7c1e5bbb0d20d23641f02be25326214c55c0a75ab9a1a01eb0b4a8b08b8ec21a",
+      "matches": true
+    },
+    {
+      "path": "docs/reviews/2026-10-08/review-game-design-project.md",
+      "expected": "3a83585a31bf5ea3839e7b9edb45f146e0ecd13a2eea0d7938d8b519b1219a10",
+      "actual": "3a83585a31bf5ea3839e7b9edb45f146e0ecd13a2eea0d7938d8b519b1219a10",
+      "matches": true
+    },
+    {
+      "path": "docs/traceability.md",
+      "expected": "9182d22efef83844a73485b02f9072c98a9e5d05da07fa413e8b7766867dc2c5",
+      "actual": "9182d22efef83844a73485b02f9072c98a9e5d05da07fa413e8b7766867dc2c5",
+      "matches": true
+    },
+    {
+      "path": "examples/adaptation/README.md",
+      "expected": "7aae4564f5ccd22ba7908ac9cbc0086e15fc5f0754d738882d830e32b5032566",
+      "actual": "7aae4564f5ccd22ba7908ac9cbc0086e15fc5f0754d738882d830e32b5032566",
+      "matches": true
+    },
+    {
+      "path": "examples/adaptation/consumer.py",
+      "expected": "b46f2e8db14437c0cde5097f3d7e558c0b972d7855a60540a3b196017605e644",
+      "actual": "b46f2e8db14437c0cde5097f3d7e558c0b972d7855a60540a3b196017605e644",
+      "matches": true
+    },
+    {
+      "path": "examples/adaptation/fixtures/east-gate-en.json",
+      "expected": "13cf33385f11e68d3581cbf94d9efa2466205d69fea0d21c4ff7576255f2675f",
+      "actual": "13cf33385f11e68d3581cbf94d9efa2466205d69fea0d21c4ff7576255f2675f",
+      "matches": true
+    },
+    {
+      "path": "examples/adaptation/fixtures/east-gate-ru.json",
+      "expected": "e4e083614d2d2037128e43f9fb534df4d9058a18b2c9adf0cb7606641fa0e34c",
+      "actual": "e4e083614d2d2037128e43f9fb534df4d9058a18b2c9adf0cb7606641fa0e34c",
+      "matches": true
+    },
+    {
+      "path": "examples/adaptation/test_adaptation.py",
+      "expected": "d69aea080870adea8d69edc56f4ddba5aaeedbe081b73942503ea35b9bb820f7",
+      "actual": "d69aea080870adea8d69edc56f4ddba5aaeedbe081b73942503ea35b9bb820f7",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/OBSERVATIONS.md",
+      "expected": "f1c941b9c4c0b3c50c1c6b49d21599872e16dc1e93424b3660c0a0d7c1cd45a3",
+      "actual": "f1c941b9c4c0b3c50c1c6b49d21599872e16dc1e93424b3660c0a0d7c1cd45a3",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/README.md",
+      "expected": "840eff11879d6fa64d93873c68cc1bb1493885e2f860573a5f7bba17ede69278",
+      "actual": "840eff11879d6fa64d93873c68cc1bb1493885e2f860573a5f7bba17ede69278",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/consumer.py",
+      "expected": "a6dfd5658005de0de6743da79cfbab1192ce99a0274d460bf0e3a18a8fe7bfc3",
+      "actual": "a6dfd5658005de0de6743da79cfbab1192ce99a0274d460bf0e3a18a8fe7bfc3",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/content_rules.py",
+      "expected": "58994c2fd5d019587bbfa4cb41c09cd14a80acb907dd001b01a01c89b70f0212",
+      "actual": "58994c2fd5d019587bbfa4cb41c09cd14a80acb907dd001b01a01c89b70f0212",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/economy.py",
+      "expected": "3fa8379442a2ed4db31fe71bc5a5d80f5488a636d810b2b8aac5148018256bfb",
+      "actual": "3fa8379442a2ed4db31fe71bc5a5d80f5488a636d810b2b8aac5148018256bfb",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/content.json",
+      "expected": "7060a9c866be347ffcf9ee1a653799ed7e69df139020e743d4ac8bd16fdd3447",
+      "actual": "7060a9c866be347ffcf9ee1a653799ed7e69df139020e743d4ac8bd16fdd3447",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/event-dictionary.json",
+      "expected": "89fbfd4377682b6a570fcf9805ed0dfbe3c9529b1bea2146e9c403e333616dfa",
+      "actual": "89fbfd4377682b6a570fcf9805ed0dfbe3c9529b1bea2146e9c403e333616dfa",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/events.csv",
+      "expected": "8c41dc75e78a1a811b2d60d6df49d5b79c99ff1a5f7ff1da7422245195bcb3a0",
+      "actual": "8c41dc75e78a1a811b2d60d6df49d5b79c99ff1a5f7ff1da7422245195bcb3a0",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/observation-manifest.json",
+      "expected": "a727299d543a679dba74f17a9ea3a5eec99da758d1b894c61794b7ddcbae98e3",
+      "actual": "a727299d543a679dba74f17a9ea3a5eec99da758d1b894c61794b7ddcbae98e3",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/observations.csv",
+      "expected": "faad317dbd7ce2857481156778388b876320842b2771e56ea082a990ec09c789",
+      "actual": "faad317dbd7ce2857481156778388b876320842b2771e56ea082a990ec09c789",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/resource-model.json",
+      "expected": "5de7ee6a33e438bd1cb6cf6f05a177b63adb0cdb75d5d7236db546680c5ca595",
+      "actual": "5de7ee6a33e438bd1cb6cf6f05a177b63adb0cdb75d5d7236db546680c5ca595",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/save-v1.json",
+      "expected": "aa48da1be3186334fbedcd64526e2e93db00db1e8d2b0fe1a98ce9f66022e099",
+      "actual": "aa48da1be3186334fbedcd64526e2e93db00db1e8d2b0fe1a98ce9f66022e099",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/sessions.csv",
+      "expected": "8e891352223d0fbdb90d97215b71ed3a8956e86325fd4aa1bb9acf205617fbb5",
+      "actual": "8e891352223d0fbdb90d97215b71ed3a8956e86325fd4aa1bb9acf205617fbb5",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/lab.py",
+      "expected": "6d4cf01a280194d4d0d41b6043f33918fd1514d75f1c5db15e65e9bf89b3dc11",
+      "actual": "6d4cf01a280194d4d0d41b6043f33918fd1514d75f1c5db15e65e9bf89b3dc11",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/outcome-query.sql",
+      "expected": "9b52baf015729df5ba0e22ecfb9dbb26a0ba6ced2f09b69e25fb4cf51884b1bd",
+      "actual": "9b52baf015729df5ba0e22ecfb9dbb26a0ba6ced2f09b69e25fb4cf51884b1bd",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/requirements.txt",
+      "expected": "ffcdf5100ca9d4b696a6b156a2f565f0d348eec2eed62805378fb163bedabf9c",
+      "actual": "ffcdf5100ca9d4b696a6b156a2f565f0d348eec2eed62805378fb163bedabf9c",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/state.py",
+      "expected": "d8b9eab98f6e2acf6a12036d75b6723b894a7506e3f0f4246f6c14ed3ab85ec9",
+      "actual": "d8b9eab98f6e2acf6a12036d75b6723b894a7506e3f0f4246f6c14ed3ab85ec9",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/telemetry.py",
+      "expected": "2ad561a1031e1bf827a48e6baef45129c067cc9d0a30aeea7ad5d944302c84c5",
+      "actual": "2ad561a1031e1bf827a48e6baef45129c067cc9d0a30aeea7ad5d944302c84c5",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/test_input_and_replay.py",
+      "expected": "9d31e246bd98eb122fc3a43a6f50227562de7cb3245791acc63b3c8dfbe0ce67",
+      "actual": "9d31e246bd98eb122fc3a43a6f50227562de7cb3245791acc63b3c8dfbe0ce67",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/test_measurement_and_eligibility.py",
+      "expected": "7adf898c52274289278b76b6477e0ca0ceff72cd8cd1c3436193bf9889bf22e6",
+      "actual": "7adf898c52274289278b76b6477e0ca0ceff72cd8cd1c3436193bf9889bf22e6",
+      "matches": true
+    },
+    {
+      "path": "examples/analysis-lab/test_semantics.py",
+      "expected": "41e51385c37d1ebf57ad051305b608e24a1b8dea8587ac860613acebca117fc0",
+      "actual": "41e51385c37d1ebf57ad051305b608e24a1b8dea8587ac860613acebca117fc0",
+      "matches": true
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/README.md",
+      "expected": "c74fbe5b68d7f7134c95dc91a5609251ea290ad25066eec5f6a88d6167c9c8e4",
+      "actual": "c74fbe5b68d7f7134c95dc91a5609251ea290ad25066eec5f6a88d6167c9c8e4",
+      "matches": true
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/calculate.py",
+      "expected": "fdf38623ba6c62974983143558ea9647b341f875136744ed21e40d1afadfb819",
+      "actual": "fdf38623ba6c62974983143558ea9647b341f875136744ed21e40d1afadfb819",
+      "matches": true
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/calculation-output.json",
+      "expected": "43fa6123d7614e4c46b0a18dcb6855c2ce0dfe0c9daa5c2c5cbea60bf4cf03ab",
+      "actual": "43fa6123d7614e4c46b0a18dcb6855c2ce0dfe0c9daa5c2c5cbea60bf4cf03ab",
+      "matches": true
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/cases.json",
+      "expected": "440a731feb48100efdc3e6f10bae694eb5a6db8ab0e46ec0ad50efdb033df6f9",
+      "actual": "440a731feb48100efdc3e6f10bae694eb5a6db8ab0e46ec0ad50efdb033df6f9",
+      "matches": true
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/free-form-loom.md",
+      "expected": "6d68c34ac6a355019a560022599fd2af2bd4f334a229e3fcd363a9f665238f06",
+      "actual": "6d68c34ac6a355019a560022599fd2af2bd4f334a229e3fcd363a9f665238f06",
+      "matches": true
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/gamebook.md",
+      "expected": "1d64e9f67548d243f74687779bfab7a33de526303bfeed2c62961156985e20f9",
+      "actual": "1d64e9f67548d243f74687779bfab7a33de526303bfeed2c62961156985e20f9",
+      "matches": true
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/lens-workshop.md",
+      "expected": "0012ba6f43eeae3d199a58318857af0666b555e56e090a9b65a521de94167e32",
+      "actual": "0012ba6f43eeae3d199a58318857af0666b555e56e090a9b65a521de94167e32",
+      "matches": true
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/loom-score.json",
+      "expected": "19292751ed51346d2c26f0e2ce43404e0f96d6a192b7a30274b7dbac52b7bccd",
+      "actual": "19292751ed51346d2c26f0e2ce43404e0f96d6a192b7a30274b7dbac52b7bccd",
+      "matches": true
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/quay-crossing.md",
+      "expected": "0d022e876ef6ad0464a6d59e9dcb973676f3d9d271e9273926cf3e5e1c492ab7",
+      "actual": "0d022e876ef6ad0464a6d59e9dcb973676f3d9d271e9273926cf3e5e1c492ab7",
+      "matches": true
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/render_loom.py",
+      "expected": "f5de95ad8b1f2957e335927debabf92e7aab0bb24eeca1c4e7160d48f5dfb9fb",
+      "actual": "f5de95ad8b1f2957e335927debabf92e7aab0bb24eeca1c4e7160d48f5dfb9fb",
+      "matches": true
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/replay-notes.md",
+      "expected": "18295822e61d987a0dd2025b6c3a1b152c70e01cd0c26feecac96914e2f6fcd4",
+      "actual": "18295822e61d987a0dd2025b6c3a1b152c70e01cd0c26feecac96914e2f6fcd4",
+      "matches": true
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/test_render_loom.py",
+      "expected": "b68c86bdd005499d8330ee8034db8e7e1140feac4a70bae01e3a755f10e1f850",
+      "actual": "b68c86bdd005499d8330ee8034db8e7e1140feac4a70bae01e3a755f10e1f850",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/README.md",
+      "expected": "341181d00d742a6a7381c4861926f742fcd67967cadb523d8a41cf4ad1781548",
+      "actual": "341181d00d742a6a7381c4861926f742fcd67967cadb523d8a41cf4ad1781548",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/episode.gd",
+      "expected": "4db7b17bc664324568dd0a8ea8cad61af668db64de037ff451b91a70abee2dcb",
+      "actual": "4db7b17bc664324568dd0a8ea8cad61af668db64de037ff451b91a70abee2dcb",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/episode.gd.uid",
+      "expected": "33240bf2b0330b3c0e0da12ece5770d6fda405799f179f653113f47251d537a4",
+      "actual": "33240bf2b0330b3c0e0da12ece5770d6fda405799f179f653113f47251d537a4",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/episode.tscn",
+      "expected": "accc10f5c52e8a5bb37bb2178dfd06477cba272051cf474fc7cd20d8195be35b",
+      "actual": "accc10f5c52e8a5bb37bb2178dfd06477cba272051cf474fc7cd20d8195be35b",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/fixtures/baseline.json",
+      "expected": "3b43e2f23a81a4e49a28205fa9a5200a8a7dbaffe69deaf7a30920038c1e90d5",
+      "actual": "3b43e2f23a81a4e49a28205fa9a5200a8a7dbaffe69deaf7a30920038c1e90d5",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/fixtures/candidate.json",
+      "expected": "2f02fbb0a598e8fe6c13aeb52e85f1b158c49162cb1c6f9b82f97f676d5e878c",
+      "actual": "2f02fbb0a598e8fe6c13aeb52e85f1b158c49162cb1c6f9b82f97f676d5e878c",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/fixtures/narrow-gap.json",
+      "expected": "dbc707da653b5a8a3055b9ec98bb11dc81e1c1ba12c213572c82f8e4be1dbd63",
+      "actual": "dbc707da653b5a8a3055b9ec98bb11dc81e1c1ba12c213572c82f8e4be1dbd63",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/fixtures/no-input.json",
+      "expected": "f7a214aec7c297cb5943aeb09151694a3bac8bb1fd99025b4bae3aff3fabd99a",
+      "actual": "f7a214aec7c297cb5943aeb09151694a3bac8bb1fd99025b4bae3aff3fabd99a",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/fixtures/off-camera.json",
+      "expected": "a47891b4bc8389f099660545e173a20c8f47e3256764fef3b8a4ec6662ac9497",
+      "actual": "a47891b4bc8389f099660545e173a20c8f47e3256764fef3b8a4ec6662ac9497",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/fixtures/recovery-locked.json",
+      "expected": "189c275a626d97d9b07595b2731858ebc4213f179a9187698b9cd5b902576474",
+      "actual": "189c275a626d97d9b07595b2731858ebc4213f179a9187698b9cd5b902576474",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/fixtures/test_recorded_candidate_report.json",
+      "expected": "9105bc41111a26df77a5ae2cf2a742a0d701b98bb4e6cff2b97ed201d0bb9b9d",
+      "actual": "9105bc41111a26df77a5ae2cf2a742a0d701b98bb4e6cff2b97ed201d0bb9b9d",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/player.gd",
+      "expected": "c9bce2c42d4fb192dfb6e293c4ffb99447fbee3e13a7090571ec35df2dfbca79",
+      "actual": "c9bce2c42d4fb192dfb6e293c4ffb99447fbee3e13a7090571ec35df2dfbca79",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/player.gd.uid",
+      "expected": "fe951f61fa3c0a11ef20a59a04802ada918a0acb32c57be0b838c3fdadc1d0e6",
+      "actual": "fe951f61fa3c0a11ef20a59a04802ada918a0acb32c57be0b838c3fdadc1d0e6",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/project.godot",
+      "expected": "f70d9b895e9784e0e361d305b895921fabfa87f975dcf6530347122d629a6c21",
+      "actual": "f70d9b895e9784e0e361d305b895921fabfa87f975dcf6530347122d629a6c21",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/qualify.py",
+      "expected": "2b71554739407fb3234da9a03fdb61daec17211e55d1f794f1012861ad7dd703",
+      "actual": "2b71554739407fb3234da9a03fdb61daec17211e55d1f794f1012861ad7dd703",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/requirements.txt",
+      "expected": "0a8b77b80646216fd3ecf7b7d0fc1f41b10acf0e16011284395ffb4f2abd5ec4",
+      "actual": "0a8b77b80646216fd3ecf7b7d0fc1f41b10acf0e16011284395ffb4f2abd5ec4",
+      "matches": true
+    },
+    {
+      "path": "examples/godot-episode/test_report_contract.py",
+      "expected": "4ffbbd1f88dcb02f1ef66e34cd62e2c83b24bbba9eb82721ea59a00df2d3cc9f",
+      "actual": "4ffbbd1f88dcb02f1ef66e34cd62e2c83b24bbba9eb82721ea59a00df2d3cc9f",
+      "matches": true
+    },
+    {
+      "path": "examples/systems-studies/README.md",
+      "expected": "fdf823810874a41c3e37d98dfa579401f26ba660ffbb5b96b79476edd1e426cf",
+      "actual": "fdf823810874a41c3e37d98dfa579401f26ba660ffbb5b96b79476edd1e426cf",
+      "matches": true
+    },
+    {
+      "path": "examples/systems-studies/x3-input.json",
+      "expected": "5efb166d31942281589b5b3c01374764d6cb33b1045ec8e64ec814b56be9376c",
+      "actual": "5efb166d31942281589b5b3c01374764d6cb33b1045ec8e64ec814b56be9376c",
+      "matches": true
+    },
+    {
+      "path": "examples/systems-studies/x3-ridge-result.json",
+      "expected": "e864897f2fa40a263cb132efa436a25109c92c6314e80115c5f57c71e149ff4f",
+      "actual": "e864897f2fa40a263cb132efa436a25109c92c6314e80115c5f57c71e149ff4f",
+      "matches": true
+    },
+    {
+      "path": "plugin.json",
+      "expected": "0d6652e613726a2b0f366bafbd69173695b04e907e1248563ef23f07988336fb",
+      "actual": "0d6652e613726a2b0f366bafbd69173695b04e907e1248563ef23f07988336fb",
+      "matches": true
+    },
+    {
+      "path": "relkit.toml",
+      "expected": "7cb967f51f739860c3a504883f19a34eeae8632540b15a635d26e1e4a04042e9",
+      "actual": "7cb967f51f739860c3a504883f19a34eeae8632540b15a635d26e1e4a04042e9",
+      "matches": true
+    },
+    {
+      "path": "requirements-dev.txt",
+      "expected": "136ac6cfae8fa4e206f3722bdf9640349f989beb9d999e3842fd86bb76b9d290",
+      "actual": "136ac6cfae8fa4e206f3722bdf9640349f989beb9d999e3842fd86bb76b9d290",
+      "matches": true
+    },
+    {
+      "path": "skills/game-content-design/SKILL.md",
+      "expected": "3298bd38694831b15017b3182dab5791b86246ac0acf8f4807df1cdf3d231243",
+      "actual": "3298bd38694831b15017b3182dab5791b86246ac0acf8f4807df1cdf3d231243",
+      "matches": true
+    },
+    {
+      "path": "skills/game-content-design/agents/openai.yaml",
+      "expected": "e1d406655d2fa88e1ccd784155d36a836997baaefec65a8ccfab2d19aab4caac",
+      "actual": "e1d406655d2fa88e1ccd784155d36a836997baaefec65a8ccfab2d19aab4caac",
+      "matches": true
+    },
+    {
+      "path": "skills/game-content-design/assets/harbor-repertoire.json",
+      "expected": "6f34171f77721de0dcd4e1335bd4be561aa3fd48993b5c069f8e46ed875853f8",
+      "actual": "6f34171f77721de0dcd4e1335bd4be561aa3fd48993b5c069f8e46ed875853f8",
+      "matches": true
+    },
+    {
+      "path": "skills/game-content-design/assets/parcel-worlds.json",
+      "expected": "8284d652283dc4f6000f8baca52c70f3dc9bb30175e32447e78e37dde0b935ea",
+      "actual": "8284d652283dc4f6000f8baca52c70f3dc9bb30175e32447e78e37dde0b935ea",
+      "matches": true
+    },
+    {
+      "path": "skills/game-content-design/references/repertoire.md",
+      "expected": "da1dba2cf560ed09ec4c6f515462d6b8d7b75de9c99f07f4b1843fe82dab4ad2",
+      "actual": "da1dba2cf560ed09ec4c6f515462d6b8d7b75de9c99f07f4b1843fe82dab4ad2",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/SKILL.md",
+      "expected": "b02bcb1c7d7ad695e21d7352aef3cd1b29d862bc32786e61dbdb2a87ca0df712",
+      "actual": "b02bcb1c7d7ad695e21d7352aef3cd1b29d862bc32786e61dbdb2a87ca0df712",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/agents/openai.yaml",
+      "expected": "092e34392a47e4533c480b7fe253d6344aa06af26ab22b8d5dd103aeff9c62d1",
+      "actual": "092e34392a47e4533c480b7fe253d6344aa06af26ab22b8d5dd103aeff9c62d1",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/assets/assay-binding.json",
+      "expected": "82097de1c19f7ce40597f6472fa1f6c005dcc50bc617025ad489b6ec8b0d9795",
+      "actual": "82097de1c19f7ce40597f6472fa1f6c005dcc50bc617025ad489b6ec8b0d9795",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/assets/content.schema.json",
+      "expected": "f4db2c523b4892b9360d22e9568972d24b30e36c21e8a2fc8e722ef82ae4458b",
+      "actual": "f4db2c523b4892b9360d22e9568972d24b30e36c21e8a2fc8e722ef82ae4458b",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/assets/episode-report.schema.json",
+      "expected": "ad1bc1e4a84b3ac28fd7dbf77336831fc3a411e6e12862d13167bac8c925e2a5",
+      "actual": "ad1bc1e4a84b3ac28fd7dbf77336831fc3a411e6e12862d13167bac8c925e2a5",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/assets/episode.schema.json",
+      "expected": "02ad07d86b56ae4f74b1cf6ecdbc5dfcbf4e2bb30d5bfe4c4e0a2a3a6e1e9dda",
+      "actual": "02ad07d86b56ae4f74b1cf6ecdbc5dfcbf4e2bb30d5bfe4c4e0a2a3a6e1e9dda",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/assets/observation.schema.json",
+      "expected": "4675f0f855a441cf5f66f24fcaba9ca1f83b1a0ec99ff94e1f338660e1e9f0c3",
+      "actual": "4675f0f855a441cf5f66f24fcaba9ca1f83b1a0ec99ff94e1f338660e1e9f0c3",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/assets/observer-view.schema.json",
+      "expected": "e88d1758022d055dc2df031bbb43a71390ce515bb76afacb8ef4dc97c3171711",
+      "actual": "e88d1758022d055dc2df031bbb43a71390ce515bb76afacb8ef4dc97c3171711",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/assets/resource-model.schema.json",
+      "expected": "a888e5830780a7361c8e36258e188c49a00796fef8e14262bdd91fcab099fbab",
+      "actual": "a888e5830780a7361c8e36258e188c49a00796fef8e14262bdd91fcab099fbab",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/assets/save-v1.schema.json",
+      "expected": "72bf7841b377ae7ba09ae5c2a603dbded118cbbed26a504820e81a7719de3b2c",
+      "actual": "72bf7841b377ae7ba09ae5c2a603dbded118cbbed26a504820e81a7719de3b2c",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/assets/save-v2.schema.json",
+      "expected": "8e7cff4728c97e1fa0322e4504d3b369da7caf007647842ae46c1160965b57c6",
+      "actual": "8e7cff4728c97e1fa0322e4504d3b369da7caf007647842ae46c1160965b57c6",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/assets/telemetry-dictionary.schema.json",
+      "expected": "1df94f725bfbdf97503b3d075040fb0984fbd8078eee806223ee89093cf7a0b2",
+      "actual": "1df94f725bfbdf97503b3d075040fb0984fbd8078eee806223ee89093cf7a0b2",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/references/adaptation.md",
+      "expected": "79da889c0de0496cc174b555c7b1b60266b158dd047de94110ffac9500d7d200",
+      "actual": "79da889c0de0496cc174b555c7b1b60266b158dd047de94110ffac9500d7d200",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/references/consumer-and-assay-contract.md",
+      "expected": "87cd0929e47495ab45042ea4842ef9a3a352dc7cfda43ac18d3efef74907c549",
+      "actual": "87cd0929e47495ab45042ea4842ef9a3a352dc7cfda43ac18d3efef74907c549",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/references/environment-contracts.md",
+      "expected": "1fbe11c4fe4e4af78e70835ed0394843a49f6b279faeadc1d4b3ce887a328b15",
+      "actual": "1fbe11c4fe4e4af78e70835ed0394843a49f6b279faeadc1d4b3ce887a328b15",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/references/relations-and-context.md",
+      "expected": "5fe518e607cd2dea38c6513d1292bd8456bb18813651d805ecbc3449bc8a2895",
+      "actual": "5fe518e607cd2dea38c6513d1292bd8456bb18813651d805ecbc3449bc8a2895",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/scripts/bind_assay.py",
+      "expected": "41fe0ee7567bfc1d1df8bc1bcbe9a6db9ea193a5ccc2481d27e7bae558b5da75",
+      "actual": "41fe0ee7567bfc1d1df8bc1bcbe9a6db9ea193a5ccc2481d27e7bae558b5da75",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/scripts/observe_evidence.py",
+      "expected": "e47a8cc8913423c2ea31b1edda8af07445e6ed9b3440a1f4350ad6e9eb9caca5",
+      "actual": "e47a8cc8913423c2ea31b1edda8af07445e6ed9b3440a1f4350ad6e9eb9caca5",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/scripts/requirements.txt",
+      "expected": "25eb3034f302321350cee99445b27c26c7e2d06c5904520364b2759d6ecde552",
+      "actual": "25eb3034f302321350cee99445b27c26c7e2d06c5904520364b2759d6ecde552",
+      "matches": true
+    },
+    {
+      "path": "skills/game-design/scripts/validate_artifact.py",
+      "expected": "05fd81379352867ff20c285f83b1e94b1a59c2152626e1451acded77ab39d906",
+      "actual": "05fd81379352867ff20c285f83b1e94b1a59c2152626e1451acded77ab39d906",
+      "matches": true
+    },
+    {
+      "path": "skills/game-information-design/SKILL.md",
+      "expected": "c046bcf4c5fb7c7f036ff626080d90f9a1751e2365f59880b94d64e59cd473f9",
+      "actual": "c046bcf4c5fb7c7f036ff626080d90f9a1751e2365f59880b94d64e59cd473f9",
+      "matches": true
+    },
+    {
+      "path": "skills/game-information-design/agents/openai.yaml",
+      "expected": "b1857fa72c975eb06c5963588033bd35835a6efc8371927ee2682178bb84e54f",
+      "actual": "b1857fa72c975eb06c5963588033bd35835a6efc8371927ee2682178bb84e54f",
+      "matches": true
+    },
+    {
+      "path": "skills/game-information-design/references/inference.md",
+      "expected": "a3b052dbd728470c1acda73e8f212e1e51ae681ec930b3655b696aa3b724743a",
+      "actual": "a3b052dbd728470c1acda73e8f212e1e51ae681ec930b3655b696aa3b724743a",
+      "matches": true
+    },
+    {
+      "path": "skills/game-information-design/references/learning-and-help.md",
+      "expected": "08b2ae1e0cc9cb5f6c41269751558c6e0031b04cb23aa03e30f8ec64e7b4c371",
+      "actual": "08b2ae1e0cc9cb5f6c41269751558c6e0031b04cb23aa03e30f8ec64e7b4c371",
+      "matches": true
+    },
+    {
+      "path": "skills/game-participation-design/SKILL.md",
+      "expected": "4b75f2bea3377e4f6c810fbe59c1cf6cd5bf8a2d9da389b1e898b078268a229f",
+      "actual": "4b75f2bea3377e4f6c810fbe59c1cf6cd5bf8a2d9da389b1e898b078268a229f",
+      "matches": true
+    },
+    {
+      "path": "skills/game-participation-design/agents/openai.yaml",
+      "expected": "21900b9fea0e771ab6014af2fcb0a685013467609ad9ffc4febc081293027438",
+      "actual": "21900b9fea0e771ab6014af2fcb0a685013467609ad9ffc4febc081293027438",
+      "matches": true
+    },
+    {
+      "path": "skills/game-participation-design/references/access-and-return.md",
+      "expected": "7c1f4c2a6c2862787c182f72f8ca9aa272126d23b5b38172a53be605010f50e1",
+      "actual": "7c1f4c2a6c2862787c182f72f8ca9aa272126d23b5b38172a53be605010f50e1",
+      "matches": true
+    },
+    {
+      "path": "skills/game-participation-design/references/paid-and-timed-rights.md",
+      "expected": "feb919b74c724cf32223ebc5843bd197db55a18349bb9152b821fe78e00bc6b5",
+      "actual": "feb919b74c724cf32223ebc5843bd197db55a18349bb9152b821fe78e00bc6b5",
+      "matches": true
+    },
+    {
+      "path": "skills/game-participation-design/references/shared-play.md",
+      "expected": "c329ac62d44c933a2862d9a5874fc116f559a60f9e184009a88d31afcdb0a7e8",
+      "actual": "c329ac62d44c933a2862d9a5874fc116f559a60f9e184009a88d31afcdb0a7e8",
+      "matches": true
+    },
+    {
+      "path": "skills/game-systems-design/SKILL.md",
+      "expected": "462bea254ca2d6db2a1e8a63d8945c9e0d63d741ee0f9f39b8be925a9f072863",
+      "actual": "462bea254ca2d6db2a1e8a63d8945c9e0d63d741ee0f9f39b8be925a9f072863",
+      "matches": true
+    },
+    {
+      "path": "skills/game-systems-design/agents/openai.yaml",
+      "expected": "2260d66c8d69300df57efdfec1ef18ab38016d946d705a56b5f0a5221473c626",
+      "actual": "2260d66c8d69300df57efdfec1ef18ab38016d946d705a56b5f0a5221473c626",
+      "matches": true
+    },
+    {
+      "path": "skills/game-systems-design/references/game-state-transfer.md",
+      "expected": "2150e18b048c1c28b9c1fcaf57f74a2830d9bec9985afa7ca850ab418ecbeb68",
+      "actual": "2150e18b048c1c28b9c1fcaf57f74a2830d9bec9985afa7ca850ab418ecbeb68",
+      "matches": true
+    },
+    {
+      "path": "skills/game-systems-design/references/loss-and-continuation.md",
+      "expected": "0b92bec7d67f112215c1e038c9388ca17dd5920255c94b2bff6d53dc7d31e27f",
+      "actual": "0b92bec7d67f112215c1e038c9388ca17dd5920255c94b2bff6d53dc7d31e27f",
+      "matches": true
+    },
+    {
+      "path": "skills/game-systems-design/references/resources-and-development.md",
+      "expected": "7e96e8420fd93a6afe12cb255dc49c61e986310f0ebe5558088645253e7a6442",
+      "actual": "7e96e8420fd93a6afe12cb255dc49c61e986310f0ebe5558088645253e7a6442",
+      "matches": true
+    },
+    {
+      "path": "skills/game-world-narrative-design/SKILL.md",
+      "expected": "2db0781a3332291a33ac948d074872b4bb2f005497e48d175445778c43a7a10b",
+      "actual": "2db0781a3332291a33ac948d074872b4bb2f005497e48d175445778c43a7a10b",
+      "matches": true
+    },
+    {
+      "path": "skills/game-world-narrative-design/agents/openai.yaml",
+      "expected": "197ac1a21f961771f5a94cfc9e0861489e1cc86d932689f069fcca2cc862cd2a",
+      "actual": "197ac1a21f961771f5a94cfc9e0861489e1cc86d932689f069fcca2cc862cd2a",
+      "matches": true
+    },
+    {
+      "path": "skills/game-world-narrative-design/references/conditional-story.md",
+      "expected": "267005af2df922874c05069fb3d7bb74009611df1b651b24716b5bbe386a6230",
+      "actual": "267005af2df922874c05069fb3d7bb74009611df1b651b24716b5bbe386a6230",
+      "matches": true
+    },
+    {
+      "path": "skills/game-world-narrative-design/references/world-relations.md",
+      "expected": "bc349359bf8c857523bd6f44f100ca33eafcaabe9e58498994b5185b240e31c1",
+      "actual": "bc349359bf8c857523bd6f44f100ca33eafcaabe9e58498994b5185b240e31c1",
+      "matches": true
+    },
+    {
+      "path": "skills/gameplay-design/SKILL.md",
+      "expected": "ab09856ed270ad21e935db35d1451024f643c8bd366418048339bd4f215900fc",
+      "actual": "ab09856ed270ad21e935db35d1451024f643c8bd366418048339bd4f215900fc",
+      "matches": true
+    },
+    {
+      "path": "skills/gameplay-design/agents/openai.yaml",
+      "expected": "c4f094710a7130328553cc8febed17b42a4da5e85483da291743319747d8f4ff",
+      "actual": "c4f094710a7130328553cc8febed17b42a4da5e85483da291743319747d8f4ff",
+      "matches": true
+    },
+    {
+      "path": "skills/gameplay-design/references/actions-and-time.md",
+      "expected": "a987036e6b7e0fcd466aa9bfffb6b08a38457875b6561234401aa7e0a114f86c",
+      "actual": "a987036e6b7e0fcd466aa9bfffb6b08a38457875b6561234401aa7e0a114f86c",
+      "matches": true
+    },
+    {
+      "path": "skills/gameplay-design/references/entities.md",
+      "expected": "3ab9acdfb317478d4ade01129f50764c386eb102faaf5ff4118e60fa95e67df8",
+      "actual": "3ab9acdfb317478d4ade01129f50764c386eb102faaf5ff4118e60fa95e67df8",
+      "matches": true
+    },
+    {
+      "path": "skills/gameplay-design/references/space-and-situations.md",
+      "expected": "1225006b58ff87f0ab1e0e7a2b2bdbff38904e015b924933ec3ec824c326523d",
+      "actual": "1225006b58ff87f0ab1e0e7a2b2bdbff38904e015b924933ec3ec824c326523d",
+      "matches": true
+    },
+    {
+      "path": "tests/test_assay_binding.py",
+      "expected": "c8b3617f4c024c3c1e3de68ce0e26604b1c910b869a4b1ed282878e525670312",
+      "actual": "c8b3617f4c024c3c1e3de68ce0e26604b1c910b869a4b1ed282878e525670312",
+      "matches": true
+    },
+    {
+      "path": "tests/test_distribution.py",
+      "expected": "baa9fa4398a792dc841b50b155de2fe7c5a65afa7e16e045bf23815491e7d6cc",
+      "actual": "baa9fa4398a792dc841b50b155de2fe7c5a65afa7e16e045bf23815491e7d6cc",
+      "matches": true
+    },
+    {
+      "path": "tools/check.py",
+      "expected": "d4c21045b6e825cba48a25c666840e999ac0d30493fa7a10ce65d9995a6c5a63",
+      "actual": "d4c21045b6e825cba48a25c666840e999ac0d30493fa7a10ce65d9995a6c5a63",
+      "matches": true
+    },
+    {
+      "path": "tools/package.py",
+      "expected": "73a759b67fdc43ef2837c447f1cfac76741b10b9c9f8c05e86c0ea62b74fa161",
+      "actual": "73a759b67fdc43ef2837c447f1cfac76741b10b9c9f8c05e86c0ea62b74fa161",
+      "matches": true
+    },
+    {
+      "path": "tools/release.py",
+      "expected": "6804edffbcc803f7d0a363fdd1c100a2a9c9bdc6f2112f99cfd3b4c8a11b2877",
+      "actual": "6804edffbcc803f7d0a363fdd1c100a2a9c9bdc6f2112f99cfd3b4c8a11b2877",
+      "matches": true
+    },
+    {
+      "path": "tools/render.py",
+      "expected": "12773deb6534f939c9b4f51f012d7bd250bdc45f1d55cadbe36e4dcbd6e48a65",
+      "actual": "12773deb6534f939c9b4f51f012d7bd250bdc45f1d55cadbe36e4dcbd6e48a65",
+      "matches": true
+    },
+    {
+      "path": "tools/smoke.py",
+      "expected": "0059f81e481fcb249f13133f1f92af83e512947443096ecb18d2406685643d7c",
+      "actual": "0059f81e481fcb249f13133f1f92af83e512947443096ecb18d2406685643d7c",
+      "matches": true
+    },
+    {
+      "path": "tools/update_assay_binding.py",
+      "expected": "53a659c19f59e2d05783e80c21b5a820268c43a971f59da6ffc7013c428ca9e2",
+      "actual": "53a659c19f59e2d05783e80c21b5a820268c43a971f59da6ffc7013c428ca9e2",
+      "matches": true
+    },
+    {
+      "path": "tools/vendor/Apache-2.0.txt",
+      "expected": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "actual": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "matches": true
+    },
+    {
+      "path": "tools/vendor/plugin.schema.json",
+      "expected": "0a4aad95ce337878ad38802ebf0daa3fde76abe3f65400c86bcbb1ec0b3ab883",
+      "actual": "0a4aad95ce337878ad38802ebf0daa3fde76abe3f65400c86bcbb1ec0b3ab883",
+      "matches": true
+    }
+  ]
+}

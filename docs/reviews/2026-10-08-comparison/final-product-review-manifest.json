@@ -1,0 +1,17 @@
+{
+  "archive": "final-product-review.zip",
+  "scope": "Complete unchanged seven-file final product/documentation review handoff; later evidence-only additions and publication have a separate boundary.",
+  "sha256": "b74a1349198e9ea8dc9a71a0173201cf77694f09ca044674faddd746881eccec",
+  "bytes": 36300,
+  "entry_count": 7,
+  "reopened_all_entries": true,
+  "files": {
+    "input-verification.json": "2cd5ecb1e3e49b59286555668fecb86304f36c062d6a52fd84c886f9882fd242",
+    "seal_inputs.py": "97cfc025ed92e5829a87a3cce937663651a8be287aa9493897ad31269f1e7325",
+    "verify_inputs.py": "9bb241099df77cd2ed58f89cf25b9ca3806ce5496ae9640577f405e068673bb9",
+    "inspected-files.json": "69ef49d132eb0f35da177f9706f6db88626b7431cb6b673205fae9f39e964366",
+    "REPORT.md": "7c636de8211ed3b13153b4d433c22894589c817ffd21a16c9b30e713f1aec159",
+    "final-drift-check.json": "a0a5d02430b39f4cc3510c366b2a3ce105c7229b2490a932a3dc0763cb6b3ff8",
+    "observed-checks.json": "24751974d45b204a8d963d10f4b58250b6bf38205f8d73c86e2de6573a12f4f2"
+  }
+}

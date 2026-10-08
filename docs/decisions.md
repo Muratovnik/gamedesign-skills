@@ -74,3 +74,41 @@ Those concerns do not replace the package's procedures for changing a concrete
 artifact and checking the consequence. The [comparison rationale](late-comparison.md)
 summarizes this boundary and cites public sources. It does not claim a measured
 comparison of agent performance.
+
+The later [external comparison](research/2026-10-08/comparison.md) reads concrete
+public implementations and records accepted, conditional and rejected transfers.
+Its companion verification record reports actual scoped model tasks separately;
+a repository's name, popularity or tests do not establish agent quality.
+
+## Optional native operations under existing owners
+
+The comparison adds SciPy utility calculation to systems design, native Ink
+execution to conditional narrative, and Khronos glTF conformance to the shared
+environment. These are original adapters around established implementations.
+They exist because the concrete operation was absent; a second parser, solver,
+narrative VM or general workflow would duplicate a more appropriate owner.
+Dependencies are obtained in task-owned environments only when selected.
+
+The input model, game predicate and uncertainty stay explicit. Intentional
+dominance is not rejected as bad design; a silent or common ending remains legal;
+an empty or camera-only glTF can be conformant. Reconsider each adapter if an
+existing game's native consumer already performs the operation, a qualified
+dependency no longer fits, or repeated observed tasks expose a concrete missing
+contract. A new package name alone is insufficient reason to broaden it.
+
+## Preserve evidence meaning through serialization
+
+Observation conditions, collection method and units are required input meaning,
+so the saved report now carries them. A digest of a separate manifest does not
+make an isolated report interpretable. This corrects the implementation of an
+existing requirement and its regression test; it adds no new universal
+playtesting or assistance rule.
+
+## Qualify native sources rather than assume cache behavior
+
+The exact Linux native lifecycle is exercised through real Codex and Claude
+managers. The verifier records the effective source, full runtime file set and
+content before executing an installed resource; Claude may read a retained local
+source while also having a cache. It tests same-version replacement and rollback
+and preserves a separate plugin. Native listing, enabled metadata, resource
+loading and a model's actual selection remain distinct compatibility claims.

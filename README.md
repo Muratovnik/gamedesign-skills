@@ -2,7 +2,7 @@
 
 # Game Design
 
-Seven composable methods for making and revising playable games.
+Composable methods for making and revising playable games.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.1.1-informational?style=flat-square)](VERSION)
@@ -17,7 +17,9 @@ prototype. A large design document is optional.
 
 The package includes original playable studies, a Godot input and physics
 episode, renderable sound-and-light scores, semantic Python consumers, state
-migration and analysis examples. General research and engineering methods come
+migration and analysis examples. Optional operations calculate a declared
+zero-sum model, compile and resume native Ink, and validate glTF/GLB artifacts.
+General research and engineering methods come
 from the separately maintained [Assay](https://github.com/Muratovnik/assay)
 package; Game Design does not install or embed Assay.
 
@@ -57,6 +59,13 @@ observer views, content selection and telemetry use the
 [analysis lab](examples/analysis-lab/README.md). More paper studies are listed in
 the [example guide](docs/examples.md).
 
+For an explicit payoff question, use the [strategy matrix](examples/strategy-matrix/README.md).
+For a native conditional story, use the [Ink episode](examples/ink-episode/README.md).
+For asset conformance, use the [glTF/GLB example](examples/gltf-artifacts/README.md).
+Each provides its own task-local dependency instructions and actual consumer
+checks. Paper work does not require these optional packages, and reading a skill
+does not install them.
+
 ## Access
 
 The source can be read directly from a local checkout. Give the agent the
@@ -82,9 +91,11 @@ For native use, the generated Codex and Claude marketplaces identify the full
 bundle as `game-design@game-design-source`. Follow the
 [installation and lifecycle procedures](docs/installation.md) for the chosen
 client's commands, scope, conflicts, update and rollback. These procedures use
-native plugin managers; client/build qualification remains
-[pending](docs/compatibility.md#native-client-qualification). The direct source
-route above is available without registration.
+native plugin managers. The exact Linux local-source lifecycle for Codex 0.159.2
+and Claude Code 2.1.289 has been exercised; see the
+[qualification boundary](docs/compatibility.md#native-client-qualification) for
+the separate evidence about inventory, source loading and model use. The direct
+source route above is available without registration.
 
 ## Quick start
 
@@ -118,6 +129,8 @@ It prepares source files; it does not publish or register the package.
 - [Compatibility](docs/compatibility.md): dependencies and observed versus pending support.
 - [Design decisions](docs/decisions.md): rationale, evidence and reconsideration conditions.
 - [Research and evidence limits](docs/late-comparison.md).
+- [External comparison and accepted changes](docs/research/2026-10-08/comparison.md).
+- [Current change verification](docs/reviews/2026-10-08-comparison/README.md).
 - [Release preparation](docs/releases.md): build a local source archive.
 - [Russian quick start](docs/quickstart.ru.md).
 
@@ -125,8 +138,10 @@ It prepares source files; it does not publish or register the package.
 
 The examples are authored and synthetic. Headless engine checks establish
 specific input, timing, geometry and state properties, not perception or human
-experience. No model-quality campaign, user playtest, automatic client
-discovery or arbitrary-engine qualification is claimed.
+experience. Native metadata and installed-resource checks establish their
+declared client boundary. The current change's model tasks, results and transport
+limits are recorded separately in the verification record. No human playtest,
+universal model improvement or arbitrary-engine qualification is claimed.
 
 ## Contributing
 

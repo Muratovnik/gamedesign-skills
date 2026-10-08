@@ -237,7 +237,6 @@ def build(root: Path, output: Path) -> dict:
         "sha256": hashlib.sha256(output.read_bytes()).hexdigest(),
         "files": inventory,
         "excluded": sorted(EXCLUDED_DIRECTORIES),
-        "evaluation_included": False,
     }
 
 

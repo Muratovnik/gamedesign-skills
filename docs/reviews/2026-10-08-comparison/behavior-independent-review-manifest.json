@@ -1,0 +1,21 @@
+{
+  "archive": "behavior-independent-review.zip",
+  "scope": "Complete ten-file independent review handoff plus extraction index; original subject evidence stays in separate behavior archive.",
+  "sha256": "dad32a8049e56f9ada791e3447cc4a3b70467e8966c08979362b542a1524f5ab",
+  "bytes": 224651,
+  "entry_count": 11,
+  "reopened_all_entries": true,
+  "files": {
+    "check-command.stdout.json": "25d877c173d4b5f722c5d4e2d0b50b2eb994a3245eb70db0009712fbd5a2859b",
+    "context-and-provenance-checks.json": "a41d1ff131949ec288bfbdc97fcd906457c0bd3d08728ecfb1635157a0bb1b60",
+    "REPORT.md": "e2798d542c572fed1a94cb6a84d418e42357415a96ff26a70782cd342b6af29a",
+    "checks.json": "8928c39434de447cc3b9f125349e4404ccbbac700faf44bd9c77d5d2745a94c2",
+    "final-drift-check.json": "3ca373f5ba22a9d6d36b6f6253d6df4cffce51af1f7aa39d4f7489a24031d9b3",
+    "verify_frozen_evidence.py": "63ac8221fa9e8cfbba09e69473bca539e61a9da0e395cca41568a4aede5c8103",
+    "review-delivery-manifest.json": "8c68158a819dcbcd9522e510ecb1f078e7a469b651a9b8ab2f30278ec2016a54",
+    "file-hash-scope.json": "fd922d018622545981b394e24dbb854b2cd3c334abee5260c346ab4ac630f3a9",
+    "native-artifact-replay.json": "69f89b0256d1e2a1d5674f9e3162ba2c4a9500ed304b256c7e0cb677d77630f1",
+    "replay_native_artifacts.cjs": "58c5060d9805afd03eb67a07ca9f1d67065ace2864bfe7c82ec6a47ac5024c0b",
+    "ARCHIVE-README.md": "67a5b1f43487cfda1459c2e4683637bede80f44974d851745e473c2dd1324d42"
+  }
+}

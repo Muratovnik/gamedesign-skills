@@ -1,0 +1,17 @@
+{
+  "source_url": "https://api.github.com/repos/Muratovnik/gamedesign-skills/git/commits/a06f5336e5805c0cd84c924ca3aefdc658dc8401",
+  "sha": "a06f5336e5805c0cd84c924ca3aefdc658dc8401",
+  "tree": {
+    "sha": "237e2892adefbf170c149ac644b0c4a18b31ba76",
+    "url": "https://api.github.com/repos/Muratovnik/gamedesign-skills/git/trees/237e2892adefbf170c149ac644b0c4a18b31ba76"
+  },
+  "parents": [
+    "a0db5af71146586cf861881670c991ad94d87e2b",
+    "1873993a6491b52fe8288c19837600a012e18d4d"
+  ],
+  "message": "Merge 1873993a6491b52fe8288c19837600a012e18d4d into a0db5af71146586cf861881670c991ad94d87e2b",
+  "branch_candidate": "1873993a6491b52fe8288c19837600a012e18d4d",
+  "branch_tree": "237e2892adefbf170c149ac644b0c4a18b31ba76",
+  "tree_equal": true,
+  "scope": "GitHub Actions PR checkout is a06f...; fetched Git data proves its complete tree equals the published runtime candidate tree. Job logs retain the observed checkout."
+}

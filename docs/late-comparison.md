@@ -20,3 +20,12 @@ whether people noticed, understood or valued that change requires the relevant
 observations. Likewise, the presence of a method does not establish that a model
 selects or applies it, or that the package improves its results. Those claims
 need comparable evidence from the relevant tasks, games and tools.
+
+The [2026-10-08 external comparison](research/2026-10-08/comparison.md) applies
+that standard to exact public methods, implementations, tests and terms. It
+records the useful components as well as counterexamples and deferred routes,
+and links the requirement/plan changes to the implemented consumers. Its
+[verification record](reviews/2026-10-08-comparison/README.md) distinguishes
+script tests, native lifecycle, paired model tasks and independent review. The
+supplied discovery report is not used as verified licensing or performance
+evidence.

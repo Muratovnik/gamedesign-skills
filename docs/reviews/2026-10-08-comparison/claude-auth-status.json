@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/tmp/game-design-native-e429285/tools/node_modules/.bin/claude",
+    "auth",
+    "status",
+    "--json"
+  ],
+  "status": "completed",
+  "exit_code": 1,
+  "elapsed_seconds": 2.586004557000706,
+  "redacted_status": {
+    "loggedIn": false,
+    "authMethod": "none",
+    "apiProvider": "firstParty"
+  },
+  "scope": "Read-only authentication status; no credential content retained and no model turn."
+}
