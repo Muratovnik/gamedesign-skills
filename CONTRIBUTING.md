@@ -23,6 +23,22 @@ results. These checks cannot demonstrate discovery or better design decisions.
 Any future model or human evaluation needs its own agreed inputs, isolation and
 resources; preparing evaluation materials does not authorize running them.
 
+The source checks used by CI are:
+
+```bash
+python -B tools/check.py
+python -B -m unittest discover -s tests -v
+python -B -m unittest discover -s examples/adaptation -p 'test_*.py' -v
+python -B -m unittest discover -s examples/analysis-lab -p 'test_*.py' -v
+python -B -m unittest discover -s examples/godot-episode -p 'test_*.py' -v
+python -B -m unittest discover -s examples/design-studies/harbour-of-echoes -p 'test_*.py' -v
+```
+
+Install `requirements-dev.txt` in an isolated Python environment first. The
+Godot command above checks the report contract; the native engine qualification
+has its own [runtime and command](examples/godot-episode/README.md). Release
+history, build and archive smoke checks are described in [releases](docs/releases.md).
+
 No installer, automatic download, network callback or global hook runs when a
 skill is read. Preserve foreign work, use new output paths, and do not infer
 authority to publish or change a live game from a design request. Local source

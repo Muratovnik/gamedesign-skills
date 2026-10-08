@@ -40,6 +40,7 @@ PUBLIC_ROOT_DIRECTORIES = frozenset({
     "tests",
     "tools",
 })
+PUBLIC_NESTED_FILES = frozenset({".agents/plugins/marketplace.json"})
 PUBLIC_GITHUB_FILES = frozenset({"relkit.pyz", "relkit.pyz.sha256"})
 PUBLIC_GITHUB_DIRECTORIES = frozenset({"workflows"})
 
@@ -143,18 +144,24 @@ def members(root: Path) -> list[Path]:
     root = _checked_root(root)
     files: list[Path] = []
 
-    for name in sorted(PUBLIC_ROOT_FILES):
-        path = root / name
-        try:
-            info = path.lstat()
-        except FileNotFoundError:
-            continue
-        if _is_reparse_point(info):
-            raise ValueError(f"Archive refuses symlinks or reparse points: {name}")
-        if not stat.S_ISREG(info.st_mode):
-            raise ValueError(f"Expected a regular public root file: {name}")
-        if not _excluded_file(name):
-            files.append(path)
+    for name in sorted(PUBLIC_ROOT_FILES | PUBLIC_NESTED_FILES):
+        path = root
+        parts = Path(name).parts
+        for index, part in enumerate(parts):
+            path = path / part
+            try:
+                info = path.lstat()
+            except FileNotFoundError:
+                break
+            if _is_reparse_point(info):
+                raise ValueError(f"Archive refuses symlinks or reparse points: {path.relative_to(root)}")
+            if index < len(parts) - 1:
+                if not stat.S_ISDIR(info.st_mode):
+                    raise ValueError(f"Expected a public source directory: {path.relative_to(root)}")
+            elif not stat.S_ISREG(info.st_mode):
+                raise ValueError(f"Expected a regular public source file: {name}")
+            elif not _excluded_file(part):
+                files.append(path)
 
     for name in sorted(PUBLIC_ROOT_DIRECTORIES):
         path = root / name
@@ -180,6 +187,8 @@ def _is_excluded_output(root: Path, destination: Path) -> bool:
     try:
         relative = destination.relative_to(root)
     except ValueError:
+        return False
+    if relative.as_posix() in PUBLIC_NESTED_FILES:
         return False
     return any(part.casefold() in EXCLUDED_DIRECTORIES for part in relative.parts[:-1])
 

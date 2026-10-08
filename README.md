@@ -65,8 +65,9 @@ goal and permissions. Have it read the applicable `SKILL.md` and references.
 This explicit source route does not require client registration.
 
 General methods are maintained separately in Assay. The shipped binding requires
-Assay **0.17.1**, commit `1dbb7435d5349cb00cb4a2c8ffb5e00a2d703c03`, obtained
-separately. The binding tool verifies the pinned source bytes before reading a method:
+Assay **0.17.2**, commit `94c517b0aac9ba2575086bf9aead1cc828aadb0d`, obtained
+separately. From the Game Design root, the binding tool verifies the pinned
+source bytes before reading a method:
 
 ```bash
 python3 skills/game-design/scripts/bind_assay.py --assay-root /absolute/assay --provider-state enabled --method evidence-research --read
@@ -77,10 +78,13 @@ state is a caller declaration, not proof of client permission. Required Assay
 methods depend on the operation; see the
 [consumer and Assay contract](skills/game-design/references/consumer-and-assay-contract.md).
 
-The root `plugin.json` and Claude `.claude-plugin/plugin.json` are source
-projections. Their presence and schema validity do not qualify client listing,
-automatic selection or lifecycle. See [installation and lifecycle](docs/installation.md)
-for current guidance and evidence boundaries.
+For native use, the generated Codex and Claude marketplaces identify the full
+bundle as `game-design@game-design-source`. Follow the
+[installation and lifecycle procedures](docs/installation.md) for the chosen
+client's commands, scope, conflicts, update and rollback. These procedures use
+native plugin managers; client/build qualification remains
+[pending](docs/compatibility.md#native-client-qualification). The direct source
+route above is available without registration.
 
 ## Quick start
 
@@ -113,7 +117,7 @@ It prepares source files; it does not publish or register the package.
 - [Environment contract](skills/game-design/references/environment-contracts.md): input → action → output → consumer and precision boundaries.
 - [Compatibility](docs/compatibility.md): dependencies and observed versus pending support.
 - [Design decisions](docs/decisions.md): rationale, evidence and reconsideration conditions.
-- [Comparison rationale](docs/late-comparison.md): how the package relates to existing approaches.
+- [Research and evidence limits](docs/late-comparison.md).
 - [Release preparation](docs/releases.md): build a local source archive.
 - [Russian quick start](docs/quickstart.ru.md).
 

@@ -121,12 +121,41 @@ class ReleaseBoundary(unittest.TestCase):
             self.assertEqual(a["sha256"], b["sha256"])
             with zipfile.ZipFile(first) as archive:
                 self.assertEqual(archive.namelist(), ["game-design/" + item["path"] for item in a["files"]])
+                self.assertIn("game-design/.agents/plugins/marketplace.json", archive.namelist())
+                self.assertIn("game-design/.claude-plugin/marketplace.json", archive.namelist())
                 self.assertFalse(any("evals" in Path(n).parts or ".git" in Path(n).parts for n in archive.namelist()))
                 archive.extractall(base / "relocated")
             copied = base / "relocated/game-design"
             self.assertEqual(check.inspect(copied)["status"], "pass")
             with self.assertRaises(FileExistsError):
                 package.build(ROOT, first)
+
+    def test_local_marketplaces_reject_incomplete_sources_and_automatic_install_policy(self):
+        with temporary_directory() as directory:
+            root = Path(directory)
+            paths = (".agents/plugins/marketplace.json", ".claude-plugin/marketplace.json")
+            originals = {path: (ROOT / path).read_bytes() for path in paths}
+            for path, content in originals.items():
+                target = root / path
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(content)
+            self.assertEqual(check.marketplace_errors(root, "game-design"), [])
+            cases = (
+                (paths[0], "source", {"source": "local", "path": "./skills/game-design"}, "Codex"),
+                (paths[1], "source", "./skills/game-design", "Claude"),
+                (paths[0], "policy", {"installation": "INSTALLED_BY_DEFAULT", "authentication": "ON_INSTALL"}, "Codex"),
+            )
+            for path, field, invalid, client in cases:
+                with self.subTest(client=client, field=field):
+                    value = json.loads(originals[path])
+                    value["plugins"][0][field] = invalid
+                    (root / path).write_text(json.dumps(value), encoding="utf-8")
+                    errors = check.marketplace_errors(root, "game-design")
+                    self.assertEqual(len(errors), 1, errors)
+                    self.assertIn(f"{client} local marketplace:", errors[0])
+                    self.assertIn(field, errors[0])
+                    (root / path).write_bytes(originals[path])
+            self.assertEqual(check.marketplace_errors(root, "game-design"), [])
 
     def test_missing_sibling_is_reported(self):
         with temporary_directory() as directory:
@@ -214,6 +243,30 @@ class SecurePackaging(unittest.TestCase):
             "SECURITY.md", "VERSION", "catalog.json", "docs/public.md", "relkit.toml",
             "tools/package.py",
         })
+
+    def test_only_generated_agents_marketplace_is_public(self):
+        root = self._source()
+        expected = ".agents/plugins/marketplace.json"
+        for relative in (expected, ".agents/plugins/state.json", ".agents/skills/foreign/SKILL.md"):
+            path = root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("fixture\n", encoding="utf-8")
+        actual = {path.relative_to(root).as_posix() for path in package.members(root)}
+        self.assertEqual({path for path in actual if path.startswith(".agents/")}, {expected})
+        with self.assertRaisesRegex(ValueError, "outside public source roots"):
+            package.validate_destination(root, root / expected)
+
+    def test_generated_agents_marketplace_refuses_linked_ancestors(self):
+        root = self._source()
+        outside = self.base / "foreign-agents"
+        (outside / "plugins").mkdir(parents=True)
+        (outside / "plugins/marketplace.json").write_text("foreign bytes\n", encoding="utf-8")
+        try:
+            (root / ".agents").symlink_to(outside, target_is_directory=True)
+        except OSError as exc:
+            self.skipTest(f"Cannot create the symlink fixture on this platform: {exc}")
+        with self.assertRaisesRegex(ValueError, "symlinks or reparse points"):
+            package.members(root)
 
     def test_reparse_points_in_public_roots_are_refused(self):
         root = self._source()

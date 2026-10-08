@@ -2,12 +2,12 @@
   "schema_version": 1,
   "assay": {
     "repository": "https://github.com/Muratovnik/assay",
-    "version": "0.17.1",
-    "commit": "1dbb7435d5349cb00cb4a2c8ffb5e00a2d703c03"
+    "version": "0.17.2",
+    "commit": "94c517b0aac9ba2575086bf9aead1cc828aadb0d"
   },
   "scope": "Identity files and selected owner runtime resources, excluding evaluator inputs. No native discovery claim.",
   "identity_files": {
-    "VERSION": "cd81ec19767ffb807bada6d48578a18d77a29adb394e09e9cdfcd5ea9eebb6a2",
+    "VERSION": "b9b88c3ba0e9b6e35ef2a4d02bc27a2c0206f1a1fcb8b8749abe90df8f9d0f0d",
     "catalog.toml": "2a14d8c4980b9dddfb2c13de343da5d20d0a2365a5c86f78be44da96ad691b76",
     "LICENSE": "822600c5a9621cfd9883fc36721f4cf3440ccba8063054b4e71df2496f75dfd6"
   },
@@ -194,29 +194,29 @@
       "skills/implementation-planning/references/scope-and-readiness.md": "ca82a1cfbe1010fb86984d015390bcfc23959cc148541665a02a890b0ddd5692"
     },
     "technical-writing": {
-      "skills/technical-writing/SKILL.md": "99272b313e867e602d3249b9aaf269f15d0e1f7a308610961363948390ccfd4c",
+      "skills/technical-writing/SKILL.md": "e9efe15e313b06723f10c0fe07cef5b46cc56353c3de6c1d41f491c99b8bd48e",
       "skills/technical-writing/agents/openai.yaml": "9588c999aeac3f671745b866fedcc4842bfb05ca5205be6a6ddad4162004ad0a",
       "skills/technical-writing/assets/readme-internal.template.md": "8ba947af8c03dc8a7f4cf022574df34483c929ef5ebdd4c2dd8a89aba3aecdf2",
       "skills/technical-writing/assets/readme-public.template.md": "e356a8e239f9194dd3aeef1a64a89bc54d33bea4cfa284926094333c2f2e1dfb",
       "skills/technical-writing/references/doc-types.md": "d2303d3a517d36c5669c02535a07e8c4bfbe4440a02743c72fb4da77e8c18c03",
-      "skills/technical-writing/references/document-design.md": "971a7f578672a342d956f62af3935c613665bef0c8cde81d53571472f9e29879",
+      "skills/technical-writing/references/document-design.md": "4be8b16cfb961296217d549044c241d286029aae1fc7fcd6dfa35a29dd8359c4",
       "skills/technical-writing/references/editorial-core.md": "59a2c34b25c829fda13775f2c544c6adb016735619ad26f501e833d29afcb48c",
       "skills/technical-writing/references/grounding.md": "779134c936c913264f3b728cae150c83768ce353ed09eba39410be0265631e08",
-      "skills/technical-writing/references/languages.md": "5b778b3f405ac5d50b4a710a5bf2514fe8d8062bd719065a4e547cfcdb4ddf1a",
+      "skills/technical-writing/references/languages.md": "bd9d33757d59f794062cabed9d78c5b66be5a99a709f423b67d9e961246b4ff8",
       "skills/technical-writing/references/preservation.md": "1c5f554fb12c81bf044ec77eb2cd15ecf4a0893262d564506ae8372e2542e153",
       "skills/technical-writing/references/reader-testing.md": "30f4ab16adb3b31559b8ef7aa42ac706777db469ded52423d619d7f724e398e4",
       "skills/technical-writing/references/readme-presentation.md": "9b3b00fa458e77759f3e6bc4e660d00bd7828f6b8a419f75ead5b78752778089",
       "skills/technical-writing/references/readme-profile.md": "1f55651ae061e09eda68354071b849ae27e2abcb69b330ffacee28678eef048c",
-      "skills/technical-writing/references/readme.md": "fd4e7e3d8ee313dfedfb3e10e90548269b4bc70cdd981ed96b723716aa33f43a",
+      "skills/technical-writing/references/readme.md": "e1269299f06c0a0e1c486a51b067b1969da736c24c967586aedfb7a881071af9",
       "skills/technical-writing/scripts/requirements.txt": "353b347ab05ddb1286772ac32acdc96a68ec28858f35741674526dc97cd5e30a",
       "skills/technical-writing/scripts/text_check.py": "a126882fd370366beea4c6f1fd30d0c5a31851add7f4b9ca7a9424b2a9fd3653"
     },
     "text-writing": {
-      "skills/text-writing/SKILL.md": "e7251fa79114c0e8fa6e2f49824a522fb595ea8eb4d2d427b81332df69346ce4",
-      "skills/text-writing/agents/openai.yaml": "8292d48e7190d40c73d6b3bbf1723c0d21c1725d69e88f09aac0c7c3f77fd0b7",
+      "skills/text-writing/SKILL.md": "b32c390c0254c7d271298b9425a7cf96f576fe7ec5c1d714edc694819543d3a5",
+      "skills/text-writing/agents/openai.yaml": "0b2ec74c9e1f7bb57e69f1ac1a26a7c3a7e561e9074980fffb178f01ac95e465",
       "skills/text-writing/references/author-profile.md": "f1ddcba55b21aa7f9b66005fcaedcc9ea4129d2eb499b62cc1f192c4ae4acae5",
       "skills/text-writing/references/composition.md": "8cb9eeaf6176978e24ac49a4c89311075b2a9ee488335c947062e8b4dd045742",
-      "skills/text-writing/references/editorial-core.md": "127113cb2ea9c491b9adfdc8b8fb14f855cc10c9a371fe6d79e977a7d5885ba2",
+      "skills/text-writing/references/editorial-core.md": "0de48def2e4e3b9540b8df53e1a6a29601e2eb4e018a879509e7e6f5d111a842",
       "skills/text-writing/references/en.md": "24c40f9104ca64a1ce88bf19bb56c35a131da3eeefe779ab1cbfd91e12075a48",
       "skills/text-writing/references/product-copy.md": "8da7c3b7cc7fcb2991d5b5f2e47b32ed8f4c92215cb1c21817ab248580d32942",
       "skills/text-writing/references/ru.md": "90460c8d1c02d29a80993b746c9e0fea95afa629ca60eb7c080948a460db6349",

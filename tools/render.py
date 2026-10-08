@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the two client projections from the release inventory; never install."""
+"""Render client manifests and marketplaces from inventory; never install."""
 from __future__ import annotations
 
 import argparse
@@ -19,11 +19,26 @@ def projections(root: Path = ROOT) -> dict[str, str]:
     }
     portable = {"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json", **identity,
                 "keywords": ["game-design", "gameplay", "narrative", "prototyping"]}
+    marketplace_name = f"{catalog['name']}-source"
+    codex_marketplace = {
+        "name": marketplace_name,
+        "interface": {"displayName": "Game Design source"},
+        "plugins": [{"name": catalog["name"], "source": {"source": "local", "path": "./"},
+                     "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+                     "category": "Productivity"}],
+    }
+    claude_marketplace = {
+        "name": marketplace_name, "owner": {"name": catalog["name"]},
+        "description": identity["description"], "metadata": {"version": version},
+        "plugins": [{"name": catalog["name"], "source": "./"}],
+    }
     # Both clients discover the conventional skills/ directory. Listing it again
     # in Claude's additive field would create an unnecessary second load path.
     return {
         "plugin.json": json.dumps(portable, indent=2) + "\n",
         ".claude-plugin/plugin.json": json.dumps(identity, indent=2) + "\n",
+        ".agents/plugins/marketplace.json": json.dumps(codex_marketplace, indent=2) + "\n",
+        ".claude-plugin/marketplace.json": json.dumps(claude_marketplace, indent=2) + "\n",
     }
 
 

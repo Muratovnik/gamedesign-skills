@@ -61,15 +61,19 @@ python3 examples/godot-episode/qualify.py assess --fixture examples/godot-episod
 
 `assess` distinguishes supported (0), refuted (1), and missing, invalid, stale or
 unavailable evidence (2). Verify the input digest, build and fixture identity,
-executed events, relevant clock and actual output. The point-ray/body mismatch,
+executed events, relevant clock and actual output. A save/reload claim needs the
+ordered operations and the state they preserved; an aggregate success flag is
+not that evidence. The point-ray/body mismatch,
 off-camera signal, unavailable input and blocked recovery controls show why a
 single successful execution is insufficient.
 
 For state work, migrate to a new path, inspect it, then build an actor view and
 ask the consumer for the next legal choice. Compare owner, resource, right,
 knowledge and history semantics as well as numbers. For telemetry, preserve the
-session denominator, event definitions, build/cohort filter and missingness; a
-missing completion event does not automatically mean failure.
+session denominator, event definitions, build/cohort filter and missingness.
+Check that the selected outcome is defined among that build's events before
+counting outcomes; an invalid definition is not a failed attempt. A missing
+completion event does not automatically mean failure.
 
 ## Human and material route
 

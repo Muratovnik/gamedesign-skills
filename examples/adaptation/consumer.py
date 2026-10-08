@@ -60,11 +60,14 @@ def view(artifact: dict, expected_revision: str, line: int) -> dict:
     if type(line) is not int or not 1 <= line <= len(lines):
         raise ValueError("The requested display line is unavailable")
     carousel = artifact["display"] == "one-line-carousel"
+    actions = ["next-line", "choose-direction"] if carousel else ["choose-direction"]
+    if artifact.get("aid") == "line-pins":
+        actions.insert(0, "pin-current-line" if carousel else "pin-line")
     return {"artifact_id": artifact["artifact_id"], "revision": artifact["revision"],
             "guide": artifact["guide"], "visible_lines": [lines[line - 1]] if carousel else lines,
             "current_line": line if carousel else None,
             "next_line": (line % len(lines)) + 1 if carousel else None,
-            "permitted_actions": ["pin-current-line", "next-line", "choose-direction"] if carousel else ["pin-line", "choose-direction"],
+            "permitted_actions": actions,
             "directions": artifact["directions"], "evidence_scope": "actual serialized text presentation, not a rendered device"}
 
 

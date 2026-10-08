@@ -72,6 +72,39 @@ def document(text: str) -> tuple[list[str], set[str]]:
     return links, anchors
 
 
+def marketplace_errors(root: Path, name: str) -> list[str]:
+    """Check the chosen one-bundle local route, not every native client format."""
+    errors = []
+    for relative, client in ((".agents/plugins/marketplace.json", "Codex"),
+                             (".claude-plugin/marketplace.json", "Claude")):
+        entry = {"type": "object", "required": ["name", "source"], "properties": {
+            "name": {"const": name},
+            "source": {"const": {"source": "local", "path": "./"} if client == "Codex" else "./"},
+        }}
+        schema = {"type": "object", "required": ["name", "plugins"], "properties": {
+            "name": {"const": f"{name}-source"},
+            "plugins": {"type": "array", "minItems": 1, "maxItems": 1, "items": entry},
+        }}
+        if client == "Codex":
+            entry["required"].extend(["policy", "category"])
+            entry["properties"].update({
+                "policy": {"const": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}},
+                "category": {"type": "string", "minLength": 1},
+            })
+        else:
+            schema["required"].append("owner")
+            schema["properties"]["owner"] = {
+                "type": "object", "required": ["name"],
+                "properties": {"name": {"type": "string", "minLength": 1}},
+            }
+        try:
+            value = json.loads((root / relative).read_text(encoding="utf-8"))
+            Draft202012Validator(schema).validate(value)
+        except Exception as exc:
+            errors.append(f"{client} local marketplace: {exc}")
+    return errors
+
+
 def inspect(root: Path) -> dict:
     errors, counters = [], {"skills": 0, "markdown_files": 0, "local_links": 0, "schemas": 0}
     catalog = json.loads((root / "catalog.json").read_text(encoding="utf-8"))
@@ -106,6 +139,7 @@ def inspect(root: Path) -> dict:
         path = root / relative
         if not path.exists() or path.read_bytes() != expected_text.encode("utf-8"):
             errors.append(f"Stale generated file: {relative}")
+    errors.extend(marketplace_errors(root, catalog["name"]))
     schemas = list((root / "skills").rglob("*.schema.json")) + [root / "tools/vendor/plugin.schema.json"]
     for path in schemas:
         try:

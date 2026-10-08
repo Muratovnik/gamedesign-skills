@@ -138,7 +138,8 @@ the next survey:
 
 ```bash
 "$PYTHON" examples/analysis-lab/lab.py recover \
-  --input "$OUT/save-v2.json" --operation-id recovery-1 --output "$OUT/recovered.json"
+  --input "$OUT/save-v2.json" --content examples/analysis-lab/fixtures/content.json \
+  --operation-id recovery-1 --output "$OUT/recovered.json"
 "$PYTHON" examples/analysis-lab/lab.py survey \
   --input "$OUT/recovered.json" --operation-id expedition-2 --output "$OUT/resumed.json"
 "$PYTHON" examples/analysis-lab/lab.py survey \
@@ -151,6 +152,18 @@ the same operation ID returns `already_applied` with identical game state;
 it does not award the two pieces twice. If the active winch holder or route
 contributor is missing, or the treasurer is absent, recovery is refuted without
 writing a changed save.
+
+Fresh recovery consumes the `salvage` repertoire supplied by `--content`; its
+default is this example's adjacent `fixtures/content.json`. It applies the same
+observer projection and eligibility rules as content selection: active status,
+known or public facts, unlocks, usable rights and prior history. Bo needs an
+eligible `operate-winch` item and Cy an eligible `chart-route` item. Knowing the
+winch procedure can come from Bo's private knowledge or from a public fact.
+A repertoire without either required action is missing evidence and returns 2;
+an inspected action whose requirements are unmet refutes recovery with exit 1.
+The printed interpretation records the actual content path and SHA-256 in
+`content_input`; the final output receipt identifies the input save separately.
+Changing the repertoire is therefore an explicit, recorded input change.
 
 **Local operation identity:** an operation
 ID is nonempty and contains no `:`. This example reserves that separator for
@@ -168,6 +181,9 @@ completed, later changes to stock, source yield, generator condition or active
 participants do not undo that history. Replaying it preserves the *current*
 state without paying again or repairing a later loss. A fresh operation still
 checks the current source and participant conditions.
+An already completed recovery is recognized before reading current content.
+That replay reports only its historical operation ID, reads no repertoire and
+does not claim a new eligibility assessment or content hash.
 
 The related [systems paper study](../systems-studies/README.md) deliberately has
 a different revision: a working generator adds a two-piece bonus to a base
@@ -224,6 +240,15 @@ deliberately inaccessible archive can both be legitimate designs; the local
 test asks what the declared contract permits.
 
 ## Telemetry by build, cohort and missingness
+
+Before importing rows or creating an output database, the consumer checks that
+every build declares its outcome event and the query's `action_accepted` and
+`episode_end` events in `allowed_events`. A definition that refers to an
+undeclared event returns 2, so a dictionary typo cannot silently convert the
+recorded successful sessions into measured failures.
+Other declared outcome names are valid. A correctly declared outcome that was
+not observed can still be a game failure when the completed capture supports it;
+missing capture remains unknown.
 
 ```bash
 "$PYTHON" examples/analysis-lab/lab.py telemetry \

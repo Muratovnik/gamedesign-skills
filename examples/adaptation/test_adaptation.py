@@ -50,6 +50,18 @@ class AdaptationContract(unittest.TestCase):
         self.assertEqual(result["next_line"], 3)
         self.assertEqual(result["guide"], self.target["guide"])
 
+    def test_optional_pin_aid_agrees_between_presented_and_executable_actions(self):
+        for filename, pin_action in (("east-gate-ru.json", "pin-current-line"), ("east-gate-en.json", "pin-line")):
+            with self.subTest(artifact=filename):
+                artifact = json.loads((ROOT / "fixtures" / filename).read_text(encoding="utf-8"))
+                self.assertIn(pin_action, view(artifact, artifact["revision"], 1)["permitted_actions"])
+                self.assertEqual(len(play(artifact, artifact["revision"], [1], "east")["notebook"]), 1)
+                del artifact["aid"]
+                self.assertNotIn(pin_action, view(artifact, artifact["revision"], 1)["permitted_actions"])
+                self.assertEqual(play(artifact, artifact["revision"], [], "east")["gate"], "open")
+                with self.assertRaisesRegex(ValueError, "[Pp]in"):
+                    play(artifact, artifact["revision"], [1], "east")
+
     def test_later_consumer_uses_and_spends_token(self):
         state = play(self.target, "east-gate-ru-2", [], "east")
         result = enter_ferry(self.target, "east-gate-ru-2", state)

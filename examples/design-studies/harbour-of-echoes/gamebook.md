@@ -98,8 +98,10 @@ not. The facilitator must not replace past evidence with a current-state label.
 
 ### Terrace: evidence T and work
 
-Read: “The sole bridge out of the harbour has a gate register. Cloth waits on a
-raised rack beside the dye bowls.”
+The rack starts lowered (`rack_raised=false`). Read: “The sole bridge out of the
+harbour has a gate register. Cloth waits on a lowered rack beside the dye bowls.”
+When `rack_raised=true`, use “Cloth waits on the raised rack beside the dye bowls”
+for the second sentence, including on later visits.
 
 Give card T: **Oren crossed outward at bell 2. The sole bridge remained shut
 until bell 4, so he could not be at the pump at bell 3.** The gate record is
@@ -119,7 +121,7 @@ After repair, fresh water supplies mixing. The worker describes the earlier
 cost: “We had no stored water” or “The tank bought us time,” as appropriate.
 Used reserve units remain used; the repair does not rewrite work history.
 The participant can raise the cloth rack in every version, setting
-`rack_raised=true`, which changes its description on return.
+`rack_raised=true`. Raising it again leaves the state and description unchanged.
 
 ### Tower: evidence V or a limited account
 
@@ -187,7 +189,7 @@ occurs until an option is committed.
 | Name Mira or Oren | “I will record your accusation and your name as its source. The person you name may answer.” Set `record_mode=named`, `claim` to that name; clerk gains the submitted testimony. |
 | Attribute it to an automatic pulse | “I will record that account of the mechanism, under your name.” Set `record_mode=named`, `claim=automatic`; no person is accused. |
 | Describe the diversion without assigning its cause | “The event and the repair are public. An accusation is not.” Set `record_mode=anonymous`, `claim=none`; clerk receives no operator identity from this act. |
-| Decline to file | “Then the page stays blank. The repair still needs hands.” Set `record_mode=unfiled`, `claim=none`. |
+| Decline to file | “Then the page stays blank.” Set `record_mode=unfiled`, `claim=none`. |
 
 Every committed option sets `petition_closed=true`. Named and anonymous reports
 produce one receipt; refusal produces none. A later visit discusses the existing

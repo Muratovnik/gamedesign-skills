@@ -2,63 +2,25 @@
 """Project one permitted observer view, then choose content using only that view."""
 
 import argparse
-from datetime import datetime
 import json
 from pathlib import Path
 import sys
 
-from state import SKILL, validate_state
+from content_rules import rejection_reasons, validate_content
+from state import SKILL, observer_view
 from validate_artifact import digest, read_json, validate
 from jsonschema.exceptions import SchemaError, ValidationError
 
 
-def observer_view(state, actor_id):
-    validate_state(state)
-    if state["schema_version"] != 2:
-        raise ValueError("The content consumer requires migrated schema 2.")
-    matches = [a for a in state["actors"] if a["id"] == actor_id]
-    if len(matches) != 1:
-        raise ValueError("Observer identity is missing or ambiguous.")
-    actor = matches[0]
-    known = set(actor["known_fact_ids"]) | {f["id"] for f in state["facts"] if f["public"]}
-    facts = {f["id"]: f["value"] for f in state["facts"] if f["id"] in known}
-    right_kinds = []
-    now = datetime.fromisoformat(state["clock_utc"])
-    if actor["status"] == "active":
-        for right in state["rights"]:
-            delegated = any(d["right_id"] == right["id"] and d["from_id"] == right["owner_id"]
-                            and d["to_id"] == actor_id and d["accepted"] for d in state["delegations"])
-            if (right["owner_id"] == actor_id or delegated) and datetime.fromisoformat(right["expires_at"]) > now:
-                right_kinds.append(right["kind"])
-    return {"schema_version": 1, "game_id": state["game_id"], "build_id": state["build_id"],
-            "observer_id": actor_id, "active": actor["status"] == "active", "clock_utc": state["clock_utc"],
-            "facts": facts, "unlock_ids": actor["unlock_ids"], "right_kinds": sorted(set(right_kinds)),
-            "can_spend_crew_scrap": actor["status"] == "active" and state["roles"]["treasurer_id"] == actor_id,
-            "scrap": {a["owner_id"]: a["amount"] for a in state["accounts"] if a["owner_id"] in (actor_id, state["crew_id"])},
-            "history_ids": [event["id"] for event in state["history"]], "generator_operational": state["world"]["generator"]}
-
-
 def select_content(view, content, stage):
     validate(view, SKILL / "assets" / "observer-view.schema.json")
-    validate(content, SKILL / "assets" / "content.schema.json")
-    if view["game_id"] != content["game_id"]:
-        raise ValueError("Content and observer belong to different games.")
-    if len({item["id"] for item in content["items"]}) != len(content["items"]):
-        raise ValueError("Content identities are duplicated.")
+    validate_content(content, view["game_id"])
     selected = []
     rejected = []
     for item in content["items"]:
         if item["stage"] != stage:
             continue
-        reasons = []
-        if not view["active"]:
-            reasons.append("observer_away")
-        for key, available in (("required_facts", view["facts"]), ("required_unlocks", view["unlock_ids"]),
-                               ("required_rights", view["right_kinds"])):
-            if not set(item[key]) <= set(available):
-                reasons.append(key)
-        if set(item["forbidden_history"]) & set(view["history_ids"]):
-            reasons.append("already_emitted_history")
+        reasons = rejection_reasons(view, item)
         if reasons:
             rejected.append({"id": item["id"], "reasons": reasons})
         else:
