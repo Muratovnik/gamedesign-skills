@@ -17,7 +17,15 @@ hosted_ci = "public-only"
 # The binder's negative test supplies an escaping resource path and asserts its
 # rejection. Structural path rules do not apply to this synthetic fixture;
 # independent secret scanning and non-excludable owner rules still apply.
-exclude = ["tests/test_distribution.py"]
+# The requested review preserves raw, synthetic observations, including SQLite
+# output and absolute paths from disposable fixtures. These exact evidence
+# archives are records, not deployed files or runtime path configuration.
+# Keep secret scanning and non-excludable owner checks enabled for them.
+exclude = [
+  "tests/test_distribution.py",
+  "docs/reviews/2026-10-08/evidence/baseline-evidence.zip",
+  "docs/reviews/2026-10-08/evidence/correction-evidence.zip",
+]
 
 [changelog]
 profile = "strict"
@@ -37,6 +45,7 @@ checks = [
   ["{python}", "-B", "-m", "unittest", "discover", "-s", "examples/adaptation", "-p", "test_*.py", "-v"],
   ["{python}", "-B", "-m", "unittest", "discover", "-s", "examples/analysis-lab", "-p", "test_*.py", "-v"],
   ["{python}", "-B", "-m", "unittest", "discover", "-s", "examples/godot-episode", "-p", "test_*.py", "-v"],
+  ["{python}", "-B", "-m", "unittest", "discover", "-s", "examples/design-studies/harbour-of-echoes", "-p", "test_*.py", "-v"],
 ]
 build = [["{python}", "-B", "tools/release.py", "build", "--output", "{assets}", "--version", "{version}"]]
 smoke = [["{python}", "-B", "tools/smoke.py", "--assets", "{assets}", "--version", "{version}", "--temp", "{temp}/gamedesign-smoke"]]

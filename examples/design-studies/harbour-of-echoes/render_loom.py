@@ -25,17 +25,23 @@ def sha256(path):
 
 def read_score(path):
     score = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(score, dict):
+        raise ValueError("The Loom score must be a JSON object")
     if score.get("artifact_id") != "sound-and-light-loom":
         raise ValueError("Expected the sound-and-light-loom score")
-    if score.get("beat_seconds") != 1:
+    if type(score.get("beat_seconds")) not in (int, float) or score["beat_seconds"] != 1:
         raise ValueError("This realization uses one-second beats")
+    if not isinstance(score.get("revision"), str) or not score["revision"].strip():
+        raise ValueError("The score needs a nonempty revision before rendering")
     phrases = score.get("phrases", [])
+    if not isinstance(phrases, list) or not all(isinstance(phrase, dict) for phrase in phrases):
+        raise ValueError("Phrases must be an array of objects")
     if [phrase.get("id") for phrase in phrases] != ["phrase-a", "phrase-b"]:
         raise ValueError("Expected both published phrases, in A/B order")
     for phrase in phrases:
         sections = phrase.get("sections", [])
-        if not sections:
-            raise ValueError(f"Empty phrase: {phrase['id']}")
+        if not isinstance(sections, list) or not sections or not all(isinstance(section, dict) for section in sections):
+            raise ValueError(f"Phrase sections must be a nonempty array of objects: {phrase['id']}")
         for section in sections:
             if type(section.get("beats")) is not int or section["beats"] < 1:
                 raise ValueError("Each section needs a positive integer beat count")

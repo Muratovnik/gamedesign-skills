@@ -8,7 +8,7 @@ import sqlite3
 import sys
 
 from economy import resource_path, waiting_distribution
-from state import SKILL, migrate, recover, resumed_survey, validate_state
+from state import DEFAULT_CONTENT, SKILL, migrate, recover, resumed_survey, validate_state
 from telemetry import query
 from validate_artifact import digest, read_json, validate
 from jsonschema.exceptions import SchemaError, ValidationError
@@ -29,6 +29,9 @@ def main():
         sub.add_argument("--output", type=Path, required=True)
         if name in ("recover", "survey"):
             sub.add_argument("--operation-id", required=True)
+        if name == "recover":
+            sub.add_argument("--content", type=Path, default=DEFAULT_CONTENT,
+                             help="Recovery action repertoire (default: the adjacent fixtures/content.json)")
     wait = subs.add_parser("waiting")
     wait.add_argument("--p", type=float, required=True)
     wait.add_argument("--horizon", type=int, default=30)
@@ -59,7 +62,8 @@ def main():
                 result = migrate(source)
                 code = 0
             else:
-                result, interpretation = (recover if args.command == "recover" else resumed_survey)(source, args.operation_id)
+                result, interpretation = (recover(source, args.operation_id, args.content)
+                    if args.command == "recover" else resumed_survey(source, args.operation_id))
                 if interpretation["status"] == "refuted":
                     print(json.dumps(interpretation))
                     return 1

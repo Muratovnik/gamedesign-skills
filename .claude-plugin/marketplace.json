@@ -1,0 +1,16 @@
+{
+  "name": "game-design-source",
+  "owner": {
+    "name": "game-design"
+  },
+  "description": "Seven composable game design methods, original playable examples and explicit artifact adapters.",
+  "metadata": {
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "game-design",
+      "source": "./"
+    }
+  ]
+}

@@ -75,7 +75,7 @@ petition. On return, repeat the missing introduction if false; otherwise use
 | --- | --- | --- |
 | “Name Mira as the operator.” | “I will write that you name Mira. She will be allowed to answer.” | `record_mode=named`, `claim=Mira`; council receives this testimony, not automatic proof |
 | “Describe the diversion without naming a person.” | “Then the damage and the work are public. An accusation is not.” | `record_mode=anonymous`; council learns the reported event but no operator identity from this act |
-| “I will not file a statement.” | “The page stays blank. The repair still needs hands.” | `record_mode=unfiled`; refusal is carried forward |
+| “I will not file a statement.” | “The page stays blank.” | `record_mode=unfiled`; refusal is carried forward |
 
 Each choice sets `petition_closed=true`. The first two produce one filing
 receipt; refusal produces none. Subsequent visits permit discussion of the

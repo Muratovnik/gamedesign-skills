@@ -1,0 +1,34 @@
+{
+  "repository": "Muratovnik/gamedesign-skills",
+  "mechanism": "Authorized GitHub connector Git data API after local Git transport lacked authentication",
+  "local_push": {
+    "argv": [
+      "git",
+      "push",
+      "--set-upstream",
+      "origin",
+      "review/game-design-correction-2026-10-08"
+    ],
+    "environment": {
+      "GIT_TERMINAL_PROMPT": "0"
+    },
+    "exit_code": 128,
+    "stderr": "fatal: could not read Username for 'https://github.com': terminal prompts disabled\n"
+  },
+  "mapping": [
+    {
+      "local_commit": "f252043c28fb13905b456a9d7ab9bb7ab7d0f740",
+      "published_commit": "a4e2b4c8756755c7955d0d826c157e38531eedf2",
+      "tree": "01bfefab9027ec171f8f8793e3dbfb0f0e0bd899",
+      "identical_tree": true
+    },
+    {
+      "local_commit": "5f3d0951b18dd5c87a5e077c8560d555a1c03c2d",
+      "published_commit": "7b385469b95ffe40562e7161ea9c3cab7bec2b94",
+      "tree": "cd84ab3cd583ad2ceec9860da79d907de5d7f8c1",
+      "identical_tree": true
+    }
+  ],
+  "raw_evidence_not_rewritten": true,
+  "model_trials": 0
+}

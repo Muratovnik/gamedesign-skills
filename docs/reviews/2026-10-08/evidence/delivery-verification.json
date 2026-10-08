@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "implementation_commit": "5f3d0951b18dd5c87a5e077c8560d555a1c03c2d",
+  "verified_index_tree_before_this_receipt": "3ce742c363e4359c9ba883d50a4e0913fe22bd10",
+  "scope": "The own-baseline and correction evidence additions before this self-contained receipt. Runtime bytes are unchanged from the implementation commit. PR CI is not yet run; later remote results are separate.",
+  "checks": [
+    {
+      "name": "baseline-doc-structure",
+      "command_record": {
+        "argv": [
+          "/workspace/scratch/c4106697b2e8/review-work/venv/bin/python",
+          "-B",
+          "tools/check.py"
+        ],
+        "cwd": "/workspace/scratch/c4106697b2e8/gamedesign-skills",
+        "started_utc": "2026-10-08T14:03:02.552856+00:00",
+        "model_trials": 0,
+        "exit_code": 0,
+        "elapsed_seconds": 2.782
+      },
+      "stdout": "{\n  \"status\": \"pass\",\n  \"scope\": \"static structure only\",\n  \"counts\": {\n    \"skills\": 7,\n    \"markdown_files\": 54,\n    \"local_links\": 343,\n    \"schemas\": 10\n  },\n  \"errors\": [],\n  \"native_discovery\": \"not_observed\",\n  \"behavioral_quality\": \"not_measured\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "baseline-staged-audit",
+      "command_record": {
+        "argv": [
+          "/workspace/scratch/c4106697b2e8/review-work/venv/bin/python",
+          ".github/relkit.pyz",
+          "audit",
+          "--staged",
+          "--json"
+        ],
+        "cwd": "/workspace/scratch/c4106697b2e8/gamedesign-skills",
+        "started_utc": "2026-10-08T14:03:19.239946+00:00",
+        "model_trials": 0,
+        "exit_code": 0,
+        "elapsed_seconds": 11.897
+      },
+      "stdout": "{\"schema_version\": 1, \"tool_version\": \"0.31.0\", \"command\": [\"audit\"], \"root\": \"/workspace/scratch/c4106697b2e8/gamedesign-skills\", \"status\": \"ok\", \"exit_code\": 0, \"data\": {\"scope\": \"staged\", \"engines\": {\"betterleaks\": 0, \"lychee\": 0}, \"exposure\": {\"new\": [], \"baselined\": [], \"stale\": [], \"unreadable\": [], \"excluded\": [\"docs/reviews/2026-10-08/evidence/baseline-evidence.zip\", \"docs/reviews/2026-10-08/evidence/correction-evidence.zip\", \"tests/test_distribution.py\"]}}, \"errors\": [], \"warnings\": [], \"next_action\": null}\n",
+      "stderr": "4:03PM INF scanned ~2674688 bytes (2.67 MB) in 3.73s\n4:03PM INF no leaks found\nrelkit: retained unowned or changed temporary files: /workspace/scratch/c4106697b2e8/gamedesign-skills/.git/relkit/tmp/engine-upya2x0o\n\ud83d\udd0d 427 Total (in 35ms) \ud83d\udd17 208 Unique \u2705 343 OK \ud83d\udeab 0 Errors \ud83d\udc7b 84 Excluded\n\nrelkit audit: passed\n"
+    }
+  ],
+  "model_trials": 0
+}

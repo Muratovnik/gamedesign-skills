@@ -165,7 +165,8 @@
           },
           "warning_tick": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 1,
+            "description": "The first automatic physics step is tick 1; qualification also requires warning_tick <= resolve_tick <= stop_tick."
           },
           "resolve_tick": {
             "type": "integer",

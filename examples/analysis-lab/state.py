@@ -5,9 +5,12 @@ from datetime import datetime
 from pathlib import Path
 import sys
 
+from content_rules import rejection_reasons, validate_content
+
 SKILL = Path(__file__).resolve().parents[2] / "skills" / "game-design"
+DEFAULT_CONTENT = Path(__file__).resolve().parent / "fixtures" / "content.json"
 sys.path.insert(0, str(SKILL / "scripts"))
-from validate_artifact import validate  # noqa: E402
+from validate_artifact import digest, read_json, validate  # noqa: E402
 
 
 def unique_ids(values, label):
@@ -106,7 +109,33 @@ def operation_history(state, operation_id):
     return {event["id"]: event for event in state["history"]}
 
 
-def recover(state, operation_id):
+def observer_view(state, actor_id):
+    validate_state(state)
+    if state["schema_version"] != 2:
+        raise ValueError("The content consumer requires migrated schema 2.")
+    matches = [a for a in state["actors"] if a["id"] == actor_id]
+    if len(matches) != 1:
+        raise ValueError("Observer identity is missing or ambiguous.")
+    actor = matches[0]
+    known = set(actor["known_fact_ids"]) | {f["id"] for f in state["facts"] if f["public"]}
+    facts = {f["id"]: f["value"] for f in state["facts"] if f["id"] in known}
+    right_kinds = []
+    now = datetime.fromisoformat(state["clock_utc"])
+    if actor["status"] == "active":
+        for right in state["rights"]:
+            delegated = any(d["right_id"] == right["id"] and d["from_id"] == right["owner_id"]
+                            and d["to_id"] == actor_id and d["accepted"] for d in state["delegations"])
+            if (right["owner_id"] == actor_id or delegated) and datetime.fromisoformat(right["expires_at"]) > now:
+                right_kinds.append(right["kind"])
+    return {"schema_version": 1, "game_id": state["game_id"], "build_id": state["build_id"],
+            "observer_id": actor_id, "active": actor["status"] == "active", "clock_utc": state["clock_utc"],
+            "facts": facts, "unlock_ids": actor["unlock_ids"], "right_kinds": sorted(set(right_kinds)),
+            "can_spend_crew_scrap": actor["status"] == "active" and state["roles"]["treasurer_id"] == actor_id,
+            "scrap": {a["owner_id"]: a["amount"] for a in state["accounts"] if a["owner_id"] in (actor_id, state["crew_id"])},
+            "history_ids": [event["id"] for event in state["history"]], "generator_operational": state["world"]["generator"]}
+
+
+def recover(state, operation_id, content_path=DEFAULT_CONTENT):
     validate_state(state)
     if state["schema_version"] != 2:
         raise ValueError("Recovery consumer requires schema 2.")
@@ -122,22 +151,30 @@ def recover(state, operation_id):
             raise ValueError("Recovery history is incomplete or conflicts with the requested operation.")
         # Historical completion survives later loss, changed stock and a new treasurer.
         return deepcopy(state), {"status": "already_applied", "operation_id": operation_id}
+    content_path = Path(content_path).resolve()
+    content = validate_content(read_json(content_path), state["game_id"])
+    evidence = {"content_input": {"path": str(content_path), "sha256": digest(content_path)}}
+    contributions = {}
+    for actor_id, action in (("bo", "operate-winch"), ("cy", "chart-route")):
+        items = [item for item in content["items"] if item["stage"] == "salvage" and item["action"] == action]
+        if not items:
+            raise ValueError("Recovery repertoire has no salvage action: " + action)
+        contributions[actor_id] = items
     changed = deepcopy(state)
     if changed["world"]["generator"]:
-        return state, {"status": "refuted", "reason": "generator_already_operational"}
+        return state, {"status": "refuted", "reason": "generator_already_operational", **evidence}
     actors = {actor["id"]: actor for actor in changed["actors"]}
-    if ("bo" not in actors or actors["bo"]["status"] != "active" or "winch" not in actors["bo"]["unlock_ids"]
-            or "cy" not in actors or actors["cy"]["status"] != "active"
-            or "survey-map" not in {f["id"] for f in changed["facts"] if f["public"]} | set(actors["cy"]["known_fact_ids"])):
-        return state, {"status": "refuted", "reason": "missing_active_winch_or_route_contributor"}
+    for actor_id, items in contributions.items():
+        if actor_id not in actors or not any(not rejection_reasons(observer_view(changed, actor_id), item) for item in items):
+            return state, {"status": "refuted", "reason": "missing_active_winch_or_route_contributor", **evidence}
     treasurer = changed["roles"]["treasurer_id"]
     if actors[treasurer]["status"] != "active":
-        return state, {"status": "refuted", "reason": "no_active_authorized_spender"}
+        return state, {"status": "refuted", "reason": "no_active_authorized_spender", **evidence}
     account = crew_account(changed)
     before = account["amount"]
     yield_scrap = changed["world"]["survey_yield_scrap"]
     if before + yield_scrap < 6:
-        return state, {"status": "refuted", "reason": "survey_does_not_fund_repair"}
+        return state, {"status": "refuted", "reason": "survey_does_not_fund_repair", **evidence}
     account["amount"] += yield_scrap
     account["amount"] -= 6
     changed["world"]["generator"] = True
@@ -147,7 +184,7 @@ def recover(state, operation_id):
     validate_state(changed)
     return changed, {"status": "supported", "operation_id": operation_id, "scrap_before": before,
                      "survey_source": yield_scrap, "repair_sink": 6, "scrap_after": account["amount"],
-                     "operator": "bo", "route_decider": "cy", "spender": treasurer}
+                     "operator": "bo", "route_decider": "cy", "spender": treasurer, **evidence}
 
 
 def resumed_survey(state, operation_id):

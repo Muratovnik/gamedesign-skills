@@ -31,6 +31,7 @@ jobs:
       - run: python -B -m unittest discover -s examples/adaptation -p 'test_*.py' -v
       - run: python -B -m unittest discover -s examples/analysis-lab -p 'test_*.py' -v
       - run: python -B -m unittest discover -s examples/godot-episode -p 'test_*.py' -v
+      - run: python -B -m unittest discover -s examples/design-studies/harbour-of-echoes -p 'test_*.py' -v
       - run: python .github/relkit.pyz audit --history
       - run: python -B tools/release.py build --output dist --version 0.1.0
       - run: python -B tools/smoke.py --assets dist --version 0.1.0 --temp tmp/release-smoke

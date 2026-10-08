@@ -26,6 +26,10 @@ def query(sessions_path, events_path, dictionary_path, build_id, cohort, databas
     dictionary = validate(read_json(dictionary_path), SKILL / "assets" / "telemetry-dictionary.schema.json")
     if build_id not in dictionary["builds"]:
         raise ValueError("No outcome definition exists for this build.")
+    for defined_build, meaning in dictionary["builds"].items():
+        required = {meaning["outcome_event"], "action_accepted", "episode_end"}
+        if not required <= set(meaning["allowed_events"]):
+            raise ValueError("Outcome, attempt and capture-end events must be allowed for build " + defined_build)
     definition = dictionary["builds"][build_id]
     sessions = csv_rows(sessions_path, ["session_id", "actor_id", "game_id", "build_id", "cohort", "capture_complete", "expected_resolution_tick"])
     events = csv_rows(events_path, ["event_id", "session_id", "build_id", "sequence_no", "run_tick", "event_name"])

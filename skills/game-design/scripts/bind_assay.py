@@ -35,7 +35,7 @@ def checked_bytes(root: Path, relative: str, expected: str) -> bytes:
         data = path.read_bytes()
     except PermissionError as exc:
         raise BindingFailure("permission_denied", relative) from exc
-    except (FileNotFoundError, IsADirectoryError, NotADirectoryError) as exc:
+    except (FileNotFoundError, IsADirectoryError, NotADirectoryError, RuntimeError) as exc:
         raise BindingFailure("resource_unreadable", relative) from exc
     if hashlib.sha256(data).hexdigest() != expected:
         raise BindingFailure("resource_changed", relative, 1)

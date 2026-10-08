@@ -33,6 +33,9 @@ and allowed actions. Request that next ID to browse the next line; the source
 version emits its four lines together. These are actual serialized text views,
 not a rendered mobile interface. The default play command applies the supplied
 pin and choice sequence. It does not claim that a human actually read the views.
+Pin actions appear in the view only when the content declares `aid: line-pins`.
+Without that optional aid, both layouts still support direction choice and the
+carousel still supports navigation; submitting a pin action is invalid.
 `enter-ferry` reopens the saved result in another process, verifies the content
 digest and direction/token, and returns a consumed-token state. Reusing that
 post-voyage state is rejected.

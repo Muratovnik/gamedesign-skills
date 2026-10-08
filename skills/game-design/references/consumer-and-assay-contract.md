@@ -6,8 +6,8 @@ second general research or engineering workflow.
 
 ## Bind an actual Assay source
 
-The initial method dependency is the separately obtained complete Assay 0.17.1
-collection at commit `1dbb7435d5349cb00cb4a2c8ffb5e00a2d703c03`.
+The current method dependency is the separately obtained complete Assay 0.17.2
+collection at commit `94c517b0aac9ba2575086bf9aead1cc828aadb0d`.
 The consumer supplies the permitted Game Design and Assay roots. Do not infer a
 cache path, scan the machine for a provider, download mutable main as a silent
 substitute or bypass a deliberately disabled provider.
@@ -62,9 +62,9 @@ reason. These are this package's messages, not claimed native Assay API codes.
 Exit 0 means selected release resources were verified; exit 1 refutes the
 compatibility condition; exit 2 means missing/invalid/unavailable evidence.
 
-Examples: missing root/owner, disabled provider, unreadable resource and invalid
-resource path are unavailable; changed required bytes or an unsupported source
-revision are incompatible. Neither condition is repaired by guessing a matching
+Examples: missing root/owner, disabled provider, unreadable resource (including a
+cyclic symbolic link) and invalid resource path are unavailable; changed required
+bytes or an unsupported source revision are incompatible. Neither condition is repaired by guessing a matching
 skill name. A native provider is an alternative only after its listing, qualified
 name, exact identity and actual load have been established. An ambiguous duplicate
 provider remains unresolved. No native automatic discovery is asserted here.
@@ -95,8 +95,8 @@ states with different consumers.
 ## Source basis
 
 This keeps the consumer contract aligned with Assay's
-[composition contract](https://github.com/Muratovnik/assay/blob/1dbb7435d5349cb00cb4a2c8ffb5e00a2d703c03/docs/explanation/skill-composition.md)
-defines optional-peer metadata and distinguishes reading from execution. The
+[composition contract](https://github.com/Muratovnik/assay/blob/94c517b0aac9ba2575086bf9aead1cc828aadb0d/docs/explanation/skill-composition.md),
+which defines optional-peer metadata and distinguishes reading from execution. The
 [Agent Skills specification](https://agentskills.io/specification) defines the
 skill format, not cross-package installation. The explicit hash-bound route is
 local integration glue; it is not a new locator, installer or permission system.

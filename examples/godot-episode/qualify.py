@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import math
 import os
 from pathlib import Path
 import platform
@@ -31,9 +32,26 @@ def source_identity():
     return {name: digest(HERE / name) for name in SOURCES}
 
 
-def run(godot: Path, fixture_path: Path, output: Path):
+def read_fixture(path):
+    fixture = validate(read_json(path), SKILL / "assets" / "episode.schema.json")
+    threats = fixture["threats"]
+    if len({threat["id"] for threat in threats}) != len(threats):
+        raise ValueError("Threat identities must be distinct.")
+    if any(not threat["warning_tick"] <= threat["resolve_tick"] <= fixture["stop_tick"] for threat in threats):
+        raise ValueError("Each warning must occur no later than its resolution, within the run horizon.")
+    return fixture
+
+
+def validate_timeout(seconds):
+    if type(seconds) not in (int, float) or not math.isfinite(seconds) or seconds <= 0:
+        raise ValueError("The phase timeout must be a finite positive number of seconds.")
+    return seconds
+
+
+def run(godot: Path, fixture_path: Path, output: Path, timeout_seconds=30):
+    validate_timeout(timeout_seconds)
     fixture_path = fixture_path.resolve()
-    validate(read_json(fixture_path), SKILL / "assets" / "episode.schema.json")
+    read_fixture(fixture_path)
     godot = godot.resolve(strict=True)
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
@@ -56,6 +74,7 @@ def run(godot: Path, fixture_path: Path, output: Path):
                "qualification_source_sha256": digest(Path(__file__)),
                "schema_sha256": digest(SKILL / "assets" / "episode.schema.json"),
                "report_schema_sha256": digest(REPORT_SCHEMA),
+               "timeout_seconds": timeout_seconds,
                "jsonschema_version": version("jsonschema")}
     commands = [
         [str(godot), "--version"],
@@ -65,7 +84,7 @@ def run(godot: Path, fixture_path: Path, output: Path):
     ]
     for phase, command in zip(("version", "native-import", "native-execution"), commands):
         try:
-            result = subprocess.run(command, capture_output=True, text=True, env=env, timeout=30, check=False)
+            result = subprocess.run(command, capture_output=True, text=True, env=env, timeout=timeout_seconds, check=False)
         except (OSError, subprocess.TimeoutExpired) as error:
             if isinstance(error, subprocess.TimeoutExpired):
                 for channel in ("stdout", "stderr"):
@@ -101,11 +120,104 @@ def run(godot: Path, fixture_path: Path, output: Path):
     return 0 if receipt["status"] == "consumer_executed" else 2
 
 
+def operation_evidence(fixture, report):
+    """Check report completeness/consistency; this does not authenticate an engine run."""
+    events = report["events"]
+    if [event["sequence"] for event in events] != list(range(len(events))):
+        raise ValueError("Event sequence is incomplete or out of order.")
+    if any(a["run_tick"] > b["run_tick"] for a, b in zip(events, events[1:])):
+        raise ValueError("Event run ticks are out of order.")
+    loaded = [event for event in events if event["kind"] == "fixture_loaded"]
+    if (len(loaded) != 1 or loaded[0]["sequence"] != 0 or loaded[0]["run_tick"] != 0
+            or loaded[0]["detail"]["case_id"] != fixture["case_id"]
+            or loaded[0]["detail"]["fixture_sha256"] != report["fixture_sha256"]):
+        raise ValueError("The initial fixture observation disagrees with the report identity.")
+    injected = [event for event in events if event["kind"] == "input_injected"]
+    received = [event for event in events if event["kind"] == "input_received"]
+    expected = [(item["tick"], item["action"]) for item in sorted(fixture["input_schedule"], key=lambda item: item["tick"])
+                if item["tick"] <= fixture["stop_tick"]]
+    if [(event["run_tick"], event["detail"]["action"]) for event in injected] != expected:
+        raise ValueError("Injected input evidence does not cover the fixture schedule within the run horizon.")
+    if report["input_received_count"] != len(received):
+        raise ValueError("The received-input summary disagrees with the event population.")
+    pipeline = bool(injected) and len(received) == len(injected) and all(
+        a["run_tick"] == b["run_tick"] and a["detail"]["action"] == b["detail"]["action"]
+        and a["sequence"] < b["sequence"] < (injected[index + 1]["sequence"] if index + 1 < len(injected) else len(events))
+        for index, (a, b) in enumerate(zip(injected, received)))
+    outcomes = {"save": {"state_saved", "save_failed"}, "reset": {"state_reset"},
+                "load": {"state_restored", "load_failed"}, "interact": {"npc_reply"}}
+    observed = []
+    for index, command in enumerate(injected):
+        action = command["detail"]["action"]
+        if action not in outcomes:
+            continue
+        end = injected[index + 1]["sequence"] if index + 1 < len(injected) else len(events)
+        delivery = [event for event in received if command["sequence"] < event["sequence"] < end
+                    and event["run_tick"] == command["run_tick"] and event["detail"]["action"] == action]
+        if len(delivery) != 1:
+            raise ValueError("Missing or ambiguous controller delivery for scheduled " + action)
+        results = [event for event in events if delivery[0]["sequence"] < event["sequence"] < end
+                   and event["run_tick"] == command["run_tick"] and event["kind"] in outcomes[action]]
+        if len(results) != 1:
+            raise ValueError("Missing or ambiguous operation result for scheduled " + action)
+        if results[0]["kind"] in ("save_failed", "load_failed"):
+            raise ValueError("Native state operation was unavailable: " + results[0]["kind"])
+        observed.append(results[0])
+    kinds = set().union(*outcomes.values())
+    if {event["sequence"] for event in events if event["kind"] in kinds} != {event["sequence"] for event in observed}:
+        raise ValueError("An operation result has no matching scheduled controller input.")
+    saves = [event for event in observed if event["kind"] == "state_saved"]
+    restores = [event for event in observed if event["kind"] == "state_restored"]
+    replies = [event for event in observed if event["kind"] == "npc_reply"]
+    saved = report["saved_state"]
+    if bool(saved) != bool(saves):
+        raise ValueError("The saved snapshot and save-operation evidence disagree.")
+    for snapshot in (report["final_state"], saved):
+        if snapshot and (snapshot["game_id"] != fixture["game_id"] or snapshot["build_id"] != fixture["build_id"]
+                         or snapshot["actor"]["id"] != fixture["actor"]["id"]):
+            raise ValueError("A state snapshot belongs to a different game, build or actor.")
+    if saves and saved["world_tick"] != saves[-1]["world_tick"]:
+        raise ValueError("The retained snapshot does not describe the last save operation.")
+    restore = restores[-1] if restores else None
+    reply = replies[-1] if replies else None
+    if report["restored_equal"] != (restore["detail"]["matches_saved_relations"] if restore else False):
+        raise ValueError("The reload summary disagrees with the observed restore operation.")
+    if report["npc_reply"] != (reply["detail"]["line"] if reply else ""):
+        raise ValueError("The NPC summary disagrees with the observed reply.")
+    reload_chain = bool(restore and saves and saves[-1]["sequence"] < restore["sequence"] and any(
+        event["kind"] == "state_reset" and saves[-1]["sequence"] < event["sequence"] < restore["sequence"]
+        for event in observed))
+    reset_after_restore = bool(restore and any(event["kind"] == "state_reset"
+        and event["sequence"] > restore["sequence"] for event in observed))
+    if reload_chain and restore["detail"]["matches_saved_relations"] and (
+            restore["world_tick"] != saved["world_tick"] or restore["detail"]["world_tick"] != saved["world_tick"]
+            or restore["detail"]["actor_x_px"] != saved["actor"]["position_px"][0]):
+        raise ValueError("A successful restore claim contradicts the retained saved state.")
+    if reload_chain and report["restored_equal"] and not reset_after_restore:
+        # This scene can append crossing history and witnessed knowledge after load.
+        # Its existing owner map cannot change; pre-existing relations cannot disappear.
+        later = [event for event in events if event["sequence"] > restore["sequence"]]
+        expected_history = saved["history"] + ["gate-crossed" for event in later if event["kind"] == "gate_crossed"]
+        expected_knowledge = {actor: list(facts) for actor, facts in saved["knowledge"].items()}
+        for event in later:
+            if event["kind"] == "knowledge_acquired":
+                actor = event["detail"]["actor_id"]
+                if actor not in expected_knowledge:
+                    raise ValueError("Later knowledge refers to an actor absent from the saved knowledge map.")
+                expected_knowledge[actor].append(event["detail"]["fact_id"])
+        final = report["final_state"]
+        if (final["right_owners"] != saved["right_owners"] or final["history"] != expected_history
+                or final["knowledge"] != expected_knowledge):
+            raise ValueError("Saved owners, history or knowledge contradict the downstream state and observed later effects.")
+    return {"pipeline": pipeline, "reload_chain": reload_chain, "restore": restore, "reply": reply,
+            "reset_after_restore": reset_after_restore}
+
+
 def assess(fixture_path: Path, report_path: Path, claim: str):
     try:
         if claim not in CLAIMS:
             raise ValueError("Unsupported episode claim.")
-        fixture = validate(read_json(fixture_path), SKILL / "assets" / "episode.schema.json")
+        fixture = read_fixture(fixture_path)
         report = validate(read_json(report_path), REPORT_SCHEMA)
     except (OSError, ValueError, TypeError, SchemaError, ValidationError) as error:
         return 2, {"claim": claim, "status": "invalid_evidence", "reason": "invalid_or_missing_report_or_fixture",
@@ -122,15 +234,17 @@ def assess(fixture_path: Path, report_path: Path, claim: str):
     threats = [event for event in events if event["kind"] == "threat_resolved"]
     if len(threats) != 2 or {event["detail"]["threat_id"] for event in threats} != {t["id"] for t in fixture["threats"]}:
         return 2, {"claim": claim, "status": "missing_evidence", "reason": "threats_not_observed"}
-    received = [event for event in events if event["kind"] == "input_received"]
-    injected = [event for event in events if event["kind"] == "input_injected"]
-    pipeline = bool(injected) and len(received) == len(injected) and all(
-        a["run_tick"] == b["run_tick"] and a["detail"]["action"] == b["detail"]["action"]
-        for a, b in zip(injected, received))
+    try:
+        operations = operation_evidence(fixture, report)
+    except ValueError as error:
+        return 2, {"claim": claim, "status": "invalid_evidence", "reason": "invalid_or_missing_operation_evidence", "error": str(error)}
+    pipeline = operations["pipeline"]
     attack = [event for event in events if event["kind"] == "attack_started"]
     dodge = [event for event in events if event["kind"] == "dodge_started"]
     if claim == "escape":
         expected_line = "The winch route is ready."
+        reply = operations["reply"]
+        reloaded = operations["reload_chain"] and report["restored_equal"]
         properties = {
             "input_reached_controller": pipeline,
             "committed_attack_executed": len(attack) == 1 and attack[0]["detail"]["cancellable"] is False,
@@ -138,9 +252,13 @@ def assess(fixture_path: Path, report_path: Path, claim: str):
                 and dodge[0]["world_tick"] >= attack[0]["detail"]["recovery_until"],
             "two_threats_avoided": all(event["detail"]["hit"] is False for event in threats),
             "body_crossed": any(row["position_px"][0] >= 152 for row in trajectory),
-            "native_reload_preserved_relations": report.get("restored_equal") is True,
-            "restored_knowledge_used": report.get("npc_reply") == expected_line
-                and "gate-crossed" in report["final_state"]["knowledge"]["keeper-ivo"],
+            "native_reload_preserved_relations": reloaded,
+            "restored_knowledge_used": bool(reloaded and reply and not operations["reset_after_restore"]
+                and reply["sequence"] > operations["restore"]["sequence"]
+                and reply["detail"]["speaker_id"] == "keeper-ivo" and reply["detail"]["line"] == expected_line
+                and "gate-crossed" in reply["detail"]["known_fact_ids"]
+                and "gate-crossed" in report["saved_state"]["knowledge"]["keeper-ivo"]
+                and "gate-crossed" in report["final_state"]["knowledge"]["keeper-ivo"]),
             "owner_preserved": report["final_state"]["right_owners"] == {"winch": "bo", "archive-pass": "ava"},
             "history_not_duplicated": report["final_state"]["history"].count("archive-message") == 1,
         }
@@ -166,7 +284,8 @@ def assess(fixture_path: Path, report_path: Path, claim: str):
                   "properties": properties, "report_sha256": digest(report_path)}
 
 
-def suite(godot: Path, output: Path):
+def suite(godot: Path, output: Path, timeout_seconds=30):
+    validate_timeout(timeout_seconds)
     output.mkdir(parents=True, exist_ok=False)
     expected = {"baseline": {"escape": 1, "recovery-blocked": 0},
                 "candidate": {"escape": 0, "camera-signals": 0},
@@ -178,7 +297,7 @@ def suite(godot: Path, output: Path):
     for name, claims in expected.items():
         fixture = HERE / "fixtures" / (name + ".json")
         case_output = output / name
-        operation = run(godot, fixture, case_output)
+        operation = run(godot, fixture, case_output, timeout_seconds)
         if operation:
             outcomes.append({"case": name, "operation_exit": operation, "expected": 0})
             write_json(output / "suite.json", {"status": "unavailable", "outcomes": outcomes})
@@ -204,6 +323,8 @@ def main():
         sub = commands.add_parser(name)
         sub.add_argument("--godot", required=True, type=Path)
         sub.add_argument("--out", required=True, type=Path)
+        sub.add_argument("--timeout-seconds", type=float, default=30,
+                         help="Finite positive bound for each native phase; default 30, with no automatic retry")
         if name == "run":
             sub.add_argument("--fixture", required=True, type=Path)
     sub = commands.add_parser("assess")
@@ -213,9 +334,9 @@ def main():
     args = parser.parse_args()
     try:
         if args.command == "suite":
-            return suite(args.godot, args.out)
+            return suite(args.godot, args.out, args.timeout_seconds)
         if args.command == "run":
-            return run(args.godot, args.fixture, args.out)
+            return run(args.godot, args.fixture, args.out, args.timeout_seconds)
         code, result = assess(args.fixture, args.report, args.claim)
         print(json.dumps(result, indent=2))
         return code

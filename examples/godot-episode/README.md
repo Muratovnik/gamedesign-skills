@@ -71,6 +71,27 @@ evidence with exit 2. Actual boolean observations can still refute a property
 with exit 1. Extra root diagnostic metadata is allowed; it is not evidence for
 the property. Empty observed populations remain unavailable with exit 2.
 
+The assessor also binds the injected-event population to every scheduled input
+at or before `stop_tick`, in execution order. Scheduled save/reset/load/interact
+commands need controller-delivery and operation-result events. It checks their
+order, the retained save identity, and agreement between the reload/NPC summaries
+and those events. Missing or contradictory operation evidence returns 2. An
+asserted successful load must also retain saved owners, history and knowledge
+in the downstream state. Recorded post-load crossings and knowledge acquisition
+can add to those relations; the check permits these existing scene effects. An
+observed restore with `matches_saved_relations: false`, or an observed NPC reply
+that does not use the restored knowledge, refutes escape with exit 1. Escape's
+reload claim needs an observed save, reset and restore, followed by the NPC
+interaction for its knowledge claim. The no-input fixture has no scheduled
+operations: its valid absence of player action still refutes escape with exit 1.
+These checks establish protocol consistency, not cryptographic authenticity.
+
+Automatic physics starts at tick 1. The fixture requires
+`1 <= warning_tick <= resolve_tick <= stop_tick` and distinct threat IDs.
+A warning and resolution on the same tick are allowed: the scene emits the
+warning before the player step and resolves the threat afterwards. Commands
+scheduled beyond `stop_tick` are outside the executed input population.
+
 Run the complete public control set with:
 
 ```bash
@@ -80,8 +101,12 @@ Run the complete public control set with:
 
 The suite expects some property checks to return 1 or 2. It succeeds only when
 those distinctions match the stated contracts. A launch/import timeout returns
-2, retains that attempt, and leaves dependent claims unavailable. The 30-second
-per-process bound is an operational limit of this small qualification command.
+2, retains that attempt, and leaves dependent claims unavailable. The default
+per-process bound is 30 seconds. `run` and `suite` accept `--timeout-seconds 55`
+when a recorded host needs a larger startup bound; it must be finite and
+positive. Each receipt records the actual `timeout_seconds`. There are no
+automatic retries; a later attempt uses a fresh output directory and retains
+the previous timeout and its partial logs.
 Do not interpret an import timeout as a collision or game-design defect.
 
 ## What the native consumer does
@@ -185,10 +210,13 @@ public teaching example and cannot serve as secret final model-evaluation data.
 "$PYTHON" -m unittest discover -s examples/godot-episode -p test_report_contract.py -v
 ```
 
-Five public tests exercise the assessor and a separate CLI rejection. They use
+The public tests exercise the assessor and CLI input boundaries. They use
 the byte-preserved native candidate report at
 `fixtures/test_recorded_candidate_report.json`, then alter only selected fields
 to distinguish malformed evidence from a typed negative observation. That file
 is a historical test fixture, not a new engine run or a game input. Its `test_`
 name identifies it as test data. The tests also retain valid
-extra diagnostic metadata, empty-observation and stale-fixture controls.
+extra diagnostic metadata, empty-observation and stale-fixture controls. Further
+controls remove scheduled state operations while retaining positive summaries,
+exercise coherent negative observations, and check tick and timeout boundaries.
+Their altered reports are synthetic protocol inputs, not new native receipts.

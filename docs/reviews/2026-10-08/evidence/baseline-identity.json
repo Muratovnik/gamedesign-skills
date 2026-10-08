@@ -1,0 +1,618 @@
+{
+  "subject": "Muratovnik/gamedesign-skills",
+  "commit": "f9f6bac0ee767597692d5c17d1eecc90f6788aa8",
+  "tree": "3e7c4bcdf035c7025a1d4cf452e0f759841cab5d",
+  "dirty": "",
+  "assay_commit": "94c517b0aac9ba2575086bf9aead1cc828aadb0d",
+  "files": [
+    {
+      "path": ".betterleaks.toml",
+      "sha256": "070980fba70d7b9b3e08f808e753bdd6275ad4f832b131c28ecf0db75eeaaae0"
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "sha256": "3c43c3243db62e8c3ead042e8cc31ce11b63283a68fae1269ce4c4b8df068c6b"
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "ef9974ae486cedac2638968e17c82aca37e3d83dd40929ada3aa94daea026258"
+    },
+    {
+      "path": ".github/relkit.pyz",
+      "sha256": "fe4c3271e21ff560a3385313b1da340c48b13f271769bbabeb4d0f975a7a621d"
+    },
+    {
+      "path": ".github/relkit.pyz.sha256",
+      "sha256": "3d53c0b7074534aaec700d2bacc84cbf3b671ad99cd4454e7d6ba94defba289b"
+    },
+    {
+      "path": ".github/workflows/check.yml",
+      "sha256": "21b9d58c71ce90e328beadca955e614617b2a847b1baa92cac34d26e33e6821f"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "f566a47ef57b58b1107127957f6bc93f1b6008d739c27fc1e37e26cff3d66186"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "73ecb0e0eefc59102ad555dcb1d90fb15d830568202a9aacee8bed4d62fa9729"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "9b107a433c49b40785cc9994e27035eb4f22792f5840a953f1c959c7c76ad1d2"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "402dfbcd6386ec8309d21de347c7cbf6485e191fa3def8be3eff1f7af7978bcf"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "43f715d10e372f8cf616481133ec461f7f10f565fcdfa1c1f4087b6660273444"
+    },
+    {
+      "path": "NOTICE.md",
+      "sha256": "4922e702379a146076f52bc7bc50b7c98769a4e941bc1547884a638384f0486c"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a14d55aed64b55109d7adb7531ec07142c6b450517b93a55922ab6a7acb01f5e"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "dd76cdc07fadb96912f21d9f91938412a0a2366b57f81495babaca75f34929a4"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "catalog.json",
+      "sha256": "24b29495315d019af01ad0c0bc3a24f4a0c17c6a1ca253ce0845350966f7b34c"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "sha256": "53c522ff7e66d7a492d24e29a511714b613644194f428568d8d2c5f71855b5b0"
+    },
+    {
+      "path": "docs/decisions.md",
+      "sha256": "85fbf52aaf50cbddbd593861bfbe1a879850be98c714ea4138275389a2a69a5d"
+    },
+    {
+      "path": "docs/examples.md",
+      "sha256": "0a13459d50e3cdc5c85fd563d726eff284ee4b09a92b8ecded86a967a31ff66e"
+    },
+    {
+      "path": "docs/installation.md",
+      "sha256": "d726b8e6fbd07c8cc12a9486aa1ae42f5006c1957d39815ddc791b946c9adb15"
+    },
+    {
+      "path": "docs/late-comparison.md",
+      "sha256": "153eab8a3c11a775b4698cd84b72e84c0316a8e8d2f1a16eb3a79ab136b89b3f"
+    },
+    {
+      "path": "docs/quickstart.ru.md",
+      "sha256": "b43463ed20ee3fbd55474f92be1ace998bdb771b65904eca31a19014bed97465"
+    },
+    {
+      "path": "docs/releases.md",
+      "sha256": "a6b196ddc310b35b7b87a8c256f834bbd9f7b649a8f608c3cab413359fc56f1a"
+    },
+    {
+      "path": "docs/traceability.md",
+      "sha256": "9182d22efef83844a73485b02f9072c98a9e5d05da07fa413e8b7766867dc2c5"
+    },
+    {
+      "path": "examples/adaptation/README.md",
+      "sha256": "a60f21422145fffedfb0c3d010059b7d174ddf42fec2f65c29071fc43f7facc2"
+    },
+    {
+      "path": "examples/adaptation/consumer.py",
+      "sha256": "39e6bce2cc079df1581d71510343281c5e152dc69ca1cf3fb545f0a766c00a32"
+    },
+    {
+      "path": "examples/adaptation/fixtures/east-gate-en.json",
+      "sha256": "13cf33385f11e68d3581cbf94d9efa2466205d69fea0d21c4ff7576255f2675f"
+    },
+    {
+      "path": "examples/adaptation/fixtures/east-gate-ru.json",
+      "sha256": "e4e083614d2d2037128e43f9fb534df4d9058a18b2c9adf0cb7606641fa0e34c"
+    },
+    {
+      "path": "examples/adaptation/test_adaptation.py",
+      "sha256": "f5670a2d7ca56c68fa3054cadf1962b5331c47d9f85eb15c03b37498dc4dc8c0"
+    },
+    {
+      "path": "examples/analysis-lab/OBSERVATIONS.md",
+      "sha256": "f1c941b9c4c0b3c50c1c6b49d21599872e16dc1e93424b3660c0a0d7c1cd45a3"
+    },
+    {
+      "path": "examples/analysis-lab/README.md",
+      "sha256": "6795557fe985b57c9becd821faf383fed27c0643f8a2fa0f639a608e8ec37fee"
+    },
+    {
+      "path": "examples/analysis-lab/consumer.py",
+      "sha256": "79453d75a56f71a69847fc4a5f26cac61b4451d5655e70041b0a8ce06dd6de0e"
+    },
+    {
+      "path": "examples/analysis-lab/economy.py",
+      "sha256": "3fa8379442a2ed4db31fe71bc5a5d80f5488a636d810b2b8aac5148018256bfb"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/content.json",
+      "sha256": "7060a9c866be347ffcf9ee1a653799ed7e69df139020e743d4ac8bd16fdd3447"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/event-dictionary.json",
+      "sha256": "89fbfd4377682b6a570fcf9805ed0dfbe3c9529b1bea2146e9c403e333616dfa"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/events.csv",
+      "sha256": "8c41dc75e78a1a811b2d60d6df49d5b79c99ff1a5f7ff1da7422245195bcb3a0"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/observation-manifest.json",
+      "sha256": "a727299d543a679dba74f17a9ea3a5eec99da758d1b894c61794b7ddcbae98e3"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/observations.csv",
+      "sha256": "faad317dbd7ce2857481156778388b876320842b2771e56ea082a990ec09c789"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/resource-model.json",
+      "sha256": "5de7ee6a33e438bd1cb6cf6f05a177b63adb0cdb75d5d7236db546680c5ca595"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/save-v1.json",
+      "sha256": "aa48da1be3186334fbedcd64526e2e93db00db1e8d2b0fe1a98ce9f66022e099"
+    },
+    {
+      "path": "examples/analysis-lab/fixtures/sessions.csv",
+      "sha256": "8e891352223d0fbdb90d97215b71ed3a8956e86325fd4aa1bb9acf205617fbb5"
+    },
+    {
+      "path": "examples/analysis-lab/lab.py",
+      "sha256": "6fcef3e9d8c34b2ccb380918f2cdd693e6c268a875eb5b70af8777bbdb2ae118"
+    },
+    {
+      "path": "examples/analysis-lab/outcome-query.sql",
+      "sha256": "9b52baf015729df5ba0e22ecfb9dbb26a0ba6ced2f09b69e25fb4cf51884b1bd"
+    },
+    {
+      "path": "examples/analysis-lab/requirements.txt",
+      "sha256": "ffcdf5100ca9d4b696a6b156a2f565f0d348eec2eed62805378fb163bedabf9c"
+    },
+    {
+      "path": "examples/analysis-lab/state.py",
+      "sha256": "2a8d104c9fb94ad24d7c9ab39585c7c9a4000d529b2ac638d796b462ee34fa22"
+    },
+    {
+      "path": "examples/analysis-lab/telemetry.py",
+      "sha256": "e4d977ca4f0e381f73744dec0ddd624f203693b0f27c2087cb8cf1c4f0ccd77e"
+    },
+    {
+      "path": "examples/analysis-lab/test_input_and_replay.py",
+      "sha256": "9d31e246bd98eb122fc3a43a6f50227562de7cb3245791acc63b3c8dfbe0ce67"
+    },
+    {
+      "path": "examples/analysis-lab/test_semantics.py",
+      "sha256": "41e51385c37d1ebf57ad051305b608e24a1b8dea8587ac860613acebca117fc0"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/README.md",
+      "sha256": "c74fbe5b68d7f7134c95dc91a5609251ea290ad25066eec5f6a88d6167c9c8e4"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/calculate.py",
+      "sha256": "fdf38623ba6c62974983143558ea9647b341f875136744ed21e40d1afadfb819"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/calculation-output.json",
+      "sha256": "43fa6123d7614e4c46b0a18dcb6855c2ce0dfe0c9daa5c2c5cbea60bf4cf03ab"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/cases.json",
+      "sha256": "440a731feb48100efdc3e6f10bae694eb5a6db8ab0e46ec0ad50efdb033df6f9"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/free-form-loom.md",
+      "sha256": "6d68c34ac6a355019a560022599fd2af2bd4f334a229e3fcd363a9f665238f06"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/gamebook.md",
+      "sha256": "d4ae55f8269827197fb7e7e67684ea84befdf847446da66a1c3e5e70b07d7b4a"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/lens-workshop.md",
+      "sha256": "0012ba6f43eeae3d199a58318857af0666b555e56e090a9b65a521de94167e32"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/loom-score.json",
+      "sha256": "19292751ed51346d2c26f0e2ce43404e0f96d6a192b7a30274b7dbac52b7bccd"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/quay-crossing.md",
+      "sha256": "0d022e876ef6ad0464a6d59e9dcb973676f3d9d271e9273926cf3e5e1c492ab7"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/render_loom.py",
+      "sha256": "1b08eaab0a36dbee6d8ddd7c7db2935c1990bf709475a81dc08443a7a1f54af6"
+    },
+    {
+      "path": "examples/design-studies/harbour-of-echoes/replay-notes.md",
+      "sha256": "18295822e61d987a0dd2025b6c3a1b152c70e01cd0c26feecac96914e2f6fcd4"
+    },
+    {
+      "path": "examples/godot-episode/README.md",
+      "sha256": "1e7c639d7bd819017939e3062a4ca30c96c348be15895bedb4bf34bb3c614cd3"
+    },
+    {
+      "path": "examples/godot-episode/episode.gd",
+      "sha256": "4db7b17bc664324568dd0a8ea8cad61af668db64de037ff451b91a70abee2dcb"
+    },
+    {
+      "path": "examples/godot-episode/episode.gd.uid",
+      "sha256": "33240bf2b0330b3c0e0da12ece5770d6fda405799f179f653113f47251d537a4"
+    },
+    {
+      "path": "examples/godot-episode/episode.tscn",
+      "sha256": "accc10f5c52e8a5bb37bb2178dfd06477cba272051cf474fc7cd20d8195be35b"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/baseline.json",
+      "sha256": "3b43e2f23a81a4e49a28205fa9a5200a8a7dbaffe69deaf7a30920038c1e90d5"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/candidate.json",
+      "sha256": "2f02fbb0a598e8fe6c13aeb52e85f1b158c49162cb1c6f9b82f97f676d5e878c"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/narrow-gap.json",
+      "sha256": "dbc707da653b5a8a3055b9ec98bb11dc81e1c1ba12c213572c82f8e4be1dbd63"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/no-input.json",
+      "sha256": "f7a214aec7c297cb5943aeb09151694a3bac8bb1fd99025b4bae3aff3fabd99a"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/off-camera.json",
+      "sha256": "a47891b4bc8389f099660545e173a20c8f47e3256764fef3b8a4ec6662ac9497"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/recovery-locked.json",
+      "sha256": "189c275a626d97d9b07595b2731858ebc4213f179a9187698b9cd5b902576474"
+    },
+    {
+      "path": "examples/godot-episode/fixtures/test_recorded_candidate_report.json",
+      "sha256": "9105bc41111a26df77a5ae2cf2a742a0d701b98bb4e6cff2b97ed201d0bb9b9d"
+    },
+    {
+      "path": "examples/godot-episode/player.gd",
+      "sha256": "c9bce2c42d4fb192dfb6e293c4ffb99447fbee3e13a7090571ec35df2dfbca79"
+    },
+    {
+      "path": "examples/godot-episode/player.gd.uid",
+      "sha256": "fe951f61fa3c0a11ef20a59a04802ada918a0acb32c57be0b838c3fdadc1d0e6"
+    },
+    {
+      "path": "examples/godot-episode/project.godot",
+      "sha256": "f70d9b895e9784e0e361d305b895921fabfa87f975dcf6530347122d629a6c21"
+    },
+    {
+      "path": "examples/godot-episode/qualify.py",
+      "sha256": "ca4cdb626b7e63ecc389621be012b66a06813da792781e8ae5b20be922441de8"
+    },
+    {
+      "path": "examples/godot-episode/requirements.txt",
+      "sha256": "0a8b77b80646216fd3ecf7b7d0fc1f41b10acf0e16011284395ffb4f2abd5ec4"
+    },
+    {
+      "path": "examples/godot-episode/test_report_contract.py",
+      "sha256": "58c3f1b225e2efd80fb6b2c5e50604fe0313ff8ed9e296911a5a38e22a987ef9"
+    },
+    {
+      "path": "examples/systems-studies/README.md",
+      "sha256": "fdf823810874a41c3e37d98dfa579401f26ba660ffbb5b96b79476edd1e426cf"
+    },
+    {
+      "path": "examples/systems-studies/x3-input.json",
+      "sha256": "5efb166d31942281589b5b3c01374764d6cb33b1045ec8e64ec814b56be9376c"
+    },
+    {
+      "path": "examples/systems-studies/x3-ridge-result.json",
+      "sha256": "e864897f2fa40a263cb132efa436a25109c92c6314e80115c5f57c71e149ff4f"
+    },
+    {
+      "path": "plugin.json",
+      "sha256": "0d6652e613726a2b0f366bafbd69173695b04e907e1248563ef23f07988336fb"
+    },
+    {
+      "path": "relkit.toml",
+      "sha256": "a1317d6d2018efb636385406875499e0618cedc17b5961960fa9e25e61265695"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "sha256": "136ac6cfae8fa4e206f3722bdf9640349f989beb9d999e3842fd86bb76b9d290"
+    },
+    {
+      "path": "skills/game-content-design/SKILL.md",
+      "sha256": "3298bd38694831b15017b3182dab5791b86246ac0acf8f4807df1cdf3d231243"
+    },
+    {
+      "path": "skills/game-content-design/agents/openai.yaml",
+      "sha256": "e1d406655d2fa88e1ccd784155d36a836997baaefec65a8ccfab2d19aab4caac"
+    },
+    {
+      "path": "skills/game-content-design/assets/harbor-repertoire.json",
+      "sha256": "6f34171f77721de0dcd4e1335bd4be561aa3fd48993b5c069f8e46ed875853f8"
+    },
+    {
+      "path": "skills/game-content-design/assets/parcel-worlds.json",
+      "sha256": "8284d652283dc4f6000f8baca52c70f3dc9bb30175e32447e78e37dde0b935ea"
+    },
+    {
+      "path": "skills/game-content-design/references/repertoire.md",
+      "sha256": "da1dba2cf560ed09ec4c6f515462d6b8d7b75de9c99f07f4b1843fe82dab4ad2"
+    },
+    {
+      "path": "skills/game-design/SKILL.md",
+      "sha256": "b02bcb1c7d7ad695e21d7352aef3cd1b29d862bc32786e61dbdb2a87ca0df712"
+    },
+    {
+      "path": "skills/game-design/agents/openai.yaml",
+      "sha256": "092e34392a47e4533c480b7fe253d6344aa06af26ab22b8d5dd103aeff9c62d1"
+    },
+    {
+      "path": "skills/game-design/assets/assay-binding.json",
+      "sha256": "293a03da494387fd2f4cee12f5143e532b86e7fdb79ca4b1ea83b21a8f5fcad4"
+    },
+    {
+      "path": "skills/game-design/assets/content.schema.json",
+      "sha256": "f4db2c523b4892b9360d22e9568972d24b30e36c21e8a2fc8e722ef82ae4458b"
+    },
+    {
+      "path": "skills/game-design/assets/episode-report.schema.json",
+      "sha256": "ad1bc1e4a84b3ac28fd7dbf77336831fc3a411e6e12862d13167bac8c925e2a5"
+    },
+    {
+      "path": "skills/game-design/assets/episode.schema.json",
+      "sha256": "71a0bd6d7cb1b97381900268f6d4edb70a8bf79bb0717e817d85bbd1014391f3"
+    },
+    {
+      "path": "skills/game-design/assets/observation.schema.json",
+      "sha256": "4675f0f855a441cf5f66f24fcaba9ca1f83b1a0ec99ff94e1f338660e1e9f0c3"
+    },
+    {
+      "path": "skills/game-design/assets/observer-view.schema.json",
+      "sha256": "e88d1758022d055dc2df031bbb43a71390ce515bb76afacb8ef4dc97c3171711"
+    },
+    {
+      "path": "skills/game-design/assets/resource-model.schema.json",
+      "sha256": "a888e5830780a7361c8e36258e188c49a00796fef8e14262bdd91fcab099fbab"
+    },
+    {
+      "path": "skills/game-design/assets/save-v1.schema.json",
+      "sha256": "72bf7841b377ae7ba09ae5c2a603dbded118cbbed26a504820e81a7719de3b2c"
+    },
+    {
+      "path": "skills/game-design/assets/save-v2.schema.json",
+      "sha256": "8e7cff4728c97e1fa0322e4504d3b369da7caf007647842ae46c1160965b57c6"
+    },
+    {
+      "path": "skills/game-design/assets/telemetry-dictionary.schema.json",
+      "sha256": "1df94f725bfbdf97503b3d075040fb0984fbd8078eee806223ee89093cf7a0b2"
+    },
+    {
+      "path": "skills/game-design/references/adaptation.md",
+      "sha256": "79da889c0de0496cc174b555c7b1b60266b158dd047de94110ffac9500d7d200"
+    },
+    {
+      "path": "skills/game-design/references/consumer-and-assay-contract.md",
+      "sha256": "f07ad3832d7aad66b042b1d1ac4c5f1ef9c4200d663a099b679aca953919261b"
+    },
+    {
+      "path": "skills/game-design/references/environment-contracts.md",
+      "sha256": "c6f48b6667afa3b95583cafe47f604bc696af9f5874e7d3bbea900efa6b25633"
+    },
+    {
+      "path": "skills/game-design/references/relations-and-context.md",
+      "sha256": "5fe518e607cd2dea38c6513d1292bd8456bb18813651d805ecbc3449bc8a2895"
+    },
+    {
+      "path": "skills/game-design/scripts/bind_assay.py",
+      "sha256": "66bd824660aeb1c72627ca3632ed89aff82e16bf614f036371e5a28741a3a962"
+    },
+    {
+      "path": "skills/game-design/scripts/observe_evidence.py",
+      "sha256": "e47a8cc8913423c2ea31b1edda8af07445e6ed9b3440a1f4350ad6e9eb9caca5"
+    },
+    {
+      "path": "skills/game-design/scripts/requirements.txt",
+      "sha256": "25eb3034f302321350cee99445b27c26c7e2d06c5904520364b2759d6ecde552"
+    },
+    {
+      "path": "skills/game-design/scripts/validate_artifact.py",
+      "sha256": "05fd81379352867ff20c285f83b1e94b1a59c2152626e1451acded77ab39d906"
+    },
+    {
+      "path": "skills/game-information-design/SKILL.md",
+      "sha256": "c046bcf4c5fb7c7f036ff626080d90f9a1751e2365f59880b94d64e59cd473f9"
+    },
+    {
+      "path": "skills/game-information-design/agents/openai.yaml",
+      "sha256": "b1857fa72c975eb06c5963588033bd35835a6efc8371927ee2682178bb84e54f"
+    },
+    {
+      "path": "skills/game-information-design/references/inference.md",
+      "sha256": "a3b052dbd728470c1acda73e8f212e1e51ae681ec930b3655b696aa3b724743a"
+    },
+    {
+      "path": "skills/game-information-design/references/learning-and-help.md",
+      "sha256": "08b2ae1e0cc9cb5f6c41269751558c6e0031b04cb23aa03e30f8ec64e7b4c371"
+    },
+    {
+      "path": "skills/game-participation-design/SKILL.md",
+      "sha256": "4b75f2bea3377e4f6c810fbe59c1cf6cd5bf8a2d9da389b1e898b078268a229f"
+    },
+    {
+      "path": "skills/game-participation-design/agents/openai.yaml",
+      "sha256": "21900b9fea0e771ab6014af2fcb0a685013467609ad9ffc4febc081293027438"
+    },
+    {
+      "path": "skills/game-participation-design/references/access-and-return.md",
+      "sha256": "7c1f4c2a6c2862787c182f72f8ca9aa272126d23b5b38172a53be605010f50e1"
+    },
+    {
+      "path": "skills/game-participation-design/references/paid-and-timed-rights.md",
+      "sha256": "feb919b74c724cf32223ebc5843bd197db55a18349bb9152b821fe78e00bc6b5"
+    },
+    {
+      "path": "skills/game-participation-design/references/shared-play.md",
+      "sha256": "c329ac62d44c933a2862d9a5874fc116f559a60f9e184009a88d31afcdb0a7e8"
+    },
+    {
+      "path": "skills/game-systems-design/SKILL.md",
+      "sha256": "462bea254ca2d6db2a1e8a63d8945c9e0d63d741ee0f9f39b8be925a9f072863"
+    },
+    {
+      "path": "skills/game-systems-design/agents/openai.yaml",
+      "sha256": "2260d66c8d69300df57efdfec1ef18ab38016d946d705a56b5f0a5221473c626"
+    },
+    {
+      "path": "skills/game-systems-design/references/game-state-transfer.md",
+      "sha256": "2150e18b048c1c28b9c1fcaf57f74a2830d9bec9985afa7ca850ab418ecbeb68"
+    },
+    {
+      "path": "skills/game-systems-design/references/loss-and-continuation.md",
+      "sha256": "0b92bec7d67f112215c1e038c9388ca17dd5920255c94b2bff6d53dc7d31e27f"
+    },
+    {
+      "path": "skills/game-systems-design/references/resources-and-development.md",
+      "sha256": "7e96e8420fd93a6afe12cb255dc49c61e986310f0ebe5558088645253e7a6442"
+    },
+    {
+      "path": "skills/game-world-narrative-design/SKILL.md",
+      "sha256": "2db0781a3332291a33ac948d074872b4bb2f005497e48d175445778c43a7a10b"
+    },
+    {
+      "path": "skills/game-world-narrative-design/agents/openai.yaml",
+      "sha256": "197ac1a21f961771f5a94cfc9e0861489e1cc86d932689f069fcca2cc862cd2a"
+    },
+    {
+      "path": "skills/game-world-narrative-design/references/conditional-story.md",
+      "sha256": "22fcdcd1210e1977ae313b703953c60a2e8a9693acc982dfa957dda6ecc62495"
+    },
+    {
+      "path": "skills/game-world-narrative-design/references/world-relations.md",
+      "sha256": "bc349359bf8c857523bd6f44f100ca33eafcaabe9e58498994b5185b240e31c1"
+    },
+    {
+      "path": "skills/gameplay-design/SKILL.md",
+      "sha256": "ab09856ed270ad21e935db35d1451024f643c8bd366418048339bd4f215900fc"
+    },
+    {
+      "path": "skills/gameplay-design/agents/openai.yaml",
+      "sha256": "c4f094710a7130328553cc8febed17b42a4da5e85483da291743319747d8f4ff"
+    },
+    {
+      "path": "skills/gameplay-design/references/actions-and-time.md",
+      "sha256": "a987036e6b7e0fcd466aa9bfffb6b08a38457875b6561234401aa7e0a114f86c"
+    },
+    {
+      "path": "skills/gameplay-design/references/entities.md",
+      "sha256": "3ab9acdfb317478d4ade01129f50764c386eb102faaf5ff4118e60fa95e67df8"
+    },
+    {
+      "path": "skills/gameplay-design/references/space-and-situations.md",
+      "sha256": "1225006b58ff87f0ab1e0e7a2b2bdbff38904e015b924933ec3ec824c326523d"
+    },
+    {
+      "path": "tests/test_distribution.py",
+      "sha256": "17d7b1dc9bd7c1e95c44afe49f211f33a4e872eb5c5dd0bb0fa9247abbcda817"
+    },
+    {
+      "path": "tools/check.py",
+      "sha256": "813385be93c09462cd66e8d1712174066ae880dabba5091a0462a5f7c042ed8e"
+    },
+    {
+      "path": "tools/package.py",
+      "sha256": "2733b7c2f05869a18d88e0b89c27b2d3cb6f8c4dea81b0a0145e53ee2ac34082"
+    },
+    {
+      "path": "tools/release.py",
+      "sha256": "6804edffbcc803f7d0a363fdd1c100a2a9c9bdc6f2112f99cfd3b4c8a11b2877"
+    },
+    {
+      "path": "tools/render.py",
+      "sha256": "bbc0466dd11baeee62c8d86a79519301ca1de36f1366fec8eaa12b748620573e"
+    },
+    {
+      "path": "tools/smoke.py",
+      "sha256": "0059f81e481fcb249f13133f1f92af83e512947443096ecb18d2406685643d7c"
+    },
+    {
+      "path": "tools/update_assay_binding.py",
+      "sha256": "53a659c19f59e2d05783e80c21b5a820268c43a971f59da6ffc7013c428ca9e2"
+    },
+    {
+      "path": "tools/vendor/Apache-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "tools/vendor/plugin.schema.json",
+      "sha256": "0a4aad95ce337878ad38802ebf0daa3fde76abe3f65400c86bcbb1ec0b3ab883"
+    }
+  ],
+  "input_documents": [
+    {
+      "path": "upload/game-design-assay-mapping(1).md",
+      "sha256": "e6c1828fa24e96b27eacfd10cb0c111befbfc694c14860f76396b3c0500b094d"
+    },
+    {
+      "path": "upload/game-design-capability-model(8).md",
+      "sha256": "05ca1723299ec00985fe755b11914733a241cc085a50d372f7f1094a46935759"
+    },
+    {
+      "path": "upload/game-design-domain-map(2).md",
+      "sha256": "3a224087b4538a0efe0bf9daa29d50887e44b2dc792934f4ac84bdefff3d2221"
+    },
+    {
+      "path": "upload/game-design-domain-requirements(1).md",
+      "sha256": "005a981ebe5991a94b0e738619c46e0ade50ac4615c4f71c5d610347faf1cfae"
+    },
+    {
+      "path": "upload/game-design-domain-research(1).md",
+      "sha256": "ca0010be4d9f062bd8a5c90c124fc069efca8f8b30febd96152cb8c9366c034a"
+    },
+    {
+      "path": "upload/game-design-knowledge-synthesis(6).md",
+      "sha256": "8cdd6854eadb262fa58238bafaf3bb7312882d5d4f310bc436dabcd1e2c37eaa"
+    },
+    {
+      "path": "upload/game-design-operational-requirements(4).md",
+      "sha256": "9edd491d061d59d0de375bba90afb895f721f660c73965ee9f513e874243673b"
+    },
+    {
+      "path": "upload/game-design-project-brief(2).md",
+      "sha256": "edf594355833c929e4ad6cc58a62e1a495768bf248c99a2ea9005786b215b5a8"
+    },
+    {
+      "path": "upload/game-design-project-plan(1).md",
+      "sha256": "b846ff4c4900d39996f6794574758c0b9ac64432858ba764eebc05dc379166a2"
+    },
+    {
+      "path": "project_sources/01-software-engineering.md",
+      "sha256": "da4e2a72588d7e9605475ee683a8b0ade278d4d84fca0d9d4ed7aefbeaf91f10"
+    },
+    {
+      "path": "project_sources/02-research-quality.md",
+      "sha256": "830241f439715e7d42f61cfb7a0d9605457197e2700b12468074ca13fe9897d1"
+    },
+    {
+      "path": "project_sources/03-llm-reasoning-control.md",
+      "sha256": "02fb31968dffd8801652d7a9eb46f3cd73a02b33965d263549c761924fdb7b32"
+    }
+  ],
+  "model_trial_budget": 0,
+  "model_trials_executed": 0,
+  "isolation": "Task-owned directories and instructions; not an enforced OS sandbox."
+}
