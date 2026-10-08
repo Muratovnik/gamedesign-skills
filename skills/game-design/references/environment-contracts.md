@@ -96,7 +96,10 @@ available. Synthetic data must remain labeled synthetic after import.
 python3 scripts/observe_evidence.py --csv /absolute/observations.csv --manifest /absolute/observation-manifest.json --output /fresh/observations.json
 ```
 
-The importer retains rows and computes bounded descriptive counts. Its
+The importer retains rows, session conditions, collection method and units in the
+saved report, alongside source hashes and bounded descriptive counts. Preserve
+these conditions during later handoffs: identical assistance categories can
+describe an aid that reads a card or one that supplies the answer. Its
 `human_claim` remains `not_established`: the next researcher must inspect the
 material, distinguish interpretation from cause, and decide whether a design
 revision is supported. A successful import cannot settle readability, consent,

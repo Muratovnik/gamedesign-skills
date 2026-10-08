@@ -44,3 +44,37 @@ jobs:
               output.write(f"version={version}\n")
       - run: python -B tools/release.py build --output dist --version ${{ steps.version.outputs.version }}
       - run: python -B tools/smoke.py --assets dist --version ${{ steps.version.outputs.version }} --temp tmp/release-smoke
+
+  native-clients:
+    if: github.event.repository && !github.event.repository.private
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements-dev.txt
+      - name: Install exact native clients into disposable runner storage
+        run: npm install --prefix "$RUNNER_TEMP/native-client-tools" --save-exact --no-audit --no-fund @openai/codex@0.159.2 @anthropic-ai/claude-code@2.1.289
+      - name: Retain the comparison baseline as an immutable source
+        run: git worktree add --detach "$RUNNER_TEMP/game-design-previous" a0db5af71146586cf861881670c991ad94d87e2b
+      - name: Qualify native discovery and local-source lifecycle
+        run: >-
+          python -B tools/qualify_native_clients.py --disposable-user
+          --codex "$RUNNER_TEMP/native-client-tools/node_modules/.bin/codex"
+          --claude "$RUNNER_TEMP/native-client-tools/node_modules/.bin/claude"
+          --source "$GITHUB_WORKSPACE" --previous "$RUNNER_TEMP/game-design-previous"
+          --work "$RUNNER_TEMP/game-design-client-qualification"
+          --receipt "$RUNNER_TEMP/native-client-receipt.json"
+      - name: Preserve actual client evidence, including incomplete runs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: native-client-evidence
+          path: |
+            ${{ runner.temp }}/native-client-receipt.json
+            ${{ runner.temp }}/native-client-tools/package-lock.json
+          if-no-files-found: warn
