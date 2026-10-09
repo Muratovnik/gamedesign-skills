@@ -20,7 +20,7 @@ The commands below use Bash. Replace these example paths with the actual source
 and game locations; keep the quotes if a path contains spaces:
 
 ```bash
-GAME_DESIGN_ROOT="/absolute/packages/game-design-0.1.1/game-design"
+GAME_DESIGN_ROOT="/absolute/packages/game-design-0.2.0/game-design"
 GAME_ROOT="/absolute/my-game"
 ```
 

@@ -2,35 +2,24 @@
 
 ## [Unreleased]
 
+## [0.2.0](https://github.com/Muratovnik/gamedesign-skills/compare/v0.1.1...v0.2.0) (2026-10-09)
+
 ### Added
 
-- Optional certified two-player zero-sum calculation through SciPy, with explicit
-  utility/context inputs, best-response checks and original strategy examples.
-- Optional native Ink compile/run/save/resume and predicate assessment through
-  inkjs, with a fresh-process continuation example and legitimate ending controls.
-- Optional glTF/GLB conformance validation through the Khronos library, preserving
-  raw reports, unavailable resources and unsupported coverage separately from
-  game-specific predicates.
-- Fresh-user native Codex/Claude lifecycle qualification and CI for optional
-  artifact operations, with actual receipts and independent review of the change.
-- A source-pinned external comparison, terms/provenance decisions, requirement
-  and plan addendum, and bounded paired model-task evidence.
+- Optional two-player zero-sum calculation with declared utility and context, independent best-response bounds and original strategy examples. ([1873993](https://github.com/Muratovnik/gamedesign-skills/commit/1873993a6491b52fe8288c19837600a012e18d4d))
+- Native Ink compile, explicit choices, save, fresh-process resume and selected-predicate assessment, including valid departure and ending examples. ([1873993](https://github.com/Muratovnik/gamedesign-skills/commit/1873993a6491b52fe8288c19837600a012e18d4d))
+- glTF/GLB conformance inspection with explicitly permitted local resources, full native reports and coverage gaps kept separate from game-specific properties. ([1873993](https://github.com/Muratovnik/gamedesign-skills/commit/1873993a6491b52fe8288c19837600a012e18d4d))
 
 ### Fixed
 
-- Preserve required observation conditions, collection method and units in the
-  saved report, so equal counts with different assistance remain interpretable.
-- Remove the package receipt's unconditional claim that no evaluation is
-  included: public review evidence is included, while runtime `evals` directories
-  remain excluded and the receipt lists the actual archived files.
+- Reject malformed UTF-8 in Ink source, compiled story, scenario, report, saved state and dependency metadata before interpreting it; valid Unicode remains supported. ([513bbd7](https://github.com/Muratovnik/gamedesign-skills/commit/513bbd78330f4ee0d0c94cedaa81b771b78f09b6))
+- Preserve observation conditions, collection method and units in saved reports so equal counts under different assistance remain interpretable. ([513bbd7](https://github.com/Muratovnik/gamedesign-skills/commit/513bbd78330f4ee0d0c94cedaa81b771b78f09b6))
 
 ### Changed
 
-- Route an established artifact operation directly to its owned environment
-  contract without requiring concept development. Optional dependencies remain
-  task-local; the seven-skill bundle and separate Assay ownership are preserved.
-- Document the observed Linux native lifecycle separately from model selection,
-  operation quality and unqualified client/platform combinations.
+- Start with direct source use and a first playable result; retain Windows instructions and make client registration optional. ([95dcd7e](https://github.com/Muratovnik/gamedesign-skills/commit/95dcd7eab179b942a096986862e5ac0c6deb724c))
+- Route a requested artifact operation to its existing owner, with task-local dependencies and the complete seven-skill bundle. ([513bbd7](https://github.com/Muratovnik/gamedesign-skills/commit/513bbd78330f4ee0d0c94cedaa81b771b78f09b6))
+- Document the exercised Linux client manager/source lifecycle separately from model selection, other client builds, platforms and human experience. ([513bbd7](https://github.com/Muratovnik/gamedesign-skills/commit/513bbd78330f4ee0d0c94cedaa81b771b78f09b6))
 
 ## [0.1.1](https://github.com/Muratovnik/gamedesign-skills/compare/v0.1.0...v0.1.1) (2026-10-08)
 

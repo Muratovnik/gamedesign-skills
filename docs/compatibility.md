@@ -7,7 +7,7 @@ and access route, interpreter or engine, artifact schema, and game revision.
 
 | Component or route | Current boundary |
 | --- | --- |
-| Game Design | Version 0.1.1; use the complete source bundle |
+| Game Design | Version 0.2.0; use the complete source bundle |
 | Assay | The shipped binder requires 0.17.2 at commit `94c517b0aac9ba2575086bf9aead1cc828aadb0d`; it does not install Assay |
 | Python | Examples require Python 3.11 or newer; that does not establish other environment combinations |
 | Python packages | Development dependencies are listed in `requirements-dev.txt`; reading a skill downloads no package |

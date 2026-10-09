@@ -55,7 +55,7 @@ are prepared in task-owned directories; paper and prose work installs none.
 ## Access
 
 Browse the [source](https://github.com/Muratovnik/gamedesign-skills) or download
-the [v0.1.1 source release](https://github.com/Muratovnik/gamedesign-skills/releases/tag/v0.1.1).
+the [v0.2.0 source release](https://github.com/Muratovnik/gamedesign-skills/releases/tag/v0.2.0).
 The release archive contains the complete source bundle under `game-design/`.
 For direct use, give your agent the absolute path to that directory, your game's
 root and current artifact, the intended change, and the actions it is permitted

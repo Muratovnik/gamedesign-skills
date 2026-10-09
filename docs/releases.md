@@ -8,7 +8,7 @@ repository's pinned project-native Release Kit in `.github/relkit.pyz` reads
 smoke test, owner audit and required publication guard. Use this repository
 entry point so the configured policy is applied.
 
-The public [v0.1.1 release](https://github.com/Muratovnik/gamedesign-skills/releases/tag/v0.1.1)
+The public [v0.2.0 release](https://github.com/Muratovnik/gamedesign-skills/releases/tag/v0.2.0)
 is an existing release record. For a future candidate, choose the intended
 version, update `VERSION` and `CHANGELOG.md`, and finish the source changes from
 the repository root. Before preparation, commit those files and all other
