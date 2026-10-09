@@ -57,7 +57,8 @@ are prepared in task-owned directories; paper and prose work installs none.
 
 Use a plugin-capable Codex or Claude Code CLI. The commands below fetch the
 public GitHub repository through each client's native plugin manager; they can
-be entered in Bash or Windows PowerShell.
+be entered in Bash or Windows PowerShell. Check the source and scope of any
+existing `game-design-source` registration before adding another one.
 
 **Codex**
 
@@ -77,8 +78,7 @@ claude plugin details game-design
 ```
 
 Verify that the installed component inventory shows the Game Design skills,
-then start a new session. Inspect any existing `game-design-source`
-registration before adding another one. The GitHub-source syntax is documented
+then start a new session. The GitHub-source syntax is documented
 by both clients, but this project's recorded native installation checks use a
 **local source directory**, not the GitHub route. See
 [installation and scope](docs/installation.md) and
@@ -96,8 +96,8 @@ Assay. Its exact pinned revision and conditional requirements are in the
 
 ## Quick start
 
-After installing the plugin, start a new session in your game project. To try
-one method without preparing a game repository, send the following prompt:
+After installing the plugin, start a fresh session. To try one method without
+preparing a game repository, send the following prompt:
 
 > Use Game Design's `gameplay-design` skill. In a top-down game an enemy
 > charges for 0.6 seconds and strikes one tile. The warning appears only
@@ -113,10 +113,11 @@ For an existing game, supply its current rules or files, the desired change
 and the actions the agent may take. Name the skill explicitly; installation
 does not guarantee automatic selection. See the
 [Russian quick start](docs/quickstart.ru.md).
+
 ## Documentation
 
-- [Installation](docs/installation.md) separates direct source use from optional
-  Codex and Claude Code plugin registration and its update/removal procedures.
+- [Installation](docs/installation.md) covers GitHub installation, direct
+  source use, scopes, updates and removal.
 - [Compatibility](docs/compatibility.md) records the current dependency and
   client-qualification boundaries.
 - [Example guide](docs/examples.md) maps methods to playable studies and tools.
@@ -132,6 +133,7 @@ their inspected properties, not player perception, arbitrary-engine
 compatibility or general model quality. Installed-resource loading and
 automatic model selection are separate claims; their recorded evidence and
 limits are in [compatibility](docs/compatibility.md).
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for source ownership and maintainer

@@ -10,6 +10,8 @@ dependencies.
 Use a plugin-capable Codex or Claude Code CLI. The public repository contains
 both marketplace manifests, so no source archive or manual checkout is needed
 for this route. These shell commands also work in Windows PowerShell.
+Before installing, inspect an existing `game-design-source` marketplace or
+`game-design` plugin to avoid replacing a differently owned registration.
 
 ### Codex
 
@@ -37,8 +39,7 @@ claude plugin details game-design
 ```
 
 Check that the intended plugin and skills are listed, then start a fresh
-session. If `game-design-source` or `game-design` already exists, inspect its
-source and scope first. Do not replace another provider's registration.
+session. Do not replace another provider's registration.
 
 The native GitHub-source format is described in
 [Codex plugin packaging](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli)
@@ -62,7 +63,6 @@ This is an example prompt, not a recorded model run or a player playtest. The
 
 ## Use source files directly
 
-
 Start with an authorized checkout or download the
 [v0.2.0 source archive](https://github.com/Muratovnik/gamedesign-skills/releases/tag/v0.2.0)
 and extract it. For an archive, verify its checksum against the accompanying
@@ -83,8 +83,8 @@ In Windows PowerShell, use `$GameDesignRoot` and `$GameRoot` instead of the
 Bash variables, or put the actual absolute path in quotes:
 
 ```powershell
-$GameDesignRoot = "C:\\packages\\game-design-0.2.0\\game-design"
-$GameRoot = "C:\\projects\\my-game"
+$GameDesignRoot = "C:\packages\game-design-0.2.0\game-design"
+$GameRoot = "C:\projects\my-game"
 ```
 
 For direct source use, give the authorized text reader those two roots, the
@@ -238,11 +238,13 @@ commands (`codex plugin marketplace upgrade game-design-source` and
 `claude plugin marketplace update game-design-source`). Claude Code also
 offers `claude plugin update game-design@game-design-source --scope local`.
 Check the installed revision and skills again after updating; a marketplace
-refresh alone is not evidence that the installed files changed. The recorded
-project qualification covers local-source replacement, not GitHub upgrade.
+refresh alone is not evidence that the installed files changed. These commands
+refresh the configured source, not an arbitrary earlier tag. Record an immutable
+source revision and retain the older source for an exact rollback. Do not refresh
+unrelated marketplaces. The recorded project qualification covers local-source
+replacement, not GitHub upgrade.
 
 ### Local-source replacement and rollback
-
 
 For either client, retain the earlier source, matching Assay selection, native
 inventory and relevant settings outside managed roots before changing them.
@@ -267,11 +269,3 @@ without relying on a cache refresh to imply different bytes. If the old copy
 predates native packaging, remove the new registration and return to its
 explicit-source route. Package rollback does not undo changes to game artifacts
 or save formats; use the game's recovery path for those.
-
-For a separately chosen Git-backed marketplace, the clients also expose
-`codex plugin marketplace upgrade game-design-source` and
-`claude plugin marketplace update game-design-source`; Claude then offers
-`claude plugin update game-design@game-design-source --scope local`. These
-refresh the configured source, not an arbitrary prior version. Record its
-immutable revision and use the source-replacement procedure above for an exact
-rollback. Do not run an unqualified refresh across unrelated marketplaces.
