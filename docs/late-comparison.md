@@ -43,3 +43,10 @@ The authored examples are synthetic. Their technical and arithmetic records
 describe only the declared cases; they are not player studies, general engine
 support claims, or undisclosed final evaluation data. For the mapping from a
 capability to its method and example, use the [capability map](traceability.md).
+
+The [source-pinned external comparison](research/2026-10-08/comparison.md) and
+[verification record](reviews/2026-10-08-comparison/README.md) separate discovered
+patterns, retained terms and observed operations. The supplied discovery report
+was not accepted as licensing or performance evidence. Six explicit-source model
+pairs remain a bounded diagnostic comparison, not proof of native discovery or
+general improvement.

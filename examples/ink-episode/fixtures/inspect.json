@@ -1,0 +1,18 @@
+{
+  "schema": "ink-scenario/1",
+  "id": "hear-before-sharing",
+  "observe_variables": ["disclosure_heard", "excerpt_shared"],
+  "actions": [{"choice": "Hear the introduction"}],
+  "checks": [
+    {"kind": "choice", "at": 0, "text": "Share the excerpt", "available": false},
+    {"kind": "choice", "at": 0, "text": "Leave the room", "available": true},
+    {"kind": "variable", "at": 0, "name": "disclosure_heard", "equals": false},
+    {"kind": "text", "at": 1, "includes": "The voice is an imitation, not a recovered witness."},
+    {"kind": "variable", "at": 1, "name": "disclosure_heard", "equals": true},
+    {"kind": "variable", "at": 1, "name": "excerpt_shared", "equals": false},
+    {"kind": "choice", "at": 1, "text": "Share the excerpt", "available": true},
+    {"kind": "choice", "at": 1, "text": "Leave the room", "available": true},
+    {"kind": "terminal", "at": 1, "equals": false},
+    {"kind": "action_count", "at_least": 1}
+  ]
+}

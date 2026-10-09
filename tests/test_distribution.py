@@ -257,6 +257,28 @@ class SecurePackaging(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "outside public source roots"):
             package.validate_destination(root, root / expected)
 
+    def test_review_evidence_does_not_make_runtime_evals_public(self):
+        root = self._source()
+        review = root / "docs/reviews/behavior-evidence.zip"
+        review.parent.mkdir(parents=True)
+        with zipfile.ZipFile(review, "w") as evidence:
+            evidence.writestr("evaluator/rubric.md", "published review criterion\n")
+        runtime = root / "skills/example"
+        (runtime / "evals").mkdir(parents=True)
+        (runtime / "SKILL.md").write_text("runtime method\n", encoding="utf-8")
+        (runtime / "evals/rubric.md").write_text("excluded runtime rubric\n", encoding="utf-8")
+
+        archive = self.base / "review-source.zip"
+        receipt = package.build(root, archive)
+        inventory = {item["path"] for item in receipt["files"]}
+        self.assertIn("docs/reviews/behavior-evidence.zip", inventory)
+        self.assertIn("skills/example/SKILL.md", inventory)
+        self.assertNotIn("skills/example/evals/rubric.md", inventory)
+        self.assertNotIn("evaluation_included", receipt)
+        with zipfile.ZipFile(archive) as built:
+            self.assertEqual(built.read("game-design/docs/reviews/behavior-evidence.zip"), review.read_bytes())
+            self.assertNotIn("game-design/skills/example/evals/rubric.md", built.namelist())
+
     def test_generated_agents_marketplace_refuses_linked_ancestors(self):
         root = self._source()
         outside = self.base / "foreign-agents"

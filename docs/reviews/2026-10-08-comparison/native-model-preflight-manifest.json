@@ -1,0 +1,14 @@
+{
+  "archive": "native-model-preflight.zip",
+  "scope": "Independent ordinary Codex explicit-prompt/owned-PTY attempt and redacted Claude authentication status; no completed native model turn.",
+  "archive_sha256": "5efc47646ce3845ba5041618b8766338ede6b2fd1b455d2cabd57ead44dbcb9e",
+  "archive_bytes": 1165,
+  "entry_count": 4,
+  "reopened_all_entries": true,
+  "files": {
+    "claude-auth-status.json": "32cbafa4dbf86a55a202f3fac9ab1680ee98b602c759a43c325d9de270ce7747",
+    "codex-owned-pty/attempt.json": "e80c988fe58ac63256d30042feb8b94b14e8863f56d8888feee28196378d0981",
+    "codex-owned-pty/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "codex-owned-pty/stdout.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

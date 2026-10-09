@@ -46,6 +46,12 @@ by their first letters. A correct choice opens a gate and supplies the next scen
 a wrong direction remains a valid retry. The example consumer checks the content
 and action relationships, not language quality or human experience.
 
+For tasks that need executable artifact evidence, use the optional
+[strategy matrix](examples/strategy-matrix/README.md),
+[Ink episode](examples/ink-episode/README.md), or
+[glTF/GLB inspection](examples/gltf-artifacts/README.md). Their dependencies
+are prepared in task-owned directories; paper and prose work installs none.
+
 ## Access
 
 Browse the [source](https://github.com/Muratovnik/gamedesign-skills) or download
@@ -108,8 +114,10 @@ invalid-content cases.
 The examples are synthetic. Deterministic and headless checks establish only the
 properties they inspect; they do not establish player perception, human
 experience, automatic client discovery, arbitrary-engine compatibility or
-model quality. Native Codex and Claude Code lifecycle qualification remains
-unverified; see the [compatibility record](docs/compatibility.md#native-client-qualification).
+general model quality. Recorded fresh-Linux checks exercised the local-source
+manager lifecycle for Codex 0.159.2 and Claude Code 2.1.289, including installed
+resource use. This is separate from automatic model selection or adherence;
+see the [compatibility record](docs/compatibility.md#native-client-qualification).
 
 ## Contributing
 

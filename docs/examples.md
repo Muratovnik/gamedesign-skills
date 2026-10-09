@@ -15,6 +15,10 @@ observations; this guide points you to the part that makes a useful comparison.
 | Content generation and selection | [Repertoire](../skills/game-content-design/references/repertoire.md) and the [analysis lab](../examples/analysis-lab/README.md) | Whether relations remain varied after cosmetic names are removed, and how generated content moves through filtering, selection and presentation. |
 | Adapting an existing artifact | [East Gate](../examples/adaptation/README.md) | Versioned English and Russian clues, one-line display with permanent line pins, player-selected direction and the reused next scene. |
 
+| Declared competing strategy utilities | [Strategy matrix](../examples/strategy-matrix/README.md) | Solved probabilities and independent best-response bounds; context is not inferred from numbers. |
+| Executable conditional story and continuation | [Ink episode](../examples/ink-episode/README.md) | Compile, explicit choices, saved state, fresh resume and selected predicates; valid departure stays available. |
+| A selected glTF/GLB delivery | [glTF artifacts](../examples/gltf-artifacts/README.md) | Conformance, unavailable resources and unrecognized coverage; engine import and the caller's game predicate remain separate. |
+
 The [Harbour of Echoes guide](../examples/design-studies/harbour-of-echoes/README.md)
 collects the paper studies and links each to its method owner. The
 [capability map](traceability.md) maps methods to examples and implementation
@@ -36,3 +40,11 @@ serialized actor views for its declared save format; it does not isolate a model
 that has already seen the full save. East Gate's serialized views do not measure
 human reading or a rendered device interaction. Each detailed example states
 the evidence it supplies and the properties left open.
+
+## Cross-domain traces
+
+The strategy trace connects declared utility and context to a solver result and
+independent bounds. Ink connects source to compilation, explicit actions,
+native state, fresh continuation and predicate assessment. glTF connects selected
+bytes and resources to the native report; the caller still evaluates the intended
+game property. Each example owns its commands and legitimate alternatives.

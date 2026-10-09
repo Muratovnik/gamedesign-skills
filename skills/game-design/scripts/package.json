@@ -1,0 +1,12 @@
+{
+  "name": "gamedesign-gltf-tools",
+  "private": true,
+  "description": "Optional glTF conformance dependency for Game Design artifact checks",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "gltf-validator": "2.0.0-dev.3.10"
+  }
+}

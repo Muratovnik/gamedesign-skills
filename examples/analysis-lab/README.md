@@ -315,7 +315,9 @@ These rows demonstrate query semantics, not player frequencies or treatment effe
 The four rows are explicitly fabricated format examples. They exercise an
 unaided recorded outcome, an assisted attempt, an unknown outcome after lost
 recording, and a declined attempt. The importer preserves the rows, source hashes,
-question and missingness. It reports `human_claim: not_established`.
+question, session conditions, collection method, units and missingness. Equal
+counts do not make different aid or prior-experience conditions interchangeable;
+those conditions travel with the report. It reports `human_claim: not_established`.
 
 For real evidence, use the [collection and interpretation route](OBSERVATIONS.md).
 Importing real records would still require inspection of their provenance,
@@ -329,7 +331,7 @@ tabletop observations. It does not create them by assigning a model a role.
 "$PYTHON" -m unittest discover -s examples/analysis-lab -p 'test_*.py' -v
 ```
 
-Twenty-three public semantic tests cover an
+The public semantic tests cover an
 equal-total but wrong-owner save that still passes the schema, an absent
 authority, lost winch, altered private fact, expired delegation, repeated reward,
 empty selection, late crossing, missing telemetry, empty observation set and

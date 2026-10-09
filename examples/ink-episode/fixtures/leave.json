@@ -1,0 +1,13 @@
+{
+  "schema": "ink-scenario/1",
+  "id": "leave-without-sharing",
+  "observe_variables": ["disclosure_heard", "excerpt_shared"],
+  "actions": [{"choice": "Leave the room"}],
+  "checks": [
+    {"kind": "choice", "at": 0, "text": "Leave the room", "available": true},
+    {"kind": "text", "at": 1, "includes": "You return the headphones and leave the envelope open."},
+    {"kind": "variable", "at": 1, "name": "disclosure_heard", "equals": false},
+    {"kind": "variable", "at": 1, "name": "excerpt_shared", "equals": false},
+    {"kind": "terminal", "at": 1, "equals": true}
+  ]
+}

@@ -76,3 +76,36 @@ the relation between implementation and player experience. Their contribution
 is to connect those concerns to a concrete artifact and an inspectable change.
 The [research and evidence page](late-comparison.md) records the source basis
 and limits; it does not report a measured comparison of agent performance.
+
+## Optional native operations under existing owners
+
+The comparison adds SciPy utility calculation to systems design, native Ink
+execution to conditional narrative, and Khronos glTF conformance to the shared
+environment. These are original adapters around established implementations.
+They exist because the concrete operation was absent; a second parser, solver,
+narrative VM or general workflow would duplicate a more appropriate owner.
+Dependencies are obtained in task-owned environments only when selected.
+
+The input model, game predicate and uncertainty stay explicit. Intentional
+dominance is not rejected as bad design; a silent or common ending remains legal;
+an empty or camera-only glTF can be conformant. Reconsider each adapter if an
+existing game's native consumer already performs the operation, a qualified
+dependency no longer fits, or repeated observed tasks expose a concrete missing
+contract. A new package name alone is insufficient reason to broaden it.
+
+## Preserve evidence meaning through serialization
+
+Observation conditions, collection method and units are required input meaning,
+so the saved report now carries them. A digest of a separate manifest does not
+make an isolated report interpretable. This corrects the implementation of an
+existing requirement and its regression test; it adds no new universal
+playtesting or assistance rule.
+
+## Qualify native sources rather than assume cache behavior
+
+The exact Linux native lifecycle is exercised through real Codex and Claude
+managers. The verifier records the effective source, full runtime file set and
+content before executing an installed resource; Claude may read a retained local
+source while also having a cache. It tests same-version replacement and rollback
+and preserves a separate plugin. Native listing, enabled metadata, resource
+loading and a model's actual selection remain distinct compatibility claims.

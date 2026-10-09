@@ -1,0 +1,310 @@
+﻿2026-10-08T17:49:16.6300424Z Current runner version: '2.337.0'
+2026-10-08T17:49:16.6329860Z ##[group]Runner Image Provisioner
+2026-10-08T17:49:16.6331095Z Hosted Compute Agent
+2026-10-08T17:49:16.6331668Z Version: 20261002.596
+2026-10-08T17:49:16.6332558Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T17:49:16.6333436Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T17:49:16.6334187Z Worker ID: {c07e1a19-ede0-45bd-9a61-5e30ccc8d305}
+2026-10-08T17:49:16.6335005Z Region: centralus
+2026-10-08T17:49:16.6335580Z Cloud: Azure
+2026-10-08T17:49:16.6336078Z ##[endgroup]
+2026-10-08T17:49:16.6337727Z ##[group]Operating System
+2026-10-08T17:49:16.6338403Z Ubuntu
+2026-10-08T17:49:16.6338956Z 24.04.5
+2026-10-08T17:49:16.6339482Z LTS
+2026-10-08T17:49:16.6340026Z ##[endgroup]
+2026-10-08T17:49:16.6340576Z ##[group]Runner Image
+2026-10-08T17:49:16.6341230Z Image: ubuntu-24.04
+2026-10-08T17:49:16.6341829Z Version: 20261004.327.1
+2026-10-08T17:49:16.6343253Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T17:49:16.6344792Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T17:49:16.6345805Z ##[endgroup]
+2026-10-08T17:49:16.6346918Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T17:49:16.6349686Z Contents: read
+2026-10-08T17:49:16.6350301Z Metadata: read
+2026-10-08T17:49:16.6350858Z ##[endgroup]
+2026-10-08T17:49:16.6353976Z Secret source: Actions
+2026-10-08T17:49:16.6355079Z Cache mode: write
+2026-10-08T17:49:16.6356211Z Prepare workflow directory
+2026-10-08T17:49:16.6711536Z Prepare all required actions
+2026-10-08T17:49:16.6766182Z Getting action download info
+2026-10-08T17:49:16.9439581Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-08T17:49:17.0386781Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-08T17:49:17.1438382Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-08T17:49:17.3810018Z Complete job name: native-clients
+2026-10-08T17:49:17.4565633Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-08T17:49:17.4566804Z with:
+2026-10-08T17:49:17.4567388Z   fetch-depth: 0
+2026-10-08T17:49:17.4567999Z   persist-credentials: false
+2026-10-08T17:49:17.4568680Z   repository: Muratovnik/gamedesign-skills
+2026-10-08T17:49:17.4573652Z   token: ***
+2026-10-08T17:49:17.4574252Z   ssh-strict: true
+2026-10-08T17:49:17.4574825Z   ssh-user: git
+2026-10-08T17:49:17.4575393Z   clean: true
+2026-10-08T17:49:17.4575969Z   sparse-checkout-cone-mode: true
+2026-10-08T17:49:17.4576639Z   fetch-tags: false
+2026-10-08T17:49:17.4577227Z   show-progress: true
+2026-10-08T17:49:17.4577773Z   lfs: false
+2026-10-08T17:49:17.4578394Z   submodules: false
+2026-10-08T17:49:17.4578981Z   set-safe-directory: true
+2026-10-08T17:49:17.4579656Z   allow-unsafe-pr-checkout: false
+2026-10-08T17:49:17.4580634Z ##[endgroup]
+2026-10-08T17:49:17.5586447Z Syncing repository: Muratovnik/gamedesign-skills
+2026-10-08T17:49:17.5589817Z ##[group]Getting Git version info
+2026-10-08T17:49:17.5591207Z Working directory is '/home/runner/work/gamedesign-skills/gamedesign-skills'
+2026-10-08T17:49:17.5593874Z [command]/usr/bin/git version
+2026-10-08T17:49:17.5664754Z git version 2.55.0
+2026-10-08T17:49:17.5693607Z ##[endgroup]
+2026-10-08T17:49:17.5705656Z Temporarily overriding HOME='/home/runner/work/_temp/5f715f7b-77e0-47f2-9fc5-c9d9f8337bd7' before making global git config changes
+2026-10-08T17:49:17.5709042Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T17:49:17.5711743Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gamedesign-skills/gamedesign-skills
+2026-10-08T17:49:17.5754191Z Deleting the contents of '/home/runner/work/gamedesign-skills/gamedesign-skills'
+2026-10-08T17:49:17.5757963Z ##[group]Determining repository object format
+2026-10-08T17:49:17.5759771Z ##[endgroup]
+2026-10-08T17:49:17.5761139Z ##[group]Initializing the repository
+2026-10-08T17:49:17.5765461Z [command]/usr/bin/git init /home/runner/work/gamedesign-skills/gamedesign-skills
+2026-10-08T17:49:17.5884166Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T17:49:17.5886452Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T17:49:17.5888781Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T17:49:17.5890342Z hint: call:
+2026-10-08T17:49:17.5891349Z hint:
+2026-10-08T17:49:17.5892956Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T17:49:17.5919324Z hint:
+2026-10-08T17:49:17.5920790Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T17:49:17.5922890Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T17:49:17.5924357Z hint:
+2026-10-08T17:49:17.5925488Z hint: 	git branch -m <name>
+2026-10-08T17:49:17.5926543Z hint:
+2026-10-08T17:49:17.5927793Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T17:49:17.5931145Z Initialized empty Git repository in /home/runner/work/gamedesign-skills/gamedesign-skills/.git/
+2026-10-08T17:49:17.5935609Z [command]/usr/bin/git remote add origin https://github.com/Muratovnik/gamedesign-skills
+2026-10-08T17:49:17.5960734Z ##[endgroup]
+2026-10-08T17:49:17.5962657Z ##[group]Disabling automatic garbage collection
+2026-10-08T17:49:17.5975501Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T17:49:17.6023003Z ##[endgroup]
+2026-10-08T17:49:17.6024534Z ##[group]Setting up auth
+2026-10-08T17:49:17.6025591Z Removing SSH command configuration
+2026-10-08T17:49:17.6030471Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T17:49:17.6085248Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T17:49:17.6437718Z Removing HTTP extra header
+2026-10-08T17:49:17.6445706Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T17:49:17.6477255Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T17:49:17.6673265Z Removing includeIf entries pointing to credentials config files
+2026-10-08T17:49:17.6680001Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T17:49:17.6710616Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T17:49:17.6911509Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-8b04f0cc-0399-4448-b595-282be8009310.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T17:49:17.6949394Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git.path /home/runner/work/_temp/git-credentials-8b04f0cc-0399-4448-b595-282be8009310.config
+2026-10-08T17:49:17.6982994Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-8b04f0cc-0399-4448-b595-282be8009310.config
+2026-10-08T17:49:17.7018549Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-8b04f0cc-0399-4448-b595-282be8009310.config
+2026-10-08T17:49:17.7050330Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-8b04f0cc-0399-4448-b595-282be8009310.config
+2026-10-08T17:49:17.7079055Z ##[endgroup]
+2026-10-08T17:49:17.7080835Z ##[group]Fetching the repository
+2026-10-08T17:49:17.7087121Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +a06f5336e5805c0cd84c924ca3aefdc658dc8401:refs/remotes/pull/2/merge
+2026-10-08T17:49:18.6544480Z From https://github.com/Muratovnik/gamedesign-skills
+2026-10-08T17:49:18.6548565Z  * [new branch]      feat/research-backed-design-tools        -> origin/feat/research-backed-design-tools
+2026-10-08T17:49:18.6551992Z  * [new branch]      main                                     -> origin/main
+2026-10-08T17:49:18.6555544Z  * [new branch]      review/game-design-correction-2026-10-08 -> origin/review/game-design-correction-2026-10-08
+2026-10-08T17:49:18.6558198Z  * [new tag]         v0.1.0                                   -> v0.1.0
+2026-10-08T17:49:18.6560519Z  * [new tag]         v0.1.1                                   -> v0.1.1
+2026-10-08T17:49:18.6562842Z  * [new ref]         a06f5336e5805c0cd84c924ca3aefdc658dc8401 -> pull/2/merge
+2026-10-08T17:49:18.6567082Z ##[endgroup]
+2026-10-08T17:49:18.6568653Z ##[group]Determining the checkout info
+2026-10-08T17:49:18.6570399Z ##[endgroup]
+2026-10-08T17:49:18.6571471Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T17:49:18.6612340Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T17:49:18.6646489Z ##[group]Checking out the ref
+2026-10-08T17:49:18.6648976Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2/merge
+2026-10-08T17:49:18.6862549Z Note: switching to 'refs/remotes/pull/2/merge'.
+2026-10-08T17:49:18.6863834Z 
+2026-10-08T17:49:18.6864797Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-08T17:49:18.6867566Z changes and commit them, and you can discard any commits you make in this
+2026-10-08T17:49:18.6870582Z state without impacting any branches by switching back to a branch.
+2026-10-08T17:49:18.6872786Z 
+2026-10-08T17:49:18.6874282Z If you want to create a new branch to retain commits you create, you may
+2026-10-08T17:49:18.6877691Z do so (now or later) by using -c with the switch command. Example:
+2026-10-08T17:49:18.6879771Z 
+2026-10-08T17:49:18.6881135Z   git switch -c <new-branch-name>
+2026-10-08T17:49:18.6882734Z 
+2026-10-08T17:49:18.6883613Z Or undo this operation with:
+2026-10-08T17:49:18.6884816Z 
+2026-10-08T17:49:18.6885747Z   git switch -
+2026-10-08T17:49:18.6886767Z 
+2026-10-08T17:49:18.6888026Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-08T17:49:18.6889757Z 
+2026-10-08T17:49:18.6891629Z HEAD is now at a06f533 Merge 1873993a6491b52fe8288c19837600a012e18d4d into a0db5af71146586cf861881670c991ad94d87e2b
+2026-10-08T17:49:18.6898640Z ##[endgroup]
+2026-10-08T17:49:18.6920976Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T17:49:18.6946144Z a06f5336e5805c0cd84c924ca3aefdc658dc8401
+2026-10-08T17:49:18.6955419Z ##[group]Removing auth
+2026-10-08T17:49:18.6957937Z Removing SSH command configuration
+2026-10-08T17:49:18.6961533Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T17:49:18.6993297Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T17:49:18.7180368Z Removing HTTP extra header
+2026-10-08T17:49:18.7184300Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T17:49:18.7219139Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T17:49:18.7409161Z Removing includeIf entries pointing to credentials config files
+2026-10-08T17:49:18.7411750Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T17:49:18.7437762Z includeif.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git.path
+2026-10-08T17:49:18.7441363Z includeif.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git/worktrees/*.path
+2026-10-08T17:49:18.7444303Z includeif.gitdir:/github/workspace/.git.path
+2026-10-08T17:49:18.7446242Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-08T17:49:18.7451206Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git.path
+2026-10-08T17:49:18.7466273Z /home/runner/work/_temp/git-credentials-8b04f0cc-0399-4448-b595-282be8009310.config
+2026-10-08T17:49:18.7477475Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-8b04f0cc\-0399\-4448\-b595\-282be8009310\.config
+2026-10-08T17:49:18.7512940Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git/worktrees/*.path
+2026-10-08T17:49:18.7536169Z /home/runner/work/_temp/git-credentials-8b04f0cc-0399-4448-b595-282be8009310.config
+2026-10-08T17:49:18.7544766Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-8b04f0cc\-0399\-4448\-b595\-282be8009310\.config
+2026-10-08T17:49:18.7587580Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-08T17:49:18.7608468Z /github/runner_temp/git-credentials-8b04f0cc-0399-4448-b595-282be8009310.config
+2026-10-08T17:49:18.7615887Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-8b04f0cc\-0399\-4448\-b595\-282be8009310\.config
+2026-10-08T17:49:18.7655232Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-08T17:49:18.7675880Z /github/runner_temp/git-credentials-8b04f0cc-0399-4448-b595-282be8009310.config
+2026-10-08T17:49:18.7688117Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-8b04f0cc\-0399\-4448\-b595\-282be8009310\.config
+2026-10-08T17:49:18.7719548Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T17:49:18.7903394Z Removing credentials config '/home/runner/work/_temp/git-credentials-8b04f0cc-0399-4448-b595-282be8009310.config'
+2026-10-08T17:49:18.7912828Z ##[endgroup]
+2026-10-08T17:49:18.8283827Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+2026-10-08T17:49:18.8285611Z with:
+2026-10-08T17:49:18.8286641Z   python-version: 3.12
+2026-10-08T17:49:18.8287751Z   check-latest: false
+2026-10-08T17:49:18.8298545Z   token: ***
+2026-10-08T17:49:18.8299684Z   update-environment: true
+2026-10-08T17:49:18.8300908Z   allow-prereleases: false
+2026-10-08T17:49:18.8302075Z   freethreaded: false
+2026-10-08T17:49:18.8303320Z ##[endgroup]
+2026-10-08T17:49:18.9497315Z ##[group]Installed versions
+2026-10-08T17:49:18.9596816Z Successfully set up CPython (3.12.15)
+2026-10-08T17:49:18.9599260Z ##[endgroup]
+2026-10-08T17:49:18.9854903Z ##[group]Run python -m pip install -r requirements-dev.txt
+2026-10-08T17:49:18.9857768Z [36;1mpython -m pip install -r requirements-dev.txt[0m
+2026-10-08T17:49:19.0140555Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:19.0141974Z env:
+2026-10-08T17:49:19.0143479Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:19.0145432Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T17:49:19.0147359Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:19.0149122Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:19.0150907Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:19.0152769Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T17:49:19.0154528Z ##[endgroup]
+2026-10-08T17:49:22.8242906Z Collecting PyYAML==6.0.3 (from -r requirements-dev.txt (line 2))
+2026-10-08T17:49:22.9006986Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-10-08T17:49:22.9219947Z Collecting markdown-it-py==4.2.0 (from -r requirements-dev.txt (line 3))
+2026-10-08T17:49:22.9323906Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+2026-10-08T17:49:22.9613768Z Collecting jsonschema==4.26.0 (from -r requirements-dev.txt (line 4))
+2026-10-08T17:49:22.9717710Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+2026-10-08T17:49:22.9946923Z Collecting attrs==26.1.0 (from -r requirements-dev.txt (line 5))
+2026-10-08T17:49:23.0053960Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-10-08T17:49:23.0256119Z Collecting jsonschema-specifications==2025.9.1 (from -r requirements-dev.txt (line 6))
+2026-10-08T17:49:23.0363020Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-10-08T17:49:23.0536513Z Collecting mdurl==0.1.2 (from -r requirements-dev.txt (line 7))
+2026-10-08T17:49:23.0640490Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-10-08T17:49:23.0893376Z Collecting referencing==0.37.0 (from -r requirements-dev.txt (line 8))
+2026-10-08T17:49:23.1000247Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-10-08T17:49:23.3767911Z Collecting rpds-py==2026.9.1 (from -r requirements-dev.txt (line 9))
+2026-10-08T17:49:23.3874461Z   Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+2026-10-08T17:49:23.4092884Z Collecting typing-extensions==4.16.0 (from -r requirements-dev.txt (line 10))
+2026-10-08T17:49:23.4196646Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-10-08T17:49:23.4403619Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-10-08T17:49:23.4905934Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 25.2 MB/s  0:00:00
+2026-10-08T17:49:23.5019647Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+2026-10-08T17:49:23.5146424Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-10-08T17:49:23.5275363Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+2026-10-08T17:49:23.5403255Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-10-08T17:49:23.5534443Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-10-08T17:49:23.5659226Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-10-08T17:49:23.5785021Z Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+2026-10-08T17:49:23.6006556Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-10-08T17:49:23.8446938Z Installing collected packages: typing-extensions, rpds-py, PyYAML, mdurl, attrs, referencing, markdown-it-py, jsonschema-specifications, jsonschema
+2026-10-08T17:49:24.1271999Z 
+2026-10-08T17:49:24.1286885Z Successfully installed PyYAML-6.0.3 attrs-26.1.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 markdown-it-py-4.2.0 mdurl-0.1.2 referencing-0.37.0 rpds-py-2026.9.1 typing-extensions-4.16.0
+2026-10-08T17:49:24.1993133Z ##[group]Run npm install --prefix "$RUNNER_TEMP/native-client-tools" --save-exact --no-audit --no-fund @openai/codex@0.159.2 @anthropic-ai/claude-code@2.1.289
+2026-10-08T17:49:24.1994312Z [36;1mnpm install --prefix "$RUNNER_TEMP/native-client-tools" --save-exact --no-audit --no-fund @openai/codex@0.159.2 @anthropic-ai/claude-code@2.1.289[0m
+2026-10-08T17:49:24.2036097Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:24.2036599Z env:
+2026-10-08T17:49:24.2037038Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:24.2037727Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T17:49:24.2038407Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:24.2039133Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:24.2039658Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:24.2040223Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T17:49:24.2040899Z ##[endgroup]
+2026-10-08T17:49:32.2244021Z 
+2026-10-08T17:49:32.2245158Z added 4 packages in 8s
+2026-10-08T17:49:32.2643829Z ##[group]Run git worktree add --detach "$RUNNER_TEMP/game-design-previous" a0db5af71146586cf861881670c991ad94d87e2b
+2026-10-08T17:49:32.2644670Z [36;1mgit worktree add --detach "$RUNNER_TEMP/game-design-previous" a0db5af71146586cf861881670c991ad94d87e2b[0m
+2026-10-08T17:49:32.2684642Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:32.2685029Z env:
+2026-10-08T17:49:32.2685476Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:32.2685988Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T17:49:32.2686515Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:32.2687000Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:32.2687449Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:32.2688382Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T17:49:32.2688788Z ##[endgroup]
+2026-10-08T17:49:32.2770560Z Preparing worktree (detached HEAD a0db5af)
+2026-10-08T17:49:32.2980766Z HEAD is now at a0db5af docs: link version 0.1.1 release boundary
+2026-10-08T17:49:32.3033330Z ##[group]Run python -B tools/qualify_native_clients.py --disposable-user --codex "$RUNNER_TEMP/native-client-tools/node_modules/.bin/codex" --claude "$RUNNER_TEMP/native-client-tools/node_modules/.bin/claude" --source "$GITHUB_WORKSPACE" --previous "$RUNNER_TEMP/game-design-previous" --work "$RUNNER_TEMP/game-design-client-qualification" --receipt "$RUNNER_TEMP/native-client-receipt.json"
+2026-10-08T17:49:32.3035828Z [36;1mpython -B tools/qualify_native_clients.py --disposable-user --codex "$RUNNER_TEMP/native-client-tools/node_modules/.bin/codex" --claude "$RUNNER_TEMP/native-client-tools/node_modules/.bin/claude" --source "$GITHUB_WORKSPACE" --previous "$RUNNER_TEMP/game-design-previous" --work "$RUNNER_TEMP/game-design-client-qualification" --receipt "$RUNNER_TEMP/native-client-receipt.json"[0m
+2026-10-08T17:49:32.3076181Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:32.3076554Z env:
+2026-10-08T17:49:32.3076943Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:32.3077600Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T17:49:32.3078110Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:32.3078600Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:32.3079049Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:32.3079529Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T17:49:32.3079962Z ##[endgroup]
+2026-10-08T17:49:47.2034147Z {"status": "supported", "errors": [], "receipt": "/home/runner/work/_temp/native-client-receipt.json"}
+2026-10-08T17:49:47.2204590Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-08T17:49:47.2205112Z with:
+2026-10-08T17:49:47.2205421Z   name: native-client-evidence
+2026-10-08T17:49:47.2206129Z   path: /home/runner/work/_temp/native-client-receipt.json
+/home/runner/work/_temp/native-client-tools/package-lock.json
+
+2026-10-08T17:49:47.2206787Z   if-no-files-found: warn
+2026-10-08T17:49:47.2207131Z   compression-level: 6
+2026-10-08T17:49:47.2207465Z   overwrite: false
+2026-10-08T17:49:47.2207793Z   include-hidden-files: false
+2026-10-08T17:49:47.2208172Z env:
+2026-10-08T17:49:47.2208564Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:47.2209090Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T17:49:47.2209629Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:47.2210113Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:47.2210918Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T17:49:47.2211399Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T17:49:47.2211832Z ##[endgroup]
+2026-10-08T17:49:47.3810388Z (node:3655) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T17:49:47.3811449Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T17:49:47.3860419Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-08T17:49:47.3864258Z The least common ancestor is /home/runner/work/_temp. This will be the root directory of the artifact
+2026-10-08T17:49:47.3865506Z With the provided path, there will be 2 files uploaded
+2026-10-08T17:49:47.3867323Z Artifact name is valid!
+2026-10-08T17:49:47.3883559Z Root directory input is valid!
+2026-10-08T17:49:47.8061138Z Beginning upload of artifact content to blob storage
+2026-10-08T17:49:47.8300079Z (node:3655) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T17:49:48.0070271Z Uploaded bytes 33452
+2026-10-08T17:49:48.0556328Z Finished uploading artifact content to blob storage!
+2026-10-08T17:49:48.0557164Z SHA256 digest of uploaded artifact zip is f78b01ed5ec0bab19c9a7a6b26e678aacbee6027b3d47c4d50f3fe058391a24f
+2026-10-08T17:49:48.0558166Z Finalizing artifact upload
+2026-10-08T17:49:48.2859842Z Artifact native-client-evidence.zip successfully finalized. Artifact ID 11568218182
+2026-10-08T17:49:48.2861329Z Artifact native-client-evidence has been successfully uploaded! Final size is 33452 bytes. Artifact ID is 11568218182
+2026-10-08T17:49:48.2867177Z Artifact download URL: https://github.com/Muratovnik/gamedesign-skills/actions/runs/37819498740/artifacts/11568218182
+2026-10-08T17:49:48.3038472Z Post job cleanup.
+2026-10-08T17:49:48.4400019Z Post job cleanup.
+2026-10-08T17:49:48.5297606Z [command]/usr/bin/git version
+2026-10-08T17:49:48.5349740Z git version 2.55.0
+2026-10-08T17:49:48.5384125Z Temporarily overriding HOME='/home/runner/work/_temp/b6922886-1370-4881-a0b2-3816a31b888e' before making global git config changes
+2026-10-08T17:49:48.5386420Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T17:49:48.5391280Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gamedesign-skills/gamedesign-skills
+2026-10-08T17:49:48.5428512Z Removing SSH command configuration
+2026-10-08T17:49:48.5436495Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T17:49:48.5473279Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T17:49:48.5685830Z Removing HTTP extra header
+2026-10-08T17:49:48.5693203Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T17:49:48.5738297Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T17:49:48.5923831Z Removing includeIf entries pointing to credentials config files
+2026-10-08T17:49:48.5939821Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T17:49:48.5965370Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T17:49:48.6424794Z Cleaning up orphan processes
+2026-10-08T17:49:48.6658691Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

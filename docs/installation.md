@@ -50,11 +50,13 @@ is local. Keep using a separate explicit source while such a conflict is open.
 These procedures use the Codex CLI **0.159.2** interface and the documented
 Claude Code **v2.1.289** interface. The latter supports
 [validating a root containing both manifests](https://code.claude.com/docs/en/plugins/cli-reference#validate-a-directory).
-The isolated Codex check on 2026-10-08 reached `--version`; marketplace listing
-stopped during client bootstrap before registry or package metadata handling.
-Native installation and lifecycle remain unverified for both clients;
-[compatibility](compatibility.md#native-client-qualification) records the
-qualification boundary and required receipts. Run the relevant `--version` and
+Recorded fresh Ubuntu/Linux checks exercised install, exact seven-skill
+inventory, disable/re-enable, source replacement, rollback, removal, preservation
+of an unrelated registration, execution of the installed observation resource,
+and reopening of its report.
+The [compatibility record](compatibility.md#native-client-qualification) names
+the tested source and boundary. Manager evidence does not establish model
+selection, adherence or another operating system. Run the relevant `--version` and
 subcommand `--help` before applying these commands to a different build.
 
 ### Codex: registered local marketplace
@@ -72,7 +74,10 @@ codex plugin list --marketplace game-design-source --json
 ```
 
 Check the returned source and installed identity before starting a fresh
-session. The generated `.agents/plugins/marketplace.json` makes the package
+session. In this build skill names are namespaced, for example
+`game-design:game-systems-design`; metadata records source path and enabled state.
+The qualifier compared the complete runtime file set and hashes.
+The generated `.agents/plugins/marketplace.json` makes the package
 available; installation remains an explicit native action. This uses the
 [Codex local marketplace format](https://developers.openai.com/plugins/build/plugins#marketplace-metadata)
 and commands exposed by `codex plugin --help`.
@@ -126,6 +131,11 @@ Expect the intended identity, local scope and seven skills in the component
 inventory. A successful validator checks structure; the final inventory and
 fresh-session checks establish later boundaries. The package uses a
 [relative source in a local marketplace](https://code.claude.com/docs/en/plugin-marketplaces#write-relative-paths-from-the-marketplace-root).
+
+In this build native listing may expose `readFromFolder` for the effective
+local source and `installPath` for a separate cache. Verify the effective files;
+`details` can still describe disabled components. A disabled metadata entry
+does not establish exclusion from a fresh model session.
 
 The [native lifecycle commands](https://code.claude.com/docs/en/plugins/cli-reference)
 for this scope are:

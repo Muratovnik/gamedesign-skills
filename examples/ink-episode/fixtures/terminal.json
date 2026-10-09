@@ -1,0 +1,10 @@
+{
+  "schema": "ink-scenario/1",
+  "id": "accepted-closing-scene",
+  "observe_variables": [],
+  "actions": [],
+  "checks": [
+    {"kind": "text", "at": 0, "includes": "The archive is closed for the evening."},
+    {"kind": "terminal", "at": 0, "equals": true}
+  ]
+}

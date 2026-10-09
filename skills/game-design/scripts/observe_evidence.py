@@ -52,6 +52,8 @@ def import_observations(csv_path: Path, manifest_path: Path):
     status = "synthetic_format_demonstration" if manifest["record_kind"] == "synthetic" else "imported_source_requires_interpretation"
     return {"status": status, "source_id": manifest["source_id"], "record_kind": manifest["record_kind"],
             "question": manifest["question"], "game_id": manifest["game_id"], "build_id": manifest["build_id"],
+            "conditions": manifest["conditions"], "collection_method": manifest["collection_method"],
+            "units": manifest["units"],
             "source_sha256": {"csv": digest(csv_path), "manifest": digest(manifest_path)},
             "rows": rows, "counts": {"all": len(rows), "known_attempt_outcomes": len(known),
                 "unknown_outcomes": sum(row["completed"] == "unknown" for row in rows),

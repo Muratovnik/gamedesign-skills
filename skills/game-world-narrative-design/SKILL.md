@@ -50,6 +50,7 @@ material according to what must operate independently.
 | World, place, institution, ecology, daily practice or material change | [World relations](references/world-relations.md) | Related places, traces and actions at a chosen simulation scale |
 | Quest, changing dialogue, condition, scene order, interruption or merge | [Conditional story](references/conditional-story.md#construct-conditions-and-time) | Conditions, effects, clocks and complete scene variants |
 | Dramatic choice, reveal, refusal, pause or expressive consequence | [Dramatic function](references/conditional-story.md#compose-dramatic-function) | Preparation, performed action, response and surviving consequence |
+| An actual Ink source, compiled story, choice trace or native save must be delivered or checked | [Ink artifacts](references/ink-artifacts.md) | A compiled story and selected runtime observations, with an optional save/resume handoff |
 
 For cross-owner work, use [relations and context](../game-design/references/relations-and-context.md).
 For actual project artifacts, operations and general methods, use the
