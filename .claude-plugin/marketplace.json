@@ -3,7 +3,7 @@
   "owner": {
     "name": "game-design"
   },
-  "description": "Seven composable game design methods, original playable examples and explicit artifact adapters.",
+  "description": "Game design skills for playable rules, systems, scenes, and prototypes, with inspectable examples.",
   "metadata": {
     "version": "0.2.0"
   },

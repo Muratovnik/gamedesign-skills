@@ -20,6 +20,10 @@ to the relevant sibling.
 | How is a repertoire generated, filtered and selected? | [Content design](../skills/game-content-design/SKILL.md) | [Analysis lab](../examples/analysis-lab/README.md): follow generated content through filtering, selection and presentation. |
 | How can an existing artifact adapt across language and device? | [Adaptation](../skills/game-design/references/adaptation.md) | [East Gate](../examples/adaptation/README.md): revise the clue and consume that same artifact in the target action. |
 
+## Artifact operations
+
+| Design question | Canonical method | Example or implementation pointer |
+| --- | --- | --- |
 | What does a declared two-player zero-sum utility imply? | [Zero-sum analysis](../skills/game-systems-design/references/zero-sum-analysis.md) | [Strategy matrix](../examples/strategy-matrix/README.md): probabilities, exploitability and independent bounds. |
 | Does an executable story preserve a selected consequence? | [Ink artifacts](../skills/game-world-narrative-design/references/ink-artifacts.md) | [Ink episode](../examples/ink-episode/README.md): compile, explicit actions, state, fresh resume and assessment. |
 | Is a selected 3D artifact usable for conformance inspection? | [glTF artifacts](../skills/game-design/references/gltf-artifacts.md) | [glTF examples](../examples/gltf-artifacts/README.md): actual resources, native errors and declared coverage gaps. |
