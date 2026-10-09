@@ -1,0 +1,517 @@
+﻿2026-10-08T17:49:15.8489558Z Current runner version: '2.337.0'
+2026-10-08T17:49:15.8508493Z ##[group]Runner Image Provisioner
+2026-10-08T17:49:15.8509049Z Hosted Compute Agent
+2026-10-08T17:49:15.8509462Z Version: 20261002.596
+2026-10-08T17:49:15.8509831Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T17:49:15.8510279Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T17:49:15.8510756Z Worker ID: {e19317cb-e62a-4319-9647-a68797f41645}
+2026-10-08T17:49:15.8511195Z Region: centralus
+2026-10-08T17:49:15.8511582Z Cloud: Azure
+2026-10-08T17:49:15.8511900Z ##[endgroup]
+2026-10-08T17:49:15.8512998Z ##[group]Operating System
+2026-10-08T17:49:15.8513368Z Ubuntu
+2026-10-08T17:49:15.8513706Z 24.04.5
+2026-10-08T17:49:15.8514056Z LTS
+2026-10-08T17:49:15.8514360Z ##[endgroup]
+2026-10-08T17:49:15.8514683Z ##[group]Runner Image
+2026-10-08T17:49:15.8515074Z Image: ubuntu-24.04
+2026-10-08T17:49:15.8515440Z Version: 20261004.327.1
+2026-10-08T17:49:15.8516230Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T17:49:15.8517097Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T17:49:15.8517702Z ##[endgroup]
+2026-10-08T17:49:15.8518383Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T17:49:15.8519620Z Contents: read
+2026-10-08T17:49:15.8519959Z Metadata: read
+2026-10-08T17:49:15.8520355Z ##[endgroup]
+2026-10-08T17:49:15.8521711Z Secret source: Actions
+2026-10-08T17:49:15.8522395Z Cache mode: write
+2026-10-08T17:49:15.8522847Z Prepare workflow directory
+2026-10-08T17:49:15.8759516Z Prepare all required actions
+2026-10-08T17:49:15.8790068Z Getting action download info
+2026-10-08T17:49:16.1190976Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-08T17:49:16.1885078Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-08T17:49:16.3506772Z Complete job name: check (ubuntu-latest)
+2026-10-08T17:49:16.3951074Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-08T17:49:16.3951559Z with:
+2026-10-08T17:49:16.3951772Z   fetch-depth: 0
+2026-10-08T17:49:16.3952013Z   persist-credentials: false
+2026-10-08T17:49:16.3952415Z   repository: Muratovnik/gamedesign-skills
+2026-10-08T17:49:16.3954508Z   token: ***
+2026-10-08T17:49:16.3954722Z   ssh-strict: true
+2026-10-08T17:49:16.3954948Z   ssh-user: git
+2026-10-08T17:49:16.3955162Z   clean: true
+2026-10-08T17:49:16.3955391Z   sparse-checkout-cone-mode: true
+2026-10-08T17:49:16.3955660Z   fetch-tags: false
+2026-10-08T17:49:16.3955888Z   show-progress: true
+2026-10-08T17:49:16.3956159Z   lfs: false
+2026-10-08T17:49:16.3956371Z   submodules: false
+2026-10-08T17:49:16.3956605Z   set-safe-directory: true
+2026-10-08T17:49:16.3956866Z   allow-unsafe-pr-checkout: false
+2026-10-08T17:49:16.3957203Z ##[endgroup]
+2026-10-08T17:49:16.4585663Z Syncing repository: Muratovnik/gamedesign-skills
+2026-10-08T17:49:16.4587187Z ##[group]Getting Git version info
+2026-10-08T17:49:16.4587843Z Working directory is '/home/runner/work/gamedesign-skills/gamedesign-skills'
+2026-10-08T17:49:16.4588807Z [command]/usr/bin/git version
+2026-10-08T17:49:16.4622305Z git version 2.55.0
+2026-10-08T17:49:16.4634167Z ##[endgroup]
+2026-10-08T17:49:16.4641441Z Temporarily overriding HOME='/home/runner/work/_temp/11096988-5b94-41c7-b090-1fdff8792fd4' before making global git config changes
+2026-10-08T17:49:16.4642959Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T17:49:16.4647646Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gamedesign-skills/gamedesign-skills
+2026-10-08T17:49:16.4689983Z Deleting the contents of '/home/runner/work/gamedesign-skills/gamedesign-skills'
+2026-10-08T17:49:16.4696744Z ##[group]Determining repository object format
+2026-10-08T17:49:16.4697339Z ##[endgroup]
+2026-10-08T17:49:16.4697983Z ##[group]Initializing the repository
+2026-10-08T17:49:16.4698955Z [command]/usr/bin/git init /home/runner/work/gamedesign-skills/gamedesign-skills
+2026-10-08T17:49:16.4769554Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T17:49:16.4770732Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T17:49:16.4771514Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T17:49:16.4772108Z hint: call:
+2026-10-08T17:49:16.4772522Z hint:
+2026-10-08T17:49:16.4772946Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T17:49:16.4773450Z hint:
+2026-10-08T17:49:16.4773922Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T17:49:16.4774685Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T17:49:16.4775285Z hint:
+2026-10-08T17:49:16.4775615Z hint: 	git branch -m <name>
+2026-10-08T17:49:16.4775997Z hint:
+2026-10-08T17:49:16.4776550Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T17:49:16.4781859Z Initialized empty Git repository in /home/runner/work/gamedesign-skills/gamedesign-skills/.git/
+2026-10-08T17:49:16.4788007Z [command]/usr/bin/git remote add origin https://github.com/Muratovnik/gamedesign-skills
+2026-10-08T17:49:16.4829387Z ##[endgroup]
+2026-10-08T17:49:16.4829798Z ##[group]Disabling automatic garbage collection
+2026-10-08T17:49:16.4833397Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T17:49:16.4859159Z ##[endgroup]
+2026-10-08T17:49:16.4859782Z ##[group]Setting up auth
+2026-10-08T17:49:16.4860269Z Removing SSH command configuration
+2026-10-08T17:49:16.4863948Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T17:49:16.4893574Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T17:49:16.5160492Z Removing HTTP extra header
+2026-10-08T17:49:16.5165333Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T17:49:16.5193247Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T17:49:16.5353455Z Removing includeIf entries pointing to credentials config files
+2026-10-08T17:49:16.5357439Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T17:49:16.5390622Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T17:49:16.5562520Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-ea4f245e-fd37-4108-89fb-d2447b508e22.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T17:49:16.5595929Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git.path /home/runner/work/_temp/git-credentials-ea4f245e-fd37-4108-89fb-d2447b508e22.config
+2026-10-08T17:49:16.5623522Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-ea4f245e-fd37-4108-89fb-d2447b508e22.config
+2026-10-08T17:49:16.5653314Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-ea4f245e-fd37-4108-89fb-d2447b508e22.config
+2026-10-08T17:49:16.5680978Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-ea4f245e-fd37-4108-89fb-d2447b508e22.config
+2026-10-08T17:49:16.5706075Z ##[endgroup]
+2026-10-08T17:49:16.5706478Z ##[group]Fetching the repository
+2026-10-08T17:49:16.5710980Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +a06f5336e5805c0cd84c924ca3aefdc658dc8401:refs/remotes/pull/2/merge
+2026-10-08T17:49:17.2719493Z From https://github.com/Muratovnik/gamedesign-skills
+2026-10-08T17:49:17.2720554Z  * [new branch]      feat/research-backed-design-tools        -> origin/feat/research-backed-design-tools
+2026-10-08T17:49:17.2721519Z  * [new branch]      main                                     -> origin/main
+2026-10-08T17:49:17.2722772Z  * [new branch]      review/game-design-correction-2026-10-08 -> origin/review/game-design-correction-2026-10-08
+2026-10-08T17:49:17.2723910Z  * [new tag]         v0.1.0                                   -> v0.1.0
+2026-10-08T17:49:17.2724689Z  * [new tag]         v0.1.1                                   -> v0.1.1
+2026-10-08T17:49:17.2725558Z  * [new ref]         a06f5336e5805c0cd84c924ca3aefdc658dc8401 -> pull/2/merge
+2026-10-08T17:49:17.2727467Z ##[endgroup]
+2026-10-08T17:49:17.2728118Z ##[group]Determining the checkout info
+2026-10-08T17:49:17.2728999Z ##[endgroup]
+2026-10-08T17:49:17.2729442Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T17:49:17.2769467Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T17:49:17.2794971Z ##[group]Checking out the ref
+2026-10-08T17:49:17.2797213Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2/merge
+2026-10-08T17:49:17.2960322Z Note: switching to 'refs/remotes/pull/2/merge'.
+2026-10-08T17:49:17.2960737Z 
+2026-10-08T17:49:17.2960990Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-08T17:49:17.2961617Z changes and commit them, and you can discard any commits you make in this
+2026-10-08T17:49:17.2962356Z state without impacting any branches by switching back to a branch.
+2026-10-08T17:49:17.2962785Z 
+2026-10-08T17:49:17.2963021Z If you want to create a new branch to retain commits you create, you may
+2026-10-08T17:49:17.2963579Z do so (now or later) by using -c with the switch command. Example:
+2026-10-08T17:49:17.2963944Z 
+2026-10-08T17:49:17.2964277Z   git switch -c <new-branch-name>
+2026-10-08T17:49:17.2964495Z 
+2026-10-08T17:49:17.2964615Z Or undo this operation with:
+2026-10-08T17:49:17.2964833Z 
+2026-10-08T17:49:17.2964939Z   git switch -
+2026-10-08T17:49:17.2965075Z 
+2026-10-08T17:49:17.2965367Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-08T17:49:17.2965795Z 
+2026-10-08T17:49:17.2966242Z HEAD is now at a06f533 Merge 1873993a6491b52fe8288c19837600a012e18d4d into a0db5af71146586cf861881670c991ad94d87e2b
+2026-10-08T17:49:17.2968046Z ##[endgroup]
+2026-10-08T17:49:17.3001700Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T17:49:17.3025176Z a06f5336e5805c0cd84c924ca3aefdc658dc8401
+2026-10-08T17:49:17.3033765Z ##[group]Removing auth
+2026-10-08T17:49:17.3034147Z Removing SSH command configuration
+2026-10-08T17:49:17.3035514Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T17:49:17.3062925Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T17:49:17.3227976Z Removing HTTP extra header
+2026-10-08T17:49:17.3230061Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T17:49:17.3257285Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T17:49:17.3424168Z Removing includeIf entries pointing to credentials config files
+2026-10-08T17:49:17.3479033Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T17:49:17.3483836Z includeif.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git.path
+2026-10-08T17:49:17.3485062Z includeif.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git/worktrees/*.path
+2026-10-08T17:49:17.3486368Z includeif.gitdir:/github/workspace/.git.path
+2026-10-08T17:49:17.3487151Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-08T17:49:17.3489330Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git.path
+2026-10-08T17:49:17.3490489Z /home/runner/work/_temp/git-credentials-ea4f245e-fd37-4108-89fb-d2447b508e22.config
+2026-10-08T17:49:17.3493343Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-ea4f245e\-fd37\-4108\-89fb\-d2447b508e22\.config
+2026-10-08T17:49:17.3513807Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git/worktrees/*.path
+2026-10-08T17:49:17.3534158Z /home/runner/work/_temp/git-credentials-ea4f245e-fd37-4108-89fb-d2447b508e22.config
+2026-10-08T17:49:17.3540537Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/gamedesign-skills/gamedesign-skills/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-ea4f245e\-fd37\-4108\-89fb\-d2447b508e22\.config
+2026-10-08T17:49:17.3601605Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-08T17:49:17.3621657Z /github/runner_temp/git-credentials-ea4f245e-fd37-4108-89fb-d2447b508e22.config
+2026-10-08T17:49:17.3627652Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-ea4f245e\-fd37\-4108\-89fb\-d2447b508e22\.config
+2026-10-08T17:49:17.3684191Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-08T17:49:17.3705701Z /github/runner_temp/git-credentials-ea4f245e-fd37-4108-89fb-d2447b508e22.config
+2026-10-08T17:49:17.3712858Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-ea4f245e\-fd37\-4108\-89fb\-d2447b508e22\.config
+2026-10-08T17:49:17.3739435Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T17:49:17.3917886Z Removing credentials config '/home/runner/work/_temp/git-credentials-ea4f245e-fd37-4108-89fb-d2447b508e22.config'
+2026-10-08T17:49:17.3924855Z ##[endgroup]
+2026-10-08T17:49:17.4115626Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+2026-10-08T17:49:17.4116130Z with:
+2026-10-08T17:49:17.4116363Z   python-version: 3.11
+2026-10-08T17:49:17.4116636Z   check-latest: false
+2026-10-08T17:49:17.4119432Z   token: ***
+2026-10-08T17:49:17.4119682Z   update-environment: true
+2026-10-08T17:49:17.4119978Z   allow-prereleases: false
+2026-10-08T17:49:17.4120262Z   freethreaded: false
+2026-10-08T17:49:17.4120526Z ##[endgroup]
+2026-10-08T17:49:17.4887071Z ##[group]Installed versions
+2026-10-08T17:49:17.4940442Z Successfully set up CPython (3.11.17)
+2026-10-08T17:49:17.4941278Z ##[endgroup]
+2026-10-08T17:49:17.5062823Z ##[group]Run python -m pip install -r requirements-dev.txt
+2026-10-08T17:49:17.5063429Z [36;1mpython -m pip install -r requirements-dev.txt[0m
+2026-10-08T17:49:17.5283355Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:17.5283755Z env:
+2026-10-08T17:49:17.5284088Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:17.5284665Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-08T17:49:17.5285205Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:17.5285682Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:17.5286161Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:17.5286659Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-08T17:49:17.5287070Z ##[endgroup]
+2026-10-08T17:49:18.1967965Z Collecting PyYAML==6.0.3 (from -r requirements-dev.txt (line 2))
+2026-10-08T17:49:18.2572757Z   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-10-08T17:49:18.2767046Z Collecting markdown-it-py==4.2.0 (from -r requirements-dev.txt (line 3))
+2026-10-08T17:49:18.2863188Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+2026-10-08T17:49:18.3176744Z Collecting jsonschema==4.26.0 (from -r requirements-dev.txt (line 4))
+2026-10-08T17:49:18.3273208Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+2026-10-08T17:49:18.3559291Z Collecting attrs==26.1.0 (from -r requirements-dev.txt (line 5))
+2026-10-08T17:49:18.3653158Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-10-08T17:49:18.3838754Z Collecting jsonschema-specifications==2025.9.1 (from -r requirements-dev.txt (line 6))
+2026-10-08T17:49:18.3933868Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-10-08T17:49:18.4101888Z Collecting mdurl==0.1.2 (from -r requirements-dev.txt (line 7))
+2026-10-08T17:49:18.4198865Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-10-08T17:49:18.4411136Z Collecting referencing==0.37.0 (from -r requirements-dev.txt (line 8))
+2026-10-08T17:49:18.4506974Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-10-08T17:49:18.6215612Z Collecting rpds-py==2026.9.1 (from -r requirements-dev.txt (line 9))
+2026-10-08T17:49:18.6315680Z   Downloading rpds_py-2026.9.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+2026-10-08T17:49:18.6513144Z Collecting typing-extensions==4.16.0 (from -r requirements-dev.txt (line 10))
+2026-10-08T17:49:18.6609244Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-10-08T17:49:18.6769974Z Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+2026-10-08T17:49:18.7298336Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 21.6 MB/s  0:00:00
+2026-10-08T17:49:18.7395845Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+2026-10-08T17:49:18.7509444Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-10-08T17:49:18.7623964Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+2026-10-08T17:49:18.7736004Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-10-08T17:49:18.7844712Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-10-08T17:49:18.7953087Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-10-08T17:49:18.8060985Z Downloading rpds_py-2026.9.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (375 kB)
+2026-10-08T17:49:18.8191375Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-10-08T17:49:18.8559471Z Installing collected packages: typing-extensions, rpds-py, PyYAML, mdurl, attrs, referencing, markdown-it-py, jsonschema-specifications, jsonschema
+2026-10-08T17:49:19.0291635Z 
+2026-10-08T17:49:19.0299038Z Successfully installed PyYAML-6.0.3 attrs-26.1.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 markdown-it-py-4.2.0 mdurl-0.1.2 referencing-0.37.0 rpds-py-2026.9.1 typing-extensions-4.16.0
+2026-10-08T17:49:19.0749122Z ##[group]Run python -B tools/check.py
+2026-10-08T17:49:19.0749356Z [36;1mpython -B tools/check.py[0m
+2026-10-08T17:49:19.0804818Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:19.0804989Z env:
+2026-10-08T17:49:19.0805170Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:19.0805442Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-08T17:49:19.0805706Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:19.0805949Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:19.0806187Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:19.0806430Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-08T17:49:19.0806637Z ##[endgroup]
+2026-10-08T17:49:19.4584962Z {
+2026-10-08T17:49:19.4585478Z   "status": "pass",
+2026-10-08T17:49:19.4586160Z   "scope": "static structure only",
+2026-10-08T17:49:19.4586455Z   "counts": {
+2026-10-08T17:49:19.4586741Z     "skills": 7,
+2026-10-08T17:49:19.4586939Z     "markdown_files": 60,
+2026-10-08T17:49:19.4587150Z     "local_links": 369,
+2026-10-08T17:49:19.4587445Z     "schemas": 10
+2026-10-08T17:49:19.4587618Z   },
+2026-10-08T17:49:19.4587779Z   "errors": [],
+2026-10-08T17:49:19.4587980Z   "native_discovery": "not_observed",
+2026-10-08T17:49:19.4588244Z   "behavioral_quality": "not_measured"
+2026-10-08T17:49:19.4588568Z }
+2026-10-08T17:49:19.4817738Z ##[group]Run python -B -m unittest discover -s tests -v
+2026-10-08T17:49:19.4817993Z [36;1mpython -B -m unittest discover -s tests -v[0m
+2026-10-08T17:49:19.4869996Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:19.4870139Z env:
+2026-10-08T17:49:19.4870292Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:19.4870530Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-08T17:49:19.4870763Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:19.4870985Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:19.4871194Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:19.4871402Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-08T17:49:19.4871580Z ##[endgroup]
+2026-10-08T17:49:19.7663007Z test_cyclic_required_resource_is_unavailable_json_without_traceback (test_assay_binding.BindingCLI.test_cyclic_required_resource_is_unavailable_json_without_traceback) ... ok
+2026-10-08T17:49:19.8909274Z test_valid_changed_missing_disabled_and_missing_owner_keep_distinct_results (test_assay_binding.BindingCLI.test_valid_changed_missing_disabled_and_missing_owner_keep_distinct_results) ... ok
+2026-10-08T17:49:19.8917328Z test_disabled_route_is_not_bypassed (test_distribution.BindingBoundary.test_disabled_route_is_not_bypassed) ... ok
+2026-10-08T17:49:19.8924107Z test_missing_peer_is_local_failure (test_distribution.BindingBoundary.test_missing_peer_is_local_failure) ... ok
+2026-10-08T17:49:19.8937456Z test_missing_resource_cannot_pass (test_distribution.BindingBoundary.test_missing_resource_cannot_pass) ... ok
+2026-10-08T17:49:19.8954178Z test_modified_required_reference_invalidates_owner (test_distribution.BindingBoundary.test_modified_required_reference_invalidates_owner) ... ok
+2026-10-08T17:49:19.8966127Z test_new_owner_code_is_not_silently_verified (test_distribution.BindingBoundary.test_new_owner_code_is_not_silently_verified) ... ok
+2026-10-08T17:49:19.8980746Z test_other_owner_work_is_preserved_and_irrelevant (test_distribution.BindingBoundary.test_other_owner_work_is_preserved_and_irrelevant) ... ok
+2026-10-08T17:49:19.9008356Z test_relocated_bytes_and_recursive_reference_are_read (test_distribution.BindingBoundary.test_relocated_bytes_and_recursive_reference_are_read) ... ok
+2026-10-08T17:49:19.9021270Z test_symlink_and_path_escape_are_rejected (test_distribution.BindingBoundary.test_symlink_and_path_escape_are_rejected) ... ok
+2026-10-08T17:49:20.2710821Z test_archive_is_reproducible_relocatable_and_excludes_keys (test_distribution.ReleaseBoundary.test_archive_is_reproducible_relocatable_and_excludes_keys) ... ok
+2026-10-08T17:49:20.2713947Z test_frontmatter_uses_yaml_and_links_ignore_code (test_distribution.ReleaseBoundary.test_frontmatter_uses_yaml_and_links_ignore_code) ... ok
+2026-10-08T17:49:20.2738923Z test_local_marketplaces_reject_incomplete_sources_and_automatic_install_policy (test_distribution.ReleaseBoundary.test_local_marketplaces_reject_incomplete_sources_and_automatic_install_policy) ... ok
+2026-10-08T17:49:20.4931442Z test_missing_sibling_is_reported (test_distribution.ReleaseBoundary.test_missing_sibling_is_reported) ... ok
+2026-10-08T17:49:20.5804529Z test_package_cli_preserves_the_external_receipt_contract (test_distribution.ReleaseBoundary.test_package_cli_preserves_the_external_receipt_contract) ... ok
+2026-10-08T17:49:20.6425122Z test_corrupted_checksum_and_unsafe_downloaded_zip_are_rejected (test_distribution.SecurePackaging.test_corrupted_checksum_and_unsafe_downloaded_zip_are_rejected) ... ok
+2026-10-08T17:49:20.6444158Z test_explicit_membership_excludes_private_scratch_and_client_sentinels (test_distribution.SecurePackaging.test_explicit_membership_excludes_private_scratch_and_client_sentinels) ... ok
+2026-10-08T17:49:20.6461593Z test_generated_agents_marketplace_refuses_linked_ancestors (test_distribution.SecurePackaging.test_generated_agents_marketplace_refuses_linked_ancestors) ... ok
+2026-10-08T17:49:20.6485591Z test_only_generated_agents_marketplace_is_public (test_distribution.SecurePackaging.test_only_generated_agents_marketplace_is_public) ... ok
+2026-10-08T17:49:20.8321514Z test_release_build_smokes_downloaded_assets_and_exact_names (test_distribution.SecurePackaging.test_release_build_smokes_downloaded_assets_and_exact_names) ... ok
+2026-10-08T17:49:20.8330446Z test_release_outputs_cannot_be_written_into_public_source_paths (test_distribution.SecurePackaging.test_release_outputs_cannot_be_written_into_public_source_paths) ... ok
+2026-10-08T17:49:20.8350083Z test_reparse_points_in_public_roots_are_refused (test_distribution.SecurePackaging.test_reparse_points_in_public_roots_are_refused) ... ok
+2026-10-08T17:49:20.8970676Z test_version_mismatch_and_extra_asset_are_rejected (test_distribution.SecurePackaging.test_version_mismatch_and_extra_asset_are_rejected) ... ok
+2026-10-08T17:49:22.9013981Z test_a_real_timeout_preserves_the_attempt_and_partial_output (test_native_qualification.NativeEvidenceTests.test_a_real_timeout_preserves_the_attempt_and_partial_output) ... ok
+2026-10-08T17:49:22.9015790Z test_component_names_are_taken_from_inventory_not_plugin_title (test_native_qualification.NativeEvidenceTests.test_component_names_are_taken_from_inventory_not_plugin_title) ... ok
+2026-10-08T17:49:22.9835275Z test_revision_check_detects_extra_runtime_files_after_a_valid_control (test_native_qualification.NativeEvidenceTests.test_revision_check_detects_extra_runtime_files_after_a_valid_control) ... ok
+2026-10-08T17:49:22.9836391Z 
+2026-10-08T17:49:22.9836564Z ----------------------------------------------------------------------
+2026-10-08T17:49:22.9836892Z Ran 26 tests in 3.244s
+2026-10-08T17:49:22.9837023Z 
+2026-10-08T17:49:22.9837092Z OK
+2026-10-08T17:49:23.0010594Z ##[group]Run python -B -m unittest discover -s examples/adaptation -p 'test_*.py' -v
+2026-10-08T17:49:23.0010960Z [36;1mpython -B -m unittest discover -s examples/adaptation -p 'test_*.py' -v[0m
+2026-10-08T17:49:23.0064685Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:23.0064827Z env:
+2026-10-08T17:49:23.0064981Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:23.0065225Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-08T17:49:23.0065464Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:23.0065678Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:23.0065887Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:23.0066117Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-08T17:49:23.0066300Z ##[endgroup]
+2026-10-08T17:49:23.0608513Z test_later_consumer_uses_and_spends_token (test_adaptation.AdaptationContract.test_later_consumer_uses_and_spends_token) ... ok
+2026-10-08T17:49:23.0609220Z test_literal_translation_breaking_operation_is_rejected (test_adaptation.AdaptationContract.test_literal_translation_breaking_operation_is_rejected) ... ok
+2026-10-08T17:49:23.0612348Z test_optional_pin_aid_agrees_between_presented_and_executable_actions (test_adaptation.AdaptationContract.test_optional_pin_aid_agrees_between_presented_and_executable_actions) ... ok
+2026-10-08T17:49:23.0613422Z test_stale_and_wrong_later_sign_are_rejected (test_adaptation.AdaptationContract.test_stale_and_wrong_later_sign_are_rejected) ... ok
+2026-10-08T17:49:23.0614393Z test_target_view_presents_one_line_and_navigation (test_adaptation.AdaptationContract.test_target_view_presents_one_line_and_navigation) ... ok
+2026-10-08T17:49:23.0615637Z test_transferred_clue_actions_and_later_scene (test_adaptation.AdaptationContract.test_transferred_clue_actions_and_later_scene) ... ok
+2026-10-08T17:49:23.0616656Z test_valid_rewrite_and_permanent_help_are_not_rejected (test_adaptation.AdaptationContract.test_valid_rewrite_and_permanent_help_are_not_rejected) ... ok
+2026-10-08T17:49:23.0617673Z test_wrong_player_choice_remains_a_playable_nonterminal_state (test_adaptation.AdaptationContract.test_wrong_player_choice_remains_a_playable_nonterminal_state) ... ok
+2026-10-08T17:49:23.1512498Z test_malformed_content_records_fail_before_presentation (test_adaptation.InvalidFileBoundary.test_malformed_content_records_fail_before_presentation) ... ok
+2026-10-08T17:49:23.3020011Z test_malformed_saved_state_cannot_start_a_voyage (test_adaptation.InvalidFileBoundary.test_malformed_saved_state_cannot_start_a_voyage) ... ok
+2026-10-08T17:49:23.3898675Z test_non_object_artifacts_fail_as_invalid (test_adaptation.InvalidFileBoundary.test_non_object_artifacts_fail_as_invalid) ... ok
+2026-10-08T17:49:23.3899021Z 
+2026-10-08T17:49:23.3914835Z ----------------------------------------------------------------------
+2026-10-08T17:49:23.3915098Z Ran 11 tests in 0.329s
+2026-10-08T17:49:23.3915234Z 
+2026-10-08T17:49:23.3915314Z OK
+2026-10-08T17:49:23.4007512Z ##[group]Run python -B -m unittest discover -s examples/analysis-lab -p 'test_*.py' -v
+2026-10-08T17:49:23.4007849Z [36;1mpython -B -m unittest discover -s examples/analysis-lab -p 'test_*.py' -v[0m
+2026-10-08T17:49:23.4059448Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:23.4059588Z env:
+2026-10-08T17:49:23.4059740Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:23.4059989Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-08T17:49:23.4060220Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:23.4060434Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:23.4060639Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:23.4060862Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-08T17:49:23.4061044Z ##[endgroup]
+2026-10-08T17:49:23.7426903Z test_fresh_survey_without_required_source_or_actor_is_refuted (test_input_and_replay.InputAndReplayTests.test_fresh_survey_without_required_source_or_actor_is_refuted) ... ok
+2026-10-08T17:49:24.0114075Z test_genuine_repeats_preserve_later_world_changes_without_awards (test_input_and_replay.InputAndReplayTests.test_genuine_repeats_preserve_later_world_changes_without_awards) ... ok
+2026-10-08T17:49:24.0322935Z test_non_finite_values_are_rejected_by_shared_json_boundary (test_input_and_replay.InputAndReplayTests.test_non_finite_values_are_rejected_by_shared_json_boundary) ... ok
+2026-10-08T17:49:24.3524312Z test_recovery_subevents_cannot_be_claimed_as_standalone_operations (test_input_and_replay.InputAndReplayTests.test_recovery_subevents_cannot_be_claimed_as_standalone_operations) ... ok
+2026-10-08T17:49:25.1273133Z test_save_roots_and_nested_types_are_rejected_before_use (test_input_and_replay.InputAndReplayTests.test_save_roots_and_nested_types_are_rejected_before_use) ... ok
+2026-10-08T17:49:25.7830871Z test_unrelated_history_and_incomplete_recovery_are_conflicts (test_input_and_replay.InputAndReplayTests.test_unrelated_history_and_incomplete_recovery_are_conflicts) ... ok
+2026-10-08T17:49:25.7935733Z test_renamed_valid_outcome_keeps_measurement_and_unobserved_outcome_is_failure (test_measurement_and_eligibility.MeasurementDefinitions.test_renamed_valid_outcome_keeps_measurement_and_unobserved_outcome_is_failure) ... ok
+2026-10-08T17:49:26.0094115Z test_unknown_outcome_and_missing_control_definitions_fail_before_database (test_measurement_and_eligibility.MeasurementDefinitions.test_unknown_outcome_and_missing_control_definitions_fail_before_database) ... ok
+2026-10-08T17:49:26.1090034Z test_content_rights_and_history_constrain_choice_and_transition_together (test_measurement_and_eligibility.RecoveryEligibility.test_content_rights_and_history_constrain_choice_and_transition_together) ... ok
+2026-10-08T17:49:26.2736764Z test_explicit_alternate_repertoire_is_consumed_and_identified_by_cli (test_measurement_and_eligibility.RecoveryEligibility.test_explicit_alternate_repertoire_is_consumed_and_identified_by_cli) ... ok
+2026-10-08T17:49:26.3622035Z test_missing_action_repertoire_is_invalid_and_completed_replay_needs_no_current_content (test_measurement_and_eligibility.RecoveryEligibility.test_missing_action_repertoire_is_invalid_and_completed_replay_needs_no_current_content) ... ok
+2026-10-08T17:49:26.4828820Z test_unknown_winch_procedure_refutes_both_consumers_but_public_knowledge_enables (test_measurement_and_eligibility.RecoveryEligibility.test_unknown_winch_procedure_refutes_both_consumers_but_public_knowledge_enables) ... ok
+2026-10-08T17:49:26.5551354Z test_absent_or_unaccepted_authority_does_not_fund_repair (test_semantics.MigrationAndConsumersTests.test_absent_or_unaccepted_authority_does_not_fund_repair) ... ok
+2026-10-08T17:49:26.6108890Z test_equal_total_and_valid_schema_do_not_prove_owner_preservation (test_semantics.MigrationAndConsumersTests.test_equal_total_and_valid_schema_do_not_prove_owner_preservation) ... ok
+2026-10-08T17:49:26.6625228Z test_explicit_delegation_enables_host_but_does_not_transfer_personal_right (test_semantics.MigrationAndConsumersTests.test_explicit_delegation_enables_host_but_does_not_transfer_personal_right) ... ok
+2026-10-08T17:49:26.7243390Z test_hidden_fact_does_not_enter_other_observer_or_choice (test_semantics.MigrationAndConsumersTests.test_hidden_fact_does_not_enter_other_observer_or_choice) ... ok
+2026-10-08T17:49:26.7540571Z test_migration_keeps_owned_knowledge_rights_and_history (test_semantics.MigrationAndConsumersTests.test_migration_keeps_owned_knowledge_rights_and_history) ... ok
+2026-10-08T17:49:26.7971834Z test_missing_winch_changes_feasible_group_plan (test_semantics.MigrationAndConsumersTests.test_missing_winch_changes_feasible_group_plan) ... ok
+2026-10-08T17:49:26.9026403Z test_recovery_then_resumed_consumer_and_replay (test_semantics.MigrationAndConsumersTests.test_recovery_then_resumed_consumer_and_replay) ... ok
+2026-10-08T17:49:26.9486332Z test_zero_selected_is_refuted_and_empty_inspected_is_missing (test_semantics.MigrationAndConsumersTests.test_zero_selected_is_refuted_and_empty_inspected_is_missing) ... ok
+2026-10-08T17:49:26.9487420Z test_recovery_conversion_has_different_units_and_source_sensitivity (test_semantics.ResourceAndWaitingTests.test_recovery_conversion_has_different_units_and_source_sensitivity) ... ok
+2026-10-08T17:49:26.9491518Z test_tiny_probability_preserves_capped_waiting_or_declares_numeric_limit (test_semantics.ResourceAndWaitingTests.test_tiny_probability_preserves_capped_waiting_or_declares_numeric_limit) ... ok
+2026-10-08T17:49:26.9492520Z test_transfer_preserves_stock_but_changes_holder (test_semantics.ResourceAndWaitingTests.test_transfer_preserves_stock_but_changes_holder) ... ok
+2026-10-08T17:49:26.9493037Z test_waiting_known_distribution_and_guarantee (test_semantics.ResourceAndWaitingTests.test_waiting_known_distribution_and_guarantee) ... ok
+2026-10-08T17:49:26.9541307Z test_build_cohort_missingness_and_reopened_database (test_semantics.TelemetryAndObservationTests.test_build_cohort_missingness_and_reopened_database) ... ok
+2026-10-08T17:49:26.9569686Z test_empty_cohort_cannot_pass (test_semantics.TelemetryAndObservationTests.test_empty_cohort_cannot_pass) ... ok
+2026-10-08T17:49:26.9613301Z test_late_success_name_does_not_satisfy_deadline (test_semantics.TelemetryAndObservationTests.test_late_success_name_does_not_satisfy_deadline) ... ok
+2026-10-08T17:49:26.9791582Z test_missing_validator_dependency_has_distinct_status (test_semantics.TelemetryAndObservationTests.test_missing_validator_dependency_has_distinct_status) ... ok
+2026-10-08T17:49:27.1118639Z test_saved_observations_preserve_conditions_for_the_next_reader (test_semantics.TelemetryAndObservationTests.test_saved_observations_preserve_conditions_for_the_next_reader) ... ok
+2026-10-08T17:49:27.1175143Z test_synthetic_import_retains_unknown_and_assisted_cases (test_semantics.TelemetryAndObservationTests.test_synthetic_import_retains_unknown_and_assisted_cases) ... ok
+2026-10-08T17:49:27.1175628Z 
+2026-10-08T17:49:27.1175752Z ----------------------------------------------------------------------
+2026-10-08T17:49:27.1175964Z Ran 30 tests in 3.561s
+2026-10-08T17:49:27.1176044Z 
+2026-10-08T17:49:27.1176094Z OK
+2026-10-08T17:49:27.1332867Z ##[group]Run python -B -m unittest discover -s examples/godot-episode -p 'test_*.py' -v
+2026-10-08T17:49:27.1333431Z [36;1mpython -B -m unittest discover -s examples/godot-episode -p 'test_*.py' -v[0m
+2026-10-08T17:49:27.1398874Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:27.1399087Z env:
+2026-10-08T17:49:27.1399247Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:27.1399498Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-08T17:49:27.1399739Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:27.1399968Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:27.1400180Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:27.1400392Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-08T17:49:27.1400573Z ##[endgroup]
+2026-10-08T17:49:27.4964312Z test_first_tick_and_warning_resolution_order_are_checked_before_run (test_report_contract.FixtureAndRunnerBoundaryTests.test_first_tick_and_warning_resolution_order_are_checked_before_run) ... ok
+2026-10-08T17:49:27.6436708Z test_timeout_bound_is_finite_positive_and_invalid_cli_has_no_side_effect (test_report_contract.FixtureAndRunnerBoundaryTests.test_timeout_bound_is_finite_positive_and_invalid_cli_has_no_side_effect) ... ok
+2026-10-08T17:49:27.7611357Z test_cli_wrong_root_has_structured_exit_two (test_report_contract.ReportContractTests.test_cli_wrong_root_has_structured_exit_two) ... ok
+2026-10-08T17:49:27.8551166Z test_empty_and_stale_evidence_keep_distinct_non_success_status (test_report_contract.ReportContractTests.test_empty_and_stale_evidence_keep_distinct_non_success_status) ... ok
+2026-10-08T17:49:27.9014981Z test_empty_scheduled_input_is_a_valid_refutation_of_escape (test_report_contract.ReportContractTests.test_empty_scheduled_input_is_a_valid_refutation_of_escape) ... ok
+2026-10-08T17:49:28.7077425Z test_malformed_observation_records_cannot_support_or_refute (test_report_contract.ReportContractTests.test_malformed_observation_records_cannot_support_or_refute) ... ok
+2026-10-08T17:49:28.7585501Z test_observed_post_load_additions_are_valid_but_are_not_restored_knowledge (test_report_contract.ReportContractTests.test_observed_post_load_additions_are_valid_but_are_not_restored_knowledge) ... ok
+2026-10-08T17:49:28.9084453Z test_observed_reload_and_reply_failures_refute_while_unavailable_save_is_invalid (test_report_contract.ReportContractTests.test_observed_reload_and_reply_failures_refute_while_unavailable_save_is_invalid) ... ok
+2026-10-08T17:49:29.2071960Z test_operation_summaries_and_snapshot_must_match_observed_events (test_report_contract.ReportContractTests.test_operation_summaries_and_snapshot_must_match_observed_events) ... ok
+2026-10-08T17:49:29.3593921Z test_recorded_success_and_typed_negative_observations (test_report_contract.ReportContractTests.test_recorded_success_and_typed_negative_observations) ... ok
+2026-10-08T17:49:29.6104678Z test_saved_owners_history_and_knowledge_cannot_contradict_successful_reload (test_report_contract.ReportContractTests.test_saved_owners_history_and_knowledge_cannot_contradict_successful_reload) ... ok
+2026-10-08T17:49:29.8538335Z test_scheduled_state_operations_cannot_disappear_behind_positive_summaries (test_report_contract.ReportContractTests.test_scheduled_state_operations_cannot_disappear_behind_positive_summaries) ... ok
+2026-10-08T17:49:30.0809954Z test_wrong_report_roots_are_invalid_evidence (test_report_contract.ReportContractTests.test_wrong_report_roots_are_invalid_evidence) ... ok
+2026-10-08T17:49:30.0810286Z 
+2026-10-08T17:49:30.0810650Z ----------------------------------------------------------------------
+2026-10-08T17:49:30.0810858Z Ran 13 tests in 2.850s
+2026-10-08T17:49:30.0810944Z 
+2026-10-08T17:49:30.0810994Z OK
+2026-10-08T17:49:30.0980479Z ##[group]Run python -B -m unittest discover -s examples/design-studies/harbour-of-echoes -p 'test_*.py' -v
+2026-10-08T17:49:30.0980913Z [36;1mpython -B -m unittest discover -s examples/design-studies/harbour-of-echoes -p 'test_*.py' -v[0m
+2026-10-08T17:49:30.1034739Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:30.1034885Z env:
+2026-10-08T17:49:30.1035037Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:30.1035278Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-08T17:49:30.1035511Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:30.1035726Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:30.1035939Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:30.1036164Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-08T17:49:30.1036344Z ##[endgroup]
+2026-10-08T17:49:30.3498670Z test_valid_numeric_beat_writes_reopenable_media_with_declared_rests (test_render_loom.LoomInputAndOutput.test_valid_numeric_beat_writes_reopenable_media_with_declared_rests) ... ok
+2026-10-08T17:49:30.7163225Z test_wrong_container_types_and_missing_identity_fail_before_output_directory (test_render_loom.LoomInputAndOutput.test_wrong_container_types_and_missing_identity_fail_before_output_directory) ... ok
+2026-10-08T17:49:30.7163891Z 
+2026-10-08T17:49:30.7164044Z ----------------------------------------------------------------------
+2026-10-08T17:49:30.7164340Z Ran 2 tests in 0.541s
+2026-10-08T17:49:30.7164466Z 
+2026-10-08T17:49:30.7164535Z OK
+2026-10-08T17:49:30.7268779Z ##[group]Run python .github/relkit.pyz audit --history
+2026-10-08T17:49:30.7269008Z [36;1mpython .github/relkit.pyz audit --history[0m
+2026-10-08T17:49:30.7318990Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:30.7319134Z env:
+2026-10-08T17:49:30.7319276Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:30.7319503Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-08T17:49:30.7319722Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:30.7319924Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:30.7320123Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:30.7320319Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-08T17:49:30.7320488Z ##[endgroup]
+2026-10-08T17:49:34.9327484Z 5:49PM INF scanned ~5057957 bytes (5.06 MB) in 352ms
+2026-10-08T17:49:34.9327843Z 5:49PM INF no leaks found
+2026-10-08T17:49:34.9452554Z relkit: retained unowned or changed temporary files: /home/runner/work/gamedesign-skills/gamedesign-skills/.git/relkit/tmp/engine-8tl2cpsm
+2026-10-08T17:49:35.0350652Z 🔍 481 Total (in 4ms) 🔗 244 Unique ✅ 369 OK 🚫 0 Errors 👻 112 Excluded
+2026-10-08T17:49:35.0350959Z 
+2026-10-08T17:49:35.0655216Z relkit audit: passed (including history)
+2026-10-08T17:49:35.0814076Z ##[group]Run import os
+2026-10-08T17:49:35.0814233Z [36;1mimport os[0m
+2026-10-08T17:49:35.0814373Z [36;1mfrom pathlib import Path[0m
+2026-10-08T17:49:35.0814572Z [36;1mversion = Path("VERSION").read_text(encoding="utf-8").strip()[0m
+2026-10-08T17:49:35.0814841Z [36;1mwith open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:[0m
+2026-10-08T17:49:35.0815088Z [36;1m    output.write(f"version={version}\n")[0m
+2026-10-08T17:49:35.0818176Z shell: /opt/hostedtoolcache/Python/3.11.17/x64/bin/python {0}
+2026-10-08T17:49:35.0818355Z env:
+2026-10-08T17:49:35.0818497Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:35.0818713Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-08T17:49:35.0818930Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:35.0819129Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:35.0819517Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:35.0819717Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-08T17:49:35.0819887Z ##[endgroup]
+2026-10-08T17:49:35.1012885Z ##[group]Run python -B tools/release.py build --output dist --version 0.1.1
+2026-10-08T17:49:35.1013162Z [36;1mpython -B tools/release.py build --output dist --version 0.1.1[0m
+2026-10-08T17:49:35.1062443Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:35.1062577Z env:
+2026-10-08T17:49:35.1062718Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:35.1062951Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-08T17:49:35.1063175Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:35.1063377Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:35.1063575Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:35.1063786Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-08T17:49:35.1063956Z ##[endgroup]
+2026-10-08T17:49:35.1921040Z {
+2026-10-08T17:49:35.1921285Z   "version": "0.1.1",
+2026-10-08T17:49:35.1921603Z   "archive": "gamedesign-skills-0.1.1-source.zip",
+2026-10-08T17:49:35.1921982Z   "sha256": "29b2167f1361b6336b63b154abc4f9b48e84d00b581048eb1449c0416e6a0aa8",
+2026-10-08T17:49:35.1922469Z   "file_count": 197,
+2026-10-08T17:49:35.1922645Z   "assets": [
+2026-10-08T17:49:35.1922832Z     "gamedesign-skills-0.1.1-source.zip",
+2026-10-08T17:49:35.1923087Z     "SHA256SUMS"
+2026-10-08T17:49:35.1923368Z   ]
+2026-10-08T17:49:35.1923590Z }
+2026-10-08T17:49:35.1994239Z ##[group]Run python -B tools/smoke.py --assets dist --version 0.1.1 --temp tmp/release-smoke
+2026-10-08T17:49:35.1994571Z [36;1mpython -B tools/smoke.py --assets dist --version 0.1.1 --temp tmp/release-smoke[0m
+2026-10-08T17:49:35.2042032Z shell: /usr/bin/bash -e {0}
+2026-10-08T17:49:35.2042264Z env:
+2026-10-08T17:49:35.2042425Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:35.2042651Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-08T17:49:35.2042874Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:35.2043077Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:35.2043276Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-08T17:49:35.2043472Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-08T17:49:35.2043644Z ##[endgroup]
+2026-10-08T17:49:35.2988048Z {
+2026-10-08T17:49:35.2988237Z   "status": "pass",
+2026-10-08T17:49:35.2988465Z   "version": "0.1.1",
+2026-10-08T17:49:35.2988637Z   "archive": "gamedesign-skills-0.1.1-source.zip",
+2026-10-08T17:49:35.2988887Z   "sha256": "29b2167f1361b6336b63b154abc4f9b48e84d00b581048eb1449c0416e6a0aa8",
+2026-10-08T17:49:35.2989107Z   "archive_files": 197,
+2026-10-08T17:49:35.2989227Z   "skills": [
+2026-10-08T17:49:35.2989346Z     "game-content-design",
+2026-10-08T17:49:35.2989486Z     "game-design",
+2026-10-08T17:49:35.2989611Z     "game-information-design",
+2026-10-08T17:49:35.2989760Z     "game-participation-design",
+2026-10-08T17:49:35.2989903Z     "game-systems-design",
+2026-10-08T17:49:35.2990039Z     "game-world-narrative-design",
+2026-10-08T17:49:35.2990183Z     "gameplay-design"
+2026-10-08T17:49:35.2990297Z   ],
+2026-10-08T17:49:35.2990398Z   "east_gate": {
+2026-10-08T17:49:35.2990509Z     "play": {
+2026-10-08T17:49:35.2990623Z       "status": "executed",
+2026-10-08T17:49:35.2990756Z       "operation": "play",
+2026-10-08T17:49:35.2990880Z       "gate": "open",
+2026-10-08T17:49:35.2991143Z       "output": "/home/runner/work/gamedesign-skills/gamedesign-skills/tmp/release-smoke/consumer-runs/play.json"
+2026-10-08T17:49:35.2991413Z     },
+2026-10-08T17:49:35.2991514Z     "ferry": {
+2026-10-08T17:49:35.2991626Z       "status": "executed",
+2026-10-08T17:49:35.2991759Z       "operation": "enter-ferry",
+2026-10-08T17:49:35.2991893Z       "gate": "open",
+2026-10-08T17:49:35.2992505Z       "output": "/home/runner/work/gamedesign-skills/gamedesign-skills/tmp/release-smoke/consumer-runs/ferry.json"
+2026-10-08T17:49:35.2992769Z     }
+2026-10-08T17:49:35.2992865Z   },
+2026-10-08T17:49:35.3038760Z   "static_check": "not_run"
+2026-10-08T17:49:35.3038920Z }
+2026-10-08T17:49:35.3108904Z Post job cleanup.
+2026-10-08T17:49:35.3949803Z Post job cleanup.
+2026-10-08T17:49:35.4483999Z [command]/usr/bin/git version
+2026-10-08T17:49:35.4514664Z git version 2.55.0
+2026-10-08T17:49:35.4535509Z Temporarily overriding HOME='/home/runner/work/_temp/709b0ff1-5525-4709-b30e-3b11642bb9d0' before making global git config changes
+2026-10-08T17:49:35.4536205Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T17:49:35.4538382Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gamedesign-skills/gamedesign-skills
+2026-10-08T17:49:35.4564815Z Removing SSH command configuration
+2026-10-08T17:49:35.4568779Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T17:49:35.4599297Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T17:49:35.4789291Z Removing HTTP extra header
+2026-10-08T17:49:35.4796954Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T17:49:35.4818185Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T17:49:35.5000182Z Removing includeIf entries pointing to credentials config files
+2026-10-08T17:49:35.5005308Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T17:49:35.5034265Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T17:49:35.5311778Z Cleaning up orphan processes
+

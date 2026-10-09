@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "model_id": "signal-demonstration-1",
+  "model_type": "two-player-zero-sum",
+  "context": {
+    "situation": "Original synthetic teaching demonstration: the teacher intentionally offers a stronger completed signal and a weaker incomplete signal.",
+    "availability": "Harbour may choose either Complete or Incomplete. Channel chooses Observe or Distract simultaneously; all listed choices are available.",
+    "horizon": "One scored demonstration only. The later teaching conversation and the learner's understanding are outside this utility model."
+  },
+  "row_player": {
+    "name": "Harbour",
+    "actions": ["Complete", "Incomplete"]
+  },
+  "column_player": {
+    "name": "Channel",
+    "actions": ["Observe", "Distract"]
+  },
+  "utility": {
+    "meaning": "The invented demonstration declares zero-sum transfers of utility credits; Complete always transfers two credits to Harbour, while Incomplete transfers one or zero.",
+    "unit": "net utility credits to Harbour per demonstration",
+    "costs": "No action cost or later resource effect is included. This intentionally limited model cannot value the later lesson.",
+    "row_objective": "maximize-expected-utility",
+    "column_utility": "negative-of-row"
+  },
+  "payoffs": [
+    [2, 2],
+    [1, 0]
+  ]
+}

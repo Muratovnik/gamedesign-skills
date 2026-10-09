@@ -17,14 +17,27 @@ hosted_ci = "public-only"
 # The binder's negative test supplies an escaping resource path and asserts its
 # rejection. Structural path rules do not apply to this synthetic fixture;
 # independent secret scanning and non-excludable owner rules still apply.
-# The requested review preserves raw, synthetic observations, including SQLite
-# output and absolute paths from disposable fixtures. These exact evidence
-# archives are records, not deployed files or runtime path configuration.
-# Keep secret scanning and non-excludable owner checks enabled for them.
+# The requested public review preserves raw synthetic observations, source-read
+# records, test logs and paths from disposable fixtures. The exact evidence files
+# below are records, not installed instructions or runtime path configuration.
+# These exclusions skip built-in path/semantic heuristics for those files;
+# external secret scanning, archive limits and declared non-excludable private,
+# owner-workflow and personal-data rules still apply. See the publication audit
+# record for the content review and independently checked scanner boundaries.
 exclude = [
   "tests/test_distribution.py",
   "docs/reviews/2026-10-08/evidence/baseline-evidence.zip",
   "docs/reviews/2026-10-08/evidence/correction-evidence.zip",
+  "docs/reviews/2026-10-08-comparison/behavior-evidence.zip",
+  "docs/reviews/2026-10-08-comparison/behavior-independent-review.zip",
+  "docs/reviews/2026-10-08-comparison/final-product-review.zip",
+  "docs/reviews/2026-10-08-comparison/integration-evidence.zip",
+  "docs/reviews/2026-10-08-comparison/native-model-preflight.zip",
+  "docs/reviews/2026-10-08-comparison/publication-audit-evidence.zip",
+  "docs/reviews/2026-10-08-comparison/ci-runtime-113456576647.log",
+  "docs/reviews/2026-10-08-comparison/ci-runtime-113456576836.log",
+  "docs/reviews/2026-10-08-comparison/ci-runtime-113456576892.log",
+  "docs/reviews/2026-10-08-comparison/ci-runtime-113456576901.log",
 ]
 
 [changelog]

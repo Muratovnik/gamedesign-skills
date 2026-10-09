@@ -3,3 +3,43 @@ betterleaksMinVersion = "1.8.1"
 
 [extend]
 useDefault = true
+
+# Exact public evidence content identities, independently recomputed.
+# All conditions apply together; default detection rules remain enabled.
+
+[[allowlists]]
+description = "Verified SHA256 of redacted Claude status in exact raw evidence records"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ['''^32cbafa4dbf86a55a202f3fac9ab1680ee98b602c759a43c325d9de270ce7747$''']
+paths = [
+  '''(?:^|/)docs/reviews/2026\-10\-08\-comparison/native\-model\-preflight\-manifest\.json$''',
+]
+
+[[allowlists]]
+description = "Verified SHA256 of access-and-return source in exact raw evidence records"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ['''^7c1f4c2a6c2862787c182f72f8ca9aa272126d23b5b38172a53be605010f50e1$''']
+paths = [
+  '''(?:^|/)docs/reviews/2026\-10\-08\-comparison/behavior\-evidence\.zip!sources/candidate/manifest\.json$''',
+  '''(?:^|/)docs/reviews/2026\-10\-08\-comparison/behavior\-evidence\.zip!sources/main/manifest\.json$''',
+  '''(?:^|/)docs/reviews/2026\-10\-08\-comparison/native\-lifecycle\-first\.json$''',
+  '''(?:^|/)docs/reviews/2026\-10\-08\-comparison/native\-lifecycle\-first\.zip!native\-client\-receipt\.json$''',
+  '''(?:^|/)docs/reviews/2026\-10\-08\-comparison/native\-lifecycle\-qualified\.json$''',
+  '''(?:^|/)docs/reviews/2026\-10\-08\-comparison/native\-lifecycle\-qualified\.zip!native\-client\-receipt\.json$''',
+]
+
+[[allowlists]]
+description = "Verified SHA256 of Ink keep-token scenario in exact raw evidence records"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "secret"
+regexes = ['''^bd8b9440c68a30de17b68a7ea172fa1e3d4dc1d4b98a1c75db3a8efec38c3501$''']
+paths = [
+  '''(?:^|/)docs/reviews/2026\-10\-08\-comparison/behavior\-evidence\-manifest\.json$''',
+  '''(?:^|/)docs/reviews/2026\-10\-08\-comparison/behavior\-evidence\.zip!evidence\-manifest\.json$''',
+  '''(?:^|/)docs/reviews/2026\-10\-08\-comparison/behavior\-evidence\.zip!model\-runs/03\-b\-result\.json$''',
+]

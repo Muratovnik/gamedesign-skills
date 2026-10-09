@@ -5,7 +5,7 @@
   },
   "description": "Seven composable game design methods, original playable examples and explicit artifact adapters.",
   "metadata": {
-    "version": "0.1.1"
+    "version": "0.2.0"
   },
   "plugins": [
     {

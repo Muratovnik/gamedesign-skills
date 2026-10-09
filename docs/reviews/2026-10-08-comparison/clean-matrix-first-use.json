@@ -1,0 +1,80 @@
+{
+  "status": "pass",
+  "steps": [
+    {
+      "name": "create",
+      "argv": [
+        "python",
+        "-m",
+        "venv",
+        "/workspace/scratch/e429285ef1e1/research/verification/clean-matrix-first-use/venv"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.150998448996688
+    },
+    {
+      "name": "install",
+      "argv": [
+        "/workspace/scratch/e429285ef1e1/research/verification/clean-matrix-first-use/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--cache-dir",
+        "/workspace/scratch/e429285ef1e1/research/verification/clean-matrix-first-use/pip-cache",
+        "-r",
+        "/workspace/scratch/e429285ef1e1/gamedesign-skills/skills/game-systems-design/scripts/requirements.txt"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 57.821828216998256
+    },
+    {
+      "name": "versions",
+      "argv": [
+        "/workspace/scratch/e429285ef1e1/research/verification/clean-matrix-first-use/venv/bin/python",
+        "-c",
+        "import sys,numpy,scipy,json;print(json.dumps({\"python\":sys.version,\"numpy\":numpy.__version__,\"scipy\":scipy.__version__}))"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.23807104699517367
+    },
+    {
+      "name": "first-use",
+      "argv": [
+        "/workspace/scratch/e429285ef1e1/research/verification/clean-matrix-first-use/venv/bin/python",
+        "-B",
+        "/workspace/scratch/e429285ef1e1/gamedesign-skills/skills/game-systems-design/scripts/solve_zero_sum.py",
+        "--model",
+        "/workspace/scratch/e429285ef1e1/gamedesign-skills/examples/strategy-matrix/fixtures/channel-signals.json",
+        "--output",
+        "/workspace/scratch/e429285ef1e1/research/verification/clean-matrix-first-use/channel-signals-report.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.9513461300011841
+    },
+    {
+      "name": "suite",
+      "argv": [
+        "/workspace/scratch/e429285ef1e1/research/verification/clean-matrix-first-use/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/workspace/scratch/e429285ef1e1/gamedesign-skills/examples/strategy-matrix",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 27.291906259000825
+    }
+  ],
+  "versions": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "numpy": "2.5.3",
+    "scipy": "1.17.0"
+  },
+  "requirement_sha256": "81455bfe3b0116876b35816894f424480e133427239f1593e0763af056d26b1d",
+  "adapter_sha256": "4e3e1aabb39f2da092e0a4a073137a3712061201e531ad7dfd64731cae58de10",
+  "scope": "Fresh venv, documented requirement resolver, actual CLI and all18 tests. No forced NumPy version; records actual resolution."
+}

@@ -16,11 +16,11 @@ not as recommended combat timings for people.
 
 ## Prerequisites and commands
 
-Use a supplied **Godot 4.7.2 Linux x86_64 standard editor binary** and Python
-3.11+ with `jsonschema==4.26.0`. The recorded host used Python 3.12.14. Obtain
-Godot from its [official archive](https://godotengine.org/download/archive/4.7.2-stable/)
-into a disposable directory. The package does not install an engine or modify
-client settings. The binary is not redistributed in this example.
+Use a supplied Godot 4.7.2 standard editor binary and Python 3.11+ with
+`jsonschema==4.26.0`. The recorded qualification used the Linux x86_64 editor
+binary and Python 3.12.14. Obtain a binary from the
+[official Godot 4.7.2 archive](https://godotengine.org/download/archive/4.7.2-stable/)
+if one is not already available; this example does not bundle the engine.
 
 From the Game Design repository root, choose an isolated environment. If one
 does not already exist:
@@ -31,13 +31,15 @@ python3 -m venv .venv
 ```
 
 Set `PYTHON` to that environment's executable and `GODOT` to your actual
-binary path. All remaining commands run from the repository root. `RUN` is a
-new disposable output root; each `--out` below must be a nonexistent directory.
+binary path. All remaining commands run from the repository root. Outputs live
+under ignored `tmp/`; each `--out` must be a new, nonexistent directory. Bash
+example:
 
 ```bash
 PYTHON=.venv/bin/python
 GODOT=/absolute/path/to/Godot_v4.7.2-stable_linux.x86_64
-RUN=$(mktemp -d)
+mkdir -p tmp/reader-runs
+RUN=$(mktemp -d tmp/reader-runs/godot-episode-XXXXXX)
 "$PYTHON" examples/godot-episode/qualify.py run \
   --godot "$GODOT" \
   --fixture examples/godot-episode/fixtures/candidate.json \
@@ -46,6 +48,13 @@ RUN=$(mktemp -d)
   --fixture examples/godot-episode/fixtures/candidate.json \
   --report "$RUN/candidate/report.json" --claim escape
 ```
+
+On Windows PowerShell, create a new output directory under `tmp\reader-runs`,
+set `$PYTHON = '.venv\Scripts\python.exe'` and `$GODOT` to the compatible
+Godot executable, then invoke the same `qualify.py` arguments with `py -3` or
+`& $PYTHON`. Use Windows path separators or quoted full paths. The recorded
+native observations below are from Linux x86_64; they do not qualify another
+host's engine startup or rendering.
 
 The first command validates the fixture using the installed JSON Schema
 library, copies the exact native inputs to a disposable project, runs native

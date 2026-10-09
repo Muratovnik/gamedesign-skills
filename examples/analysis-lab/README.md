@@ -15,14 +15,19 @@ does not assign another participant's personal pass.
 
 ## Prerequisites and output handling
 
-Use Python 3.11+ with `jsonschema==4.26.0` in a disposable or project virtual
-environment. The recorded environment used Python 3.12.14. From the repository
-root, create an isolated environment if needed:
+Use Python 3.11+ with the `jsonschema==4.26.0` dependency declared through the
+skill scripts' requirements file. The recorded environment used Python 3.12.14.
+From the repository root, create an isolated environment if needed:
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r examples/analysis-lab/requirements.txt
 ```
+
+On Windows PowerShell, the equivalent setup is `py -3 -m venv .venv`, followed
+by `.venv\Scripts\python.exe -m pip install -r examples/analysis-lab/requirements.txt`.
+Installing the declared dependency is needed only for running these commands;
+it is not needed to read the supplied fixtures and results.
 
 Commands below run from the repository root. Set `PYTHON` to the chosen
 environment's executable. Outputs must be new paths: commands do not replace
@@ -30,8 +35,23 @@ an existing save, report or database.
 
 ```bash
 PYTHON=.venv/bin/python
-OUT=$(mktemp -d)
+mkdir -p tmp/reader-runs
+OUT=$(mktemp -d tmp/reader-runs/analysis-lab-XXXXXX)
 ```
+
+In PowerShell, create a unique output directory under the same ignored scratch
+parent and use the virtual environment interpreter:
+
+```powershell
+$null = New-Item -ItemType Directory -Force tmp\reader-runs
+$OUT = Join-Path (Resolve-Path tmp\reader-runs) ("analysis-lab-" + [guid]::NewGuid().ToString("N"))
+New-Item -ItemType Directory $OUT | Out-Null
+$PYTHON = '.\.venv\Scripts\python.exe'
+```
+
+Translate later Bash invocations from `"$PYTHON"` to `& $PYTHON` and each
+`$OUT/name` to `(Join-Path $OUT name)`. Every output path must be new because
+the commands refuse to replace existing files or databases.
 
 All JSON shape checks call the real
 [Draft 2020-12 validator](https://python-jsonschema.readthedocs.io/en/stable/validate/).
@@ -295,7 +315,9 @@ These rows demonstrate query semantics, not player frequencies or treatment effe
 The four rows are explicitly fabricated format examples. They exercise an
 unaided recorded outcome, an assisted attempt, an unknown outcome after lost
 recording, and a declined attempt. The importer preserves the rows, source hashes,
-question and missingness. It reports `human_claim: not_established`.
+question, session conditions, collection method, units and missingness. Equal
+counts do not make different aid or prior-experience conditions interchangeable;
+those conditions travel with the report. It reports `human_claim: not_established`.
 
 For real evidence, use the [collection and interpretation route](OBSERVATIONS.md).
 Importing real records would still require inspection of their provenance,
@@ -309,7 +331,7 @@ tabletop observations. It does not create them by assigning a model a role.
 "$PYTHON" -m unittest discover -s examples/analysis-lab -p 'test_*.py' -v
 ```
 
-Twenty-three public semantic tests cover an
+The public semantic tests cover an
 equal-total but wrong-owner save that still passes the schema, an absent
 authority, lost winch, altered private fact, expired delegation, repeated reward,
 empty selection, late crossing, missing telemetry, empty observation set and

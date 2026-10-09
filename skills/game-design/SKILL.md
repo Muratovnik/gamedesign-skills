@@ -1,6 +1,6 @@
 ---
 name: game-design
-description: Create and develop a game concept, reconcile interacting game decisions, or adapt an existing game across language, platform or medium. Use for an unresolved whole or a cross-system change; skip isolated action, clue, scene, price, participation or content tasks with an established purpose, and purely technical changes that preserve game relations.
+description: Create and develop a game concept, reconcile interacting game decisions, or adapt an existing game across language, platform or medium. Use for an unresolved whole, a cross-system change, a requested game-asset glTF/GLB check, or importing game observations. Skip isolated action, clue, scene, price, participation or content tasks with an established purpose, and unrelated technical changes.
 license: MIT
 metadata:
   assay-optional-skills: "evidence-research implementation-planning research-driven-change software-architecture code-change test-writing test-audit independent-audit technical-writing"
@@ -12,6 +12,11 @@ Turn the requested intention into something a participant can do, encounter or
 express. Develop the actual object: a rule, place, encounter, scene, sequence,
 resource relation, mode of participation or adaptation. A GDD is one possible
 delivery format, not a prerequisite.
+
+For an established artifact-operation task, use the applicable
+[environment route](references/environment-contracts.md) directly and return its
+artifact and bounded evidence. Develop a concept only when the game relation
+itself needs that work.
 
 ## Establish the current game
 
@@ -66,6 +71,7 @@ read its specific reference when only that established relation is needed.
 | Authored repertoire, generation, selection or encountered distribution | [Content](../game-content-design/SKILL.md) |
 | Language, device, display or material changes a game relation | [Adaptation](references/adaptation.md) |
 | Files, calculations, time, geometry, runtime, saves, views, data or human material | [Environment contracts](references/environment-contracts.md) |
+| A glTF/GLB artifact's format, accessors or local resource references | [glTF conformance](references/gltf-artifacts.md) |
 
 Use the representation that can answer the question. A paper witness can settle
 a narrow contradiction; an assertion about a running controller needs the actual

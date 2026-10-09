@@ -1,0 +1,2 @@
+# Optional zero-sum calculation; Python 3.11+ in a disposable or project venv.
+scipy==1.17.0

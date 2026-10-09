@@ -1,0 +1,87 @@
+{
+  "archive": "domain-research-probes.zip",
+  "archive_sha256": "252036e863eb94b7747f701bdcc04403cf1afb4295d987db23cfaff3224e5231",
+  "original_root": "/workspace/scratch/e429285ef1e1/research/domain/notes",
+  "files": [
+    {
+      "path": "apetrov-acyclic_nontransitive.json",
+      "bytes": 74,
+      "sha256": "2f131f58ad1a4452ffd21a13587e1d7ebdec6966b304d2ec7d0da71f096fcc8a"
+    },
+    {
+      "path": "apetrov-acyclic_nontransitive.txt",
+      "bytes": 510,
+      "sha256": "466ecbd77969d6100099ad515aac3869b9e46bb4072e3938f9fe58c7d1b927d2"
+    },
+    {
+      "path": "apetrov-nonfinite.json",
+      "bytes": 52,
+      "sha256": "87f9ea8fd9c0e40bbe478ef1e992538de0acf67e6fd1561bcbebdbbd19edcd8e"
+    },
+    {
+      "path": "apetrov-nonfinite.txt",
+      "bytes": 440,
+      "sha256": "00e11801c4af0d7177d79bad57ad561a6e630786aaeed2a8fb46537a19af2ef4"
+    },
+    {
+      "path": "apetrov-singleton.json",
+      "bytes": 34,
+      "sha256": "3420fc0d1691809e94a898cc6a1b991aa5dd83d6e3e2c92e68e23515d4f5e240"
+    },
+    {
+      "path": "apetrov-singleton.txt",
+      "bytes": 389,
+      "sha256": "a535b9b13db9ccfa6c906430d397dca6f2bacf3f31dae28c1e27fba7234996df"
+    },
+    {
+      "path": "apetrov-tests.txt",
+      "bytes": 3291,
+      "sha256": "406a0f2836082de31429da6b007c2855ee663bfeff1c55ac4a0a22d9ac81ab73"
+    },
+    {
+      "path": "minimax_feasibility.json",
+      "bytes": 3224,
+      "sha256": "088460fcc3f0e6710fb670c6a829d0021a5d906e31efb906613f03c621293bac"
+    },
+    {
+      "path": "minimax_feasibility.py",
+      "bytes": 1783,
+      "sha256": "ed360d7eb13e5ec955366183e66020abef0757eb0297f9bce3dc81e56b0c01ff"
+    },
+    {
+      "path": "ncdlek-malformed_top_level/quest.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "ncdlek-malformed_top_level.txt",
+      "bytes": 782,
+      "sha256": "c3ee6b20d68b45a34c1305094d29dc1b371b073deaafd01164e03dbdd26a3fcd"
+    },
+    {
+      "path": "ncdlek-missing_policy/quest.json",
+      "bytes": 439,
+      "sha256": "37d3115e5ea877c3406c4f9cf00538b68d13dc3e56f76978a5e6986e3dfe7694"
+    },
+    {
+      "path": "ncdlek-missing_policy.txt",
+      "bytes": 134,
+      "sha256": "15c84a7415360eb9cd36f45149f9e0884b4e5594a0b9f97eb654cb00a35d60c3"
+    },
+    {
+      "path": "observation-baseline-report.json",
+      "bytes": 2584,
+      "sha256": "b52569ccbf3540612a5242456d64485103d20fba6892ff6f4df463bb11ecbca5"
+    },
+    {
+      "path": "observation-loss-check.json",
+      "bytes": 393,
+      "sha256": "c12aa9ee117efd7a1db3dbe336e7a878a65326156243e8f081be77750cb5b3c5"
+    },
+    {
+      "path": "repository-manifest.json",
+      "bytes": 9963,
+      "sha256": "204b886191b6fcdd967058ba22e4ee01d3968f3c3e2adf4ddaa7103dba6b3929"
+    }
+  ]
+}

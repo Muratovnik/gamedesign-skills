@@ -1,45 +1,55 @@
 # Contributing
 
-Read [AGENTS.md](AGENTS.md), select the owning skill, and establish the current
-game or package revision before changing it. Keep general research, coding,
-testing and audit methods with the separately maintained Assay project. Read
-the actual method required for the task; a name in metadata is not its content.
+This repository owns the seven Game Design methods and their examples. General
+research, implementation, testing and audit methods belong to the separately
+maintained [Assay project](https://github.com/Muratovnik/assay). Before changing
+a method, read [AGENTS.md](AGENTS.md), choose its owning skill and inspect the
+game or package revision that the change affects.
 
-A subject-method change should identify the game relation it affects, a
-research or local design basis, a concrete construction or revision, and a
-nearby lawful alternative. Do not turn one example into a universal requirement
-or add checklists to compensate for unclear wording. Follow references when
-they serve the task.
+For a subject-method change, show the affected game relationship, the local
+design basis, a concrete construction or revision, and a nearby legitimate
+alternative. Preserve expressive play without victory, permanent assistance,
+purposeful repetition and accepted endings where they fit the design. Do not
+turn one example into a universal requirement.
 
-Use `VERSION` and `catalog.json` for release identity and inventory. Regenerate
-derived projections through the repository's release tooling after changing
-them. Change the Assay binding only after reviewing the dependency delta and
-using its update tool with the explicit source root and intended revision; do
-not refresh it merely to hide a compatibility failure.
+## Run the maintainer checks
 
-Use established parsers and scoped deterministic checks for observable
-properties. Run the relevant repository and example checks, preserving adverse
-results. These checks cannot demonstrate discovery or better design decisions.
-Any future model or human evaluation needs its own agreed inputs, isolation and
-resources; preparing evaluation materials does not authorize running them.
-
-The source checks used by CI are:
+Use Python 3.11 or newer from the repository root. These checks use the isolated
+development dependencies in `requirements-dev.txt`; they do not run model
+comparisons or establish human experience. In Bash:
 
 ```bash
-python -B tools/check.py
-python -B -m unittest discover -s tests -v
-python -B -m unittest discover -s examples/adaptation -p 'test_*.py' -v
-python -B -m unittest discover -s examples/analysis-lab -p 'test_*.py' -v
-python -B -m unittest discover -s examples/godot-episode -p 'test_*.py' -v
-python -B -m unittest discover -s examples/design-studies/harbour-of-echoes -p 'test_*.py' -v
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-dev.txt
+.venv/bin/python -B tools/check.py
+.venv/bin/python -B -m unittest discover -s tests -v
+.venv/bin/python -B -m unittest discover -s examples/adaptation -p 'test_*.py' -v
+.venv/bin/python -B -m unittest discover -s examples/analysis-lab -p 'test_*.py' -v
+.venv/bin/python -B -m unittest discover -s examples/godot-episode -p 'test_*.py' -v
+.venv/bin/python -B -m unittest discover -s examples/design-studies/harbour-of-echoes -p 'test_*.py' -v
 ```
 
-Install `requirements-dev.txt` in an isolated Python environment first. The
-Godot command above checks the report contract; the native engine qualification
-has its own [runtime and command](examples/godot-episode/README.md). Release
-history, build and archive smoke checks are described in [releases](docs/releases.md).
+On Windows, create the environment with `py -3.11 -m venv .venv`, install with
+`.venv\Scripts\python -m pip install -r requirements-dev.txt`, then run the
+same checks by replacing `.venv/bin/python` with `.venv\Scripts\python`.
+`tools/check.py` checks local structure, links, schemas and generated metadata;
+the test commands check their named deterministic examples. The Godot-example
+tests check its report contract. Running its native engine check requires a
+separately obtained Godot version; see the
+[Godot episode guide](examples/godot-episode/README.md). The
+[release guide](docs/releases.md) describes archive preparation and smoke checks.
 
+## Package ownership
+
+`VERSION` and `catalog.json` define release identity and the seven-entry
+inventory. If either changes, regenerate derived client projections with
+`python tools/render.py` and check them with `python tools/render.py --check`.
+Do not edit generated marketplace or plugin files by hand. The Assay binding is
+version-specific; review the dependency change and use its update tool with the
+explicit source root and intended revision instead of refreshing it to hide a
+compatibility failure.
+
+Keep maintenance tools and tests outside the seven runtime skill directories.
 No installer, automatic download, network callback or global hook runs when a
-skill is read. Preserve foreign work, use new output paths, and do not infer
-authority to publish or change a live game from a design request. Local source
-edits, client installation and publication are separate actions.
+skill is read. Preserve unrelated work. Client installation and publication are
+separate owner actions; a source edit does not authorize either.

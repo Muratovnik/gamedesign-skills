@@ -1,0 +1,448 @@
+{
+  "main": {
+    "commit": "a0db5af71146586cf861881670c991ad94d87e2b",
+    "file_count": 48,
+    "bytes": 285580,
+    "files": [
+      {
+        "path": "skills/game-content-design/SKILL.md",
+        "bytes": 4086
+      },
+      {
+        "path": "skills/game-content-design/agents/openai.yaml",
+        "bytes": 252
+      },
+      {
+        "path": "skills/game-content-design/assets/harbor-repertoire.json",
+        "bytes": 2246
+      },
+      {
+        "path": "skills/game-content-design/assets/parcel-worlds.json",
+        "bytes": 1983
+      },
+      {
+        "path": "skills/game-content-design/references/repertoire.md",
+        "bytes": 13808
+      },
+      {
+        "path": "skills/game-design/SKILL.md",
+        "bytes": 5523
+      },
+      {
+        "path": "skills/game-design/agents/openai.yaml",
+        "bytes": 119
+      },
+      {
+        "path": "skills/game-design/assets/assay-binding.json",
+        "bytes": 24795
+      },
+      {
+        "path": "skills/game-design/assets/content.schema.json",
+        "bytes": 1917
+      },
+      {
+        "path": "skills/game-design/assets/episode-report.schema.json",
+        "bytes": 22811
+      },
+      {
+        "path": "skills/game-design/assets/episode.schema.json",
+        "bytes": 5093
+      },
+      {
+        "path": "skills/game-design/assets/observation.schema.json",
+        "bytes": 1401
+      },
+      {
+        "path": "skills/game-design/assets/observer-view.schema.json",
+        "bytes": 1626
+      },
+      {
+        "path": "skills/game-design/assets/resource-model.schema.json",
+        "bytes": 1341
+      },
+      {
+        "path": "skills/game-design/assets/save-v1.schema.json",
+        "bytes": 5470
+      },
+      {
+        "path": "skills/game-design/assets/save-v2.schema.json",
+        "bytes": 6685
+      },
+      {
+        "path": "skills/game-design/assets/telemetry-dictionary.schema.json",
+        "bytes": 1273
+      },
+      {
+        "path": "skills/game-design/references/adaptation.md",
+        "bytes": 4450
+      },
+      {
+        "path": "skills/game-design/references/consumer-and-assay-contract.md",
+        "bytes": 6151
+      },
+      {
+        "path": "skills/game-design/references/environment-contracts.md",
+        "bytes": 9151
+      },
+      {
+        "path": "skills/game-design/references/relations-and-context.md",
+        "bytes": 6310
+      },
+      {
+        "path": "skills/game-design/scripts/bind_assay.py",
+        "bytes": 6031
+      },
+      {
+        "path": "skills/game-design/scripts/observe_evidence.py",
+        "bytes": 4734
+      },
+      {
+        "path": "skills/game-design/scripts/requirements.txt",
+        "bytes": 93
+      },
+      {
+        "path": "skills/game-design/scripts/validate_artifact.py",
+        "bytes": 2335
+      },
+      {
+        "path": "skills/game-information-design/SKILL.md",
+        "bytes": 4737
+      },
+      {
+        "path": "skills/game-information-design/agents/openai.yaml",
+        "bytes": 261
+      },
+      {
+        "path": "skills/game-information-design/references/inference.md",
+        "bytes": 7312
+      },
+      {
+        "path": "skills/game-information-design/references/learning-and-help.md",
+        "bytes": 8882
+      },
+      {
+        "path": "skills/game-participation-design/SKILL.md",
+        "bytes": 4670
+      },
+      {
+        "path": "skills/game-participation-design/agents/openai.yaml",
+        "bytes": 247
+      },
+      {
+        "path": "skills/game-participation-design/references/access-and-return.md",
+        "bytes": 11489
+      },
+      {
+        "path": "skills/game-participation-design/references/paid-and-timed-rights.md",
+        "bytes": 9865
+      },
+      {
+        "path": "skills/game-participation-design/references/shared-play.md",
+        "bytes": 10474
+      },
+      {
+        "path": "skills/game-systems-design/SKILL.md",
+        "bytes": 4878
+      },
+      {
+        "path": "skills/game-systems-design/agents/openai.yaml",
+        "bytes": 251
+      },
+      {
+        "path": "skills/game-systems-design/references/game-state-transfer.md",
+        "bytes": 9207
+      },
+      {
+        "path": "skills/game-systems-design/references/loss-and-continuation.md",
+        "bytes": 7744
+      },
+      {
+        "path": "skills/game-systems-design/references/resources-and-development.md",
+        "bytes": 12565
+      },
+      {
+        "path": "skills/game-world-narrative-design/SKILL.md",
+        "bytes": 5060
+      },
+      {
+        "path": "skills/game-world-narrative-design/agents/openai.yaml",
+        "bytes": 267
+      },
+      {
+        "path": "skills/game-world-narrative-design/references/conditional-story.md",
+        "bytes": 9159
+      },
+      {
+        "path": "skills/game-world-narrative-design/references/world-relations.md",
+        "bytes": 7369
+      },
+      {
+        "path": "skills/gameplay-design/SKILL.md",
+        "bytes": 5416
+      },
+      {
+        "path": "skills/gameplay-design/agents/openai.yaml",
+        "bytes": 253
+      },
+      {
+        "path": "skills/gameplay-design/references/actions-and-time.md",
+        "bytes": 9771
+      },
+      {
+        "path": "skills/gameplay-design/references/entities.md",
+        "bytes": 8589
+      },
+      {
+        "path": "skills/gameplay-design/references/space-and-situations.md",
+        "bytes": 7430
+      }
+    ]
+  },
+  "candidate": {
+    "commit": "1873993a6491b52fe8288c19837600a012e18d4d",
+    "file_count": 59,
+    "bytes": 378443,
+    "files": [
+      {
+        "path": "skills/game-content-design/SKILL.md",
+        "bytes": 4086
+      },
+      {
+        "path": "skills/game-content-design/agents/openai.yaml",
+        "bytes": 252
+      },
+      {
+        "path": "skills/game-content-design/assets/harbor-repertoire.json",
+        "bytes": 2246
+      },
+      {
+        "path": "skills/game-content-design/assets/parcel-worlds.json",
+        "bytes": 1983
+      },
+      {
+        "path": "skills/game-content-design/references/repertoire.md",
+        "bytes": 13808
+      },
+      {
+        "path": "skills/game-design/SKILL.md",
+        "bytes": 5936
+      },
+      {
+        "path": "skills/game-design/agents/openai.yaml",
+        "bytes": 119
+      },
+      {
+        "path": "skills/game-design/assets/assay-binding.json",
+        "bytes": 24795
+      },
+      {
+        "path": "skills/game-design/assets/content.schema.json",
+        "bytes": 1917
+      },
+      {
+        "path": "skills/game-design/assets/episode-report.schema.json",
+        "bytes": 22811
+      },
+      {
+        "path": "skills/game-design/assets/episode.schema.json",
+        "bytes": 5093
+      },
+      {
+        "path": "skills/game-design/assets/observation.schema.json",
+        "bytes": 1401
+      },
+      {
+        "path": "skills/game-design/assets/observer-view.schema.json",
+        "bytes": 1626
+      },
+      {
+        "path": "skills/game-design/assets/resource-model.schema.json",
+        "bytes": 1341
+      },
+      {
+        "path": "skills/game-design/assets/save-v1.schema.json",
+        "bytes": 5470
+      },
+      {
+        "path": "skills/game-design/assets/save-v2.schema.json",
+        "bytes": 6685
+      },
+      {
+        "path": "skills/game-design/assets/telemetry-dictionary.schema.json",
+        "bytes": 1273
+      },
+      {
+        "path": "skills/game-design/references/adaptation.md",
+        "bytes": 4450
+      },
+      {
+        "path": "skills/game-design/references/consumer-and-assay-contract.md",
+        "bytes": 6151
+      },
+      {
+        "path": "skills/game-design/references/environment-contracts.md",
+        "bytes": 11015
+      },
+      {
+        "path": "skills/game-design/references/gltf-artifacts.md",
+        "bytes": 6957
+      },
+      {
+        "path": "skills/game-design/references/relations-and-context.md",
+        "bytes": 6310
+      },
+      {
+        "path": "skills/game-design/scripts/bind_assay.py",
+        "bytes": 6031
+      },
+      {
+        "path": "skills/game-design/scripts/observe_evidence.py",
+        "bytes": 4876
+      },
+      {
+        "path": "skills/game-design/scripts/package-lock.json",
+        "bytes": 634
+      },
+      {
+        "path": "skills/game-design/scripts/package.json",
+        "bytes": 269
+      },
+      {
+        "path": "skills/game-design/scripts/requirements.txt",
+        "bytes": 93
+      },
+      {
+        "path": "skills/game-design/scripts/validate_artifact.py",
+        "bytes": 2335
+      },
+      {
+        "path": "skills/game-design/scripts/validate_gltf.cjs",
+        "bytes": 11485
+      },
+      {
+        "path": "skills/game-information-design/SKILL.md",
+        "bytes": 4737
+      },
+      {
+        "path": "skills/game-information-design/agents/openai.yaml",
+        "bytes": 261
+      },
+      {
+        "path": "skills/game-information-design/references/inference.md",
+        "bytes": 7312
+      },
+      {
+        "path": "skills/game-information-design/references/learning-and-help.md",
+        "bytes": 8882
+      },
+      {
+        "path": "skills/game-participation-design/SKILL.md",
+        "bytes": 4670
+      },
+      {
+        "path": "skills/game-participation-design/agents/openai.yaml",
+        "bytes": 247
+      },
+      {
+        "path": "skills/game-participation-design/references/access-and-return.md",
+        "bytes": 11489
+      },
+      {
+        "path": "skills/game-participation-design/references/paid-and-timed-rights.md",
+        "bytes": 9865
+      },
+      {
+        "path": "skills/game-participation-design/references/shared-play.md",
+        "bytes": 10474
+      },
+      {
+        "path": "skills/game-systems-design/SKILL.md",
+        "bytes": 5123
+      },
+      {
+        "path": "skills/game-systems-design/agents/openai.yaml",
+        "bytes": 251
+      },
+      {
+        "path": "skills/game-systems-design/references/game-state-transfer.md",
+        "bytes": 9207
+      },
+      {
+        "path": "skills/game-systems-design/references/loss-and-continuation.md",
+        "bytes": 7744
+      },
+      {
+        "path": "skills/game-systems-design/references/resources-and-development.md",
+        "bytes": 12565
+      },
+      {
+        "path": "skills/game-systems-design/references/zero-sum-analysis.md",
+        "bytes": 14352
+      },
+      {
+        "path": "skills/game-systems-design/scripts/requirements.txt",
+        "bytes": 93
+      },
+      {
+        "path": "skills/game-systems-design/scripts/solve_zero_sum.py",
+        "bytes": 16034
+      },
+      {
+        "path": "skills/game-world-narrative-design/SKILL.md",
+        "bytes": 5297
+      },
+      {
+        "path": "skills/game-world-narrative-design/agents/openai.yaml",
+        "bytes": 267
+      },
+      {
+        "path": "skills/game-world-narrative-design/references/conditional-story.md",
+        "bytes": 9159
+      },
+      {
+        "path": "skills/game-world-narrative-design/references/ink-artifacts.md",
+        "bytes": 12602
+      },
+      {
+        "path": "skills/game-world-narrative-design/references/world-relations.md",
+        "bytes": 7369
+      },
+      {
+        "path": "skills/game-world-narrative-design/scripts/ink_artifact.cjs",
+        "bytes": 26584
+      },
+      {
+        "path": "skills/game-world-narrative-design/scripts/package-lock.json",
+        "bytes": 675
+      },
+      {
+        "path": "skills/game-world-narrative-design/scripts/package.json",
+        "bytes": 277
+      },
+      {
+        "path": "skills/gameplay-design/SKILL.md",
+        "bytes": 5416
+      },
+      {
+        "path": "skills/gameplay-design/agents/openai.yaml",
+        "bytes": 253
+      },
+      {
+        "path": "skills/gameplay-design/references/actions-and-time.md",
+        "bytes": 9771
+      },
+      {
+        "path": "skills/gameplay-design/references/entities.md",
+        "bytes": 8589
+      },
+      {
+        "path": "skills/gameplay-design/references/space-and-situations.md",
+        "bytes": 7430
+      }
+    ]
+  },
+  "delta": {
+    "files": 11,
+    "bytes": 92863
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "archive": "clean-matrix-first-use.zip",
+  "archive_sha256": "704948c108d747781e09db4220dccb507d44008079142f6c3074c681989b91cf",
+  "original_root": "/workspace/scratch/e429285ef1e1/research/verification/clean-matrix-first-use",
+  "reopened_all_files": true,
+  "files": [
+    {
+      "path": "channel-signals-report.json",
+      "bytes": 5758,
+      "sha256": "5527d3631f2943e39a0a1bc0f7f262494803cc3a978dac792e8bb1e6c234f73e"
+    },
+    {
+      "path": "create.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "create.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "first-use.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "first-use.stdout",
+      "bytes": 5758,
+      "sha256": "5527d3631f2943e39a0a1bc0f7f262494803cc3a978dac792e8bb1e6c234f73e"
+    },
+    {
+      "path": "install.stderr",
+      "bytes": 123,
+      "sha256": "8ddbb80a6850c11f8d5c5bf6e832f7eded1113c309fa7f04e6f1348eaeeb3da1"
+    },
+    {
+      "path": "install.stdout",
+      "bytes": 1106,
+      "sha256": "3af20ae794b11e97f5c7a88772aa2385294cc993fead2206670c38734e3ad2e1"
+    },
+    {
+      "path": "receipt.json",
+      "bytes": 2757,
+      "sha256": "ce858238a9b8d378aa1a3e75fd069c8431f1053280a65778a1547da370687934"
+    },
+    {
+      "path": "suite.stderr",
+      "bytes": 2720,
+      "sha256": "7efa87c149149c67b26a8aa276a3ba8e463e32909ab679cf6d7591deba3c6e11"
+    },
+    {
+      "path": "suite.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "versions.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "versions.stdout",
+      "bytes": 105,
+      "sha256": "5fdcdacd28167534fe41338e2bfd198fa3bd4469a7dcc7ed57256b0413df32a5"
+    }
+  ]
+}

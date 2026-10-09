@@ -214,6 +214,39 @@ class TelemetryAndObservationTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "No observations"):
                 import_observations(empty, FIXTURES / "observation-manifest.json")
 
+    def test_saved_observations_preserve_conditions_for_the_next_reader(self):
+        tool = Path(__file__).resolve().parents[2] / "skills/game-design/scripts/observe_evidence.py"
+        conditions = (
+            "Synthetic first encounter; the permanent aid reads the card aloud.",
+            "Synthetic repeat encounter; the permanent aid highlights the answer.",
+        )
+        reports = []
+        with tempfile.TemporaryDirectory() as directory:
+            for index, condition in enumerate(conditions):
+                manifest = read_json(FIXTURES / "observation-manifest.json")
+                manifest["conditions"] = condition
+                manifest["collection_method"] = "Authored examples of two different aid conditions; no participants."
+                manifest_path = Path(directory) / f"manifest-{index}.json"
+                manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+                output = Path(directory) / f"report-{index}.json"
+                run = subprocess.run(
+                    [sys.executable, str(tool), "--csv", str(FIXTURES / "observations.csv"),
+                     "--manifest", str(manifest_path), "--output", str(output)],
+                    capture_output=True, text=True, check=False,
+                )
+                self.assertEqual(run.returncode, 0, run.stderr)
+                report = read_json(output)
+                self.assertEqual(report["conditions"], condition)
+                self.assertEqual(report["collection_method"],
+                                 "Authored examples of two different aid conditions; no participants.")
+                self.assertEqual(report["units"], {"elapsed_time": "s"})
+                self.assertEqual(report["human_claim"], "not_established")
+                self.assertEqual(report["record_kind"], "synthetic")
+                reports.append(report)
+        self.assertEqual(reports[0]["counts"], reports[1]["counts"])
+        self.assertNotEqual(reports[0]["conditions"], reports[1]["conditions"])
+        self.assertNotEqual(reports[0]["source_sha256"]["manifest"], reports[1]["source_sha256"]["manifest"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,6 +1,6 @@
 {
   "name": "game-design",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Seven composable game design methods, original playable examples and explicit artifact adapters.",
   "license": "MIT"
 }

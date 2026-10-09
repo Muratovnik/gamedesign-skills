@@ -1,0 +1,260 @@
+{
+  "date": "2026-10-08",
+  "question": "Do executable game and multi-agent environments add a useful representation/consumer beyond the existing Game Design methods for the present task?",
+  "method": "Primary-source reading through GitHub connector at exact commit; selected bytes materialized only in research scratch and compared to Git tree blob identities. No framework installed or executed; no upstream implementation, fixture, test, skill text or asset transferred to the product.",
+  "repositories": [
+    {
+      "repository": "google-deepmind/open_spiel",
+      "commit": "48401890ee9857e611678302371378175a8e4c6b",
+      "root_tree": "3039ca72ddeb738abe95a9989bc8936d0ac17d91",
+      "revision_kind": "Git snapshot; no package release identity asserted",
+      "license": "Apache-2.0",
+      "inspected_file_notices": "DeepMind Technologies Limited: 2019 in LP/CFR implementations and tests; 2021 in spiel.h and basic_tests.cc."
+    },
+    {
+      "repository": "Farama-Foundation/PettingZoo",
+      "commit": "c88bed4324a9021fa6fdd938bc66b6d1d020ac3b",
+      "root_tree": "9f7e5b4254bf206b0de9416c9f92ec6678deb2c4",
+      "revision_kind": "Git snapshot; __init__.py reports 1.27.0; no wheel or release equivalence asserted",
+      "license": "MIT",
+      "inspected_file_notices": "Root Copyright (c) Farama Foundation. No more-specific license notices found in inspected selected-file headers or their inspected ancestor/containing trees."
+    }
+  ],
+  "sources": [
+    {
+      "repository": "google-deepmind/open_spiel",
+      "commit": "48401890ee9857e611678302371378175a8e4c6b",
+      "path": "open_spiel/python/algorithms/lp_solver.py",
+      "blob_sha": "33f2066e83e925db171ff3c19ce8d99b1e78a889",
+      "blob_size": 21108,
+      "containing_tree_sha": "4597fece6a6415a01a98a1e574815d0e235c68a8",
+      "url": "https://github.com/google-deepmind/open_spiel/blob/48401890ee9857e611678302371378175a8e4c6b/open_spiel/python/algorithms/lp_solver.py",
+      "scope": "Complete file: CVXPY LP construction, ECOS defaults, one-shot zero-sum MatrixGame assertions, pure/mixed and iterated dominance.",
+      "executed": false,
+      "sha256": "9981beb6910b1791793c5e01aad7885a3fac220ff751440aaf77f0195f115146",
+      "blob_bytes_verified": true,
+      "line_count": 634
+    },
+    {
+      "repository": "google-deepmind/open_spiel",
+      "commit": "48401890ee9857e611678302371378175a8e4c6b",
+      "path": "open_spiel/python/algorithms/lp_solver_test.py",
+      "blob_sha": "fdfff7f00aa87c0ccf708d558d50fe49d8d465b9",
+      "blob_size": 11747,
+      "containing_tree_sha": "4597fece6a6415a01a98a1e574815d0e235c68a8",
+      "url": "https://github.com/google-deepmind/open_spiel/blob/48401890ee9857e611678302371378175a8e4c6b/open_spiel/python/algorithms/lp_solver_test.py",
+      "scope": "Complete test file: RPS, biased RPS, rectangular pure/nonzero-value game, Blotto, dominance, and permutation cases. Tests read, not executed.",
+      "executed": false,
+      "sha256": "5043bdc98ccef7ab1ffbdefa5155ea83fafc2f35b0346668bebfed96712a7fb5",
+      "blob_bytes_verified": true,
+      "line_count": 336
+    },
+    {
+      "repository": "google-deepmind/open_spiel",
+      "commit": "48401890ee9857e611678302371378175a8e4c6b",
+      "path": "open_spiel/spiel.h",
+      "blob_sha": "8482b86598a493ae2e73ffb59eb6221fd646b4d1",
+      "blob_size": 63675,
+      "containing_tree_sha": "0273de2cc1188994fc625cb1beccd8d99136db98",
+      "url": "https://github.com/google-deepmind/open_spiel/blob/48401890ee9857e611678302371378175a8e4c6b/open_spiel/spiel.h",
+      "scope": "Selected header declarations and contracts: lines 1-52, 55-145, 300-397, 475-550, 587-835. GameType; State action/legality, rewards/returns, information state vs observation, clone/child, simultaneous actions, chance, serialization and resampling. Other header sections not read.",
+      "executed": false,
+      "sha256": "bebb43e5a6d889b799114ed78ecd703131e67576690406c02be015aba6587f37",
+      "blob_bytes_verified": true,
+      "line_count": 1432
+    },
+    {
+      "repository": "google-deepmind/open_spiel",
+      "commit": "48401890ee9857e611678302371378175a8e4c6b",
+      "path": "open_spiel/tests/basic_tests.cc",
+      "blob_sha": "2998d8da8d50054f7f10599d98962497428862c1",
+      "blob_size": 30825,
+      "containing_tree_sha": "2535d5fcd26a2da2ecde6fff9282745e338e2d4b",
+      "url": "https://github.com/google-deepmind/open_spiel/blob/48401890ee9857e611678302371378175a8e4c6b/open_spiel/tests/basic_tests.cc",
+      "scope": "Lines 1-142 and 174-583: clone/history and legal-action helpers; serialization comparison; return-type constraints; observable shape/finite checks; RandomSimulation and RandomSimTest. Other helper sections not read. Not executed.",
+      "executed": false,
+      "sha256": "32e38a2a449de7470865ef1e9a75fc9b78843e5f286734abdd57a95e899f6a78",
+      "blob_bytes_verified": true,
+      "line_count": 795
+    },
+    {
+      "repository": "google-deepmind/open_spiel",
+      "commit": "48401890ee9857e611678302371378175a8e4c6b",
+      "path": "open_spiel/python/algorithms/cfr.py",
+      "blob_sha": "cf6f1ea74abee75aba05706d3fb572613082e6ec",
+      "blob_size": 19358,
+      "containing_tree_sha": "4597fece6a6415a01a98a1e574815d0e235c68a8",
+      "url": "https://github.com/google-deepmind/open_spiel/blob/48401890ee9857e611678302371378175a8e4c6b/open_spiel/python/algorithms/cfr.py",
+      "scope": "Complete Python CFR implementation: sequential-dynamics assertion, information-state policy keys, chance/child/terminal traversal, regret and average-policy updates. Theoretical papers linked by this source not opened.",
+      "executed": false,
+      "sha256": "56f8f472a83166c4e3312016e709d7ece1a78ba34ca1684d842a26cbc8d89fc7",
+      "blob_bytes_verified": true,
+      "line_count": 528
+    },
+    {
+      "repository": "google-deepmind/open_spiel",
+      "commit": "48401890ee9857e611678302371378175a8e4c6b",
+      "path": "open_spiel/python/algorithms/cfr_test.py",
+      "blob_sha": "5d881f12dc518e01fe705365536288b750020726",
+      "blob_size": 13771,
+      "containing_tree_sha": "4597fece6a6415a01a98a1e574815d0e235c68a8",
+      "url": "https://github.com/google-deepmind/open_spiel/blob/48401890ee9857e611678302371378175a8e4c6b/open_spiel/python/algorithms/cfr_test.py",
+      "scope": "Lines 1-131: module-level regret-policy test, initial uniform policy with Leduc legal actions, Kuhn CFR/CFR+ expected policy-value tests and CFR+ best-response threshold test. Remaining tests only located by function-name search; not read as evidence and not executed.",
+      "executed": false,
+      "sha256": "e3dc2567523b231bd6a6177831a7d9e6efbca829b17fce80ef14881fbe6d2cbb",
+      "blob_bytes_verified": true,
+      "line_count": 329
+    },
+    {
+      "repository": "google-deepmind/open_spiel",
+      "commit": "48401890ee9857e611678302371378175a8e4c6b",
+      "path": "LICENSE",
+      "blob_sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "blob_size": 11358,
+      "containing_tree_sha": "3039ca72ddeb738abe95a9989bc8936d0ac17d91",
+      "url": "https://github.com/google-deepmind/open_spiel/blob/48401890ee9857e611678302371378175a8e4c6b/LICENSE",
+      "scope": "Complete Apache-2.0 license, including redistribution and notice provisions.",
+      "executed": false,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "blob_bytes_verified": true,
+      "line_count": 202
+    },
+    {
+      "repository": "Farama-Foundation/PettingZoo",
+      "commit": "c88bed4324a9021fa6fdd938bc66b6d1d020ac3b",
+      "path": "pettingzoo/test/parallel_test.py",
+      "blob_sha": "afbbc37733ece498b5617952b939732b012e7733",
+      "blob_size": 5244,
+      "containing_tree_sha": "c2705c21907b7a7d188da710c6fe35bcbb86e775",
+      "url": "https://github.com/Farama-Foundation/PettingZoo/blob/c88bed4324a9021fa6fdd938bc66b6d1d020ac3b/pettingzoo/test/parallel_test.py",
+      "scope": "Complete test file: reset/dictionary checks, masked action sampling, selected key mismatch warnings, possible/active-agent lifecycle and stable space identity assertions. Not executed.",
+      "executed": false,
+      "sha256": "e1ee32e1db4ef08b04143c4983d989b2b4fc7582c94c9a176ae23104be520622",
+      "blob_bytes_verified": true,
+      "line_count": 124
+    },
+    {
+      "repository": "Farama-Foundation/PettingZoo",
+      "commit": "c88bed4324a9021fa6fdd938bc66b6d1d020ac3b",
+      "path": "pettingzoo/utils/env.py",
+      "blob_sha": "fea956ce77262e2649ade648316cf8234b5e8aea",
+      "blob_size": 15658,
+      "containing_tree_sha": "6fd9dce5714a8a6bab0b8110badef2b7bc0cab13",
+      "url": "https://github.com/Farama-Foundation/PettingZoo/blob/c88bed4324a9021fa6fdd938bc66b6d1d020ac3b/pettingzoo/utils/env.py",
+      "scope": "Complete base environment file: AECEnv, last, dead-step helpers, AEC iteration and ParallelEnv contracts, including optional global state and distinct termination/truncation fields.",
+      "executed": false,
+      "sha256": "d489a1d9ca99f28ef83efd418104874f9f6b5166fe70783615a2680db4914913",
+      "blob_bytes_verified": true,
+      "line_count": 430
+    },
+    {
+      "repository": "Farama-Foundation/PettingZoo",
+      "commit": "c88bed4324a9021fa6fdd938bc66b6d1d020ac3b",
+      "path": "pettingzoo/utils/conversions.py",
+      "blob_sha": "087ecef2a8320de4b2b0d9a338f4be570ffbc989",
+      "blob_size": 19036,
+      "containing_tree_sha": "6fd9dce5714a8a6bab0b8110badef2b7bc0cab13",
+      "url": "https://github.com/Farama-Foundation/PettingZoo/blob/c88bed4324a9021fa6fdd938bc66b6d1d020ac3b/pettingzoo/utils/conversions.py",
+      "scope": "Lines 1-255: entry functions and complete ordinary aec_to_parallel_wrapper including timing precondition, reset, step and delegated methods; opening of reverse wrapper. Reverse and turn-based wrapper implementations beyond this range not read.",
+      "executed": false,
+      "sha256": "3b590822319c0739913b059b024545419b07e594e7d76d8279979b2c670c71bd",
+      "blob_bytes_verified": true,
+      "line_count": 541
+    },
+    {
+      "repository": "Farama-Foundation/PettingZoo",
+      "commit": "c88bed4324a9021fa6fdd938bc66b6d1d020ac3b",
+      "path": "pettingzoo/__init__.py",
+      "blob_sha": "842e074ff2c6f80fe38b913661d2f0efdc71d541",
+      "blob_size": 1204,
+      "containing_tree_sha": "aa7ba84cc34496dd377161467a8f8da8c822b830",
+      "url": "https://github.com/Farama-Foundation/PettingZoo/blob/c88bed4324a9021fa6fdd938bc66b6d1d020ac3b/pettingzoo/__init__.py",
+      "scope": "Complete package entry point, including __version__ 1.27.0. No published-wheel identity established.",
+      "executed": false,
+      "sha256": "c33db19a45b2cb745b9e48cceb313c9e28a86be4216d1037b90c7f7c230c4d15",
+      "blob_bytes_verified": true,
+      "line_count": 46
+    },
+    {
+      "repository": "Farama-Foundation/PettingZoo",
+      "commit": "c88bed4324a9021fa6fdd938bc66b6d1d020ac3b",
+      "path": "pyproject.toml",
+      "blob_sha": "ab538e02d3f94d242b079192da61ae22308b8c34",
+      "blob_size": 8290,
+      "containing_tree_sha": "9f7e5b4254bf206b0de9416c9f92ec6678deb2c4",
+      "url": "https://github.com/Farama-Foundation/PettingZoo/blob/c88bed4324a9021fa6fdd938bc66b6d1d020ac3b/pyproject.toml",
+      "scope": "Lines 1-100: package metadata, declared core/optional dependencies and beginning of tool configuration. Remaining lint configuration not read.",
+      "executed": false,
+      "sha256": "fcf0307d09f6ded035a90421dbb822121135994bb082078c5238e2bf38c20d54",
+      "blob_bytes_verified": true,
+      "line_count": 207
+    },
+    {
+      "repository": "Farama-Foundation/PettingZoo",
+      "commit": "c88bed4324a9021fa6fdd938bc66b6d1d020ac3b",
+      "path": "LICENSE",
+      "blob_sha": "ab161e2957698a097cc09ad06054321856ef04ed",
+      "blob_size": 1073,
+      "containing_tree_sha": "9f7e5b4254bf206b0de9416c9f92ec6678deb2c4",
+      "url": "https://github.com/Farama-Foundation/PettingZoo/blob/c88bed4324a9021fa6fdd938bc66b6d1d020ac3b/LICENSE",
+      "scope": "Complete MIT license with Copyright (c) Farama Foundation.",
+      "executed": false,
+      "sha256": "fe9f87b9e7bedda9df7a8d73be96fe0c6456bd84271c8dc24e36c4e8e93515f2",
+      "blob_bytes_verified": true,
+      "line_count": 21
+    }
+  ],
+  "execution_limit": "No upstream source, test or example executed. File hashing and source inspection only; no performance, convergence, framework compatibility or product-integration result established.",
+  "unread_limit": "Not an exhaustive framework, algorithm, game catalog, dependency, bundled-asset or security audit. Source-tree metadata was used to resolve selected paths and notices, not treated as reading the unselected source.",
+  "source_identity_verification": {
+    "selected_blobs": 13,
+    "all_matched_github_tree_identity": true,
+    "method": "SHA-1 over Git blob header and selected fetched bytes; size and SHA-256 also recorded. This check did not execute framework source."
+  },
+  "local_comparison": {
+    "repository": "Muratovnik/gamedesign-skills",
+    "checkout_head": "1873993a6491b52fe8288c19837600a012e18d4d",
+    "files": [
+      {
+        "path": "AGENTS.md",
+        "sha256": "73ecb0e0eefc59102ad555dcb1d90fb15d830568202a9aacee8bed4d62fa9729",
+        "scope": "Complete repository ownership/source contract."
+      },
+      {
+        "path": "skills/game-systems-design/SKILL.md",
+        "sha256": "1792c8cc901784d175b46131b3fa751f21add4d26744ae7cf7f71e8c7f526222",
+        "scope": "Complete method."
+      },
+      {
+        "path": "skills/game-systems-design/references/zero-sum-analysis.md",
+        "sha256": "00323ee57a9cef31d479b097ce23be63d9d7e2dcff5ad036c88204277f1e31ff",
+        "scope": "Complete current numerical contract; no local solver run in this supplement."
+      },
+      {
+        "path": "skills/gameplay-design/references/entities.md",
+        "sha256": "3ab9acdfb317478d4ade01129f50764c386eb102faaf5ff4118e60fa95e67df8",
+        "scope": "Complete actor knowledge and executable role reference."
+      },
+      {
+        "path": "skills/game-design/references/environment-contracts.md",
+        "sha256": "6621eae5edd754cf2dfe41914736636bfd67722cc75f9e26e59f42d233d9a1d8",
+        "scope": "Complete shared environment operation contract."
+      },
+      {
+        "path": "skills/game-design/references/consumer-and-assay-contract.md",
+        "sha256": "87cd0929e47495ab45042ea4842ef9a3a352dc7cfda43ac18d3efef74907c549",
+        "scope": "Complete binding and ownership contract."
+      },
+      {
+        "path": "examples/analysis-lab/consumer.py",
+        "sha256": "a6dfd5658005de0de6743da79cfbab1192ce99a0274d460bf0e3a18a8fe7bfc3",
+        "scope": "Complete observer view/content consumer; no run in this supplement."
+      },
+      {
+        "path": "examples/analysis-lab/state.py",
+        "sha256": "d8b9eab98f6e2acf6a12036d75b6723b894a7506e3f0f4246f6c14ed3ab85ec9",
+        "scope": "observer_view, lines 112-135; remaining method names located, not read as evidence."
+      }
+    ]
+  }
+}
