@@ -15,6 +15,7 @@ and access route, interpreter or engine, artifact schema, and game revision.
 | Plugin manifests and marketplaces | Generated for the complete bundle; static gates check the selected local source, identity and required metadata |
 | Codex native route | CLI 0.159.2, fresh Linux user; recorded local-source manager lifecycle, exact inventory and installed-resource action |
 | Claude Code native route | 2.1.289, fresh Linux user and local scope; recorded manager/effective-source action; disabled model-session exclusion unestablished |
+| GitHub marketplace installation | Official client source type; the package's recorded native lifecycle has not exercised this installation route |
 | Zero-sum operation | SciPy 1.17.0; finite two-player zero-sum binary64 utility, independent best-response bounds; [contract](../skills/game-systems-design/references/zero-sum-analysis.md) |
 | Ink | inkjs 2.4.0, compiled format 21; selected UTF-8 source/action/state contract; [boundary](../skills/game-world-narrative-design/references/ink-artifacts.md) |
 | glTF/GLB | glTF-Validator 2.0.0-dev.3.10; resource and coverage limits, separate caller predicates; [contract](../skills/game-design/references/gltf-artifacts.md) |
@@ -28,8 +29,11 @@ unbounded compatibility with all Assay, Godot or client versions.
 
 ## Native client qualification
 
-[Installation](installation.md) defines source identity, scope, conflict handling
-and commands for use, update, disable, removal and rollback. Manifest validation,
+[Installation](installation.md) describes the short GitHub-backed route and
+the independently qualified local-source route. The receipts below cover
+**local-source registration on Linux**, not GitHub-backed installation or
+native Windows installation. Source identity, scope, conflicts, updates and
+rollback have different requirements for each route. Manifest validation,
 CLI help and explicit source reading are not automatic discovery evidence.
 
 The fresh-user Linux job in

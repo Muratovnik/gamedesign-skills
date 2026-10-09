@@ -1,17 +1,72 @@
-# Access and optional plugin installation
+# Install and use Game Design
 
-You can read the complete seven-skill source bundle directly; native plugin
-registration is an optional client-specific route. Keep every skill directory,
-sibling reference and runtime resource together. Assay is a separate source
-dependency for tasks that need its general methods. The
-[consumer contract](../skills/game-design/references/consumer-and-assay-contract.md)
-states its pinned revision and conditional read procedure.
+Install the whole Game Design plugin through a native marketplace, or read the
+skills directly from a source directory. Installing the skills does not require
+Python or a game engine. Optional executable examples describe their own
+dependencies.
 
-## Prepare the source directory
+## Install from GitHub
 
-Start with an authorized checkout or extract the source archive described in
-[release preparation](releases.md). For an archive, verify its checksum against
-the accompanying `SHA256SUMS`. Keep the full `game-design/` directory in a
+Use a plugin-capable Codex or Claude Code CLI. The public repository contains
+both marketplace manifests, so no source archive or manual checkout is needed
+for this route. These shell commands also work in Windows PowerShell.
+
+### Codex
+
+```bash
+codex plugin marketplace add Muratovnik/gamedesign-skills
+codex plugin add game-design@game-design-source
+codex plugin list --marketplace game-design-source --json
+```
+
+Confirm the installed identity and the skill inventory. The Codex marketplace
+registration and plugin installation are client-managed, not scoped to one game
+repository. To control whether the plugin is enabled in a trusted repository,
+use the [project configuration](#codex-registered-local-marketplace) below.
+
+### Claude Code
+
+Run from the game repository to use its `local` settings rather than a
+user-wide scope:
+
+```bash
+claude plugin marketplace add Muratovnik/gamedesign-skills --scope local
+claude plugin install game-design@game-design-source --scope local
+claude plugin list
+claude plugin details game-design
+```
+
+Check that the intended plugin and skills are listed, then start a fresh
+session. If `game-design-source` or `game-design` already exists, inspect its
+source and scope first. Do not replace another provider's registration.
+
+The native GitHub-source format is described in
+[Codex plugin packaging](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli)
+and [Claude Code marketplaces](https://code.claude.com/docs/en/plugin-marketplaces#host-your-marketplace).
+The project's recorded native lifecycle checks use **local sources** on Linux;
+they do not yet qualify the GitHub-source commands or native Windows
+installation. See [compatibility](compatibility.md#native-client-qualification).
+
+## First use
+
+Open a new session. Name the appropriate skill and supply a game artifact,
+intended change and allowed actions. To try a method without a game repository:
+
+> Use Game Design's `gameplay-design` skill. An enemy charges for 0.6 seconds
+> and strikes one tile, but its warning appears only 0.1 seconds before
+> impact. Revise the warning and player-response rules. Give exact timing,
+> legal responses and a failure case. Do not change code.
+
+This is an example prompt, not a recorded model run or a player playtest. The
+[Russian quick start](quickstart.ru.md) gives the same first-use route.
+
+## Use source files directly
+
+
+Start with an authorized checkout or download the
+[v0.2.0 source archive](https://github.com/Muratovnik/gamedesign-skills/releases/tag/v0.2.0)
+and extract it. For an archive, verify its checksum against the accompanying
+`SHA256SUMS`. Keep the full `game-design/` directory in a
 location you own, outside client caches. Record `VERSION` and the archive
 checksum or checkout commit; a version label alone does not identify edits in a
 checkout.
@@ -24,13 +79,25 @@ GAME_DESIGN_ROOT="/absolute/packages/game-design-0.2.0/game-design"
 GAME_ROOT="/absolute/my-game"
 ```
 
+In Windows PowerShell, use `$GameDesignRoot` and `$GameRoot` instead of the
+Bash variables, or put the actual absolute path in quotes:
+
+```powershell
+$GameDesignRoot = "C:\\packages\\game-design-0.2.0\\game-design"
+$GameRoot = "C:\\projects\\my-game"
+```
+
 For direct source use, give the authorized text reader those two roots, the
 current game artifact, the intended change and relevant permissions. Have it
 read the applicable `skills/<name>/SKILL.md` and conditional references. This
 route requires no client registration. To stop using it, remove the source path
 from the consumer's active instructions; delete only a source copy you own.
 
-## Optional native plugin registration
+## Advanced: register a local source directory
+
+Use the following commands only when you have an extracted source directory
+that you want the native client to register, rather than the GitHub
+marketplace above.
 
 Both generated marketplaces expose **`game-design@game-design-source`**. Their
 `./` source is the package root, so a native manager receives the whole bundle.
@@ -164,7 +231,18 @@ For a session-only development load, use the native alternative
 stop that route. This can take precedence over an installed package of the same
 name, so it is not evidence that registration works.
 
-## Update or roll back a registered copy
+## Update or roll back
+
+For GitHub-backed installations, the clients expose marketplace refresh
+commands (`codex plugin marketplace upgrade game-design-source` and
+`claude plugin marketplace update game-design-source`). Claude Code also
+offers `claude plugin update game-design@game-design-source --scope local`.
+Check the installed revision and skills again after updating; a marketplace
+refresh alone is not evidence that the installed files changed. The recorded
+project qualification covers local-source replacement, not GitHub upgrade.
+
+### Local-source replacement and rollback
+
 
 For either client, retain the earlier source, matching Assay selection, native
 inventory and relevant settings outside managed roots before changing them.

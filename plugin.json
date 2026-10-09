@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "game-design",
   "version": "0.2.0",
-  "description": "Seven composable game design methods, original playable examples and explicit artifact adapters.",
+  "description": "Game design skills for playable rules, systems, scenes, and prototypes, with inspectable examples.",
   "license": "MIT",
   "keywords": [
     "game-design",

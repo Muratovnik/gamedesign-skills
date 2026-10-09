@@ -14,7 +14,7 @@ def projections(root: Path = ROOT) -> dict[str, str]:
     version = (root / "VERSION").read_text(encoding="utf-8").strip()
     identity = {
         "name": catalog["name"], "version": version,
-        "description": "Seven composable game design methods, original playable examples and explicit artifact adapters.",
+        "description": "Game design skills for playable rules, systems, scenes, and prototypes, with inspectable examples.",
         "license": "MIT",
     }
     portable = {"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json", **identity,

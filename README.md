@@ -2,7 +2,7 @@
 
 # Game Design
 
-Seven composable methods for creating and revising playable games.
+Game design skills for AI agents working on playable games.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 [![Check](https://img.shields.io/github/actions/workflow/status/Muratovnik/gamedesign-skills/check.yml?branch=main&style=flat-square)](https://github.com/Muratovnik/gamedesign-skills/actions/workflows/check.yml)
@@ -10,32 +10,33 @@ Seven composable methods for creating and revising playable games.
 
 </div>
 
-Game Design helps you turn a design question into a playable rule, scene, map,
-resource model, paper episode or prototype change. Use one method for a focused
-revision or combine methods around an existing game. A large design document,
-score, victory condition or simulation is not required.
+Game Design is a skills plugin for Codex and Claude Code. It helps you design
+or revise game actions, puzzles, worlds, economies and content in a new or
+existing game. Work on one concrete rule or combine methods for a change
+across systems. A large game design document, score, victory condition or
+simulation is not required.
 
 ## What you can do
 
-- Shape actions, timing, actor knowledge, space and encounters with
+- Design actions, combat timing, actor behavior and encounters with
   [gameplay design](skills/gameplay-design/SKILL.md).
-- Build inference paths and assistance that players can use with
+- Build puzzles, clues, learning sequences and player assistance with
   [information design](skills/game-information-design/SKILL.md).
-- Connect places, world relationships and conditional scenes with
+- Connect places, inhabitants, quests and conditional scenes with
   [world and narrative design](skills/game-world-narrative-design/SKILL.md).
-- Make resources, progression, loss, recovery and saved-state changes work
+- Work out economies, progression, loss, recovery and persistent state
   together with [systems design](skills/game-systems-design/SKILL.md).
-- Design shared decisions, access, stopping, returning and paid rights with
+- Design shared play, access, leaving and returning with
   [participation design](skills/game-participation-design/SKILL.md).
-- Create and select a meaningful set of encounters or other game content with
+- Create and select encounters, items and other related game content with
   [content design](skills/game-content-design/SKILL.md).
-- Compose and adapt those relationships across an existing game with
+- Reconcile cross-system decisions or adapt an existing game with
   [game design](skills/game-design/SKILL.md).
 
-The supported package is the complete set of seven skill directories. Choose an
-entry directly for a narrow task; the general `game-design` method is not a
-mandatory router. The methods link to sibling references when a design decision
-crosses their boundaries.
+The supported package is the complete collection listed in
+[`catalog.json`](catalog.json). Choose a specialist directly for a focused task;
+the general `game-design` method is not a mandatory router. Skills link to
+related references when a decision crosses their boundary.
 
 ## Demonstration
 
@@ -52,51 +53,66 @@ For tasks that need executable artifact evidence, use the optional
 [glTF/GLB inspection](examples/gltf-artifacts/README.md). Their dependencies
 are prepared in task-owned directories; paper and prose work installs none.
 
-## Access
+## Install
 
-Browse the [source](https://github.com/Muratovnik/gamedesign-skills) or download
-the [v0.2.0 source release](https://github.com/Muratovnik/gamedesign-skills/releases/tag/v0.2.0).
-The release archive contains the complete source bundle under `game-design/`.
-For direct use, give your agent the absolute path to that directory, your game's
-root and current artifact, the intended change, and the actions it is permitted
-to take. Have it read the applicable `skills/<name>/SKILL.md` and references.
-This route does not require client registration.
+Use a plugin-capable Codex or Claude Code CLI. The commands below fetch the
+public GitHub repository through each client's native plugin manager; they can
+be entered in Bash or Windows PowerShell.
 
-Some tasks use general research or engineering methods maintained separately in
-[Assay](https://github.com/Muratovnik/assay). The shipped binder is pinned to
-Assay 0.17.2 at commit
-[`94c517b0aac9ba2575086bf9aead1cc828aadb0d`](https://github.com/Muratovnik/assay/tree/94c517b0aac9ba2575086bf9aead1cc828aadb0d).
-Obtain that source separately when the task needs it; the package does not
-install Assay. For the verified explicit-source route and its caller-state
-condition, see the [consumer contract](skills/game-design/references/consumer-and-assay-contract.md).
+**Codex**
+
+```bash
+codex plugin marketplace add Muratovnik/gamedesign-skills
+codex plugin add game-design@game-design-source
+codex plugin list --marketplace game-design-source --json
+```
+
+**Claude Code** — run from your game repository so `--scope local` applies to
+that project.
+
+```bash
+claude plugin marketplace add Muratovnik/gamedesign-skills --scope local
+claude plugin install game-design@game-design-source --scope local
+claude plugin details game-design
+```
+
+Verify that the installed component inventory shows the Game Design skills,
+then start a new session. Inspect any existing `game-design-source`
+registration before adding another one. The GitHub-source syntax is documented
+by both clients, but this project's recorded native installation checks use a
+**local source directory**, not the GitHub route. See
+[installation and scope](docs/installation.md) and
+[compatibility evidence](docs/compatibility.md#native-client-qualification).
+
+For use without plugin registration, download the
+[v0.2.0 source release](https://github.com/Muratovnik/gamedesign-skills/releases/tag/v0.2.0)
+or clone the repository, then give your agent the authorized source directory,
+game root and the applicable `skills/<name>/SKILL.md`. Reading methods this way
+needs neither Python nor a plugin manager. General research and engineering
+methods are maintained separately in
+[Assay](https://github.com/Muratovnik/assay); Game Design does not install
+Assay. Its exact pinned revision and conditional requirements are in the
+[consumer contract](skills/game-design/references/consumer-and-assay-contract.md).
 
 ## Quick start
 
-To apply a method, give your agent the current game artifact, your goal and the
-actions it may take, then have it read the relevant skill and references. This
-plain-source route needs no Python. To run the included East Gate consumer, use
-Python 3.11 or newer. From the extracted `game-design/` directory, run this
-command in Bash:
+After installing the plugin, start a new session in your game project. To try
+one method without preparing a game repository, send the following prompt:
 
-```bash
-mkdir -p tmp
-python3 examples/adaptation/consumer.py \
-  --artifact examples/adaptation/fixtures/east-gate-ru.json \
-  --expect-revision east-gate-ru-2 \
-  --pin 1 --pin 2 --pin 3 --pin 4 --pin 5 --pin 6 \
-  --choose east \
-  --output tmp/east-gate-result.json
-```
+> Use Game Design's `gameplay-design` skill. In a top-down game an enemy
+> charges for 0.6 seconds and strikes one tile. The warning appears only
+> 0.1 seconds before impact. Revise the warning and player-response rules.
+> Give exact timings, the available player responses, and a failure case to
+> check. Do not change code.
 
-For Windows PowerShell instructions, see the [East Gate example guide](examples/adaptation/README.md#run-the-example).
+The result should describe a concrete action sequence with a plausible
+failure case, rather than just naming design principles. This is an example
+request, not a tested model run or player playtest.
 
-The command prints an `executed` result with `gate` set to `open`. The JSON file
-contains the pinned notebook, ferry token and next scene. The output file must be
-new; choose another name if you have already run the command. This is a
-deterministic example path, not a report of a run on your machine. The
-[East Gate guide](examples/adaptation/README.md) explains the wrong-turn and
-invalid-content cases.
-
+For an existing game, supply its current rules or files, the desired change
+and the actions the agent may take. Name the skill explicitly; installation
+does not guarantee automatic selection. See the
+[Russian quick start](docs/quickstart.ru.md).
 ## Documentation
 
 - [Installation](docs/installation.md) separates direct source use from optional
@@ -111,14 +127,11 @@ invalid-content cases.
 
 ## Limits
 
-The examples are synthetic. Deterministic and headless checks establish only the
-properties they inspect; they do not establish player perception, human
-experience, automatic client discovery, arbitrary-engine compatibility or
-general model quality. Recorded fresh-Linux checks exercised the local-source
-manager lifecycle for Codex 0.159.2 and Claude Code 2.1.289, including installed
-resource use. This is separate from automatic model selection or adherence;
-see the [compatibility record](docs/compatibility.md#native-client-qualification).
-
+The examples are synthetic. Deterministic and headless checks establish only
+their inspected properties, not player perception, arbitrary-engine
+compatibility or general model quality. Installed-resource loading and
+automatic model selection are separate claims; their recorded evidence and
+limits are in [compatibility](docs/compatibility.md).
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for source ownership and maintainer
