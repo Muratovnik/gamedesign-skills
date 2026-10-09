@@ -244,6 +244,24 @@ source revision and retain the older source for an exact rollback. Do not refres
 unrelated marketplaces. The recorded project qualification covers local-source
 replacement, not GitHub upgrade.
 
+To remove a GitHub-backed registration you own, first verify that no other
+consumer needs the marketplace. For **Codex**, use:
+
+```bash
+codex plugin remove game-design@game-design-source
+codex plugin marketplace remove game-design-source
+```
+
+For **Claude Code** using the `local` scope selected above, use:
+
+```bash
+claude plugin uninstall game-design@game-design-source --scope local --keep-data
+claude plugin marketplace remove game-design-source --scope local
+```
+
+Re-list the installed plugins and marketplaces and check for another active
+provider. Removal of the plugin does not roll back game artifacts or saves.
+
 ### Local-source replacement and rollback
 
 For either client, retain the earlier source, matching Assay selection, native
