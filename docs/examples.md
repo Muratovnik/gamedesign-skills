@@ -15,6 +15,10 @@ observations; this guide points you to the part that makes a useful comparison.
 | Content generation and selection | [Repertoire](../skills/game-content-design/references/repertoire.md) and the [analysis lab](../examples/analysis-lab/README.md) | Whether relations remain varied after cosmetic names are removed, and how generated content moves through filtering, selection and presentation. |
 | Adapting an existing artifact | [East Gate](../examples/adaptation/README.md) | Versioned English and Russian clues, one-line display with permanent line pins, player-selected direction and the reused next scene. |
 
+## Executable artifact examples
+
+| If you are checking… | Start with… | Compare… |
+| --- | --- | --- |
 | Declared competing strategy utilities | [Strategy matrix](../examples/strategy-matrix/README.md) | Solved probabilities and independent best-response bounds; context is not inferred from numbers. |
 | Executable conditional story and continuation | [Ink episode](../examples/ink-episode/README.md) | Compile, explicit choices, saved state, fresh resume and selected predicates; valid departure stays available. |
 | A selected glTF/GLB delivery | [glTF artifacts](../examples/gltf-artifacts/README.md) | Conformance, unavailable resources and unrecognized coverage; engine import and the caller's game predicate remain separate. |

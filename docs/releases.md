@@ -61,8 +61,10 @@ python .github/relkit.pyz release prepare <version>
 python .github/relkit.pyz release plan <version>
 ```
 
-Replace `<version>` with the intended stable version, for example `0.1.2` for a
-new patch candidate. Preparation produces a candidate and its configured
+Replace `<version>` with the intended stable version (without a leading `v`)
+and confirm it has not already been published. For a patch candidate, increment
+the patch component of the current released version. Preparation produces a
+candidate and its configured
 assets; planning prints the proposed tag, destination and publication effects
 for review. Confirm the planned source revision, asset names and digest before
 continuing. If the plan is wrong or the checks fail, stop and correct the
