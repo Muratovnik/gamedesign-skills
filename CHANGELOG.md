@@ -2,6 +2,21 @@
 
 ## [Unreleased]
 
+## [0.3.0](https://github.com/Muratovnik/gamedesign-skills/compare/v0.2.0...v0.3.0) (2026-10-29)
+
+### Added
+
+- Compose two rules that respond to one event: which applies first, whether one action is credited twice, whether a rule assumes a state the other already changed, contradictory feedback and a combination no rule names. ([eaa6e01](https://github.com/Muratovnik/gamedesign-skills/commit/eaa6e013ff21e98cd519630224cbe82958d629ea))
+- Systems design points rules that share an event, such as one action that pays a reward and counts toward another rule, to that composition check. ([b076de9](https://github.com/Muratovnik/gamedesign-skills/commit/b076de93fc1b56c64b6654f93e9f4111434cddd9))
+
+### Changed
+
+- Shorter installation and first use, tighter onboarding copy and a documented GitHub marketplace uninstall lifecycle. ([0f88226](https://github.com/Muratovnik/gamedesign-skills/commit/0f88226ac971c3c7c620f9ac5b5aa15d420cfc36), [77ca8e5](https://github.com/Muratovnik/gamedesign-skills/commit/77ca8e58e9cfad9d6e8c2b7ef403fe566506b3e0), [90f1ba7](https://github.com/Muratovnik/gamedesign-skills/commit/90f1ba77730cde400ec1094102cea6061e9a8336))
+
+### Fixed
+
+- The junction test reads `mklink` output in any console code page, so it no longer fails on a non-English Windows console in UTF-8 mode. ([e66b05b](https://github.com/Muratovnik/gamedesign-skills/commit/e66b05b9fef48411b62f4e35927e2b5f1540d132))
+
 ## [0.2.0](https://github.com/Muratovnik/gamedesign-skills/compare/v0.1.1...v0.2.0) (2026-10-09)
 
 ### Added

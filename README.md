@@ -85,7 +85,7 @@ by both clients, but this project's recorded native installation checks use a
 [compatibility evidence](docs/compatibility.md#native-client-qualification).
 
 For use without plugin registration, download the
-[v0.2.0 source release](https://github.com/Muratovnik/gamedesign-skills/releases/tag/v0.2.0)
+[v0.3.0 source release](https://github.com/Muratovnik/gamedesign-skills/releases/tag/v0.3.0)
 or clone the repository, then give your agent the authorized source directory,
 game root and the applicable `skills/<name>/SKILL.md`. Reading methods this way
 needs neither Python nor a plugin manager. General research and engineering

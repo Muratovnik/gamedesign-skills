@@ -64,7 +64,7 @@ This is an example prompt, not a recorded model run or a player playtest. The
 ## Use source files directly
 
 Start with an authorized checkout or download the
-[v0.2.0 source archive](https://github.com/Muratovnik/gamedesign-skills/releases/tag/v0.2.0)
+[v0.3.0 source archive](https://github.com/Muratovnik/gamedesign-skills/releases/tag/v0.3.0)
 and extract it. For an archive, verify its checksum against the accompanying
 `SHA256SUMS`. Keep the full `game-design/` directory in a
 location you own, outside client caches. Record `VERSION` and the archive
@@ -75,7 +75,7 @@ The commands below use Bash. Replace these example paths with the actual source
 and game locations; keep the quotes if a path contains spaces:
 
 ```bash
-GAME_DESIGN_ROOT="/absolute/packages/game-design-0.2.0/game-design"
+GAME_DESIGN_ROOT="/absolute/packages/game-design-0.3.0/game-design"
 GAME_ROOT="/absolute/my-game"
 ```
 
@@ -83,7 +83,7 @@ In Windows PowerShell, use `$GameDesignRoot` and `$GameRoot` instead of the
 Bash variables, or put the actual absolute path in quotes:
 
 ```powershell
-$GameDesignRoot = "C:\packages\game-design-0.2.0\game-design"
+$GameDesignRoot = "C:\packages\game-design-0.3.0\game-design"
 $GameRoot = "C:\projects\my-game"
 ```
 
