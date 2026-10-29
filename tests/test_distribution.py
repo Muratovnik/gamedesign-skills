@@ -297,9 +297,12 @@ class SecurePackaging(unittest.TestCase):
         target.mkdir()
         link = root / "docs" / "linked"
         if os.name == "nt":
+            # mklink answers in the console code page, which need not match the
+            # interpreter's text encoding; an undecodable reply must not hide the result.
             result = __import__("subprocess").run(
                 ["cmd.exe", "/c", "mklink", "/J", str(link), str(target)],
                 text=True,
+                errors="replace",
                 capture_output=True,
                 check=False,
             )
