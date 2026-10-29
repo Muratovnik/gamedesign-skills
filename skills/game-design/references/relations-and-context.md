@@ -67,6 +67,14 @@ Useful cross-domain traces:
 Each trace needs a common artifact version, entities and clock/ownership semantics.
 Local checks on incompatible versions do not establish the combined result.
 
+When two rules respond to one event, compose them explicitly. Suppose lighting
+the lamp both pays the harbour's bounty and adds trust through the repair record.
+Decide which applies first, whether one fit can be credited twice, whether either
+rule assumes a lamp state the other has already changed, as the storm rule that
+darkens an unstable lamp at dusk does, whether the feedback players see can
+contradict itself, and what a combination no rule names produces, such as a fit
+made after the record closes. Each rule passing alone does not settle the sequence.
+
 ## Choose, observe and revise
 
 Distinguish a design preference from a factual defect. A coherent scene can be
