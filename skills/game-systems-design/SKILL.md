@@ -64,7 +64,10 @@ fact or unlock changes what an actor may know. Read
 [learning and help](../game-information-design/references/learning-and-help.md)
 when the question concerns a person's understanding or use of an ability.
 Read [conditional story](../game-world-narrative-design/references/conditional-story.md)
-when history, one-time events or changed resources affect a scene.
+when history, one-time events or changed resources affect a scene. Read
+[compose a change](../game-design/references/relations-and-context.md#compose-a-change)
+when two rules respond to the same event, such as one action that both pays a
+reward and counts toward another rule.
 
 Use [participation](../game-participation-design/SKILL.md) for joint authority,
 access, return and paid or timed participation. This skill owns the game state
